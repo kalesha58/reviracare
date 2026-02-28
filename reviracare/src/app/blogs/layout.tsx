@@ -1,0 +1,13 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Blog & News",
+  description:
+    "News, updates and insights from Revira Care on disability support, NDIS, inclusion, and living well.",
+};
+
+export default function BlogsLayout({
+  children,
+}: Readonly<{ children: React.ReactNode }>): React.ReactElement {
+  return children;
+}

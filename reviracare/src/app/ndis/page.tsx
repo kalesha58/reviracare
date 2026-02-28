@@ -42,7 +42,7 @@ export default function NdisPage(): React.ReactElement {
             </span>
             <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50 leading-[1.1] mb-8">
               Tailored Care <br />
-              <span className="text-zinc-400">For Everyone</span>
+              <span className="text-zinc-500 dark:text-zinc-400">For Everyone</span>
             </h1>
             <p className="text-xl text-zinc-600 dark:text-zinc-400 leading-relaxed mb-10 max-w-xl">
               Discover NDIS support that actually understands you. We design our services around your specific goals and lifestyle.
