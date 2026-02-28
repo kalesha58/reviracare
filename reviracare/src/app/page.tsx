@@ -34,7 +34,7 @@ const BADGES = [
     id: "ndis",
     content: (
       <div className="flex items-center gap-3 bg-[#6A2B86] text-white px-5 py-3 rounded-2xl shadow-xl shadow-purple-500/20 border border-white/10">
-        <span className="font-black text-xl tracking-tighter">ndis</span>
+        <span className="font-bold text-xl tracking-tighter">ndis</span>
         <div className="w-px h-6 bg-white/20" />
         <div className="text-[10px] leading-tight font-bold uppercase text-left">
           Registered <br /> Provider
@@ -55,7 +55,7 @@ const BADGES = [
     id: "support",
     content: (
       <div className="flex items-center gap-3 px-5 py-3 bg-white/10 backdrop-blur-xl rounded-2xl border border-white/20 shadow-xl">
-        <div className="text-xl font-black text-blue-400 leading-none">24/7</div>
+        <div className="text-xl font-bold text-blue-400 leading-none">24/7</div>
         <div className="text-[10px] font-bold text-zinc-400 uppercase tracking-wider">Support</div>
       </div>
     ),
@@ -65,7 +65,7 @@ const BADGES = [
     content: (
       <div className="flex items-center gap-3 px-5 py-3 bg-[#00A3E0]/20 backdrop-blur-xl text-[#00A3E0] rounded-2xl border border-[#00A3E0]/40 shadow-xl">
         <CheckCircle2 className="w-5 h-5" />
-        <span className="text-[11px] font-black tracking-wider uppercase">COVID Safe</span>
+        <span className="text-[11px] font-bold tracking-wider uppercase">COVID Safe</span>
       </div>
     ),
   },
@@ -98,7 +98,7 @@ export default function HomePage(): React.ReactElement {
               src={CAROUSEL_IMAGES[currentImage % CAROUSEL_IMAGES.length]}
               alt="Healthcare support"
               fill
-              className="object-cover object-center opacity-40"
+              className="object-cover object-center opacity-60"
               priority
             />
             <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/40 to-zinc-950" />
@@ -107,21 +107,25 @@ export default function HomePage(): React.ReactElement {
       </div>
 
       {/* Hero Content */}
-      <section className="relative min-h-[90vh] flex items-center pt-24 md:pt-32 pb-16 overflow-hidden">
+      <section className="relative h-[65vh] min-h-[500px] flex items-center pt-20 md:pt-24 pb-12 overflow-hidden">
         <Container className="relative z-20">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* Left Content */}
-            <div className="lg:col-span-7 flex flex-col items-start text-left">
+            <div className="lg:col-span-8 flex flex-col items-start text-left">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={currentImage}
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: 20 }}
-                  transition={{ duration: 0.8 }}
+                  initial={{ opacity: 0, y: 15 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -15 }}
+                  transition={{ duration: 0.6, ease: "easeOut" }}
                   className="w-full"
                 >
-                  <h1 className="text-4xl md:text-6xl lg:text-7xl font-black tracking-tight text-white leading-[1.1] mb-6">
+                  <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-emerald-400 text-[10px] font-bold uppercase tracking-[0.2em] mb-6">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                    Trusted Healthcare Partner
+                  </div>
+                  <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-white leading-[1.15] mb-6">
                     {HERO_CONTENT[currentImage].title.split(' ').map((word, i) => (
                       i >= HERO_CONTENT[currentImage].title.split(' ').length - 2 ? (
                         <span key={i} className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-white to-blue-400">
@@ -133,7 +137,7 @@ export default function HomePage(): React.ReactElement {
                     ))}
                   </h1>
 
-                  <p className="text-base md:text-xl text-zinc-300 leading-relaxed mb-10 max-w-2xl font-medium">
+                  <p className="text-base md:text-lg text-zinc-400 leading-relaxed mb-10 max-w-xl font-medium">
                     {HERO_CONTENT[currentImage].description}
                   </p>
                 </motion.div>
@@ -158,7 +162,7 @@ export default function HomePage(): React.ReactElement {
             </div>
 
             {/* Right Badges */}
-            <div className="lg:col-span-5 flex flex-col items-end gap-4 md:gap-6">
+            <div className="lg:col-span-4 flex flex-col items-end gap-3.5">
               {BADGES.map((badge, index) => (
                 <motion.div
                   key={badge.id}
@@ -206,11 +210,11 @@ export default function HomePage(): React.ReactElement {
             </div>
             <div className="grid grid-cols-2 gap-4">
               <div className="h-64 bg-zinc-900 rounded-3xl border border-white/5 p-8 flex flex-col justify-end">
-                <div className="text-4xl font-black mb-2">500+</div>
+                <div className="text-4xl font-bold mb-2">500+</div>
                 <div className="text-zinc-500 font-bold uppercase text-xs tracking-wider">Clients Supported</div>
               </div>
               <div className="h-64 bg-emerald-500/10 rounded-3xl border border-emerald-500/20 p-8 flex flex-col justify-end">
-                <div className="text-4xl font-black text-emerald-500 mb-2">24/7</div>
+                <div className="text-4xl font-bold text-emerald-500 mb-2">24/7</div>
                 <div className="text-emerald-500/60 font-bold uppercase text-xs tracking-wider">Available Support</div>
               </div>
             </div>
