@@ -42,7 +42,7 @@ export function NDISProviderSection(): React.ReactElement {
               />
               {/* Purple-themed editorial overlay */}
               <div
-                className="absolute inset-0 bg-gradient-to-t from-purple-950/40 via-transparent to-secondary/10"
+                className="absolute inset-0 bg-gradient-to-t from-purple-brand/40 via-transparent to-secondary/10"
                 aria-hidden
               />
               <div

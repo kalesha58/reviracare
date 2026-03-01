@@ -122,7 +122,7 @@ export default function CareersPage() {
             </div>
             <h1 className="hero-title font-extrabold mb-6 tracking-tight leading-[1.05] text-white">
               Make a <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-white to-purple-400">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-white to-purple-brand">
                 Meaningful Difference
               </span>
             </h1>

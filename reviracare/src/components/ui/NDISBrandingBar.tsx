@@ -15,7 +15,7 @@ export function NDISBrandingBar({ title, className }: NDISBrandingBarProps) {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className={cn("w-full bg-[#3b0764] dark:bg-[#1e0a2d] py-6 sm:py-8 border-y border-white/5", className)}
+            className={cn("w-full bg-purple-brand py-6 sm:py-8 border-y border-white/10", className)}
         >
             <div className="max-w-[var(--container-max)] mx-auto px-[var(--section-px)] flex flex-col sm:flex-row items-center justify-between gap-6">
                 <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight text-center sm:text-left leading-tight">

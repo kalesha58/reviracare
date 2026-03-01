@@ -49,7 +49,7 @@ export function Header(): React.ReactElement {
         "fixed top-0 left-0 right-0 transition-all duration-300 border-b",
         mobileOpen ? "z-[1000]" : "z-[100]",
         scrolled
-          ? "bg-white/90 dark:bg-purple-950/90 backdrop-blur-md border-purple-100 dark:border-purple-900/50 py-3"
+          ? "bg-white/90 dark:bg-purple-brand backdrop-blur-md border-purple-brand/20 dark:border-white/10 py-3"
           : "bg-transparent border-transparent py-5"
       )}
     >
@@ -144,7 +144,7 @@ export function Header(): React.ReactElement {
                 <div className="absolute top-6 right-6 flex items-center gap-4 z-10">
                   <ThemeToggle />
                   <button
-                    className="p-2 text-slate-900 dark:text-purple-100 hover:bg-primary/10 rounded-full transition-colors"
+                    className="p-2 text-slate-900 dark:text-white hover:bg-primary/10 rounded-full transition-colors"
                     onClick={() => setMobileOpen(false)}
                   >
                     <X className="w-8 h-8" />
@@ -170,7 +170,7 @@ export function Header(): React.ReactElement {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.5 }}
-                  className="mt-auto border-t border-purple-100 dark:border-purple-900/50 pt-8 pb-10 space-y-6"
+                  className="mt-auto border-t border-purple-brand/20 dark:border-white/10 pt-8 pb-10 space-y-6"
                 >
                   <Link
                     href="/contact"
@@ -198,6 +198,14 @@ const ICON_MAP = {
   Careers: Briefcase,
   Contact: Mail,
 } as const;
+
+const SUB_ICON_MAP: Record<string, any> = {
+  BookOpen: BookOpen,
+  Sparkles: Sparkles,
+  ClipboardCheck: ClipboardCheck,
+  Building: Building,
+  FileText: FileText,
+};
 
 function MobileNavItem({
   link,
@@ -239,7 +247,7 @@ function MobileNavItem({
             <div className="flex items-center gap-4">
               <div className={cn(
                 "w-10 h-10 rounded-xl flex items-center justify-center transition-colors",
-                isExpanded ? "bg-primary text-white" : "bg-slate-100 dark:bg-purple-900/50 text-slate-600 dark:text-purple-200"
+                isExpanded ? "bg-primary text-white" : "bg-slate-100 dark:bg-purple-brand/50 text-slate-600 dark:text-white"
               )}>
                 <Icon className="w-5 h-5" />
               </div>
@@ -263,22 +271,32 @@ function MobileNavItem({
                 className="overflow-hidden"
               >
                 <div className="grid grid-cols-1 gap-1 pl-14 pr-4 py-2">
-                  {link.children?.map((child: { label: string; href: string }) => (
-                    <Link
-                      key={child.href}
-                      href={child.href}
-                      onClick={() => setMobileOpen(false)}
-                      className={cn(
-                        "nav-link-dropdown py-3 px-4 rounded-xl transition-colors flex items-center justify-between group",
-                        pathname === child.href
-                          ? "bg-zinc-900/5 dark:bg-zinc-50/5 text-zinc-900 dark:text-zinc-50 font-medium"
-                          : "text-zinc-500 dark:text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-50"
-                      )}
-                    >
-                      {child.label}
-                      <ArrowRight className="w-4 h-4 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
-                    </Link>
-                  ))}
+                  {link.children?.map((child: { label: string; href: string, icon?: string }) => {
+                    const SubIcon = child.icon ? (SUB_ICON_MAP[child.icon] || ArrowRight) : ArrowRight;
+                    const isChildActive = pathname === child.href;
+                    return (
+                      <Link
+                        key={child.href}
+                        href={child.href}
+                        onClick={() => setMobileOpen(false)}
+                        className={cn(
+                          "nav-link-dropdown py-3 px-4 rounded-xl transition-colors flex items-center gap-3 group",
+                          isChildActive
+                            ? "bg-zinc-900/5 dark:bg-zinc-50/5 text-zinc-900 dark:text-zinc-50 font-medium"
+                            : "text-zinc-500 dark:text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-50"
+                        )}
+                      >
+                        <div className={cn(
+                          "w-8 h-8 rounded-lg flex items-center justify-center transition-colors shrink-0",
+                          isChildActive ? "bg-primary text-white" : "bg-zinc-100 dark:bg-purple-brand/30 text-zinc-500 dark:text-white/80 group-hover:bg-primary/20 group-hover:text-primary"
+                        )}>
+                          <SubIcon className="w-4 h-4" />
+                        </div>
+                        <span className="flex-1">{child.label}</span>
+                        <ArrowRight className="w-4 h-4 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all shrink-0" />
+                      </Link>
+                    );
+                  })}
                 </div>
               </motion.div>
             )}
@@ -297,7 +315,7 @@ function MobileNavItem({
         >
           <div className={cn(
             "w-10 h-10 rounded-xl flex items-center justify-center transition-colors",
-            isActive ? "bg-primary text-white" : "bg-slate-100 dark:bg-purple-900/50 text-slate-600 dark:text-purple-200"
+            isActive ? "bg-primary text-white" : "bg-slate-100 dark:bg-purple-brand/50 text-slate-600 dark:text-white"
           )}>
             <Icon className="w-5 h-5" />
           </div>
@@ -312,14 +330,6 @@ function MobileNavItem({
 function NavDropdown({ link, isActive }: { link: (typeof NAV_LINKS)[number] & { children: any }, isActive: boolean }) {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
-
-  const SUB_ICON_MAP: Record<string, any> = {
-    BookOpen: BookOpen,
-    Sparkles: Sparkles,
-    ClipboardCheck: ClipboardCheck,
-    Building: Building,
-    FileText: FileText,
-  };
 
   return (
     <div
@@ -347,7 +357,7 @@ function NavDropdown({ link, isActive }: { link: (typeof NAV_LINKS)[number] & { 
             exit={{ opacity: 0, y: 10 }}
             className="absolute top-full left-0 pt-2 w-72"
           >
-            <div className="bg-white dark:bg-zinc-900 border border-purple-100 dark:border-purple-900/50 rounded-2xl shadow-xl overflow-hidden p-2 ring-1 ring-purple-950/5">
+            <div className="bg-white dark:bg-zinc-900 border border-purple-brand/20 dark:border-white/10 rounded-2xl shadow-xl overflow-hidden p-2 ring-1 ring-purple-brand/10">
               {link.children?.map((child: any) => {
                 const Icon = SUB_ICON_MAP[child.icon] || ArrowRight;
                 const isChildActive = pathname === child.href;
@@ -359,12 +369,12 @@ function NavDropdown({ link, isActive }: { link: (typeof NAV_LINKS)[number] & { 
                       "flex items-center gap-3 px-3 py-2.5 rounded-xl transition-all duration-200 group",
                       isChildActive
                         ? "bg-primary/10 text-primary font-semibold"
-                        : "text-zinc-600 dark:text-purple-200 hover:bg-primary/5 hover:text-primary dark:hover:text-primary"
+                        : "text-zinc-600 dark:text-white/80 hover:bg-primary/5 hover:text-primary dark:hover:text-primary"
                     )}
                   >
                     <div className={cn(
                       "w-8 h-8 rounded-lg flex items-center justify-center transition-colors",
-                      isChildActive ? "bg-primary text-white" : "bg-zinc-100 dark:bg-purple-900/30 text-zinc-500 dark:text-purple-300 group-hover:bg-primary/20 group-hover:text-primary"
+                      isChildActive ? "bg-primary text-white" : "bg-zinc-100 dark:bg-purple-brand/30 text-zinc-500 dark:text-white/80 group-hover:bg-primary/20 group-hover:text-primary"
                     )}>
                       <Icon className="w-4 h-4" />
                     </div>

@@ -1,5 +1,7 @@
 "use client";
 
+import React from "react";
+
 import { motion, AnimatePresence } from "framer-motion";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
@@ -20,7 +22,7 @@ const VALUES = [
     description: "We lead with empathy and understanding, ensuring every individual feels heard and valued.",
   },
   {
-    icon: <Shield className="w-8 h-8 text-purple-600" />,
+    icon: <Shield className="w-8 h-8 text-purple-brand" />,
     title: "Integrity",
     description: "We maintain the highest standards of professional ethics and transparency in all our actions.",
   },
@@ -30,7 +32,7 @@ const VALUES = [
     description: "We provide the tools and support needed for individuals to take control of their own lives.",
   },
   {
-    icon: <Award className="w-8 h-8 text-purple-600" />,
+    icon: <Award className="w-8 h-8 text-purple-brand" />,
     title: "Excellence",
     description: "We are committed to delivering the highest quality of care through continuous improvement.",
   },
@@ -46,7 +48,7 @@ const METHODOLOGY = [
   {
     step: "02",
     title: "Planning",
-    icon: <FileText className="w-6 h-6 text-purple-500" />,
+    icon: <FileText className="w-6 h-6 text-purple-brand" />,
     description: "Together, we craft a personalized support plan that aligns perfectly with your NDIS budget and aspirations."
   },
   {
@@ -58,7 +60,7 @@ const METHODOLOGY = [
   {
     step: "04",
     title: "Support",
-    icon: <Activity className="w-6 h-6 text-purple-500" />,
+    icon: <Activity className="w-6 h-6 text-purple-brand" />,
     description: "Implementation of your plan with consistent, high-quality care that focuses on your daily well-being."
   },
   {
@@ -122,7 +124,7 @@ export default function AboutPage(): React.ReactElement {
   return (
     <main className="min-h-screen bg-zinc-50 dark:bg-zinc-950 text-zinc-900 dark:text-white">
       {/* Hero Section */}
-      <section className="relative min-h-[80vh] sm:min-h-[85vh] md:min-h-[90vh] flex items-center pt-20 sm:pt-24 md:pt-28 pb-32 sm:pb-36 md:pb-20 overflow-hidden">
+      <section className="relative min-h-[85vh] md:min-h-[90vh] flex items-center pt-24 md:pt-28 pb-36 md:pb-20 overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0 z-0 bg-white dark:bg-zinc-950 overflow-hidden">
           <motion.div
@@ -143,11 +145,11 @@ export default function AboutPage(): React.ReactElement {
             <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-zinc-50/80 dark:from-black/80 dark:via-black/40 dark:to-zinc-950" />
 
             {/* Scrim behind text for readable contrast */}
-            <div className="absolute inset-0 bg-gradient-to-r from-zinc-900/50 via-zinc-900/10 to-transparent" aria-hidden />
+            <div className="absolute inset-0 bg-gradient-to-r from-zinc-900/60 via-zinc-900/20 to-transparent" aria-hidden />
 
             {/* Decorative Elements */}
             <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-primary/10 blur-[120px] rounded-full" />
-            <div className="absolute bottom-1/4 left-1/4 w-96 h-96 bg-purple-500/10 blur-[120px] rounded-full" />
+            <div className="absolute bottom-1/4 left-1/4 w-96 h-96 bg-purple-brand/20 blur-[120px] rounded-full" />
           </motion.div>
         </div>
 
@@ -165,13 +167,13 @@ export default function AboutPage(): React.ReactElement {
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
                   Trusted NDIS Partner
                 </div>
-                <h1 className="hero-title font-extrabold tracking-tight text-white leading-[1.15] mb-4 sm:mb-6 drop-shadow-[0_1px_2px_rgba(0,0,0,0.3)]">
-                  Reimagining <br className="hidden sm:block" />
+                <h1 className="hero-title font-extrabold tracking-tight text-white leading-[1.15] mb-6 drop-shadow-[0_1px_2px_rgba(0,0,0,0.3)]">
+                  Reimagining <br />
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-white to-purple-400">
                     The Care Experience
                   </span>
                 </h1>
-                <p className="subtitle text-white dark:text-zinc-400 leading-relaxed mb-6 sm:mb-10 max-w-xl drop-shadow-[0_1px_2px_rgba(0,0,0,0.3)]">
+                <p className="subtitle text-white dark:text-zinc-400 leading-relaxed mb-10 max-w-xl drop-shadow-[0_1px_2px_rgba(0,0,0,0.3)]">
                   Revira Care is more than a service provider. We are your partners in creating a life characterized by empowerment, independence, and joy.
                 </p>
               </motion.div>
@@ -180,13 +182,45 @@ export default function AboutPage(): React.ReactElement {
             {/* Right Badges (Desktop/Tablet) */}
             <div className="hidden lg:flex lg:col-span-4 flex-col items-end gap-3.5">
               {[
-                { label: "Registered Provider", sub: "NDIS Accredited", icon: <ShieldCheck className="w-6 h-6 text-primary" /> },
-                { label: "24/7 Availability", sub: "Always Support", icon: <Zap className="w-6 h-6 text-secondary" /> },
-                { label: "Certified Staff", sub: "Highly Vetted", icon: <Award className="w-6 h-6 text-primary" /> },
-                { label: "Client Focused", sub: "100% Person Centered", icon: <Heart className="w-6 h-6 text-secondary" /> }
+                {
+                  id: "ndis-official",
+                  logo: (
+                    <Image
+                      src="/images/hero/National_Disability_Insurance_Scheme_logo.svg.png"
+                      alt="NDIS Registered Provider"
+                      width={48}
+                      height={28}
+                      className="object-contain h-8 w-auto"
+                    />
+                  ),
+                  label: "Registered NDIS Provider"
+                },
+                {
+                  id: "ndis-support",
+                  logo: (
+                    <Image
+                      src="/images/hero/We-Support-NDIS-150-x-150-px-5.png"
+                      alt="We Support NDIS"
+                      width={40}
+                      height={40}
+                      className="object-contain h-10 w-auto"
+                    />
+                  ),
+                  label: "Official Registered"
+                },
+                {
+                  id: "phone",
+                  logo: <span className="text-2xl" aria-hidden>📱</span>,
+                  label: "1800 REVIRA"
+                },
+                {
+                  id: "support",
+                  logo: <div className="text-xl font-black text-primary leading-none">24/7</div>,
+                  label: "Support Services"
+                }
               ].map((badge, index) => (
                 <motion.div
-                  key={badge.label}
+                  key={badge.id}
                   initial={{ opacity: 0, x: 50 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.8, delay: 0.4 + (index * 0.1) }}
@@ -194,15 +228,21 @@ export default function AboutPage(): React.ReactElement {
                 >
                   <div className="flex items-center justify-start gap-3 sm:gap-4 bg-white/95 dark:bg-zinc-900/90 backdrop-blur-xl px-4 sm:px-5 py-2 rounded-2xl border border-zinc-200 dark:border-white/10 shadow-xl w-full min-w-[140px] max-w-[200px] sm:max-w-[240px] lg:w-64 h-[64px] sm:h-[72px]">
                     <div className="w-12 flex shrink-0 items-center justify-center">
-                      {badge.icon}
+                      {badge.logo}
                     </div>
-                    <div className="flex flex-col">
-                      <div className="text-xs font-extrabold text-zinc-900 dark:text-zinc-100 uppercase leading-snug">
-                        {badge.label}
-                      </div>
-                      <div className="text-[10px] text-zinc-500 font-bold uppercase tracking-wider">
-                        {badge.sub}
-                      </div>
+                    <div className="text-xs font-extrabold text-zinc-800 dark:text-zinc-200 uppercase leading-snug">
+                      {badge.label.split(' ').length > 2 ? (
+                        <>
+                          {badge.label.split(' ').slice(0, 1).join(' ')} <br />
+                          {badge.label.split(' ').slice(1).join(' ')}
+                        </>
+                      ) : (
+                        badge.label.split(' ').map((word, i) => (
+                          <React.Fragment key={i}>
+                            {word} {i === 0 && <br />}
+                          </React.Fragment>
+                        ))
+                      )}
                     </div>
                   </div>
                 </motion.div>
@@ -224,15 +264,47 @@ export default function AboutPage(): React.ReactElement {
           </motion.div>
 
           {/* Mobile Horizontal Badges */}
-          <div className="lg:hidden flex flex-wrap justify-center items-center gap-2 sm:gap-3 px-4 w-full max-w-lg mx-auto overflow-x-auto no-scrollbar scroll-smooth pb-2">
+          <div className="lg:hidden flex flex-wrap justify-center items-center gap-3 px-4 w-full max-w-lg mx-auto overflow-x-auto no-scrollbar scroll-smooth pb-2">
             {[
-              { label: "Registered Provider", sub: "NDIS Accredited", icon: <ShieldCheck className="w-6 h-6 text-primary" /> },
-              { label: "24/7 Availability", sub: "Always Support", icon: <Zap className="w-6 h-6 text-secondary" /> },
-              { label: "Certified Staff", sub: "Highly Vetted", icon: <Award className="w-6 h-6 text-primary" /> },
-              { label: "Client Focused", sub: "100% Person Centered", icon: <Heart className="w-6 h-6 text-secondary" /> }
+              {
+                id: "ndis-official-mobile",
+                logo: (
+                  <Image
+                    src="/images/hero/National_Disability_Insurance_Scheme_logo.svg.png"
+                    alt="NDIS Registered Provider"
+                    width={48}
+                    height={28}
+                    className="object-contain h-8 w-auto"
+                  />
+                ),
+                label: "Registered NDIS Provider"
+              },
+              {
+                id: "ndis-support-mobile",
+                logo: (
+                  <Image
+                    src="/images/hero/We-Support-NDIS-150-x-150-px-5.png"
+                    alt="We Support NDIS"
+                    width={40}
+                    height={40}
+                    className="object-contain h-10 w-auto"
+                  />
+                ),
+                label: "Official Registered"
+              },
+              {
+                id: "phone-mobile",
+                logo: <span className="text-2xl" aria-hidden>📱</span>,
+                label: "1800 REVIRA"
+              },
+              {
+                id: "support-mobile",
+                logo: <div className="text-xl font-black text-primary leading-none">24/7</div>,
+                label: "Support Services"
+              }
             ].map((badge, index) => (
               <motion.div
-                key={`mobile-${badge.label}`}
+                key={badge.id}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 1.4 + (index * 0.1) }}
@@ -240,15 +312,21 @@ export default function AboutPage(): React.ReactElement {
               >
                 <div className="flex items-center justify-start gap-3 sm:gap-4 bg-white/95 dark:bg-zinc-900/90 backdrop-blur-xl px-4 sm:px-5 py-2 rounded-2xl border border-zinc-200 dark:border-white/10 shadow-xl w-full min-w-[140px] max-w-[200px] sm:max-w-[240px] lg:w-64 h-[64px] sm:h-[72px]">
                   <div className="w-12 flex shrink-0 items-center justify-center">
-                    {badge.icon}
+                    {badge.logo}
                   </div>
-                  <div className="flex flex-col">
-                    <div className="text-xs font-extrabold text-zinc-900 dark:text-zinc-100 uppercase leading-snug">
-                      {badge.label}
-                    </div>
-                    <div className="text-[10px] text-zinc-500 font-bold uppercase tracking-wider">
-                      {badge.sub}
-                    </div>
+                  <div className="text-xs font-extrabold text-zinc-800 dark:text-zinc-200 uppercase leading-snug text-left">
+                    {badge.label.split(' ').length > 2 ? (
+                      <>
+                        {badge.label.split(' ').slice(0, 1).join(' ')} <br />
+                        {badge.label.split(' ').slice(1).join(' ')}
+                      </>
+                    ) : (
+                      badge.label.split(' ').map((word, i) => (
+                        <React.Fragment key={i}>
+                          {word} {i === 0 && <br />}
+                        </React.Fragment>
+                      ))
+                    )}
                   </div>
                 </div>
               </motion.div>
@@ -603,23 +681,23 @@ export default function AboutPage(): React.ReactElement {
       </Section>
 
       {/* CTA Section */}
-      <Section className="pb-24 sm:pb-32">
+      <Section className="pb-32">
         <Container>
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="relative rounded-2xl sm:rounded-[2.5rem] overflow-hidden bg-gradient-to-br from-primary/20 via-secondary/10 to-zinc-100 dark:to-zinc-900 border border-zinc-200 dark:border-white/10 p-8 sm:p-12 md:p-20 text-center"
+            className="relative rounded-[2.5rem] overflow-hidden bg-gradient-to-br from-primary/20 via-secondary/10 to-zinc-100 dark:to-zinc-900 border border-zinc-200 dark:border-white/10 p-12 md:p-20 text-center"
           >
             <div className="relative z-10">
-              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 sm:mb-6 tracking-tight text-zinc-900 dark:text-white">
+              <h2 className="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight text-zinc-900 dark:text-white">
                 Start Your <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary dark:from-primary dark:to-purple-300">New Chapter</span>
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary dark:from-primary dark:to-purple-100">New Chapter</span>
               </h2>
-              <p className="text-zinc-600 dark:text-zinc-400 text-base sm:text-lg mb-8 sm:mb-10 max-w-xl mx-auto leading-relaxed">
+              <p className="text-zinc-600 dark:text-zinc-400 text-lg mb-10 max-w-xl mx-auto leading-relaxed">
                 We&apos;re ready to listen, plan, and support you. Your journey towards more independence starts with a single conversation.
               </p>
-              <div className="flex flex-wrap justify-center gap-3 sm:gap-4">
+              <div className="flex flex-wrap justify-center gap-4">
                 <Link
                   href="/contact"
                   className="px-8 py-3.5 bg-zinc-900 dark:bg-white text-white dark:text-zinc-950 rounded-xl font-bold text-sm hover:bg-zinc-800 dark:hover:bg-zinc-200 transition-all hover:scale-105 shadow-xl shadow-emerald-500/5"

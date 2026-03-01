@@ -2,130 +2,217 @@
 
 import Link from "next/link";
 import { Container } from "@/components/ui/Container";
-import { SITE_NAME } from "@/constants/site";
-import { Phone, Mail, MapPin, Clock, Facebook, Instagram, Linkedin, ArrowRight, Heart } from "lucide-react";
-import { motion } from "framer-motion";
-import Image from "next/image";
+import {
+  Facebook,
+  Instagram,
+  Linkedin,
+  Youtube,
+  Heart,
+  Phone,
+  MapPin,
+  Mail,
+  Clock,
+} from "lucide-react";
 import { BrandLogo } from "@/components/ui/BrandLogo";
+
+const IMPORTANT_LINKS = [
+  { label: "Home", href: "/" },
+  { label: "About Us", href: "/about" },
+  { label: "Services", href: "/services" },
+  { label: "NDIS", href: "/ndis" },
+  { label: "Contact Us", href: "/contact" },
+  { label: "Blogs", href: "/blogs" },
+  { label: "Careers", href: "/careers" },
+] as const;
+
+const SERVICE_AREAS = [
+  "Sydney",
+  "Norwest",
+  "NSW",
+  "Parramatta",
+  "Western Sydney",
+  "Victoria",
+  "Brisbane",
+] as const;
+
+const SOCIAL_LINKS = [
+  { label: "Facebook", href: "#", icon: Facebook },
+  { label: "Instagram", href: "#", icon: Instagram },
+  { label: "LinkedIn", href: "#", icon: Linkedin },
+  { label: "Youtube", href: "#", icon: Youtube },
+] as const;
 
 export function Footer(): React.ReactElement {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-purple-brand text-white border-t border-white/5 pt-20 pb-10">
+    <footer className="bg-purple-brand text-white border-t border-white/10">
       <Container>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
-          {/* Mission & Branding */}
+        {/* Main 3-column content */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 lg:gap-14 pt-16 pb-14 lg:pt-20 lg:pb-16">
+          {/* Column 1: Logo & About */}
           <div className="space-y-6">
-            <Link href="/" className="flex items-center gap-2 group">
+            <Link href="/" className="inline-block">
               <BrandLogo
-                width={192}
-                height={48}
+                width={220}
+                height={56}
                 imageClassName="brightness-0 invert"
               />
             </Link>
-            <p className="body-sm text-purple-100/70 leading-relaxed">
-              Our mission is to provide high-quality, person-centred care that empowers individuals with disabilities to lead fulfilling and independent lives.
+            <p className="footer-body text-white/85 leading-relaxed max-w-sm">
+              As a reputed{" "}
+              <span className="font-bold text-white">NDIS</span> provider across{" "}
+              <span className="font-bold text-white">Australia</span>, we are
+              focused on helping NDIS participants pursue a healthy life on their
+              own terms. We are committed to excellence by providing you with
+              the most personalised support and helping you become more
+              independent.
             </p>
-            <div className="flex items-center gap-4">
-              <a href="#" className="p-2 rounded-full bg-white/5 text-purple-200/50 hover:text-primary transition-colors hover:bg-white/10">
-                <Facebook className="w-5 h-5" />
-              </a>
-              <a href="#" className="p-2 rounded-full bg-white/5 text-purple-200/50 hover:text-primary transition-colors hover:bg-white/10">
-                <Linkedin className="w-5 h-5" />
-              </a>
-              <a href="#" className="p-2 rounded-full bg-white/5 text-purple-200/50 hover:text-primary transition-colors hover:bg-white/10">
-                <Instagram className="w-5 h-5" />
-              </a>
-            </div>
           </div>
 
-          {/* Contact Info */}
+          {/* Column 2: Important Links */}
           <div className="space-y-6">
-            <h4 className="footer-heading text-white uppercase tracking-widest opacity-80">Contact Us</h4>
-            <div className="space-y-4">
-              <a href="tel:0288606462" className="flex items-start gap-3 group">
-                <div className="p-2 rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-all">
-                  <Phone className="w-4 h-4" />
-                </div>
-                <div className="body-sm">
-                  <span className="block text-white font-bold italic">Call Us Now</span>
-                  <span className="text-purple-100/70">02 8860 6462</span>
-                </div>
-              </a>
-              <div className="flex items-start gap-3">
-                <div className="p-2 rounded-lg bg-white/5 text-purple-200">
-                  <MapPin className="w-4 h-4" />
-                </div>
-                <div className="body-sm">
-                  <span className="block text-white font-bold italic">Our Address</span>
-                  <address className="not-italic text-purple-100/70 leading-relaxed">
-                    Level 5, Nexus Building,<br />
-                    4 Columbia Court,<br />
-                    Norwest NSW 2153 Australia
-                  </address>
-                  <span className="block mt-2 caption text-purple-200/40 uppercase">ABN: 38681225785</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Operating Hours */}
-          <div className="space-y-6">
-            <h4 className="footer-heading text-white uppercase tracking-widest opacity-80">Working Hours</h4>
-            <div className="space-y-4">
-              <div className="p-4 rounded-2xl bg-white/5 border border-white/10">
-                <div className="flex items-center gap-3 mb-2">
-                  <Clock className="w-4 h-4 text-primary" />
-                  <span className="text-sm font-bold text-white italic">Office Hours</span>
-                </div>
-                <p className="body-sm text-purple-100/70">Mon-Fri: 9 AM - 5 PM</p>
-              </div>
-              <div className="p-4 rounded-2xl bg-primary/10 border border-primary/20">
-                <div className="flex items-center gap-3 mb-2">
-                  <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-                  <span className="text-sm font-bold text-primary italic">Service Hours</span>
-                </div>
-                <p className="body-sm text-primary font-bold">Available 24/7</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Quick Links */}
-          <div className="space-y-6">
-            <h4 className="footer-heading text-white uppercase tracking-widest opacity-80">Company</h4>
-            <nav className="flex flex-col gap-4">
-              <Link href="/services" className="body-sm text-purple-100/70 hover:text-primary transition-colors flex items-center gap-2 group">
-                Services <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
-              </Link>
-              <Link href="/about" className="body-sm text-purple-100/70 hover:text-primary transition-colors flex items-center gap-2 group">
-                Our Mission <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
-              </Link>
-              <Link href="/contact" className="body-sm text-purple-100/70 hover:text-primary transition-colors flex items-center gap-2 group">
-                Contact Us <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
-              </Link>
+            <h4 className="footer-heading text-white font-bold text-base lg:text-lg normal-case tracking-normal">
+              Important Links
+            </h4>
+            <nav
+              className="flex flex-col gap-3"
+              aria-label="Important links"
+            >
+              {IMPORTANT_LINKS.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="footer-body text-white/85 hover:text-white transition-colors"
+                >
+                  {item.label}
+                </Link>
+              ))}
             </nav>
+          </div>
+
+          {/* Column 3: Service Areas */}
+          <div className="space-y-6">
+            <h4 className="footer-heading text-white font-bold text-base lg:text-lg normal-case tracking-normal">
+              Service Areas
+            </h4>
+            <ul className="flex flex-col gap-3">
+              {SERVICE_AREAS.map((area) => (
+                <li
+                  key={area}
+                  className="footer-body text-white/85"
+                >
+                  {area}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+        </div>
+
+        {/* New Horizontal Contact Bar */}
+        <div className="mb-14">
+          <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-8 md:p-10">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10">
+              {/* Phone */}
+              <div className="flex items-start gap-5">
+                <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center shrink-0">
+                  <Phone className="w-6 h-6 text-primary" />
+                </div>
+                <div>
+                  <p className="text-sm font-bold text-white/60 uppercase tracking-widest mb-1">Call Us</p>
+                  <a href="tel:0288606462" className="text-xl md:text-2xl font-black text-white hover:text-primary transition-colors">
+                    02 8860 6462
+                  </a>
+                </div>
+              </div>
+
+              {/* Address */}
+              <div className="flex items-start gap-5">
+                <div className="w-12 h-12 rounded-2xl bg-secondary/10 flex items-center justify-center shrink-0">
+                  <MapPin className="w-6 h-6 text-secondary" />
+                </div>
+                <div>
+                  <p className="text-sm font-bold text-white/60 uppercase tracking-widest mb-1">Location</p>
+                  <address className="text-sm md:text-base text-white/90 font-medium not-italic leading-relaxed">
+                    Level 5, Nexus Building, 4 Columbia Court, Norwest NSW 2153
+                  </address>
+                </div>
+              </div>
+
+              {/* Email */}
+              <div className="flex items-start gap-5">
+                <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center shrink-0">
+                  <Mail className="w-6 h-6 text-primary" />
+                </div>
+                <div>
+                  <p className="text-sm font-bold text-white/60 uppercase tracking-widest mb-1">Email Us</p>
+                  <a href="mailto:info@reviracare.com.au" className="text-sm md:text-base text-white/95 font-semibold hover:text-primary transition-colors underline decoration-primary/30 underline-offset-4">
+                    info@reviracare.com.au
+                  </a>
+                </div>
+              </div>
+
+              {/* Hours */}
+              <div className="flex items-start gap-5">
+                <div className="w-12 h-12 rounded-2xl bg-secondary/10 flex items-center justify-center shrink-0">
+                  <Clock className="w-6 h-6 text-secondary" />
+                </div>
+                <div>
+                  <p className="text-sm font-bold text-white/60 uppercase tracking-widest mb-1">Working Hours</p>
+                  <div className="text-sm md:text-base text-white/90 font-semibold space-y-0.5">
+                    <p>Mon-Fri: 9 AM - 5 PM</p>
+                    <p className="text-emerald-400">Service Hours - 24/7</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Social row - bordered buttons with icon + text */}
+        <div className="pt-8 pb-10 border-t border-white/15">
+          <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6">
+            {SOCIAL_LINKS.map(({ label, href, icon: Icon }) => (
+              <a
+                key={label}
+                href={href}
+                aria-label={label}
+                className="inline-flex items-center gap-2 px-5 py-3 rounded-lg border border-white/25 text-white hover:bg-white/10 hover:border-white/40 transition-all duration-200 footer-body"
+              >
+                <Icon className="w-5 h-5 shrink-0" strokeWidth={2} />
+                <span>{label}</span>
+              </a>
+            ))}
           </div>
         </div>
 
         {/* Acknowledgement and Copyright */}
-        <div className="pt-10 border-t border-white/10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-end">
-            <div className="space-y-6 max-w-2xl">
+        <div className="pt-10 pb-12 border-t border-white/15">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-end">
+            <div className="space-y-4 max-w-2xl">
               <div className="flex items-center gap-3 text-red-400">
-                <Heart className="w-5 h-5 fill-current" />
-                <span className="caption uppercase tracking-[0.2em]">Acknowledgement of Country</span>
+                <Heart className="w-5 h-5 fill-current shrink-0" />
+                <span className="footer-legal uppercase tracking-wider text-red-400/90">
+                  Acknowledgement of Country
+                </span>
               </div>
-              <p className="body-sm leading-relaxed text-zinc-400 italic">
-                Revira Care acknowledges the traditional owners of the land in which we work and pay our respect to their elders, past and present.
+              <p className="footer-body text-white/70 leading-relaxed italic">
+                Revira Care acknowledges the traditional owners of the land in
+                which we work and pay our respect to their elders, past and
+                present.
               </p>
             </div>
-            <div className="flex flex-col md:flex-row items-center justify-end gap-6 md:gap-12">
-              <div className="flex gap-6 caption uppercase tracking-widest text-zinc-500">
-                <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
-                <Link href="/terms" className="hover:text-white transition-colors">Terms Of Service</Link>
+            <div className="flex flex-col md:flex-row items-start md:items-center justify-end gap-4 md:gap-8">
+              <div className="flex flex-wrap gap-6 footer-legal uppercase tracking-wider text-white/60">
+                <Link href="/privacy" className="hover:text-white transition-colors">
+                  Privacy Policy
+                </Link>
+                <Link href="/terms" className="hover:text-white transition-colors">
+                  Terms Of Service
+                </Link>
               </div>
-              <p className="caption uppercase tracking-widest text-zinc-500">
+              <p className="footer-legal uppercase tracking-wider text-white/60">
                 © {currentYear} Revira Care. All Rights Reserved.
               </p>
             </div>

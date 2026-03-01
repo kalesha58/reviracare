@@ -11,7 +11,7 @@ export default function NdisLayout({
   children: React.ReactNode;
 }): React.ReactElement {
   return (
-    <div className="[--primary:var(--secondary)] [--accent:var(--purple-100)] [--accent-foreground:var(--purple-700)] dark:[--accent:#3b0764] dark:[--accent-foreground:#f3e8ff]">
+    <div className="[--primary:var(--secondary)] [--accent:var(--purple-100)] [--accent-foreground:var(--purple-700)] dark:[--accent:var(--purple-950)] dark:[--accent-foreground:var(--purple-100)]">
       {children}
     </div>
   );
