@@ -187,14 +187,14 @@ export function WhyChooseSection(): React.ReactElement {
           <motion.span
             variants={CARD_VARIANTS}
             custom={0}
-            className="text-primary font-bold uppercase text-xs tracking-[0.2em] block mb-4"
+            className="section-label text-primary uppercase tracking-[0.2em] block mb-4"
           >
             Why Choose Us
           </motion.span>
           <motion.h2
             variants={CARD_VARIANTS}
             custom={1}
-            className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-6 leading-tight"
+            className="section-title text-foreground mb-6 leading-tight"
           >
             Why Choose Revira Care?
           </motion.h2>

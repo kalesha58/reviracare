@@ -15,6 +15,34 @@
   --container-max: 1280px;
   --section-py: 5rem;
   --section-px: 1.5rem;
+  /* Section typography - use across home, about, careers, blogs */
+  --text-section-label-size: 0.75rem;
+  --text-section-label-tracking: 0.2em;
+  --text-section-title-size: clamp(1.875rem, 4vw, 2.25rem);
+  --text-section-title-size-md: clamp(2.25rem, 5vw, 3rem);
+  --text-hero-title-size: clamp(2.25rem, 5vw, 3.75rem);
+  --text-hero-title-size-lg: clamp(3rem, 6vw, 4.5rem);
+  --text-card-title-size: 1rem;
+  --text-card-title-size-sm: 1.125rem;
+  --text-subsection-title-size: 1.125rem;
+  --text-subtitle-size: 1rem;
+  --text-subtitle-size-md: 1.125rem;
+  --text-body-size: 1rem;
+  --text-body-sm-size: 0.875rem;
+  --text-caption-size: 0.75rem;
+  --text-nav-size: 0.875rem;
+  --text-nav-mobile-size: 1.25rem;
+  --text-nav-dropdown-size: 1.125rem;
+  --text-footer-heading-size: 0.75rem;
+  /* Font weights - consistent across header, sections, titles, subtitles */
+  --font-weight-nav: 500;
+  --font-weight-label: 700;
+  --font-weight-title: 700;
+  --font-weight-hero: 800;
+  --font-weight-subtitle: 500;
+  --font-weight-body: 400;
+  --font-weight-body-medium: 500;
+  --font-weight-caption: 700;
 }
 
 .dark {
@@ -44,4 +72,104 @@ body {
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* Global section & hero typography - use on home, about, careers, blogs for consistency */
+.section-label {
+  font-size: var(--text-section-label-size);
+  letter-spacing: var(--text-section-label-tracking);
+  font-weight: var(--font-weight-label);
+}
+
+.section-title {
+  font-size: var(--text-section-title-size);
+  font-weight: var(--font-weight-title);
+}
+
+@media (min-width: 768px) {
+  .section-title {
+    font-size: var(--text-section-title-size-md);
+  }
+}
+
+.hero-title {
+  font-size: var(--text-hero-title-size);
+  font-weight: var(--font-weight-hero);
+}
+
+@media (min-width: 768px) {
+  .hero-title {
+    font-size: var(--text-hero-title-size-lg);
+  }
+}
+
+.subtitle {
+  font-size: var(--text-subtitle-size);
+  font-weight: var(--font-weight-subtitle);
+}
+
+@media (min-width: 768px) {
+  .subtitle {
+    font-size: var(--text-subtitle-size-md);
+  }
+}
+
+.body {
+  font-size: var(--text-body-size);
+  font-weight: var(--font-weight-body);
+}
+
+.body-sm {
+  font-size: var(--text-body-sm-size);
+  font-weight: var(--font-weight-body);
+}
+
+.body-sm-medium {
+  font-size: var(--text-body-sm-size);
+  font-weight: var(--font-weight-body-medium);
+}
+
+.caption {
+  font-size: var(--text-caption-size);
+  font-weight: var(--font-weight-caption);
+  letter-spacing: var(--text-section-label-tracking);
+}
+
+/* Header / Nav */
+.nav-link {
+  font-size: var(--text-nav-size);
+  font-weight: var(--font-weight-nav);
+}
+
+.nav-link-mobile {
+  font-size: var(--text-nav-mobile-size);
+  font-weight: 600;
+}
+
+.nav-link-dropdown {
+  font-size: var(--text-nav-dropdown-size);
+  font-weight: var(--font-weight-nav);
+}
+
+/* Footer column headings */
+.footer-heading {
+  font-size: var(--text-footer-heading-size);
+  font-weight: var(--font-weight-caption);
+  letter-spacing: 0.05em;
+}
+
+.card-title {
+  font-size: var(--text-card-title-size);
+  font-weight: var(--font-weight-title);
+}
+
+@media (min-width: 640px) {
+  .card-title {
+    font-size: var(--text-card-title-size-sm);
+  }
+}
+
+.subsection-title {
+  font-size: var(--text-subsection-title-size);
+  font-weight: var(--font-weight-title);
 }

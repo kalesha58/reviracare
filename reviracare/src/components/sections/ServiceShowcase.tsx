@@ -72,7 +72,7 @@ export function ServiceShowcase() {
                     <motion.span
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        className="text-emerald-600 dark:text-emerald-500 font-bold uppercase text-xs tracking-[0.3em] block mb-4"
+                        className="section-label text-emerald-600 dark:text-emerald-500 uppercase tracking-[0.3em] block mb-4"
                     >
                         Explore Our Services
                     </motion.span>
@@ -80,7 +80,7 @@ export function ServiceShowcase() {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.1 }}
-                        className="text-3xl md:text-5xl font-black text-zinc-900 dark:text-white max-w-2xl leading-[1.1]"
+                        className="section-title text-zinc-900 dark:text-white max-w-2xl leading-[1.1]"
                     >
                         Our Support Services As A <span className="text-zinc-500 italic">Leading NDIS Provider</span>
                     </motion.h2>
@@ -110,11 +110,13 @@ export function ServiceShowcase() {
                                             isHovered ? "opacity-60 dark:opacity-40" : "opacity-90 dark:opacity-20 group-hover:opacity-100"
                                         )}
                                     />
+                                    {/* Dark gradient for text contrast in both light and dark mode */}
                                     <div className={cn(
-                                        "absolute inset-0 bg-gradient-to-t via-transparent dark:via-zinc-950/40",
-                                        isHovered ? "from-transparent dark:from-zinc-950" : "from-transparent dark:from-zinc-950"
+                                        "absolute inset-0 bg-gradient-to-t",
+                                        "from-zinc-900/95 via-zinc-900/50 to-transparent",
+                                        "dark:from-zinc-950 dark:via-zinc-950/40 dark:to-transparent"
                                     )} />
-                                    <div className={cn("absolute inset-0 bg-gradient-to-r", service.color)} />
+                                    <div className={cn("absolute inset-0 bg-gradient-to-r opacity-80", service.color)} />
                                 </div>
 
                                 {/* Content Overlay */}
@@ -125,13 +127,13 @@ export function ServiceShowcase() {
                                     )}>
                                         <div className="flex items-center gap-4 mb-4">
                                             <div className={cn(
-                                                "w-10 h-10 rounded-xl bg-zinc-900/5 dark:bg-white/10 backdrop-blur-md flex items-center justify-center border border-zinc-900/10 dark:border-white/20 transition-transform duration-500",
+                                                "w-10 h-10 rounded-xl bg-white/10 backdrop-blur-md flex items-center justify-center border border-white/20 transition-transform duration-500",
                                                 isHovered && "rotate-90 scale-110"
                                             )}>
                                                 <Plus className={cn("w-5 h-5", service.accent)} />
                                             </div>
                                             <h3 className={cn(
-                                                "text-xl font-bold text-zinc-900 dark:text-white transition-all duration-500",
+                                                "text-xl font-bold text-white transition-all duration-500 drop-shadow-md",
                                                 !isHovered && "whitespace-nowrap origin-left -rotate-90 absolute -top-32 left-1/2 -translate-x-1/2 group-hover:rotate-0 group-hover:translate-y-4"
                                             )}>
                                                 {service.title}
@@ -146,12 +148,12 @@ export function ServiceShowcase() {
                                                     exit={{ opacity: 0, height: 0 }}
                                                     transition={{ duration: 0.3 }}
                                                 >
-                                                    <p className="text-zinc-600 dark:text-zinc-300 text-sm leading-relaxed mb-6 max-w-md">
+                                                    <p className="text-zinc-200 dark:text-zinc-300 text-sm leading-relaxed mb-6 max-w-md drop-shadow-sm">
                                                         {service.description}
                                                     </p>
                                                     <Link
                                                         href={`/services/${service.id}`}
-                                                        className="inline-flex items-center gap-2 text-zinc-900 dark:text-white font-bold text-sm hover:gap-4 transition-all"
+                                                        className="inline-flex items-center gap-2 text-white font-bold text-sm hover:gap-4 transition-all drop-shadow-sm"
                                                     >
                                                         Learn More <ArrowRight className="w-4 h-4" />
                                                     </Link>
@@ -163,7 +165,7 @@ export function ServiceShowcase() {
 
                                 {/* Index Number */}
                                 <div className="absolute top-8 left-8">
-                                    <span className="text-[10px] font-bold text-zinc-900/20 dark:text-white/20 tracking-widest uppercase">
+                                    <span className="text-[10px] font-bold text-white/40 dark:text-white/20 tracking-widest uppercase">
                                         {(index + 1).toString().padStart(2, '0')}
                                     </span>
                                 </div>
@@ -172,67 +174,40 @@ export function ServiceShowcase() {
                     })}
                 </div>
 
-                {/* Mobile Showcase: Interactive Accordion */}
-                <div className="flex lg:hidden flex-col gap-4">
-                    {SERVICES.map((service, index) => {
-                        const isHovered = hoveredIndex === index;
-                        return (
-                            <motion.div
-                                key={service.id}
-                                onClick={() => setHoveredIndex(isHovered ? null : index)}
-                                className={cn(
-                                    "relative overflow-hidden rounded-3xl border border-zinc-200 dark:border-white/5 transition-all duration-500",
-                                    isHovered ? "h-[350px]" : "h-20"
-                                )}
+                {/* Mobile Showcase: 2-column grid */}
+                <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:hidden">
+                    {SERVICES.map((service, index) => (
+                        <motion.div
+                            key={service.id}
+                            initial={{ opacity: 0, y: 12 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.35, delay: index * 0.05 }}
+                        >
+                            <Link
+                                href={`/services/${service.id}`}
+                                className="group block relative overflow-hidden rounded-2xl border border-zinc-200 dark:border-white/10 bg-zinc-100 dark:bg-zinc-900 aspect-[4/5] shadow-sm active:scale-[0.98] transition-transform"
                             >
                                 <Image
                                     src={service.image}
                                     alt={service.title}
                                     fill
-                                    className={cn(
-                                        "object-cover transition-all duration-500",
-                                        isHovered ? "opacity-60 dark:opacity-30" : "opacity-100 dark:opacity-10"
-                                    )}
+                                    sizes="(max-width: 640px) 50vw, 25vw"
+                                    className="object-cover transition-transform duration-500 group-active:scale-105"
                                 />
-                                <div className="absolute inset-0 bg-transparent dark:bg-zinc-950/40" />
-
-                                <div className="absolute inset-0 p-6 flex flex-col justify-center">
-                                    <div className="flex items-center justify-between">
-                                        <h3 className="text-lg font-bold text-zinc-900 dark:text-white pr-8">
-                                            {service.title}
-                                        </h3>
-                                        <motion.div
-                                            animate={{ rotate: isHovered ? 45 : 0 }}
-                                            className="shrink-0 w-8 h-8 rounded-full bg-zinc-900/5 dark:bg-white/10 flex items-center justify-center border border-zinc-900/10 dark:border-white/10"
-                                        >
-                                            <Plus className="w-4 h-4 text-zinc-900 dark:text-white" />
-                                        </motion.div>
-                                    </div>
-
-                                    <AnimatePresence>
-                                        {isHovered && (
-                                            <motion.div
-                                                initial={{ opacity: 0, y: 10 }}
-                                                animate={{ opacity: 1, y: 0 }}
-                                                exit={{ opacity: 0, y: 10 }}
-                                                className="mt-6"
-                                            >
-                                                <p className="text-zinc-600 dark:text-zinc-400 text-sm leading-relaxed mb-6">
-                                                    {service.description}
-                                                </p>
-                                                <Link
-                                                    href={`/services/${service.id}`}
-                                                    className="inline-flex items-center gap-2 text-zinc-900 dark:text-white font-bold text-sm"
-                                                >
-                                                    Learn More <ArrowRight className="w-4 h-4" />
-                                                </Link>
-                                            </motion.div>
-                                        )}
-                                    </AnimatePresence>
+                                <div className="absolute inset-0 bg-gradient-to-t from-zinc-900/90 via-zinc-900/40 to-transparent" />
+                                <div className={cn("absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-60", service.color)} />
+                                <div className="absolute inset-0 p-3 sm:p-4 flex flex-col justify-end">
+                                    <h3 className="text-[13px] sm:text-sm font-bold text-white leading-tight line-clamp-3 drop-shadow-sm">
+                                        {service.title}
+                                    </h3>
+                                    <span className="mt-2 inline-flex items-center gap-1 text-white/90 text-xs font-medium">
+                                        Learn more <ArrowRight className="w-3 h-3 opacity-80" />
+                                    </span>
                                 </div>
-                            </motion.div>
-                        );
-                    })}
+                            </Link>
+                        </motion.div>
+                    ))}
                 </div>
             </Container>
         </Section>

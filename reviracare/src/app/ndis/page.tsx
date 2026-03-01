@@ -1,139 +1,209 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
+import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
-import { ArrowRight, CheckCircle2, Heart, Shield, Users } from "lucide-react";
-import Link from "next/link";
+import {
+  ArrowRight,
+  Target,
+  ClipboardCheck,
+  ClipboardList,
+  Settings,
+  Sparkles,
+  KeyRound,
+  RefreshCw,
+  Info,
+} from "lucide-react";
 
-const FEATURES = [
+const SECTION_ICONS: Record<string, React.ComponentType<{ className?: string }>> = {
+  purpose: Target,
+  eligibility: ClipboardCheck,
+  planning: ClipboardList,
+  choice: Settings,
+  early: Sparkles,
+  accessing: KeyRound,
+  continuity: RefreshCw,
+};
+
+const SECTIONS = [
   {
-    title: "Personalized Support",
-    description: "Care plans built around your unique needs and aspirations.",
-    icon: <Heart className="w-6 h-6" />,
+    id: "purpose",
+    title: "Purpose and Principles",
+    content: "The NDIS operates under the principle that every person with a disability has unique needs and aspirations. It seeks to provide individualised support based on these needs, focusing on choice and control for participants. The primary goal is to enable individuals with disabilities to enhance their independence, well-being, and social participation.",
   },
   {
-    title: "Expert Guidance",
-    description: "Navigate the NDIS with confidence alongside our experienced team.",
-    icon: <Users className="w-6 h-6" />,
+    id: "eligibility",
+    title: "Eligibility and Access",
+    content: "To be eligible for the NDIS, an individual must be under the age of 65 and have a permanent and significant disability that affects their ability to participate in daily activities. Eligibility criteria may include functional impairments, duration, and impact on daily life. Once eligible, individuals can apply for access to the NDIS.",
   },
   {
-    title: "Trusted Care",
-    description: "A commitment to safety, quality, and your overall well-being.",
-    icon: <Shield className="w-6 h-6" />,
+    id: "planning",
+    title: "Planning and Supports",
+    content: "NDIS participants go through a planning process to identify their goals, aspirations, and support needs. This involves creating a personalised plan that outlines the necessary supports and services. Supports can include assistance with daily living, therapy services, mobility aids, community participation, and more. The plan is regularly reviewed and adjusted to meet evolving needs.",
+  },
+  {
+    id: "choice",
+    title: "Choice and Control",
+    content: "The NDIS emphasises giving participants control over their support arrangements. They have the flexibility to choose their service providers, decide on the types of support they require, and manage their funding through individualised budgets. This person-centered approach aims to enhance autonomy and enable participants to make decisions that best suit their individual circumstances.",
+  },
+  {
+    id: "early",
+    title: "Early Intervention",
+    content: "The NDIS recognises the importance of early intervention for children with disabilities. Early intervention services are available to support the development and well-being of children, focusing on maximising their potential and minimising the impact of disabilities on their lives. Early intervention aims to provide timely support to address challenges and promote positive outcomes.",
+  },
+  {
+    id: "accessing",
+    title: "Accessing Services",
+    content: "Once an NDIS plan is in place, participants can access a range of services and supports. These can include allied health professionals, assistive technology, therapies, home modifications, employment assistance, and more. The NDIS also supports community participation and social inclusion, enabling individuals to engage in activities that interest them and foster meaningful connections.",
+  },
+  {
+    id: "continuity",
+    title: "Continuity of Support",
+    content: "The NDIS works closely with existing disability support systems to ensure a smooth transition for participants. It focuses on maintaining continuity of support and minimising disruptions during the transition period. The NDIS collaborates with various service providers and government agencies to ensure a holistic approach to disability support.",
   },
 ];
 
-export default function NdisPage(): React.ReactElement {
+export default function UnderstandingNdisPage(): React.ReactElement {
   return (
-    <main>
-      {/* Hero Section */}
-      <section className="relative overflow-hidden bg-zinc-50 dark:bg-zinc-950 py-24 md:py-32 pt-32">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(120,119,198,0.1),transparent_50%)]" />
-        <Container className="relative">
+    <main className="min-h-screen bg-zinc-50 dark:bg-zinc-950 text-zinc-900 dark:text-white">
+      <section className="relative w-full h-[70vh] min-h-[500px] max-h-[900px] flex items-center overflow-hidden">
+        <div className="absolute inset-0 z-0 w-full h-full">
+          <Image
+            src="/images/ndis/understanding.png"
+            alt="Understanding the NDIS"
+            fill
+            className="object-cover object-center w-full h-full dark:opacity-70"
+            priority
+            sizes="100vw"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-zinc-50 dark:from-black/80 dark:via-black/50 dark:to-zinc-950" />
+        </div>
+        <Container className="relative z-10">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.6 }}
             className="max-w-3xl"
           >
-            <span className="inline-block px-4 py-1.5 rounded-full bg-zinc-900 text-zinc-50 dark:bg-zinc-50 dark:text-zinc-900 text-xs font-bold uppercase tracking-wider mb-6">
-              NDIS Provider
-            </span>
-            <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50 leading-[1.1] mb-8">
-              Tailored Care <br />
-              <span className="text-zinc-500 dark:text-zinc-400">For Everyone</span>
+            <Link
+              href="/ndis"
+              className="inline-flex items-center gap-1 text-sm text-white/80 hover:text-white mb-4"
+            >
+              Home
+            </Link>
+            <h1 className="hero-title tracking-tight text-white leading-[1.1]">
+              Understanding the NDIS
             </h1>
-            <p className="text-xl text-zinc-600 dark:text-zinc-400 leading-relaxed mb-10 max-w-xl">
-              Discover NDIS support that actually understands you. We design our services around your specific goals and lifestyle.
+            <p className="subtitle text-zinc-200 mt-4 max-w-2xl">
+              The National Disability Insurance Scheme (NDIS) is an Australian government initiative designed to provide support and assistance to individuals with disabilities.
             </p>
-            <div className="flex flex-wrap gap-4">
-              <Link
-                href="/contact"
-                className="px-8 py-4 bg-zinc-900 text-white dark:bg-zinc-50 dark:text-zinc-900 rounded-2xl font-semibold flex items-center gap-2 hover:scale-[1.02] active:scale-[0.98] transition-all"
-              >
-                Get Started
-                <ArrowRight className="w-5 h-5" />
-              </Link>
-              <button className="px-8 py-4 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 text-zinc-900 dark:text-zinc-50 rounded-2xl font-semibold hover:bg-zinc-50 dark:hover:bg-zinc-800 transition-colors">
-                Learn More
-              </button>
-            </div>
           </motion.div>
         </Container>
       </section>
 
-      {/* Features Grid */}
-      <Section className="bg-white dark:bg-zinc-950">
-        <Container>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {FEATURES.map((feature, idx) => (
-              <motion.div
-                key={feature.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.1 }}
-                className="p-8 rounded-3xl bg-zinc-50 dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 hover:border-zinc-300 dark:hover:border-zinc-700 transition-colors"
-              >
-                <div className="w-12 h-12 bg-white dark:bg-zinc-800 rounded-2xl flex items-center justify-center shadow-sm mb-6 text-zinc-900 dark:text-zinc-50">
-                  {feature.icon}
-                </div>
-                <h3 className="text-xl font-bold mb-3 text-zinc-900 dark:text-zinc-50">
-                  {feature.title}
-                </h3>
-                <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed">
-                  {feature.description}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-        </Container>
-      </Section>
-
-      {/* Understanding Section */}
-      <Section className="bg-zinc-50 dark:bg-zinc-900/50">
-        <Container>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <Section className="bg-white dark:bg-zinc-950 border-t border-zinc-200 dark:border-zinc-800 overflow-hidden">
+        {/* Intro - full width */}
+        <div className="w-full py-12 sm:py-16 md:py-20 bg-gradient-to-b from-zinc-50 to-white dark:from-zinc-900/50 dark:to-zinc-950">
+          <Container className="max-w-4xl">
             <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 12 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
+              className="text-center"
             >
-              <h2 className="text-4xl font-bold text-zinc-900 dark:text-zinc-50 mb-8 leading-tight">
-                Understanding NDIS <br />
-                With Reviracare
-              </h2>
-              <p className="text-lg text-zinc-600 dark:text-zinc-400 mb-8">
-                The National Disability Insurance Scheme (NDIS) can be complex. Our mission is to make it simple, accessible, and truly beneficial for you.
+              <span className="section-label inline-flex items-center gap-2 text-[var(--primary)] dark:text-emerald-400 font-bold uppercase tracking-[0.2em] mb-4">
+                <span className="w-1.5 h-1.5 rounded-full bg-[var(--primary)] dark:bg-emerald-400 animate-pulse" />
+                Overview
+              </span>
+              <p className="text-base sm:text-lg md:text-xl text-zinc-600 dark:text-zinc-400 leading-relaxed max-w-3xl mx-auto">
+                It is a comprehensive and person-centric approach that aims to empower people with disabilities to live fulfilling lives and participate actively in their communities.
               </p>
-              <ul className="space-y-4">
-                {[
-                  "Understanding your plan and budget",
-                  "Finding the right support workers",
-                  "Coordinating multiple services",
-                  "Monitoring progress and adjusting care",
-                ].map((item) => (
-                  <li key={item} className="flex items-center gap-3 text-zinc-700 dark:text-zinc-300">
-                    <CheckCircle2 className="w-5 h-5 text-emerald-500" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
             </motion.div>
+          </Container>
+        </div>
+
+        {/* Content blocks - full width alternating */}
+        <div className="w-full">
+          {SECTIONS.map((section, index) => {
+            const Icon = SECTION_ICONS[section.id] ?? Target;
+            const isAlt = index % 2 === 1;
+            return (
+              <motion.article
+                key={section.id}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-60px" }}
+                transition={{ duration: 0.4 }}
+                className={`w-full py-10 sm:py-12 md:py-16 ${isAlt ? "bg-zinc-50 dark:bg-zinc-900/40" : "bg-white dark:bg-zinc-950"}`}
+              >
+                <Container className="max-w-5xl">
+                  <div className="flex flex-col sm:flex-row sm:items-start gap-6 sm:gap-8 md:gap-10">
+                    <div className="flex h-14 w-14 sm:h-16 sm:w-16 shrink-0 items-center justify-center rounded-2xl bg-[var(--primary)]/10 dark:bg-emerald-500/20 text-[var(--primary)] dark:text-emerald-400 border border-[var(--primary)]/10 dark:border-emerald-500/20">
+                      <Icon className="h-7 w-7 sm:h-8 sm:w-8" aria-hidden />
+                    </div>
+                    <div className="min-w-0 flex-1">
+                      <h2 className="text-xl sm:text-2xl font-bold text-zinc-900 dark:text-white mb-3 sm:mb-4 leading-tight">
+                        {section.title}
+                      </h2>
+                      <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed text-[15px] sm:text-base md:text-lg max-w-3xl">
+                        {section.content}
+                      </p>
+                    </div>
+                  </div>
+                </Container>
+              </motion.article>
+            );
+          })}
+        </div>
+
+        {/* Important notice - full width */}
+        <div className="w-full py-10 sm:py-12 md:py-16 bg-amber-50/80 dark:bg-amber-950/20 border-y border-amber-200/60 dark:border-amber-800/30">
+          <Container className="max-w-5xl">
             <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="relative aspect-square rounded-3xl bg-zinc-200 dark:bg-zinc-800 overflow-hidden"
+              className="flex flex-col sm:flex-row sm:items-start gap-4 sm:gap-6"
             >
-              {/* Placeholder for an image or graphic */}
-              <div className="absolute inset-0 flex items-center justify-center text-zinc-400 dark:text-zinc-600 italic">
-                Support Image Reference
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-amber-500/20 dark:bg-amber-500/30 text-amber-600 dark:text-amber-400">
+                <Info className="h-6 w-6" aria-hidden />
+              </div>
+              <div className="min-w-0 flex-1">
+                <h3 className="text-lg sm:text-xl font-semibold text-zinc-900 dark:text-white mb-2">Important notice</h3>
+                <p className="text-sm sm:text-base text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                  It&apos;s important to note that while this content provides a general understanding of the NDIS, the scheme itself is complex, and the specific details and processes may vary. It&apos;s advisable to refer to official NDIS resources, consult with the NDIS directly, or seek professional advice for comprehensive and up-to-date information based on your specific circumstances.
+                </p>
               </div>
             </motion.div>
-          </div>
-        </Container>
+          </Container>
+        </div>
+
+        {/* CTAs - full width */}
+        <div className="w-full py-12 sm:py-16 bg-white dark:bg-zinc-950">
+          <Container className="max-w-5xl">
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              className="flex flex-wrap gap-4 sm:gap-5"
+            >
+              <Link
+                href="/ndis/new"
+                className="inline-flex items-center gap-2 px-6 py-3.5 sm:px-8 sm:py-4 rounded-xl bg-[var(--primary)] text-[var(--primary-foreground)] font-semibold hover:opacity-90 transition-opacity shadow-lg shadow-[var(--primary)]/20 text-sm sm:text-base"
+              >
+                New to the NDIS? <ArrowRight className="w-4 h-4" />
+              </Link>
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2 px-6 py-3.5 sm:px-8 sm:py-4 rounded-xl border-2 border-[var(--border)] dark:border-zinc-600 text-[var(--foreground)] font-semibold hover:bg-[var(--muted)] dark:hover:bg-zinc-800 transition-colors text-sm sm:text-base"
+              >
+                Contact Us
+              </Link>
+            </motion.div>
+          </Container>
+        </div>
       </Section>
     </main>
   );

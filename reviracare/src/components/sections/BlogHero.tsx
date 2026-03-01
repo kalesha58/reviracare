@@ -29,17 +29,17 @@ export function BlogHero() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6 }}
                     >
-                        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-bold uppercase tracking-widest mb-6 backdrop-blur-sm">
+                        <div className="section-label inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary uppercase tracking-widest mb-6 backdrop-blur-sm">
                             <Sparkles className="w-3.5 h-3.5" />
                             <span>Premium Blog Resource</span>
                         </div>
 
-                        <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-foreground tracking-tight leading-[1.1] mb-6">
+                        <h1 className="hero-title text-foreground tracking-tight leading-[1.1] mb-6">
                             Insights & <br />
                             <span className="text-primary italic">Knowledge</span>
                         </h1>
 
-                        <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed mb-10 max-w-2xl">
+                        <p className="subtitle text-muted-foreground leading-relaxed mb-10 max-w-2xl">
                             A curated collection of research, advocacy, and community stories
                             designed to empower and inform the disability support network.
                             Our commitment to quality ensures you get the most relevant insights every time.

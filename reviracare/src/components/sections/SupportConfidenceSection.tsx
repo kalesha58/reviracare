@@ -85,7 +85,7 @@ export function SupportConfidenceSection(): React.ReactElement {
           <motion.h2
             variants={ITEM_VARIANTS}
             custom={0}
-            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight mb-5"
+            className="section-title text-foreground leading-tight mb-5"
           >
             Support at every step.
             <br />

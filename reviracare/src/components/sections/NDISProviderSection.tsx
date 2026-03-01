@@ -15,7 +15,7 @@ const NDIS_EXPERTISE = [
   "In-Home Assistance",
 ] as const;
 
-const IMAGE_SRC = "/images/services/in-home-support.png";
+const IMAGE_SRC = "/images/ndis/provider-section.png";
 
 export function NDISProviderSection(): React.ReactElement {
   return (
@@ -59,7 +59,7 @@ export function NDISProviderSection(): React.ReactElement {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="lg:col-span-7 order-2 lg:order-2"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+            <h2 className="section-title text-foreground mb-6">
               NDIS Provider Australia
             </h2>
             <p className="text-muted-foreground text-base md:text-lg leading-relaxed mb-8 bg-primary/5 dark:bg-primary/10 border border-primary/10 rounded-2xl p-6">

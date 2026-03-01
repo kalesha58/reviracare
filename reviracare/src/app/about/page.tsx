@@ -145,17 +145,17 @@ export default function AboutPage(): React.ReactElement {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="max-w-3xl"
           >
-            <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-zinc-900/5 dark:bg-white/5 border border-zinc-900/10 dark:border-white/10 text-emerald-600 dark:text-emerald-400 text-[10px] font-bold uppercase tracking-[0.2em] mb-6">
+            <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-zinc-900/5 dark:bg-white/5 border border-zinc-900/10 dark:border-white/10 text-emerald-600 dark:text-emerald-400 section-label font-bold uppercase tracking-[0.2em] mb-6">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
               Trusted NDIS Partner
             </div>
-            <h1 className="text-4xl md:text-6xl font-extrabold mb-5 tracking-tight leading-[1.1] text-white">
+            <h1 className="hero-title mb-5 tracking-tight leading-[1.1] text-white">
               Reimagining <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-white to-blue-500">
                 The Care Experience
               </span>
             </h1>
-            <p className="text-lg md:text-xl text-zinc-300 dark:text-zinc-400 font-medium leading-relaxed max-w-xl">
+            <p className="subtitle text-zinc-300 dark:text-zinc-400 font-medium leading-relaxed max-w-xl">
               Revira Care is more than a service provider. We are your partners in creating a life characterized by empowerment, independence, and joy.
             </p>
           </motion.div>

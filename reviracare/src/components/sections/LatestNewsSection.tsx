@@ -63,7 +63,7 @@ function BlogCard({
               {post.date}
             </span>
           </div>
-          <h3 className="font-bold text-foreground group-hover:text-primary transition-colors tracking-tight leading-snug text-base sm:text-lg line-clamp-2 mb-3">
+          <h3 className="card-title text-foreground group-hover:text-primary transition-colors tracking-tight leading-snug line-clamp-2 mb-3">
             {post.title}
           </h3>
           <p className="text-muted-foreground text-sm leading-relaxed line-clamp-2 mb-5">
@@ -95,14 +95,14 @@ export function LatestNewsSection(): React.ReactElement {
           <motion.span
             variants={ITEM_VARIANTS}
             custom={0}
-            className="text-primary font-bold uppercase text-xs tracking-[0.2em] block mb-3"
+            className="section-label text-primary uppercase block mb-3"
           >
             Latest News
           </motion.span>
           <motion.h2
             variants={ITEM_VARIANTS}
             custom={1}
-            className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground leading-tight"
+            className="section-title text-foreground leading-tight"
           >
             Read Our Blogs And News
           </motion.h2>

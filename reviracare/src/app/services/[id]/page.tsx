@@ -13,7 +13,7 @@ const SERVICE_DATA: Record<string, any> = {
     "in-home": {
         title: "In-Home And Community Support",
         subtitle: "Professional, compassionate support in the comfort of your home.",
-        image: "/images/services/in-home-support.png",
+        image: "/images/ndis/service-in-home.png",
         accent: "emerald",
         content: `
       Revira Care is dedicated to providing exceptional support to individuals with disabilities, ensuring they receive the care and assistance they need in the comfort of their homes. Our Home Care services are tailored to promote independence, dignity, and a high quality of life for all our clients.
@@ -62,7 +62,7 @@ const SERVICE_DATA: Record<string, any> = {
     "social": {
         title: "Social And Community Participation",
         subtitle: "Fostering inclusion, social interaction, and a sense of belonging.",
-        image: "/images/services/social-participation.png",
+        image: "/images/ndis/service-social.png",
         accent: "blue",
         content: `
       Social and community participation is a critical aspect of a person’s well-being. At Revira Care, we understand the importance of fostering inclusion, social interaction, and a sense of belonging within the community for people with disabilities. This service is designed to encourage active involvement in social activities.
@@ -101,7 +101,7 @@ const SERVICE_DATA: Record<string, any> = {
     "group": {
         title: "Group Activities And Community Programs",
         subtitle: "Meaningful, enjoyable, and enriching group experiences.",
-        image: "/images/services/group-activities.png",
+        image: "/images/ndis/service-group.png",
         accent: "purple",
         content: `
       We are committed to providing a wide range of group activities and community programs designed to promote independence, improve social skills, and enhance overall well-being. Our programs are carefully crafted to ensure meaningful engagement.
@@ -144,7 +144,7 @@ const SERVICE_DATA: Record<string, any> = {
     "sil": {
         title: "Supported Independent Living (SIL)",
         subtitle: "Tailored support for living independently in the community.",
-        image: "/images/services/sil.png",
+        image: "/images/ndis/service-sil.png",
         accent: "amber",
         content: `
       Supported Independent Living (SIL) is all about helping you live as independently as possible while receiving the help you need with daily tasks. Whether you live in a shared home or alone, our team provides 24/7 support.
@@ -169,7 +169,7 @@ const SERVICE_DATA: Record<string, any> = {
     "skills": {
         title: "Daily Living And Life Skills",
         subtitle: "Empowering you with the skills for everyday success.",
-        image: "/images/services/life-skills.png",
+        image: "/images/ndis/service-life-skills.png",
         accent: "rose",
         content: `
       Developing daily living and life skills is essential for independence. We work with you to master the tasks that matter most, from cooking healthy meals to managing your budget and using public transport.
@@ -194,7 +194,7 @@ const SERVICE_DATA: Record<string, any> = {
     "sda": {
         title: "Specialised Disability Accommodation (SDA)",
         subtitle: "Modern, accessible housing designed for your needs.",
-        image: "/images/services/sda.png",
+        image: "/images/ndis/service-sda.png",
         accent: "cyan",
         content: `
       Specialised Disability Accommodation (SDA) refers to housing for people who require very high support needs. Our SDA properties are designed to be accessible, functional, and beautiful, ensuring a high quality of life.

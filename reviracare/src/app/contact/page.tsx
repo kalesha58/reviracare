@@ -70,15 +70,15 @@ export default function ContactPage() {
             transition={{ duration: 0.8 }}
             className="max-w-3xl"
           >
-            <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-[10px] font-bold uppercase tracking-[0.2em] mb-6 backdrop-blur-md">
+            <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 section-label uppercase tracking-[0.2em] mb-6 backdrop-blur-md">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
               Get In Touch
             </div>
-            <h1 className="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight leading-tight text-white">
+            <h1 className="hero-title mb-6 tracking-tight leading-tight text-white">
               Feel Free To <br />
               <span className="text-emerald-400">Contact Us</span>
             </h1>
-            <p className="text-lg md:text-xl text-zinc-200 font-medium leading-relaxed max-w-2xl">
+            <p className="subtitle text-zinc-200 font-medium leading-relaxed max-w-2xl">
               Revira Care provides comprehensive services tailored to individuals with disabilities, ensuring accessibility, independence, and empowerment. From personalized care plans to community integration support, we focus on enhancing quality of life.
             </p>
           </motion.div>
@@ -119,7 +119,7 @@ export default function ContactPage() {
             {/* Map Column */}
             <div className="lg:col-span-12 xl:col-span-5 space-y-8">
               <div className="space-y-4">
-                <h2 className="text-3xl md:text-4xl font-bold text-zinc-900 dark:text-white">Our Head Office</h2>
+                <h2 className="section-title text-zinc-900 dark:text-white">Our Head Office</h2>
                 <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed">
                   Visit us at our Norwest location. We're situated in the Nexus Building, centrally located for your convenience.
                 </p>
@@ -154,7 +154,7 @@ export default function ContactPage() {
             <div className="lg:col-span-12 xl:col-span-7">
               <div className="bg-white dark:bg-zinc-900 p-8 md:p-14 rounded-[3rem] border border-zinc-200 dark:border-white/5 shadow-3xl shadow-black/5">
                 <div className="mb-12">
-                  <h3 className="text-2xl md:text-3xl font-bold text-zinc-900 dark:text-white mb-4">Send us a message</h3>
+                  <h3 className="section-title text-zinc-900 dark:text-white mb-4">Send us a message</h3>
                   <p className="text-zinc-500 dark:text-zinc-400">Fill out the form below and our team will get back to you shortly.</p>
                 </div>
 

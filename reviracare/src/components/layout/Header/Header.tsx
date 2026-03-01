@@ -81,7 +81,7 @@ export function Header(): React.ReactElement {
                 key={link.label}
                 href={link.href}
                 className={cn(
-                  "px-4 py-2 text-sm font-medium rounded-full transition-colors relative",
+                  "nav-link px-4 py-2 rounded-full transition-colors relative",
                   isActive
                     ? "text-zinc-900 dark:text-zinc-50"
                     : "text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-50 hover:bg-zinc-100 dark:hover:bg-zinc-800"
@@ -105,7 +105,7 @@ export function Header(): React.ReactElement {
           <ThemeToggle />
           <Link
             href="/contact"
-            className="px-5 py-2.5 text-sm font-medium bg-zinc-900 text-zinc-50 dark:bg-zinc-50 dark:text-zinc-900 rounded-full hover:opacity-90 transition-opacity flex items-center gap-2 group shadow-lg shadow-zinc-900/10"
+            className="nav-link px-5 py-2.5 bg-zinc-900 text-zinc-50 dark:bg-zinc-50 dark:text-zinc-900 rounded-full hover:opacity-90 transition-opacity flex items-center gap-2 group shadow-lg shadow-zinc-900/10"
           >
             Get Started
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -169,23 +169,6 @@ export function Header(): React.ReactElement {
                   transition={{ delay: 0.5 }}
                   className="mt-auto border-t border-zinc-200 dark:border-zinc-800 pt-8 pb-10 space-y-6"
                 >
-                  <div className="space-y-4">
-                    <a href="tel:0424911145" className="flex items-center gap-3 text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-50 transition-colors">
-                      <div className="w-10 h-10 rounded-full bg-zinc-100 dark:bg-zinc-900 flex items-center justify-center">
-                        <Phone className="w-5 h-5" />
-                      </div>
-                      <span className="font-medium">0424 911 145</span>
-                    </a>
-                    <div className="flex items-center gap-3 text-zinc-600 dark:text-zinc-400">
-                      <div className="w-10 h-10 rounded-full bg-zinc-100 dark:bg-zinc-900 flex items-center justify-center shrink-0">
-                        <MapPin className="w-5 h-5" />
-                      </div>
-                      <span className="font-medium text-sm leading-relaxed">
-                        Suite 2, Level 1, 10-14 Market Lane,<br />Rouse Hill, NSW, 2155
-                      </span>
-                    </div>
-                  </div>
-
                   <Link
                     href="/contact"
                     onClick={() => setMobileOpen(false)}
@@ -257,7 +240,7 @@ function MobileNavItem({
               )}>
                 <Icon className="w-5 h-5" />
               </div>
-              <span className="text-xl font-semibold">{link.label}</span>
+              <span className="nav-link-mobile">{link.label}</span>
             </div>
             <ChevronDown
               className={cn(
@@ -282,8 +265,8 @@ function MobileNavItem({
                       key={child.href}
                       href={child.href}
                       onClick={() => setMobileOpen(false)}
-                      className={cn(
-                        "py-3 px-4 rounded-xl text-lg transition-colors flex items-center justify-between group",
+                    className={cn(
+                      "nav-link-dropdown py-3 px-4 rounded-xl transition-colors flex items-center justify-between group",
                         pathname === child.href
                           ? "bg-zinc-900/5 dark:bg-zinc-50/5 text-zinc-900 dark:text-zinc-50 font-medium"
                           : "text-zinc-500 dark:text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-50"
@@ -315,7 +298,7 @@ function MobileNavItem({
           )}>
             <Icon className="w-5 h-5" />
           </div>
-          <span className="text-xl font-semibold">{link.label}</span>
+          <span className="nav-link-mobile">{link.label}</span>
         </Link>
       )}
     </motion.div>
@@ -334,7 +317,7 @@ function NavDropdown({ link, isActive }: { link: (typeof NAV_LINKS)[number] & { 
     >
       <button
         className={cn(
-          "px-4 py-2 text-sm font-medium rounded-full transition-colors flex items-center gap-1.5",
+          "nav-link px-4 py-2 rounded-full transition-colors flex items-center gap-1.5",
           isActive
             ? "text-zinc-900 dark:text-zinc-50"
             : "text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-50 hover:bg-zinc-100 dark:hover:bg-zinc-800"
@@ -358,7 +341,7 @@ function NavDropdown({ link, isActive }: { link: (typeof NAV_LINKS)[number] & { 
                   key={child.href}
                   href={child.href}
                   className={cn(
-                    "block px-3 py-2 text-sm rounded-lg transition-colors",
+                    "body-sm block px-3 py-2 rounded-lg transition-colors",
                     pathname === child.href
                       ? "bg-zinc-100 dark:bg-zinc-800 text-zinc-900 dark:text-zinc-50"
                       : "text-zinc-600 dark:text-zinc-400 hover:bg-zinc-50 dark:hover:bg-zinc-800/50 hover:text-zinc-900 dark:hover:text-zinc-50"

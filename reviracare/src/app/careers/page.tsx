@@ -115,17 +115,17 @@ export default function CareersPage() {
             transition={{ duration: 0.8 }}
             className="max-w-3xl"
           >
-            <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-[10px] font-bold uppercase tracking-[0.2em] mb-6 backdrop-blur-md">
+            <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 section-label font-bold uppercase tracking-[0.2em] mb-6 backdrop-blur-md">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
               Join Our Care Team
             </div>
-            <h1 className="text-4xl md:text-7xl font-extrabold mb-6 tracking-tight leading-[1.05] text-white">
+            <h1 className="hero-title font-extrabold mb-6 tracking-tight leading-[1.05] text-white">
               Make a <br />
               <span className="text-emerald-400">
                 Meaningful Difference
               </span>
             </h1>
-            <p className="text-lg md:text-xl text-zinc-300 font-medium leading-relaxed max-w-xl mb-10">
+            <p className="subtitle text-zinc-300 font-medium leading-relaxed max-w-xl mb-10">
               Joining Revira Care Australia offers an exciting opportunity to empower individuals with disabilities and foster a more inclusive community.
             </p>
             <div className="flex flex-wrap gap-4">
@@ -155,8 +155,8 @@ export default function CareersPage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-primary font-bold uppercase text-[11px] tracking-[0.3em] mb-4">The Revira Standard</h2>
-              <h3 className="text-3xl md:text-4xl font-bold mb-6 text-zinc-900 dark:text-white leading-tight">Focusing on Passion, <br />Not Just Qualifications</h3>
+              <h2 className="section-label text-primary uppercase tracking-[0.3em] mb-4">The Revira Standard</h2>
+              <h3 className="section-title mb-6 text-zinc-900 dark:text-white leading-tight">Focusing on Passion, <br />Not Just Qualifications</h3>
               <p className="text-zinc-600 dark:text-zinc-400 text-lg leading-relaxed mb-8">
                 While holding a <strong>Certificate IV in Disability</strong> is advantageous, it is not a prerequisite for this role. We welcome candidates from diverse backgrounds who are passionate about supporting and empowering others.
               </p>

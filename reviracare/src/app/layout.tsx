@@ -44,6 +44,7 @@ export const viewport: Viewport = {
 };
 
 import { ThemeProvider } from "@/components/theme/ThemeProvider";
+import { ChatSupport } from "@/components/chat";
 
 export default function RootLayout({
   children,
@@ -64,6 +65,7 @@ export default function RootLayout({
           <Header />
           <main className="flex-1 pt-20">{children}</main>
           <Footer />
+          <ChatSupport welcomeMessage="Hi! How can we help you today? Ask your question and we'll get back to you soon." />
         </ThemeProvider>
       </body>
     </html>

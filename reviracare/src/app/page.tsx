@@ -50,25 +50,25 @@ const BADGES = [
   {
     id: "phone",
     content: (
-      <div className="flex items-center gap-3 px-5 py-3 bg-white/10 backdrop-blur-xl rounded-2xl border border-white/20 shadow-xl">
-        <span className="text-xl">📱</span>
-        <span className="text-xs font-bold text-emerald-400 tracking-wider uppercase">1800 REVIRA</span>
+      <div className="flex items-center gap-3 px-5 py-3 bg-white/95 dark:bg-white/10 backdrop-blur-xl rounded-2xl border border-zinc-200 dark:border-white/20 shadow-xl">
+        <span className="text-xl" aria-hidden>📱</span>
+        <span className="text-xs font-bold text-emerald-700 dark:text-emerald-400 tracking-wider uppercase">1800 REVIRA</span>
       </div>
     ),
   },
   {
     id: "support",
     content: (
-      <div className="flex items-center gap-3 px-5 py-3 bg-white/10 backdrop-blur-xl rounded-2xl border border-white/20 shadow-xl">
-        <div className="text-xl font-bold text-blue-400 leading-none">24/7</div>
-        <div className="text-[10px] font-bold text-zinc-400 uppercase tracking-wider">Support</div>
+      <div className="flex items-center gap-3 px-5 py-3 bg-white/95 dark:bg-white/10 backdrop-blur-xl rounded-2xl border border-zinc-200 dark:border-white/20 shadow-xl">
+        <div className="text-xl font-bold text-blue-700 dark:text-blue-400 leading-none">24/7</div>
+        <div className="text-[10px] font-bold text-zinc-700 dark:text-zinc-400 uppercase tracking-wider">Support</div>
       </div>
     ),
   },
   {
     id: "covid",
     content: (
-      <div className="flex items-center gap-3 px-5 py-3 bg-[#00A3E0]/20 backdrop-blur-xl text-[#00A3E0] rounded-2xl border border-[#00A3E0]/40 shadow-xl">
+      <div className="flex items-center gap-3 px-5 py-3 bg-cyan-100 dark:bg-[#00A3E0]/20 backdrop-blur-xl text-cyan-800 dark:text-[#00A3E0] rounded-2xl border border-cyan-200 dark:border-[#00A3E0]/40 shadow-xl">
         <CheckCircle2 className="w-5 h-5" />
         <span className="text-[11px] font-bold tracking-wider uppercase">COVID Safe</span>
       </div>
@@ -109,6 +109,8 @@ export default function HomePage(): React.ReactElement {
                 priority
               />
               <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-zinc-50/80 dark:from-black/80 dark:via-black/40 dark:to-zinc-950" />
+              {/* Scrim behind text for readable contrast on all image areas */}
+              <div className="absolute inset-0 bg-gradient-to-r from-zinc-900/50 via-zinc-900/10 to-transparent" aria-hidden />
             </motion.div>
           </AnimatePresence>
         </div>
@@ -125,23 +127,28 @@ export default function HomePage(): React.ReactElement {
                   transition={{ duration: 0.6, ease: "easeOut" }}
                   className="w-full"
                 >
-                  <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/95 dark:bg-white/5 border border-zinc-200 dark:border-white/10 text-emerald-600 dark:text-emerald-400 text-[10px] font-bold uppercase tracking-[0.2em] mb-6 shadow-sm">
+                  <div className="section-label inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/95 dark:bg-white/5 border border-zinc-200 dark:border-white/10 text-emerald-600 dark:text-emerald-400 font-bold uppercase tracking-[0.2em] mb-6 shadow-sm">
                     <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
                     Trusted Healthcare Partner
                   </div>
-                  <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-zinc-900 dark:text-white leading-[1.15] mb-6 [text-shadow:0_1px_2px_rgba(255,255,255,0.8)] dark:[text-shadow:none]">
-                    {HERO_CONTENT[currentImage].title.split(' ').map((word, i) => (
-                      i >= HERO_CONTENT[currentImage].title.split(' ').length - 2 ? (
-                        <span key={i} className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 via-zinc-900 to-blue-600 dark:from-emerald-400 dark:via-white dark:to-blue-400">
-                          {word}{' '}
-                        </span>
-                      ) : (
-                        <span key={i}>{word} </span>
-                      )
-                    ))}
+                  <h1 className="hero-title font-extrabold tracking-tight text-white leading-[1.15] mb-6 drop-shadow-[0_1px_2px_rgba(0,0,0,0.3)]">
+                    {(() => {
+                      const words = HERO_CONTENT[currentImage].title.split(' ');
+                      const lastTwo = words.slice(-2).join(' ');
+                      const rest = words.slice(0, -2).join(' ');
+                      return (
+                        <>
+                          {rest}
+                          {rest && ' '}
+                          <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-white to-blue-500">
+                            {lastTwo}
+                          </span>
+                        </>
+                      );
+                    })()}
                   </h1>
 
-                  <p className="text-base md:text-lg text-zinc-800 dark:text-zinc-400 leading-relaxed mb-10 max-w-xl font-medium [text-shadow:0_1px_2px_rgba(255,255,255,0.8)] dark:[text-shadow:none]">
+                  <p className="subtitle text-white dark:text-zinc-400 leading-relaxed mb-10 max-w-xl drop-shadow-[0_1px_2px_rgba(0,0,0,0.3)]">
                     {HERO_CONTENT[currentImage].description}
                   </p>
                 </motion.div>
@@ -175,7 +182,7 @@ export default function HomePage(): React.ReactElement {
             className="flex flex-col items-center gap-2"
           >
             <div className="w-px h-8 bg-gradient-to-b from-emerald-500 to-transparent" />
-            <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-zinc-500 dark:text-zinc-400">Scroll</span>
+            <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-white/90 dark:text-zinc-400">Scroll</span>
           </motion.div>
 
           {/* Mobile Horizontal Badges */}
@@ -211,32 +218,78 @@ export default function HomePage(): React.ReactElement {
       <SupportConfidenceSection />
 
       {/* Welcome Section */}
-      <Section className="bg-zinc-50 dark:bg-zinc-950 text-zinc-900 dark:text-white border-t border-zinc-200 dark:border-white/5">
+      <Section className="bg-zinc-50 dark:bg-zinc-950 text-zinc-900 dark:text-white border-t border-zinc-200 dark:border-white/5 overflow-hidden">
         <Container>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <h2 className="text-4xl font-bold mb-6">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+            {/* Left: Intro + highlights */}
+            <div className="lg:col-span-7">
+              <span className="section-label inline-flex items-center gap-2 text-emerald-600 dark:text-emerald-400 uppercase tracking-[0.2em] mb-4">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                Why Revira Care
+              </span>
+              <h2 className="section-title text-zinc-900 dark:text-white mb-6 leading-tight">
                 Welcome to Revira Care
               </h2>
-              <p className="text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed mb-8">
-                We provide person-centred support to help you live the life you
-                choose. Our dedicated team works closely with you to understand
-                your goals and provide the care you deserve.
+              <p className="subtitle text-zinc-600 dark:text-zinc-400 leading-relaxed mb-8 max-w-xl">
+                We provide person-centred support to help you live the life you choose. Our dedicated team works closely with you to understand your goals and provide the care you deserve.
               </p>
-              <div className="flex items-center gap-4 text-emerald-600 dark:text-emerald-400 font-bold">
-                <CheckCircle2 className="w-6 h-6" />
-                <span>Government Registered Provider</span>
+              <ul className="space-y-4 mb-10">
+                {[
+                  "Tailored support plans built around your goals and preferences",
+                  "NDIS registered provider with quality-assured services",
+                  "Experienced support workers who respect your independence",
+                  "Community participation and in-home care when you need it",
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-3 text-zinc-700 dark:text-zinc-300 body-sm leading-relaxed">
+                    <CheckCircle2 className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+              <div className="inline-flex items-center gap-3 px-5 py-3 rounded-2xl bg-emerald-500/10 dark:bg-emerald-500/15 border border-emerald-500/20 dark:border-emerald-500/30">
+                <div className="w-10 h-10 rounded-xl bg-emerald-500/20 dark:bg-emerald-500/30 flex items-center justify-center">
+                  <CheckCircle2 className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />
+                </div>
+                <div>
+                  <span className="block font-semibold text-zinc-900 dark:text-white body-sm">Government Registered Provider</span>
+                  <span className="block caption text-zinc-500 dark:text-zinc-400 uppercase tracking-wider">NDIS Quality & Safeguards</span>
+                </div>
               </div>
             </div>
-            <div className="grid grid-cols-2 gap-4">
-              <div className="h-64 bg-zinc-100 dark:bg-zinc-900 rounded-3xl border border-zinc-200 dark:border-white/5 p-8 flex flex-col justify-end">
-                <div className="text-4xl font-bold mb-2 text-zinc-900 dark:text-white">500+</div>
-                <div className="text-zinc-500 font-bold uppercase text-xs tracking-wider">Clients Supported</div>
-              </div>
-              <div className="h-64 bg-emerald-500/5 dark:bg-emerald-500/10 rounded-3xl border border-emerald-500/10 dark:border-emerald-500/20 p-8 flex flex-col justify-end">
-                <div className="text-4xl font-bold text-emerald-600 dark:text-emerald-400 mb-2">24/7</div>
-                <div className="text-emerald-600/60 dark:text-emerald-400/60 font-bold uppercase text-xs tracking-wider">Available Support</div>
-              </div>
+
+            {/* Right: Stats cards */}
+            <div className="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4 auto-rows-fr">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="group relative overflow-hidden rounded-3xl border border-zinc-200 dark:border-white/5 bg-white dark:bg-zinc-900/80 p-8 flex flex-col justify-between shadow-sm hover:shadow-lg hover:border-zinc-300 dark:hover:border-white/10 transition-all duration-300"
+              >
+                <div className="absolute top-0 right-0 w-32 h-32 bg-zinc-100 dark:bg-zinc-800 rounded-full -translate-y-1/2 translate-x-1/2 group-hover:scale-150 transition-transform duration-500" aria-hidden />
+                <div className="relative">
+                  <span className="text-4xl sm:text-5xl font-extrabold text-zinc-900 dark:text-white tracking-tight">500+</span>
+                  <p className="caption text-zinc-500 dark:text-zinc-400 uppercase tracking-wider mt-2">Clients Supported</p>
+                </div>
+                <p className="body-sm text-zinc-600 dark:text-zinc-400 mt-4 relative">
+                  Individuals and families who trust us for quality, person-centred care.
+                </p>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.1 }}
+                className="group relative overflow-hidden rounded-3xl border border-emerald-500/20 dark:border-emerald-500/30 bg-gradient-to-br from-emerald-500/5 to-emerald-500/10 dark:from-emerald-500/10 dark:to-emerald-500/5 p-8 flex flex-col justify-between shadow-sm hover:shadow-lg hover:shadow-emerald-500/5 transition-all duration-300"
+              >
+                <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-500/10 rounded-full -translate-y-1/2 translate-x-1/2 group-hover:scale-150 transition-transform duration-500" aria-hidden />
+                <div className="relative">
+                  <span className="text-4xl sm:text-5xl font-extrabold text-emerald-600 dark:text-emerald-400 tracking-tight">24/7</span>
+                  <p className="caption text-emerald-600/80 dark:text-emerald-400/80 uppercase tracking-wider mt-2">Available Support</p>
+                </div>
+                <p className="body-sm text-zinc-600 dark:text-zinc-400 mt-4 relative">
+                  Round-the-clock availability so you’re never without support when it matters.
+                </p>
+              </motion.div>
             </div>
           </div>
         </Container>
