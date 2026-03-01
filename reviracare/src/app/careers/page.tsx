@@ -7,7 +7,7 @@ import {
   Heart, ShieldCheck, Zap, Award, CheckCircle2,
   ArrowRight, FileText, GraduationCap, Scale,
   Lock, Rocket, HelpCircle, Download, Upload,
-  X, Check, AlertCircle, Info, Mail, Phone,
+  X, Check, AlertCircle, Mail, Phone,
   User, Home, MessageSquare
 } from "lucide-react";
 import Image from "next/image";
@@ -41,7 +41,8 @@ const CLEARANCES = [
 const ONLINE_COURSES = [
   { title: "COVID-19 Infection Control", provider: "NDIS", status: "Free" },
   { title: "NDIS Worker Orientation", provider: "NDIS", status: "Free" },
-  { title: "NDIS New Worker Induction", provider: "NDIS", status: "Free" }
+  { title: "NDIS New Worker Induction", provider: "NDIS", status: "Free" },
+  { title: "NDIS Quality and Safeguards", provider: "NDIS", status: "Free" }
 ];
 
 const REQUIRED_DOCS = [
@@ -257,7 +258,16 @@ export default function CareersPage() {
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-500 text-[10px] font-bold uppercase tracking-widest mb-6">
                   Online Training
                 </div>
-                <h4 className="text-2xl font-bold mb-6">Required NDIS Courses</h4>
+                <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-5 mb-6">
+                  <div className="shrink-0 p-2.5 rounded-2xl bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-white/5">
+                    <BrandLogo
+                      width={100}
+                      height={36}
+                      imageClassName="dark:brightness-0 dark:invert"
+                    />
+                  </div>
+                  <h4 className="text-xl sm:text-2xl font-bold text-zinc-900 dark:text-white">Required NDIS Courses</h4>
+                </div>
                 <div className="space-y-4 mb-8">
                   {ONLINE_COURSES.map((course, i) => (
                     <div key={i} className="flex items-center gap-4 p-4 rounded-2xl bg-zinc-50 dark:bg-zinc-900 border border-border group hover:border-primary/30 transition-all">
@@ -271,12 +281,6 @@ export default function CareersPage() {
                       <div className="text-[10px] font-black uppercase text-primary">{course.status}</div>
                     </div>
                   ))}
-                </div>
-                <div className="p-5 rounded-2xl bg-blue-50 dark:bg-blue-500/5 border border-blue-200 dark:border-blue-500/10 flex gap-4">
-                  <Info className="w-5 h-5 text-blue-500 shrink-0 mt-0.5" />
-                  <p className="text-sm text-blue-700 dark:text-blue-300 leading-relaxed">
-                    These courses must be completed online for free and your certificates uploaded to the application below.
-                  </p>
                 </div>
               </div>
               <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl">
