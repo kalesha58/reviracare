@@ -224,7 +224,7 @@ export default function ReferralPage(): React.ReactElement {
     <main className="min-h-screen bg-zinc-50 dark:bg-zinc-950 text-zinc-900 dark:text-white pb-32 [--primary:var(--secondary)] [--accent:var(--purple-100)] [--accent-foreground:var(--purple-700)] dark:[--accent:var(--purple-950)] dark:[--accent-foreground:var(--purple-100)]">
       {/* Hero – same as main NDIS: purple-brand (footer) + image */}
       <section className="relative min-h-[95vh] md:min-h-[92vh] flex items-center pt-24 md:pt-28 pb-64 md:pb-24 overflow-hidden">
-        <div className="absolute inset-0 z-0 bg-purple-brand overflow-hidden">
+        <div className="absolute inset-0 z-0 bg-purple-brand dark:bg-zinc-950 overflow-hidden">
           <motion.div
             initial={{ opacity: 0, scale: 1.05 }}
             animate={{ opacity: 1, scale: 1 }}

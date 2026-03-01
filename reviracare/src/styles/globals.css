@@ -90,15 +90,17 @@
   --foreground: #f8fafc;
   --primary: var(--purple-500);
   --primary-foreground: #ffffff;
-  --secondary: var(--purple-brand);
-  --secondary-foreground: #ffffff;
-  --accent: var(--purple-900);
-  --accent-foreground: var(--purple-200);
+  /* Neutral dark surfaces so purple doesn't block; keeps text readable */
+  --secondary: #18181b;
+  --secondary-foreground: #fafafa;
+  --accent: #27272a;
+  --accent-foreground: #e4e4e7;
   --muted: #1e293b;
   --muted-foreground: #94a3b8;
-  --border: #1e293b;
-  --purple-brand: #2a102e;
-  --purple-brand-dark: #120918;
+  --border: #27272a;
+  /* Lighter purple in dark for accents only (icons, links, highlights) */
+  --purple-brand: #7c3aed;
+  --purple-brand-dark: #5b21b6;
 }
 
 @theme inline {

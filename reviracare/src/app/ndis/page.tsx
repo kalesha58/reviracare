@@ -71,7 +71,7 @@ export default function UnderstandingNdisPage(): React.ReactElement {
     <main className="min-h-screen bg-zinc-50 dark:bg-zinc-950 text-zinc-900 dark:text-white">
       {/* Hero – same treatment as About: image + purple-brand (footer) overlays */}
       <section className="relative min-h-[95vh] md:min-h-[92vh] flex items-center pt-24 md:pt-28 pb-64 md:pb-24 overflow-hidden">
-        <div className="absolute inset-0 z-0 bg-purple-brand overflow-hidden">
+        <div className="absolute inset-0 z-0 bg-purple-brand dark:bg-zinc-950 overflow-hidden">
           <motion.div
             initial={{ opacity: 0, scale: 1.05 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -86,9 +86,9 @@ export default function UnderstandingNdisPage(): React.ReactElement {
               priority
               sizes="100vw"
             />
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-purple-brand/90 dark:from-black/80 dark:via-black/40 dark:to-purple-brand" />
-            <div className="absolute inset-0 bg-gradient-to-r from-purple-brand/80 via-purple-brand/30 to-transparent" aria-hidden />
-            <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-purple-brand/20 blur-[120px] rounded-full" />
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-purple-brand/90 dark:from-black/80 dark:via-black/40 dark:to-zinc-950" />
+            <div className="absolute inset-0 bg-gradient-to-r from-purple-brand/80 via-purple-brand/30 to-transparent dark:from-zinc-900/80 dark:via-zinc-900/30 dark:to-transparent" aria-hidden />
+            <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-purple-brand/20 dark:bg-zinc-800/40 blur-[120px] rounded-full" />
             <div className="absolute bottom-1/4 left-1/4 w-96 h-96 bg-primary/10 blur-[120px] rounded-full" />
           </motion.div>
         </div>

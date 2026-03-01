@@ -49,7 +49,7 @@ export function Header(): React.ReactElement {
         "fixed top-0 left-0 right-0 transition-all duration-300 border-b",
         mobileOpen ? "z-[1000]" : "z-[100]",
         scrolled
-          ? "bg-white/90 dark:bg-purple-brand backdrop-blur-md border-purple-brand/20 dark:border-white/10 py-3"
+          ? "bg-white/90 dark:bg-zinc-900 backdrop-blur-md border-purple-brand/20 dark:border-zinc-800 py-3"
           : "bg-transparent border-transparent py-5"
       )}
     >

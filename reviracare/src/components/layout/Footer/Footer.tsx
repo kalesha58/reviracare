@@ -46,7 +46,7 @@ export function Footer(): React.ReactElement {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-purple-brand text-white border-t border-white/10">
+    <footer className="bg-secondary text-secondary-foreground border-t border-white/10 dark:border-border">
       <Container>
         {/* Main 3-column content */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 lg:gap-14 pt-16 pb-14 lg:pt-20 lg:pb-16">
