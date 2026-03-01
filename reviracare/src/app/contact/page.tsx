@@ -18,7 +18,7 @@ const CONTACT_INFO = [
     title: "Call Us",
     value: "02 8860 6462",
     description: "Available Mon-Fri, 9am - 5pm",
-    icon: <Phone className="w-6 h-6 text-primary" />,
+    icon: <Phone className="w-6 h-6 text-purple-brand dark:text-purple-200" />,
     link: "tel:0288606462"
   },
   {
@@ -32,7 +32,7 @@ const CONTACT_INFO = [
     title: "Our Location",
     value: "Norwest, NSW",
     description: "Level 5, Nexus Building",
-    icon: <MapPin className="w-6 h-6 text-primary" />,
+    icon: <MapPin className="w-6 h-6 text-purple-brand dark:text-purple-200" />,
     link: "https://www.google.com/maps/search/?api=1&query=Level+5,+Nexus+Norwest,+4+Columbia+Ct,+Norwest+NSW+2153"
   }
 ];
@@ -71,8 +71,8 @@ export default function ContactPage() {
             transition={{ duration: 0.8 }}
             className="max-w-3xl"
           >
-            <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary section-label uppercase tracking-[0.2em] mb-6 backdrop-blur-md">
-              <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
+            <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-purple-brand/10 border border-purple-brand/20 text-purple-brand dark:text-purple-200 section-label uppercase tracking-[0.2em] mb-6 backdrop-blur-md">
+              <span className="w-1.5 h-1.5 rounded-full bg-purple-brand dark:bg-purple-200 animate-pulse" />
               Get In Touch
             </div>
             <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 mb-6">
@@ -86,7 +86,7 @@ export default function ContactPage() {
               <div>
                 <h1 className="hero-title tracking-tight leading-tight text-white">
                   Feel Free To{" "}
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-white to-purple-brand">Contact Us</span>
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-brand via-white to-purple-brand">Contact Us</span>
                 </h1>
               </div>
             </div>
@@ -154,7 +154,7 @@ export default function ContactPage() {
 
               <div className="flex flex-wrap gap-6 pt-4">
                 <div className="flex items-center gap-3">
-                  <div className="w-2 h-2 rounded-full bg-primary" />
+                  <div className="w-2 h-2 rounded-full bg-purple-brand" />
                   <span className="text-xs font-bold uppercase tracking-widest text-zinc-500">Accessible Building</span>
                 </div>
                 <div className="flex items-center gap-3">
@@ -177,24 +177,24 @@ export default function ContactPage() {
                     <div className="space-y-2">
                       <label className="text-sm font-bold text-zinc-500 uppercase tracking-widest">Full Name</label>
                       <div className="relative group">
-                        <User className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-400 group-focus-within:text-primary transition-colors" />
+                        <User className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-400 group-focus-within:text-purple-brand dark:group-focus-within:text-purple-200 transition-colors" />
                         <input
                           required
                           type="text"
                           placeholder="Your full name"
-                          className="w-full bg-zinc-50 dark:bg-zinc-950 border border-zinc-200 dark:border-white/10 rounded-2xl px-12 py-4 text-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all text-zinc-900 dark:text-white"
+                          className="w-full bg-zinc-50 dark:bg-zinc-950 border border-zinc-200 dark:border-white/10 rounded-2xl px-12 py-4 text-sm focus:border-purple-brand focus:ring-1 focus:ring-purple-brand outline-none transition-all text-zinc-900 dark:text-white"
                         />
                       </div>
                     </div>
                     <div className="space-y-2">
                       <label className="text-sm font-bold text-zinc-500 uppercase tracking-widest">Email Address</label>
                       <div className="relative group">
-                        <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-400 group-focus-within:text-primary transition-colors" />
+                        <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-400 group-focus-within:text-purple-brand dark:group-focus-within:text-purple-200 transition-colors" />
                         <input
                           required
                           type="email"
                           placeholder="name@email.com"
-                          className="w-full bg-zinc-50 dark:bg-zinc-950 border border-zinc-200 dark:border-white/10 rounded-2xl px-12 py-4 text-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all text-zinc-900 dark:text-white"
+                          className="w-full bg-zinc-50 dark:bg-zinc-950 border border-zinc-200 dark:border-white/10 rounded-2xl px-12 py-4 text-sm focus:border-purple-brand focus:ring-1 focus:ring-purple-brand outline-none transition-all text-zinc-900 dark:text-white"
                         />
                       </div>
                     </div>
@@ -203,12 +203,12 @@ export default function ContactPage() {
                   <div className="space-y-2">
                     <label className="text-sm font-bold text-zinc-500 uppercase tracking-widest">Subject</label>
                     <div className="relative group">
-                      <Shield className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-400 group-focus-within:text-primary transition-colors" />
+                      <Shield className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-400 group-focus-within:text-purple-brand dark:group-focus-within:text-purple-200 transition-colors" />
                       <input
                         required
                         type="text"
                         placeholder="Inquiry about services"
-                        className="w-full bg-zinc-50 dark:bg-zinc-950 border border-zinc-200 dark:border-white/10 rounded-2xl px-12 py-4 text-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all text-zinc-900 dark:text-white"
+                        className="w-full bg-zinc-50 dark:bg-zinc-950 border border-zinc-200 dark:border-white/10 rounded-2xl px-12 py-4 text-sm focus:border-purple-brand focus:ring-1 focus:ring-purple-brand outline-none transition-all text-zinc-900 dark:text-white"
                       />
                     </div>
                   </div>
@@ -216,12 +216,12 @@ export default function ContactPage() {
                   <div className="space-y-2">
                     <label className="text-sm font-bold text-zinc-500 uppercase tracking-widest">Your Message</label>
                     <div className="relative group">
-                      <MessageSquare className="absolute left-4 top-5 w-4 h-4 text-zinc-400 group-focus-within:text-primary transition-colors" />
+                      <MessageSquare className="absolute left-4 top-5 w-4 h-4 text-zinc-400 group-focus-within:text-purple-brand dark:group-focus-within:text-purple-200 transition-colors" />
                       <textarea
                         required
                         rows={6}
                         placeholder="Tell us how we can help you..."
-                        className="w-full bg-zinc-50 dark:bg-zinc-950 border border-zinc-200 dark:border-white/10 rounded-2xl px-12 py-5 text-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all text-zinc-900 dark:text-white resize-none"
+                        className="w-full bg-zinc-50 dark:bg-zinc-950 border border-zinc-200 dark:border-white/10 rounded-2xl px-12 py-5 text-sm focus:border-purple-brand focus:ring-1 focus:ring-purple-brand outline-none transition-all text-zinc-900 dark:text-white resize-none"
                       />
                     </div>
                   </div>
@@ -230,7 +230,7 @@ export default function ContactPage() {
                     <button
                       disabled={formStatus === "submitting"}
                       type="submit"
-                      className="w-full py-5 bg-zinc-900 dark:bg-primary text-white rounded-[1.5rem] font-bold text-sm lg:text-base hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-3 disabled:opacity-50 disabled:scale-100 shadow-xl shadow-black/10"
+                      className="w-full py-5 bg-zinc-900 dark:bg-purple-brand text-white rounded-[1.5rem] font-bold text-sm lg:text-base hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-3 disabled:opacity-50 disabled:scale-100 shadow-xl shadow-black/10"
                     >
                       {formStatus === "submitting" ? (
                         <>
@@ -250,7 +250,7 @@ export default function ContactPage() {
                     <motion.div
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
-                      className="p-4 rounded-xl bg-primary/10 border border-primary/20 flex items-center gap-3 text-primary dark:text-primary font-bold text-sm"
+                      className="p-4 rounded-xl bg-purple-brand/10 border border-purple-brand/20 flex items-center gap-3 text-purple-brand dark:text-purple-200 font-bold text-sm"
                     >
                       <CheckCircle2 className="w-5 h-5" />
                       Message sent successfully! We'll be in touch soon.
@@ -267,8 +267,8 @@ export default function ContactPage() {
       <Section className="pb-32">
         <Container>
           <div className="max-w-4xl mx-auto text-center">
-            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-8">
-              <Heart className="w-8 h-8 text-primary fill-primary/20" />
+            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-purple-brand/10 mb-8">
+              <Heart className="w-8 h-8 text-purple-brand dark:text-purple-200 fill-purple-brand/20" />
             </div>
             <h2 className="text-2xl md:text-3xl font-bold text-zinc-900 dark:text-white mb-8 italic leading-relaxed">
               "Revira Care provides comprehensive services tailored to individuals with disabilities, ensuring accessibility, independence, and empowerment."

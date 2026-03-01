@@ -33,12 +33,12 @@
   --green-700: #15803d;
 
   /* Semantic Variables - reference palette above */
-  --primary: var(--green-600);
+  --primary: var(--purple-600);
   --primary-foreground: #ffffff;
   --secondary: var(--purple-brand);
   --secondary-foreground: #ffffff;
-  --accent: var(--green-100);
-  --accent-foreground: var(--green-700);
+  --accent: var(--purple-100);
+  --accent-foreground: var(--purple-700);
   --muted: #f1f5f9;
   --muted-foreground: #64748b;
   --border: #e2e8f0;
@@ -88,12 +88,12 @@
 .dark {
   --background: #09090b;
   --foreground: #f8fafc;
-  --primary: var(--green-500);
+  --primary: var(--purple-500);
   --primary-foreground: #ffffff;
   --secondary: var(--purple-brand);
   --secondary-foreground: #ffffff;
-  --accent: #064e3b;
-  --accent-foreground: #dcfce7;
+  --accent: var(--purple-900);
+  --accent-foreground: var(--purple-200);
   --muted: #1e293b;
   --muted-foreground: #94a3b8;
   --border: #1e293b;

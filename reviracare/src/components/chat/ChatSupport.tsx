@@ -157,7 +157,7 @@ export function ChatSupport({ welcomeMessage }: IChatSupportProps): React.ReactE
             {/* Header */}
             <div className="flex items-center justify-between shrink-0 px-4 py-3 border-b border-[var(--border)] bg-[var(--muted)]/50 dark:bg-zinc-900/50 rounded-t-2xl sm:rounded-t-2xl">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-[var(--primary)] text-[var(--primary-foreground)] flex items-center justify-center">
+                <div className="w-10 h-10 rounded-full bg-purple-brand text-white flex items-center justify-center">
                   <MessageCircle className="w-5 h-5" />
                 </div>
                 <div>
@@ -194,7 +194,7 @@ export function ChatSupport({ welcomeMessage }: IChatSupportProps): React.ReactE
                     className={cn(
                       "max-w-[85%] sm:max-w-[80%] rounded-2xl px-4 py-2.5 text-sm",
                       msg.role === "user"
-                        ? "bg-[var(--primary)] text-[var(--primary-foreground)] rounded-br-md"
+                        ? "bg-purple-brand text-white rounded-br-md"
                         : "bg-[var(--muted)] text-[var(--foreground)] rounded-bl-md border border-[var(--border)]"
                     )}
                   >
@@ -216,7 +216,7 @@ export function ChatSupport({ welcomeMessage }: IChatSupportProps): React.ReactE
                   className={cn(
                     "flex-1 min-h-[44px] max-h-28 resize-none rounded-xl px-4 py-3 text-sm",
                     "bg-[var(--muted)] border border-[var(--border)] text-[var(--foreground)]",
-                    "placeholder:text-[var(--muted-foreground)] focus:outline-none focus:ring-2 focus:ring-[var(--primary)] focus:border-transparent"
+                    "placeholder:text-[var(--muted-foreground)] focus:outline-none focus:ring-2 focus:ring-purple-brand focus:border-transparent"
                   )}
                   aria-label="Message input"
                 />
@@ -226,7 +226,7 @@ export function ChatSupport({ welcomeMessage }: IChatSupportProps): React.ReactE
                   disabled={!input.trim()}
                   className={cn(
                     "shrink-0 w-11 h-11 rounded-xl flex items-center justify-center transition-colors",
-                    "bg-[var(--primary)] text-[var(--primary-foreground)]",
+                    "bg-purple-brand text-white",
                     "hover:opacity-90 disabled:opacity-40 disabled:cursor-not-allowed"
                   )}
                   aria-label="Send message"
@@ -254,8 +254,8 @@ export function ChatSupport({ welcomeMessage }: IChatSupportProps): React.ReactE
             onClick={() => setOpen(true)}
             className={cn(
               "fixed bottom-6 right-6 z-[100] w-14 h-14 rounded-full shadow-lg flex items-center justify-center",
-              "bg-[var(--primary)] text-[var(--primary-foreground)]",
-              "hover:scale-105 active:scale-95 transition-transform focus:outline-none focus:ring-2 focus:ring-[var(--primary)] focus:ring-offset-2 focus:ring-offset-[var(--background)]"
+              "bg-purple-brand text-white",
+              "hover:scale-105 active:scale-95 transition-transform focus:outline-none focus:ring-2 focus:ring-purple-brand focus:ring-offset-2 focus:ring-offset-[var(--background)]"
             )}
             aria-label="Open support chat"
             whileHover={{ scale: 1.05 }}

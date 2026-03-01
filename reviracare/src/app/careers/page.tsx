@@ -17,7 +17,7 @@ import { useState, useRef } from "react";
 const CLEARANCES = [
   {
     title: "NDIS Worker Check",
-    icon: <ShieldCheck className="w-8 h-8 text-primary" />,
+    icon: <ShieldCheck className="w-8 h-8 text-purple-brand dark:text-purple-200" />,
     cost: "$105",
     location: "Service NSW",
     description: "Essential clearance for all NDIS support workers."
@@ -116,13 +116,13 @@ export default function CareersPage() {
             transition={{ duration: 0.8 }}
             className="max-w-3xl"
           >
-            <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary section-label font-bold uppercase tracking-[0.2em] mb-6 backdrop-blur-md">
-              <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
+            <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-purple-brand/10 border border-purple-brand/20 text-purple-brand dark:text-purple-200 section-label font-bold uppercase tracking-[0.2em] mb-6 backdrop-blur-md">
+              <span className="w-1.5 h-1.5 rounded-full bg-purple-brand dark:bg-purple-200 animate-pulse" />
               Join Our Care Team
             </div>
             <h1 className="hero-title font-extrabold mb-6 tracking-tight leading-[1.05] text-white">
               Make a <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-white to-purple-brand">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-brand via-white to-purple-brand">
                 Meaningful Difference
               </span>
             </h1>
@@ -130,7 +130,7 @@ export default function CareersPage() {
               Joining Revira Care Australia offers an exciting opportunity to empower individuals with disabilities and foster a more inclusive community.
             </p>
             <div className="flex flex-wrap gap-4">
-              <a href="#how-to-apply" className="px-8 py-4 bg-primary text-white rounded-2xl font-bold text-sm hover:opacity-90 transition-all hover:scale-105 inline-flex items-center gap-2 shadow-xl shadow-primary/20 group">
+              <a href="#how-to-apply" className="px-8 py-4 bg-purple-brand text-white rounded-2xl font-bold text-sm hover:opacity-90 transition-all hover:scale-105 inline-flex items-center gap-2 shadow-xl shadow-purple-brand/20 group">
                 Begin Your Journey
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </a>
@@ -156,7 +156,7 @@ export default function CareersPage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <h2 className="section-label text-primary uppercase tracking-[0.3em] mb-4">The Revira Standard</h2>
+              <h2 className="section-label text-purple-brand dark:text-purple-200 uppercase tracking-[0.3em] mb-4">The Revira Standard</h2>
               <h3 className="section-title mb-6 text-zinc-900 dark:text-white leading-tight">Focusing on Passion, <br />Not Just Qualifications</h3>
               <p className="text-zinc-600 dark:text-zinc-400 text-lg leading-relaxed mb-8">
                 While holding a <strong>Certificate IV in Disability</strong> is advantageous, it is not a prerequisite for this role. We welcome candidates from diverse backgrounds who are passionate about supporting and empowering others.
@@ -164,9 +164,9 @@ export default function CareersPage() {
 
               <div className="space-y-4">
                 {[
-                  { title: "Empathy & Reliability", icon: <Heart className="w-5 h-5 text-primary" /> },
+                  { title: "Empathy & Reliability", icon: <Heart className="w-5 h-5 text-purple-brand dark:text-purple-200" /> },
                   { title: "Strong Commitment", icon: <Award className="w-5 h-5 text-secondary" /> },
-                  { title: "Inclusive Environment", icon: <UsersIcon className="w-5 h-5 text-primary" /> }
+                  { title: "Inclusive Environment", icon: <UsersIcon className="w-5 h-5 text-purple-brand dark:text-purple-200" /> }
                 ].map((item, i) => (
                   <div key={i} className="flex items-center gap-3.5 p-4 rounded-xl bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-white/5 shadow-sm">
                     <div className="w-10 h-10 rounded-lg bg-zinc-50 dark:bg-zinc-950 flex items-center justify-center">
@@ -192,7 +192,7 @@ export default function CareersPage() {
                   className="object-cover"
                 />
               </div>
-              <div className="absolute -bottom-10 -right-10 bg-primary p-8 rounded-3xl shadow-2xl hidden md:block max-w-[280px]">
+              <div className="absolute -bottom-10 -right-10 bg-purple-brand p-8 rounded-3xl shadow-2xl hidden md:block max-w-[280px]">
                 <Rocket className="w-8 h-8 text-white mb-4" />
                 <h4 className="text-white font-bold mb-2">Build Your Career</h4>
                 <p className="text-green-50/80 text-xs leading-relaxed">
@@ -208,9 +208,9 @@ export default function CareersPage() {
       <Section id="how-to-apply" className="bg-zinc-100 dark:bg-zinc-900/50 py-24 border-y border-zinc-200 dark:border-white/5">
         <Container>
           <div className="flex flex-col items-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-blue-500 font-bold uppercase text-[10px] tracking-[0.3em] mb-6">Mandatory Steps</h2>
+            <h2 className="text-purple-brand dark:text-purple-200 font-bold uppercase text-[10px] tracking-[0.3em] mb-6">Mandatory Steps</h2>
             <div className="flex flex-row items-center justify-center gap-5 md:gap-6 mb-8 w-full flex-wrap sm:flex-nowrap">
-              <div className="shrink-0 p-3 md:p-4 bg-white dark:bg-zinc-800 rounded-2xl shadow-xl shadow-primary/5 border border-zinc-200 dark:border-white/5 transition-transform hover:scale-105">
+              <div className="shrink-0 p-3 md:p-4 bg-white dark:bg-zinc-800 rounded-2xl shadow-xl shadow-purple-brand/5 border border-zinc-200 dark:border-white/5 transition-transform hover:scale-105">
                 <BrandLogo
                   width={120}
                   height={42}
@@ -219,7 +219,7 @@ export default function CareersPage() {
               </div>
               <h3 className="text-2xl sm:text-3xl md:text-5xl font-extrabold tracking-tight text-zinc-900 dark:text-white leading-[1.15] text-center sm:text-left">
                 Pre-Employment{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-purple-500 to-secondary dark:from-primary dark:to-purple-400">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-brand via-purple-500 to-secondary dark:from-purple-brand dark:to-purple-200">
                   Requirements
                 </span>
               </h3>
@@ -246,7 +246,7 @@ export default function CareersPage() {
                 <p className="text-zinc-500 dark:text-zinc-400 text-sm mb-6 leading-relaxed">{clearance.description}</p>
                 <div className="pt-6 border-t border-zinc-100 dark:border-white/5 flex items-center justify-between">
                   <div className="text-xs font-bold text-zinc-400 uppercase tracking-widest">{clearance.location}</div>
-                  <div className="text-sm font-black text-primary">{clearance.cost}</div>
+                  <div className="text-sm font-black text-purple-brand dark:text-purple-200">{clearance.cost}</div>
                 </div>
               </motion.div>
             ))}
@@ -270,15 +270,15 @@ export default function CareersPage() {
                 </div>
                 <div className="space-y-4 mb-8">
                   {ONLINE_COURSES.map((course, i) => (
-                    <div key={i} className="flex items-center gap-4 p-4 rounded-2xl bg-zinc-50 dark:bg-zinc-900 border border-border group hover:border-primary/30 transition-all">
-                      <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+                    <div key={i} className="flex items-center gap-4 p-4 rounded-2xl bg-zinc-50 dark:bg-zinc-900 border border-border group hover:border-purple-brand/30 transition-all">
+                      <div className="w-8 h-8 rounded-full bg-purple-brand/10 flex items-center justify-center text-purple-brand dark:text-purple-200">
                         <CheckCircle2 className="w-5 h-5" />
                       </div>
                       <div className="flex-1">
                         <div className="text-sm font-bold">{course.title}</div>
                         <div className="text-[10px] text-zinc-500 uppercase font-bold tracking-tighter">{course.provider} Provided</div>
                       </div>
-                      <div className="text-[10px] font-black uppercase text-primary">{course.status}</div>
+                      <div className="text-[10px] font-black uppercase text-purple-brand dark:text-purple-200">{course.status}</div>
                     </div>
                   ))}
                 </div>
@@ -333,7 +333,7 @@ export default function CareersPage() {
                           <ul className="space-y-2">
                             {REQUIRED_DOCS.slice(0, 5).map(doc => (
                               <li key={doc} className="text-xs flex items-center gap-2">
-                                <Check className="w-3 h-3 text-primary" /> {doc}
+                                <Check className="w-3 h-3 text-purple-brand dark:text-purple-200" /> {doc}
                               </li>
                             ))}
                             <li className="text-[10px] text-white/40 mt-2">+ 3 Identifications & First Aid</li>
@@ -362,7 +362,7 @@ export default function CareersPage() {
                           <User className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-400" />
                           <input
                             type="text"
-                            className="w-full bg-zinc-50 dark:bg-zinc-950 border border-zinc-200 dark:border-white/10 rounded-xl px-12 py-3 text-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all text-zinc-900 dark:text-white"
+                            className="w-full bg-zinc-50 dark:bg-zinc-950 border border-zinc-200 dark:border-white/10 rounded-xl px-12 py-3 text-sm focus:border-purple-brand focus:ring-1 focus:ring-purple-brand outline-none transition-all text-zinc-900 dark:text-white"
                             placeholder="John Doe"
                           />
                         </div>
@@ -373,7 +373,7 @@ export default function CareersPage() {
                           <Phone className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-400" />
                           <input
                             type="tel"
-                            className="w-full bg-zinc-50 dark:bg-zinc-950 border border-zinc-200 dark:border-white/10 rounded-xl px-12 py-3 text-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all text-zinc-900 dark:text-white"
+                            className="w-full bg-zinc-50 dark:bg-zinc-950 border border-zinc-200 dark:border-white/10 rounded-xl px-12 py-3 text-sm focus:border-purple-brand focus:ring-1 focus:ring-purple-brand outline-none transition-all text-zinc-900 dark:text-white"
                             placeholder="+61 400 000 000"
                           />
                         </div>
@@ -421,7 +421,7 @@ export default function CareersPage() {
                       <label className="text-xs font-bold text-zinc-500 uppercase tracking-widest">Document Uploads (Max 10 files, PDF preferred)</label>
                       <div
                         onClick={() => fileInputRef.current?.click()}
-                        className="border-2 border-dashed border-zinc-200 dark:border-white/10 rounded-2xl p-8 text-center cursor-pointer hover:border-primary/50 hover:bg-zinc-50 dark:hover:bg-white/5 transition-all group"
+                        className="border-2 border-dashed border-zinc-200 dark:border-white/10 rounded-2xl p-8 text-center cursor-pointer hover:border-purple-brand/50 hover:bg-zinc-50 dark:hover:bg-white/5 transition-all group"
                       >
                         <input
                           type="file"
@@ -431,8 +431,8 @@ export default function CareersPage() {
                           accept=".pdf,.jpg,.jpeg,.png"
                           onChange={handleFileChange}
                         />
-                        <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-                          <Upload className="w-6 h-6 text-primary" />
+                        <div className="w-12 h-12 bg-purple-brand/10 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                          <Upload className="w-6 h-6 text-purple-brand dark:text-purple-200" />
                         </div>
                         <p className="text-sm font-bold mb-1">Click to upload or drag & drop</p>
                         <p className="text-[10px] text-zinc-500 font-medium">NDIS Checks, WWCC, First Aid, CPR, ID (Max 10MB per file)</p>
@@ -455,7 +455,7 @@ export default function CareersPage() {
                                 className="flex items-center justify-between p-3 bg-zinc-50 dark:bg-white/5 rounded-xl border border-border"
                               >
                                 <div className="flex items-center gap-3">
-                                  <FileText className="w-4 h-4 text-primary" />
+                                  <FileText className="w-4 h-4 text-purple-brand dark:text-purple-200" />
                                   <span className="text-xs font-bold truncate max-w-[200px] text-zinc-900 dark:text-zinc-200">{file.name}</span>
                                   <span className="text-[10px] text-zinc-400">{(file.size / (1024 * 1024)).toFixed(2)}MB</span>
                                 </div>
@@ -474,7 +474,7 @@ export default function CareersPage() {
 
                     <button
                       type="button"
-                      className="w-full py-4 bg-primary text-white rounded-2xl font-bold text-sm hover:scale-[1.02] transition-all shadow-xl shadow-primary/10 active:scale-[0.98]"
+                      className="w-full py-4 bg-purple-brand text-white rounded-2xl font-bold text-sm hover:scale-[1.02] transition-all shadow-xl shadow-purple-brand/10 active:scale-[0.98]"
                     >
                       Submit Application
                     </button>

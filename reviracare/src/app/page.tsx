@@ -12,6 +12,7 @@ import { NDISProviderSection } from "@/components/sections/NDISProviderSection";
 import { WhyChooseSection } from "@/components/sections/WhyChooseSection";
 import { LatestNewsSection } from "@/components/sections/LatestNewsSection";
 import { SupportConfidenceSection } from "@/components/sections/SupportConfidenceSection";
+import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
 
 const CAROUSEL_IMAGES = [
   "/images/hero/Hero-1.jpg",
@@ -21,7 +22,7 @@ const CAROUSEL_IMAGES = [
 
 const HERO_CONTENT = [
   {
-    title: "Tailored Care For Every Journey",
+    title: "And Care Every Journey Better Tomorrow",
     description: "Revira Care offers personalized support services designed to meet the unique needs of individuals with disabilities. Our goal is to foster independence, confidence, and a better quality of life.",
   },
   {
@@ -89,7 +90,7 @@ const BADGES = [
     content: (
       <div className="flex items-center justify-start gap-3 sm:gap-4 bg-white/95 dark:bg-zinc-900/90 backdrop-blur-xl px-4 sm:px-5 py-2 rounded-2xl border border-zinc-200 dark:border-white/10 shadow-xl w-full min-w-[140px] max-w-[200px] sm:max-w-[240px] lg:w-64 h-[64px] sm:h-[72px]">
         <div className="w-10 sm:w-12 flex shrink-0 items-center justify-center">
-          <div className="text-lg sm:text-xl font-black text-primary leading-none">24/7</div>
+          <div className="text-lg sm:text-xl font-black text-purple-brand dark:text-purple-200 leading-none">24/7</div>
         </div>
         <div className="text-[10px] sm:text-xs font-extrabold text-zinc-800 dark:text-zinc-200 uppercase leading-snug">Support <br /> Services</div>
       </div>
@@ -148,8 +149,8 @@ export default function HomePage(): React.ReactElement {
                   transition={{ duration: 0.6, ease: "easeOut" }}
                   className="w-full min-w-0"
                 >
-                  <div className="section-label inline-flex items-center gap-2 px-2.5 sm:px-3 py-1.5 rounded-full bg-white/95 dark:bg-white/5 border border-zinc-200 dark:border-white/10 text-emerald-600 dark:text-emerald-400 font-bold uppercase tracking-[0.2em] mb-4 sm:mb-6 shadow-sm text-[10px] sm:text-xs">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                  <div className="section-label inline-flex items-center gap-2 px-2.5 sm:px-3 py-1.5 rounded-full bg-white/95 dark:bg-white/5 border border-zinc-200 dark:border-white/10 text-purple-600 dark:text-purple-400 font-bold uppercase tracking-[0.2em] mb-4 sm:mb-6 shadow-sm text-[10px] sm:text-xs">
+                    <span className="w-1.5 h-1.5 rounded-full bg-purple-500 animate-pulse" />
                     Trusted Healthcare Partner
                   </div>
                   <h1 className="hero-title font-extrabold tracking-tight text-white leading-[1.15] mb-4 sm:mb-6 drop-shadow-[0_1px_2px_rgba(0,0,0,0.3)] break-words">
@@ -202,7 +203,7 @@ export default function HomePage(): React.ReactElement {
             transition={{ delay: 1.2, duration: 1 }}
             className="flex flex-col items-center gap-2"
           >
-            <div className="w-px h-8 bg-gradient-to-b from-emerald-500 to-transparent" />
+            <div className="w-px h-8 bg-gradient-to-b from-purple-500 to-transparent" />
             <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-white/90 dark:text-zinc-400">Scroll</span>
           </motion.div>
 
@@ -244,8 +245,8 @@ export default function HomePage(): React.ReactElement {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-16 items-start">
             {/* Left: Intro + highlights */}
             <div className="lg:col-span-7">
-              <span className="section-label inline-flex items-center gap-2 text-primary uppercase tracking-[0.2em] mb-4">
-                <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
+              <span className="section-label inline-flex items-center gap-2 text-purple-brand dark:text-purple-200 uppercase tracking-[0.2em] mb-4">
+                <span className="w-1.5 h-1.5 rounded-full bg-purple-brand dark:bg-purple-200 animate-pulse" />
                 Why Revira Care
               </span>
               <h2 className="section-title text-foreground mb-6 leading-tight">
@@ -272,8 +273,8 @@ export default function HomePage(): React.ReactElement {
                   <CheckCircle2 className="w-5 h-5 text-primary" />
                 </div>
                 <div>
-                  <span className="block font-semibold text-foreground body-sm">Government Registered Provider</span>
-                  <span className="block caption text-muted-foreground uppercase tracking-wider">NDIS Quality & Safeguards</span>
+                  <span className="block font-semibold text-purple-brand dark:text-purple-200 body-sm">Government Registered Provider</span>
+                  <span className="block caption text-purple-brand/80 dark:text-purple-200/90 uppercase tracking-wider">NDIS Quality & Safeguards</span>
                 </div>
               </div>
             </div>
@@ -304,8 +305,8 @@ export default function HomePage(): React.ReactElement {
               >
                 <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-full -translate-y-1/2 translate-x-1/2 group-hover:scale-150 transition-transform duration-500" aria-hidden />
                 <div className="relative">
-                  <span className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-primary tracking-tight">24/7</span>
-                  <p className="caption text-primary/80 uppercase tracking-wider mt-2">Available Support</p>
+                  <span className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-purple-brand dark:text-purple-200 tracking-tight">24/7</span>
+                  <p className="caption text-purple-brand/80 dark:text-purple-200/90 uppercase tracking-wider mt-2">Available Support</p>
                 </div>
                 <p className="body-sm text-slate-600 dark:text-slate-300 mt-3 sm:mt-4 relative">
                   Round-the-clock availability so you’re never without support when it matters.
@@ -315,6 +316,9 @@ export default function HomePage(): React.ReactElement {
           </div>
         </Container>
       </Section>
+
+      {/* Google reviews testimonials — above footer */}
+      <TestimonialsSection />
     </main>
   );
 }

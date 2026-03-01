@@ -86,15 +86,15 @@ export function Header(): React.ReactElement {
                 className={cn(
                   "nav-link px-4 py-2 rounded-full transition-colors relative",
                   isActive
-                    ? "text-primary dark:text-primary font-bold"
-                    : "text-slate-900 dark:text-zinc-100 hover:text-primary dark:hover:text-primary hover:bg-primary/5 dark:hover:bg-primary/10"
+                    ? "text-purple-brand dark:text-purple-200 font-bold"
+                    : "text-slate-900 dark:text-zinc-100 hover:text-purple-brand dark:hover:text-purple-200 hover:bg-purple-brand/5 dark:hover:bg-purple-brand/10"
                 )}
               >
                 {link.label}
                 {isActive && (
                   <motion.div
                     layoutId="active-nav"
-                    className="absolute inset-0 bg-primary/5 dark:bg-primary/10 rounded-full -z-10"
+                    className="absolute inset-0 bg-purple-brand/5 dark:bg-purple-brand/10 rounded-full -z-10"
                     transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
                   />
                 )}
@@ -108,7 +108,7 @@ export function Header(): React.ReactElement {
           <ThemeToggle />
           <Link
             href="/contact"
-            className="nav-link px-6 py-2.5 bg-primary text-white rounded-full hover:opacity-90 transition-opacity flex items-center gap-2 group shadow-lg shadow-primary/20 font-bold"
+            className="nav-link px-6 py-2.5 bg-purple-brand text-white rounded-full hover:opacity-90 transition-opacity flex items-center gap-2 group shadow-lg shadow-purple-brand/20 font-bold"
           >
             Get Started
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -144,7 +144,7 @@ export function Header(): React.ReactElement {
                 <div className="absolute top-6 right-6 flex items-center gap-4 z-10">
                   <ThemeToggle />
                   <button
-                    className="p-2 text-slate-900 dark:text-white hover:bg-primary/10 rounded-full transition-colors"
+                    className="p-2 text-slate-900 dark:text-white hover:bg-purple-brand/10 rounded-full transition-colors"
                     onClick={() => setMobileOpen(false)}
                   >
                     <X className="w-8 h-8" />
@@ -175,7 +175,7 @@ export function Header(): React.ReactElement {
                   <Link
                     href="/contact"
                     onClick={() => setMobileOpen(false)}
-                    className="w-full py-4 bg-primary text-white rounded-2xl font-bold flex items-center justify-center gap-2 shadow-xl shadow-primary/20 active:scale-[0.98] transition-all"
+                    className="w-full py-4 bg-purple-brand text-white rounded-2xl font-bold flex items-center justify-center gap-2 shadow-xl shadow-purple-brand/20 active:scale-[0.98] transition-all"
                   >
                     Get Started
                     <ArrowRight className="w-5 h-5" />
@@ -240,14 +240,14 @@ function MobileNavItem({
             className={cn(
               "flex items-center justify-between w-full p-4 rounded-2xl transition-all duration-300",
               isExpanded
-                ? "bg-primary/5 dark:bg-primary/10 text-primary font-bold"
-                : "text-slate-900 dark:text-zinc-100 hover:bg-primary/5 dark:hover:bg-primary/10"
+                ? "bg-purple-brand/5 dark:bg-purple-brand/10 text-purple-brand dark:text-purple-200 font-bold"
+                : "text-slate-900 dark:text-zinc-100 hover:bg-purple-brand/5 dark:hover:bg-purple-brand/10"
             )}
           >
             <div className="flex items-center gap-4">
               <div className={cn(
                 "w-10 h-10 rounded-xl flex items-center justify-center transition-colors",
-                isExpanded ? "bg-primary text-white" : "bg-slate-100 dark:bg-purple-brand/50 text-slate-600 dark:text-white"
+                isExpanded ? "bg-purple-brand text-white" : "bg-slate-100 dark:bg-purple-brand/50 text-slate-600 dark:text-white"
               )}>
                 <Icon className="w-5 h-5" />
               </div>
@@ -288,7 +288,7 @@ function MobileNavItem({
                       >
                         <div className={cn(
                           "w-8 h-8 rounded-lg flex items-center justify-center transition-colors shrink-0",
-                          isChildActive ? "bg-primary text-white" : "bg-zinc-100 dark:bg-purple-brand/30 text-zinc-500 dark:text-white/80 group-hover:bg-primary/20 group-hover:text-primary"
+                          isChildActive ? "bg-purple-brand text-white" : "bg-zinc-100 dark:bg-purple-brand/30 text-zinc-500 dark:text-white/80 group-hover:bg-purple-brand/20 group-hover:text-purple-brand dark:group-hover:text-purple-200"
                         )}>
                           <SubIcon className="w-4 h-4" />
                         </div>
@@ -309,13 +309,13 @@ function MobileNavItem({
           className={cn(
             "flex items-center gap-4 p-4 rounded-2xl transition-all duration-300",
             isActive
-              ? "bg-primary/5 dark:bg-primary/10 text-primary font-bold"
-              : "text-slate-900 dark:text-zinc-100 hover:bg-primary/5 dark:hover:bg-primary/10"
+              ? "bg-purple-brand/5 dark:bg-purple-brand/10 text-purple-brand dark:text-purple-200 font-bold"
+              : "text-slate-900 dark:text-zinc-100 hover:bg-purple-brand/5 dark:hover:bg-purple-brand/10"
           )}
         >
           <div className={cn(
             "w-10 h-10 rounded-xl flex items-center justify-center transition-colors",
-            isActive ? "bg-primary text-white" : "bg-slate-100 dark:bg-purple-brand/50 text-slate-600 dark:text-white"
+            isActive ? "bg-purple-brand text-white" : "bg-slate-100 dark:bg-purple-brand/50 text-slate-600 dark:text-white"
           )}>
             <Icon className="w-5 h-5" />
           </div>
@@ -341,8 +341,8 @@ function NavDropdown({ link, isActive }: { link: (typeof NAV_LINKS)[number] & { 
         className={cn(
           "nav-link px-4 py-2 rounded-full transition-colors flex items-center gap-1.5",
           isActive
-            ? "text-primary dark:text-primary font-bold bg-primary/5 dark:bg-primary/10"
-            : "text-slate-900 dark:text-zinc-100 hover:text-primary dark:hover:text-primary hover:bg-primary/5 dark:hover:bg-primary/10"
+            ? "text-purple-brand dark:text-purple-200 font-bold bg-purple-brand/5 dark:bg-purple-brand/10"
+            : "text-slate-900 dark:text-zinc-100 hover:text-purple-brand dark:hover:text-purple-200 hover:bg-purple-brand/5 dark:hover:bg-purple-brand/10"
         )}
       >
         {link.label}
@@ -368,13 +368,13 @@ function NavDropdown({ link, isActive }: { link: (typeof NAV_LINKS)[number] & { 
                     className={cn(
                       "flex items-center gap-3 px-3 py-2.5 rounded-xl transition-all duration-200 group",
                       isChildActive
-                        ? "bg-primary/10 text-primary font-semibold"
-                        : "text-zinc-600 dark:text-white/80 hover:bg-primary/5 hover:text-primary dark:hover:text-primary"
+                        ? "bg-purple-brand/10 text-purple-brand dark:text-purple-200 font-semibold"
+                        : "text-zinc-600 dark:text-white/80 hover:bg-purple-brand/5 hover:text-purple-brand dark:hover:text-purple-200"
                     )}
                   >
                     <div className={cn(
                       "w-8 h-8 rounded-lg flex items-center justify-center transition-colors",
-                      isChildActive ? "bg-primary text-white" : "bg-zinc-100 dark:bg-purple-brand/30 text-zinc-500 dark:text-white/80 group-hover:bg-primary/20 group-hover:text-primary"
+                      isChildActive ? "bg-purple-brand text-white" : "bg-zinc-100 dark:bg-purple-brand/30 text-zinc-500 dark:text-white/80 group-hover:bg-purple-brand/20 group-hover:text-purple-brand dark:group-hover:text-purple-200"
                     )}>
                       <Icon className="w-4 h-4" />
                     </div>

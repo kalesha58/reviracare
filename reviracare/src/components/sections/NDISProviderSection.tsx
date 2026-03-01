@@ -88,7 +88,7 @@ export function NDISProviderSection(): React.ReactElement {
             </ul>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 px-6 py-3.5 bg-primary text-primary-foreground font-bold rounded-2xl hover:opacity-90 transition-opacity"
+              className="inline-flex items-center gap-2 px-6 py-3.5 bg-purple-brand text-primary-foreground font-bold rounded-2xl hover:opacity-90 transition-opacity"
             >
               Connect With Revira Care
               <ArrowRight className="w-5 h-5" />

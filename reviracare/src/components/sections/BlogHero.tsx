@@ -12,7 +12,7 @@ export function BlogHero() {
             {/* Background image – same pattern as home and about */}
             <div className="absolute inset-0 z-0 bg-white dark:bg-zinc-950 overflow-hidden">
                 <Image
-                    src="/images/hero/Hero-1.jpg"
+                    src="/images/hero/blog-hero.png"
                     alt="Insights and knowledge"
                     fill
                     priority

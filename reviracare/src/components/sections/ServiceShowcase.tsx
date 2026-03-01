@@ -112,7 +112,7 @@ export function ServiceShowcase() {
                     <motion.span
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        className="section-label text-primary uppercase tracking-[0.3em] block mb-4"
+                        className="section-label text-purple-brand dark:text-purple-brand uppercase tracking-[0.3em] block mb-4"
                     >
                         Explore Our Services
                     </motion.span>
@@ -122,7 +122,7 @@ export function ServiceShowcase() {
                         transition={{ delay: 0.1 }}
                         className="section-title text-foreground max-w-2xl leading-[1.1]"
                     >
-                        Our Support Services As A <span className="text-primary italic">Leading NDIS Provider</span>
+                        Our Support Services As A <span className="text-purple-brand italic">Leading NDIS Provider</span>
                     </motion.h2>
                 </div>
 
@@ -192,7 +192,7 @@ export function ServiceShowcase() {
                                                     </p>
                                                     <Link
                                                         href={`/services/${service.id}`}
-                                                        className="inline-flex items-center gap-2 text-white bg-primary/90 hover:bg-primary px-4 py-2 rounded-full font-bold text-sm hover:gap-4 transition-all shadow-lg"
+                                                        className="inline-flex items-center gap-2 text-white bg-purple-brand hover:opacity-90 px-4 py-2 rounded-full font-bold text-sm hover:gap-4 transition-all shadow-lg"
                                                     >
                                                         Learn More <ArrowRight className="w-4 h-4" />
                                                     </Link>
