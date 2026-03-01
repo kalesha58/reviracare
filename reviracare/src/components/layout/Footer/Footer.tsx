@@ -11,7 +11,7 @@ export function Footer(): React.ReactElement {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-gradient-to-b from-slate-100 to-slate-200/80 dark:from-zinc-950 dark:to-zinc-900 border-t border-slate-200 dark:border-white/5 pt-20 pb-10">
+    <footer className="bg-purple-brand text-white border-t border-white/10 pt-20 pb-10">
       <Container>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
           {/* Mission & Branding */}
@@ -22,21 +22,21 @@ export function Footer(): React.ReactElement {
                   src="/images/logo.png"
                   alt={SITE_NAME}
                   fill
-                  className="object-contain dark:brightness-0 dark:invert"
+                  className="object-contain brightness-0 invert"
                 />
               </div>
             </Link>
-            <p className="body-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
+            <p className="body-sm text-zinc-300 leading-relaxed">
               Our mission is to provide high-quality, person-centred care that empowers individuals with disabilities to lead fulfilling and independent lives.
             </p>
             <div className="flex items-center gap-4">
-              <a href="#" className="p-2 rounded-full bg-zinc-200 dark:bg-zinc-900 text-zinc-600 dark:text-zinc-400 hover:text-emerald-500 transition-colors">
+              <a href="#" className="p-2 rounded-full bg-white/5 text-zinc-400 hover:text-emerald-400 transition-colors">
                 <Facebook className="w-5 h-5" />
               </a>
-              <a href="#" className="p-2 rounded-full bg-zinc-200 dark:bg-zinc-900 text-zinc-600 dark:text-zinc-400 hover:text-emerald-500 transition-colors">
+              <a href="#" className="p-2 rounded-full bg-white/5 text-zinc-400 hover:text-emerald-400 transition-colors">
                 <Linkedin className="w-5 h-5" />
               </a>
-              <a href="#" className="p-2 rounded-full bg-zinc-200 dark:bg-zinc-900 text-zinc-600 dark:text-zinc-400 hover:text-emerald-500 transition-colors">
+              <a href="#" className="p-2 rounded-full bg-white/5 text-zinc-400 hover:text-emerald-400 transition-colors">
                 <Instagram className="w-5 h-5" />
               </a>
             </div>
@@ -44,29 +44,29 @@ export function Footer(): React.ReactElement {
 
           {/* Contact Info */}
           <div className="space-y-6">
-            <h4 className="footer-heading text-zinc-900 dark:text-white uppercase tracking-widest">Contact Us</h4>
+            <h4 className="footer-heading text-white uppercase tracking-widest">Contact Us</h4>
             <div className="space-y-4">
               <a href="tel:0288606462" className="flex items-start gap-3 group">
-                <div className="p-2 rounded-lg bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 group-hover:bg-emerald-500 group-hover:text-white transition-all">
+                <div className="p-2 rounded-lg bg-emerald-500/10 text-emerald-400 group-hover:bg-emerald-500 group-hover:text-white transition-all">
                   <Phone className="w-4 h-4" />
                 </div>
                 <div className="body-sm">
-                  <span className="block text-zinc-900 dark:text-white font-bold italic">Call Us Now</span>
-                  <span className="text-zinc-500 dark:text-zinc-400">02 8860 6462</span>
+                  <span className="block text-white font-bold italic">Call Us Now</span>
+                  <span className="text-zinc-400">02 8860 6462</span>
                 </div>
               </a>
               <div className="flex items-start gap-3">
-                <div className="p-2 rounded-lg bg-blue-500/10 text-blue-600 dark:text-blue-400">
+                <div className="p-2 rounded-lg bg-blue-500/10 text-blue-400">
                   <MapPin className="w-4 h-4" />
                 </div>
                 <div className="body-sm">
-                  <span className="block text-zinc-900 dark:text-white font-bold italic">Our Address</span>
-                  <address className="not-italic text-zinc-500 dark:text-zinc-400 leading-relaxed">
+                  <span className="block text-white font-bold italic">Our Address</span>
+                  <address className="not-italic text-zinc-400 leading-relaxed">
                     Level 5, Nexus Building,<br />
                     4 Columbia Court,<br />
                     Norwest NSW 2153 Australia
                   </address>
-                  <span className="block mt-2 caption text-zinc-400 uppercase">ABN: 38681225785</span>
+                  <span className="block mt-2 caption text-zinc-500 uppercase">ABN: 38681225785</span>
                 </div>
               </div>
             </div>
@@ -74,36 +74,36 @@ export function Footer(): React.ReactElement {
 
           {/* Operating Hours */}
           <div className="space-y-6">
-            <h4 className="footer-heading text-zinc-900 dark:text-white uppercase tracking-widest">Working Hours</h4>
+            <h4 className="footer-heading text-white uppercase tracking-widest">Working Hours</h4>
             <div className="space-y-4">
-              <div className="p-4 rounded-2xl bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-white/5">
+              <div className="p-4 rounded-2xl bg-white/5 border border-white/10">
                 <div className="flex items-center gap-3 mb-2">
-                  <Clock className="w-4 h-4 text-emerald-500" />
-                  <span className="text-sm font-bold text-zinc-900 dark:text-white italic">Office Hours</span>
+                  <Clock className="w-4 h-4 text-emerald-400" />
+                  <span className="text-sm font-bold text-white italic">Office Hours</span>
                 </div>
-              <p className="body-sm text-zinc-500 dark:text-zinc-400">Mon-Fri: 9 AM - 5 PM</p>
+                <p className="body-sm text-zinc-400">Mon-Fri: 9 AM - 5 PM</p>
               </div>
-              <div className="p-4 rounded-2xl bg-emerald-500/5 dark:bg-emerald-500/10 border border-emerald-500/10 dark:border-emerald-500/20">
+              <div className="p-4 rounded-2xl bg-emerald-500/10 border border-emerald-500/20">
                 <div className="flex items-center gap-3 mb-2">
-                  <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                  <span className="text-sm font-bold text-emerald-600 dark:text-emerald-400 italic">Service Hours</span>
+                  <div className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                  <span className="text-sm font-bold text-emerald-400 italic">Service Hours</span>
                 </div>
-                <p className="body-sm text-emerald-600/80 dark:text-emerald-400/80 font-bold">Available 24/7</p>
+                <p className="body-sm text-emerald-400 font-bold">Available 24/7</p>
               </div>
             </div>
           </div>
 
           {/* Quick Links */}
           <div className="space-y-6">
-            <h4 className="footer-heading text-zinc-900 dark:text-white uppercase tracking-widest">Company</h4>
+            <h4 className="footer-heading text-white uppercase tracking-widest">Company</h4>
             <nav className="flex flex-col gap-4">
-              <Link href="/services" className="body-sm text-zinc-600 dark:text-zinc-400 hover:text-emerald-500 transition-colors flex items-center gap-2">
+              <Link href="/services" className="body-sm text-zinc-300 hover:text-emerald-400 transition-colors flex items-center gap-2">
                 Services <ArrowRight className="w-3 h-3" />
               </Link>
-              <Link href="/about" className="body-sm text-zinc-600 dark:text-zinc-400 hover:text-emerald-500 transition-colors flex items-center gap-2">
+              <Link href="/about" className="body-sm text-zinc-300 hover:text-emerald-400 transition-colors flex items-center gap-2">
                 Our Mission <ArrowRight className="w-3 h-3" />
               </Link>
-              <Link href="/contact" className="body-sm text-zinc-600 dark:text-zinc-400 hover:text-emerald-500 transition-colors flex items-center gap-2">
+              <Link href="/contact" className="body-sm text-zinc-300 hover:text-emerald-400 transition-colors flex items-center gap-2">
                 Contact Us <ArrowRight className="w-3 h-3" />
               </Link>
             </nav>
@@ -111,24 +111,24 @@ export function Footer(): React.ReactElement {
         </div>
 
         {/* Acknowledgement and Copyright */}
-        <div className="pt-10 border-t border-slate-200 dark:border-white/5">
+        <div className="pt-10 border-t border-white/10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-end">
             <div className="space-y-6 max-w-2xl">
-              <div className="flex items-center gap-3 text-red-500">
+              <div className="flex items-center gap-3 text-red-400">
                 <Heart className="w-5 h-5 fill-current" />
                 <span className="caption uppercase tracking-[0.2em]">Acknowledgement of Country</span>
               </div>
-              <p className="body-sm leading-relaxed text-zinc-500 dark:text-zinc-400 italic">
-                Revira Care acknowledges the traditional owners of the land in which we work and pay our respect to their elders, past and present.
+              <p className="body-sm leading-relaxed text-zinc-400 italic">
+                ReviraCare acknowledges the traditional owners of the land in which we work and pay our respect to their elders, past and present.
               </p>
             </div>
             <div className="flex flex-col md:flex-row items-center justify-end gap-6 md:gap-12">
-              <div className="flex gap-6 caption uppercase tracking-widest text-zinc-400">
-                <Link href="/privacy" className="hover:text-zinc-900 dark:hover:text-white transition-colors">Privacy Policy</Link>
-                <Link href="/terms" className="hover:text-zinc-900 dark:hover:text-white transition-colors">Terms Of Service</Link>
+              <div className="flex gap-6 caption uppercase tracking-widest text-zinc-500">
+                <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
+                <Link href="/terms" className="hover:text-white transition-colors">Terms Of Service</Link>
               </div>
-              <p className="caption uppercase tracking-widest text-zinc-400">
-                © {currentYear} Revira Care. All Rights Reserved.
+              <p className="caption uppercase tracking-widest text-zinc-500">
+                © {currentYear} ReviraCare. All Rights Reserved.
               </p>
             </div>
           </div>

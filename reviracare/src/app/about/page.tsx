@@ -71,8 +71,8 @@ const METHODOLOGY = [
 
 const FAQS = [
   {
-    question: "Is Revira Care a registered NDIS provider?",
-    answer: "Yes, Revira Care is a fully registered NDIS provider. We comply with all NDIS Quality and Safeguards Commission standards to ensure the highest level of care and safety."
+    question: "Is ReviraCare a registered NDIS provider?",
+    answer: "Yes, ReviraCare is a fully registered NDIS provider. We comply with all NDIS Quality and Safeguards Commission standards to ensure the highest level of care and safety."
   },
   {
     question: "What areas do you provide services in?",
@@ -126,7 +126,7 @@ export default function AboutPage(): React.ReactElement {
         <div className="absolute inset-0 z-0">
           <Image
             src="/images/hero/team-v3.png"
-            alt="Revira Care Professional Team"
+            alt="ReviraCare Professional Team"
             fill
             className="object-cover dark:opacity-70"
             priority
@@ -156,7 +156,7 @@ export default function AboutPage(): React.ReactElement {
               </span>
             </h1>
             <p className="subtitle text-zinc-300 dark:text-zinc-400 font-medium leading-relaxed max-w-xl">
-              Revira Care is more than a service provider. We are your partners in creating a life characterized by empowerment, independence, and joy.
+              ReviraCare is more than a service provider. We are your partners in creating a life characterized by empowerment, independence, and joy.
             </p>
           </motion.div>
         </Container>
@@ -206,7 +206,7 @@ export default function AboutPage(): React.ReactElement {
               <h2 className="text-indigo-500 dark:text-indigo-400 font-bold uppercase text-[10px] tracking-[0.3em] mb-4">Our Heritage</h2>
               <h3 className="text-3xl md:text-4xl font-bold mb-5 leading-tight text-zinc-900 dark:text-white">Founded on Faith, <br /> Built for Impact</h3>
               <p className="text-zinc-600 dark:text-zinc-500 text-base leading-relaxed mb-5">
-                Revira Care began with a simple vision: to bridge the gap between clinical support and authentic human connection. We saw individuals being treated as "cases" rather than "people," and we knew we could do better.
+                ReviraCare began with a simple vision: to bridge the gap between clinical support and authentic human connection. We saw individuals being treated as "cases" rather than "people," and we knew we could do better.
               </p>
               <p className="text-zinc-600 dark:text-zinc-500 text-base leading-relaxed mb-8">
                 Today, we stand as a beacon of quality in the community care sector, driven by a diverse team that shares one common goal: seeing our participants thrive, grow, and achieve what they once thought was impossible.
@@ -449,7 +449,7 @@ export default function AboutPage(): React.ReactElement {
                   <Quote className="w-12 h-12 text-zinc-900 dark:text-white" />
                 </div>
                 <p className="text-zinc-600 dark:text-zinc-300 italic text-[15px] mb-6 leading-relaxed relative z-10">
-                  "Revira Care has completely transformed how I approach my daily goals. I feel empowered and truly supported for the first time."
+                  "ReviraCare has completely transformed how I approach my daily goals. I feel empowered and truly supported for the first time."
                 </p>
                 <div className="flex items-center gap-3.5 relative z-10">
                   <div className="w-10 h-10 rounded-full bg-gradient-to-br from-emerald-400/80 to-blue-500/80 p-px">

@@ -58,6 +58,46 @@ const SERVICES = [
         color: "from-cyan-500/20 to-cyan-500/0",
         accent: "text-cyan-400",
     },
+    {
+        id: "coordination",
+        title: "Coordination Of Supports",
+        description: "Assisting participants in managing their NDIS plans by connecting them with services that align with their goals. Our coordinators simplify the process to ensure effective use of resources.",
+        image: "/images/services/group-activities.png",
+        color: "from-violet-500/20 to-violet-500/0",
+        accent: "text-violet-400",
+    },
+    {
+        id: "short-term-accommodation",
+        title: "Short/Medium Term Accommodation",
+        description: "Offering temporary housing solutions for individuals needing respite or transitional care. Our accommodations are designed to provide comfort, support, and opportunities for skill development.",
+        image: "/images/services/sil.png",
+        color: "from-violet-500/30 to-violet-500/0",
+        accent: "text-violet-400",
+    },
+    {
+        id: "housing-tenancy",
+        title: "Housing And Tenancy",
+        description: "Providing assistance with finding, securing, and maintaining appropriate housing. Our team helps individuals understand their tenancy rights and responsibilities while ensuring a stable living environment.",
+        image: "/images/services/sda.png",
+        color: "from-indigo-500/20 to-indigo-500/0",
+        accent: "text-indigo-400",
+    },
+    {
+        id: "nursing-care",
+        title: "Nursing Care",
+        description: "Delivering professional nursing services to address medical and health needs, including wound care, medication management, and monitoring chronic conditions. We provide compassionate and skilled care tailored to individual requirements.",
+        image: "/images/services/in-home-support.png",
+        color: "from-teal-500/20 to-teal-500/0",
+        accent: "text-teal-400",
+    },
+    {
+        id: "assist-travel-transport",
+        title: "Assist Travel/Transport",
+        description: "True freedom starts with a worry-free journey. At Revira Care, we offer reliable and safe travel support, carefully tailored to your unique schedule and needs. We're here to build your confidence, helping you reach medical appointments, enjoy social outings.",
+        image: "/images/services/social-participation.png",
+        color: "from-sky-500/20 to-sky-500/0",
+        accent: "text-sky-400",
+    },
 ];
 
 export function ServiceShowcase() {

@@ -39,7 +39,7 @@ export default function NewProviderNdisPage(): React.ReactElement {
               Are You Looking For A New NDIS Provider?
             </h1>
             <p className="text-lg text-zinc-200 mt-4 max-w-2xl">
-              If you want an NDIS service that will understand your specific needs, make plans that fit them, and understand your unique situation, then Revira Care is the best choice for you.
+              If you want an NDIS service that will understand your specific needs, make plans that fit them, and understand your unique situation, then ReviraCare is the best choice for you.
             </p>
           </motion.div>
         </Container>

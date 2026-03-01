@@ -100,7 +100,7 @@ export default function CareersPage() {
         <div className="absolute inset-0 z-0">
           <Image
             src="/images/careers/hero.png"
-            alt="Join Revira Care"
+            alt="Join ReviraCare"
             fill
             className="object-cover dark:opacity-60"
             priority
@@ -126,7 +126,7 @@ export default function CareersPage() {
               </span>
             </h1>
             <p className="subtitle text-zinc-300 font-medium leading-relaxed max-w-xl mb-10">
-              Joining Revira Care Australia offers an exciting opportunity to empower individuals with disabilities and foster a more inclusive community.
+              Joining ReviraCare Australia offers an exciting opportunity to empower individuals with disabilities and foster a more inclusive community.
             </p>
             <div className="flex flex-wrap gap-4">
               <a href="#how-to-apply" className="px-8 py-4 bg-emerald-500 text-white rounded-2xl font-bold text-sm hover:bg-emerald-600 transition-all hover:scale-105 inline-flex items-center gap-2 shadow-xl shadow-emerald-500/20 group">
@@ -459,7 +459,7 @@ export default function CareersPage() {
                       Submit Application
                     </button>
                     <p className="text-[10px] text-center text-zinc-500 font-medium px-10">
-                      By submitting, you agree to Revira Care's recruitment privacy policy and confirm that all uploaded documents are authentic.
+                      By submitting, you agree to ReviraCare's recruitment privacy policy and confirm that all uploaded documents are authentic.
                     </p>
                   </form>
                 </div>

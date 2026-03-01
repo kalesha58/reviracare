@@ -34,6 +34,7 @@
   --text-nav-mobile-size: 1.25rem;
   --text-nav-dropdown-size: 1.125rem;
   --text-footer-heading-size: 0.75rem;
+  --purple-brand: #381c4a;
   /* Font weights - consistent across header, sections, titles, subtitles */
   --font-weight-nav: 500;
   --font-weight-label: 700;
@@ -53,6 +54,7 @@
   --muted: #27272a;
   --muted-foreground: #a1a1aa;
   --border: #27272a;
+  --purple-brand: #2a1538;
 }
 
 @theme inline {
@@ -63,6 +65,7 @@
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
   --color-border: var(--border);
+  --color-purple-brand: var(--purple-brand);
   --font-sans: var(--font-inter), system-ui, -apple-system, sans-serif;
 }
 

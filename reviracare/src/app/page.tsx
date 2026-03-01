@@ -22,15 +22,15 @@ const CAROUSEL_IMAGES = [
 const HERO_CONTENT = [
   {
     title: "Tailored Care For Every Journey",
-    description: "Revira Care offers personalized support services designed to meet the unique needs of individuals with disabilities. Our goal is to foster independence, confidence, and a better quality of life.",
+    description: "ReviraCare offers personalized support services designed to meet the unique needs of individuals with disabilities. Our goal is to foster independence, confidence, and a better quality of life.",
   },
   {
     title: "Your Partner In Independence And Care",
-    description: "We provide comprehensive disability support, from in-home care to skill development programs. At Revira Care, we empower individuals to achieve their goals with dignity and respect.",
+    description: "We provide comprehensive disability support, from in-home care to skill development programs. At ReviraCare, we empower individuals to achieve their goals with dignity and respect.",
   },
   {
     title: "Inclusive Services For A Better Tomorrow",
-    description: "With a focus on accessibility and community engagement, our services promote social inclusion and personal growth. Revira Care is here to support you every step of the way.",
+    description: "With a focus on accessibility and community engagement, our services promote social inclusion and personal growth. ReviraCare is here to support you every step of the way.",
   },
 ];
 
@@ -208,7 +208,7 @@ export default function HomePage(): React.ReactElement {
       {/* NDIS Provider Australia */}
       <NDISProviderSection />
 
-      {/* Why Choose Revira Care */}
+      {/* Why Choose ReviraCare */}
       <WhyChooseSection />
 
       {/* Latest News / Blogs */}
@@ -225,10 +225,10 @@ export default function HomePage(): React.ReactElement {
             <div className="lg:col-span-7">
               <span className="section-label inline-flex items-center gap-2 text-emerald-600 dark:text-emerald-400 uppercase tracking-[0.2em] mb-4">
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                Why Revira Care
+                Why ReviraCare
               </span>
               <h2 className="section-title text-zinc-900 dark:text-white mb-6 leading-tight">
-                Welcome to Revira Care
+                Welcome to ReviraCare
               </h2>
               <p className="subtitle text-zinc-600 dark:text-zinc-400 leading-relaxed mb-8 max-w-xl">
                 We provide person-centred support to help you live the life you choose. Our dedicated team works closely with you to understand your goals and provide the care you deserve.

@@ -55,7 +55,7 @@ export default function ContactPage() {
         <div className="absolute inset-0 z-0">
           <Image
             src="/images/contact/hero.png"
-            alt="Contact Revira Care"
+            alt="Contact ReviraCare"
             fill
             className="object-cover dark:opacity-60"
             priority
@@ -79,7 +79,7 @@ export default function ContactPage() {
               <span className="text-emerald-400">Contact Us</span>
             </h1>
             <p className="subtitle text-zinc-200 font-medium leading-relaxed max-w-2xl">
-              Revira Care provides comprehensive services tailored to individuals with disabilities, ensuring accessibility, independence, and empowerment. From personalized care plans to community integration support, we focus on enhancing quality of life.
+              ReviraCare provides comprehensive services tailored to individuals with disabilities, ensuring accessibility, independence, and empowerment. From personalized care plans to community integration support, we focus on enhancing quality of life.
             </p>
           </motion.div>
         </Container>
@@ -257,7 +257,7 @@ export default function ContactPage() {
               <Heart className="w-8 h-8 text-emerald-500 fill-emerald-500/20" />
             </div>
             <h2 className="text-2xl md:text-3xl font-bold text-zinc-900 dark:text-white mb-8 italic leading-relaxed">
-              "Revira Care provides comprehensive services tailored to individuals with disabilities, ensuring accessibility, independence, and empowerment."
+              "ReviraCare provides comprehensive services tailored to individuals with disabilities, ensuring accessibility, independence, and empowerment."
             </h2>
             <div className="flex flex-col items-center gap-4">
               <div className="w-px h-12 bg-zinc-200 dark:bg-zinc-800" />

@@ -73,7 +73,7 @@ export default function EligibleNdisPage(): React.ReactElement {
             It&apos;s important to contact the NDIS or visit their official website to learn more about the eligibility requirements and the process for applying to determine your specific eligibility status.
           </p>
           <p className="text-lg font-semibold text-zinc-900 dark:text-white mb-8">
-            For further assistance, feel free to reach out to Revira Care. Our team is here to guide you through the eligibility and application process.
+            For further assistance, feel free to reach out to ReviraCare. Our team is here to guide you through the eligibility and application process.
           </p>
 
           <motion.div
@@ -86,7 +86,7 @@ export default function EligibleNdisPage(): React.ReactElement {
               <MapPin className="w-5 h-5 text-[var(--primary)]" />
               Our Address
             </h3>
-            <p className="text-zinc-700 dark:text-zinc-300 font-medium">Revira Care</p>
+            <p className="text-zinc-700 dark:text-zinc-300 font-medium">ReviraCare</p>
             <p className="text-zinc-600 dark:text-zinc-400">
               Level 5, Nexus Building,<br />
               4 Columbia Court,<br />
