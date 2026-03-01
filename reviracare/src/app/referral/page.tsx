@@ -6,7 +6,9 @@ import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
 import { Upload, User, FileText, Target, CreditCard, AlertTriangle, CheckCircle2 } from "lucide-react";
+import Link from "next/link";
 import { cn } from "@/lib/utils";
+import { NDISBrandingBar } from "@/components/ui/NDISBrandingBar";
 import type {
   IReferralFormState,
   ReferrerRole,
@@ -198,18 +200,18 @@ export default function ReferralPage(): React.ReactElement {
 
   if (status === "success") {
     return (
-      <main className="min-h-screen bg-[var(--muted)]/30 dark:bg-zinc-950 pt-24 pb-32">
+      <main className="min-h-screen bg-zinc-50 dark:bg-zinc-950 pt-24 pb-32 [--primary:var(--secondary)]">
         <Container className="py-16">
           <motion.div
             initial={{ opacity: 0, scale: 0.96 }}
             animate={{ opacity: 1, scale: 1 }}
-            className="max-w-lg mx-auto text-center rounded-3xl border border-[var(--border)] bg-[var(--background)] p-10 shadow-lg"
+            className="max-w-lg mx-auto text-center rounded-3xl border border-purple-100 dark:border-purple-900/50 bg-white dark:bg-zinc-900 p-10 shadow-lg ring-1 ring-purple-950/5"
           >
-            <div className="w-16 h-16 rounded-full bg-[var(--primary)]/20 flex items-center justify-center mx-auto mb-6">
-              <CheckCircle2 className="w-8 h-8 text-[var(--primary)]" />
+            <div className="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center mx-auto mb-6">
+              <CheckCircle2 className="w-8 h-8 text-primary" />
             </div>
-            <h1 className="section-title text-[var(--foreground)] mb-3">Referral Submitted</h1>
-            <p className="text-[var(--muted-foreground)]">
+            <h1 className="section-title text-zinc-900 dark:text-white mb-3">Referral Submitted</h1>
+            <p className="text-zinc-600 dark:text-zinc-400">
               Thank you. We have received your referral and will be in touch shortly.
             </p>
           </motion.div>
@@ -219,8 +221,8 @@ export default function ReferralPage(): React.ReactElement {
   }
 
   return (
-    <main className="min-h-screen bg-[var(--muted)]/30 dark:bg-zinc-950 text-[var(--foreground)] pb-32">
-      <section className="relative h-[40vh] min-h-[280px] flex items-center overflow-hidden">
+    <main className="min-h-screen bg-zinc-50 dark:bg-zinc-950 text-zinc-900 dark:text-white pb-32 [--primary:var(--secondary)] [--accent:var(--purple-100)] [--accent-foreground:var(--purple-700)] dark:[--accent:#3b0764] dark:[--accent-foreground:#f3e8ff]">
+      <section className="relative h-[40vh] min-h-[300px] flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
             src="/images/ndis/referral.png"
@@ -229,26 +231,28 @@ export default function ReferralPage(): React.ReactElement {
             className="object-cover dark:opacity-70"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-[var(--muted)]/30 dark:to-zinc-950" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-transparent dark:from-black/80 dark:to-transparent" />
         </div>
-        <Container className="relative z-10">
+        <Container className="relative z-10 pt-20">
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <span className="inline-block px-3 py-1.5 rounded-full bg-white/10 border border-white/20 text-white section-label uppercase tracking-wider mb-4">
-              NDIS Referral
-            </span>
-            <h1 className="hero-title text-white tracking-tight">
-              Connect With Our Crew
+            <Link
+              href="/"
+              className="inline-flex items-center gap-1 text-sm text-white/80 hover:text-white mb-6 uppercase tracking-widest font-bold"
+            >
+              Back to Home
+            </Link>
+            <h1 className="hero-title tracking-tight text-white leading-[1.1] opacity-60">
+              NDIS Referral Form
             </h1>
-            <p className="text-zinc-200 mt-2 max-w-xl">
-              Complete the form below and we&apos;ll get back to you as soon as we can.
-            </p>
           </motion.div>
         </Container>
       </section>
+
+      <NDISBrandingBar title="Connect With Our Crew" />
 
       <Section className="pt-10">
         <Container className="max-w-3xl">

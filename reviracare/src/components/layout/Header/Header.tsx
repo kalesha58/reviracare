@@ -5,7 +5,10 @@ import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, ChevronDown, ArrowRight, Home, Info, Heart, BookOpen, Briefcase, Mail, Phone, MapPin } from "lucide-react";
+import {
+  Menu, X, ChevronDown, ArrowRight, Home, Info, Heart, BookOpen,
+  Briefcase, Mail, Phone, MapPin, Sparkles, ClipboardCheck, Building, FileText
+} from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { SITE_NAME } from "@/constants/site";
 import { NAV_LINKS } from "@/constants/navigation";
@@ -305,9 +308,18 @@ function MobileNavItem({
   );
 }
 
+
 function NavDropdown({ link, isActive }: { link: (typeof NAV_LINKS)[number] & { children: any }, isActive: boolean }) {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
+
+  const SUB_ICON_MAP: Record<string, any> = {
+    BookOpen: BookOpen,
+    Sparkles: Sparkles,
+    ClipboardCheck: ClipboardCheck,
+    Building: Building,
+    FileText: FileText,
+  };
 
   return (
     <div
@@ -319,8 +331,8 @@ function NavDropdown({ link, isActive }: { link: (typeof NAV_LINKS)[number] & { 
         className={cn(
           "nav-link px-4 py-2 rounded-full transition-colors flex items-center gap-1.5",
           isActive
-            ? "text-zinc-900 dark:text-zinc-50"
-            : "text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-50 hover:bg-zinc-100 dark:hover:bg-zinc-800"
+            ? "text-primary dark:text-primary font-semibold bg-primary/5 dark:bg-primary/10"
+            : "text-zinc-600 dark:text-purple-200 hover:text-primary dark:hover:text-primary hover:bg-primary/5 dark:hover:bg-primary/10"
         )}
       >
         {link.label}
@@ -333,23 +345,33 @@ function NavDropdown({ link, isActive }: { link: (typeof NAV_LINKS)[number] & { 
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 10 }}
-            className="absolute top-full left-0 pt-2 w-56"
+            className="absolute top-full left-0 pt-2 w-72"
           >
-            <div className="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl shadow-xl overflow-hidden p-1.5 ring-1 ring-zinc-900/5">
-              {link.children?.map((child: { label: string; href: string }) => (
-                <Link
-                  key={child.href}
-                  href={child.href}
-                  className={cn(
-                    "body-sm block px-3 py-2 rounded-lg transition-colors",
-                    pathname === child.href
-                      ? "bg-zinc-100 dark:bg-zinc-800 text-zinc-900 dark:text-zinc-50"
-                      : "text-zinc-600 dark:text-zinc-400 hover:bg-zinc-50 dark:hover:bg-zinc-800/50 hover:text-zinc-900 dark:hover:text-zinc-50"
-                  )}
-                >
-                  {child.label}
-                </Link>
-              ))}
+            <div className="bg-white dark:bg-zinc-900 border border-purple-100 dark:border-purple-900/50 rounded-2xl shadow-xl overflow-hidden p-2 ring-1 ring-purple-950/5">
+              {link.children?.map((child: any) => {
+                const Icon = SUB_ICON_MAP[child.icon] || ArrowRight;
+                const isChildActive = pathname === child.href;
+                return (
+                  <Link
+                    key={child.href}
+                    href={child.href}
+                    className={cn(
+                      "flex items-center gap-3 px-3 py-2.5 rounded-xl transition-all duration-200 group",
+                      isChildActive
+                        ? "bg-primary/10 text-primary font-semibold"
+                        : "text-zinc-600 dark:text-purple-200 hover:bg-primary/5 hover:text-primary dark:hover:text-primary"
+                    )}
+                  >
+                    <div className={cn(
+                      "w-8 h-8 rounded-lg flex items-center justify-center transition-colors",
+                      isChildActive ? "bg-primary text-white" : "bg-zinc-100 dark:bg-purple-900/30 text-zinc-500 dark:text-purple-300 group-hover:bg-primary/20 group-hover:text-primary"
+                    )}>
+                      <Icon className="w-4 h-4" />
+                    </div>
+                    <span className="text-sm">{child.label}</span>
+                  </Link>
+                );
+              })}
             </div>
           </motion.div>
         )}

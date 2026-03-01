@@ -16,6 +16,7 @@ import {
   RefreshCw,
   Info,
 } from "lucide-react";
+import { NDISBrandingBar } from "@/components/ui/NDISBrandingBar";
 
 const SECTION_ICONS: Record<string, React.ComponentType<{ className?: string }>> = {
   purpose: Target,
@@ -68,19 +69,19 @@ const SECTIONS = [
 export default function UnderstandingNdisPage(): React.ReactElement {
   return (
     <main className="min-h-screen bg-zinc-50 dark:bg-zinc-950 text-zinc-900 dark:text-white">
-      <section className="relative w-full h-[70vh] min-h-[500px] max-h-[900px] flex items-center overflow-hidden">
+      <section className="relative w-full h-[50vh] min-h-[400px] flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0 w-full h-full">
           <Image
             src="/images/ndis/understanding.png"
-            alt="Understanding the NDIS"
+            alt="ReviraCare Support Services"
             fill
-            className="object-cover object-center w-full h-full dark:opacity-70"
+            className="object-cover object-top w-full h-full dark:opacity-70"
             priority
             sizes="100vw"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-zinc-50 dark:from-black/80 dark:via-black/50 dark:to-zinc-950" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-transparent dark:from-black/80 dark:to-transparent" />
         </div>
-        <Container className="relative z-10">
+        <Container className="relative z-10 pt-20">
           <motion.div
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
@@ -88,20 +89,19 @@ export default function UnderstandingNdisPage(): React.ReactElement {
             className="max-w-3xl"
           >
             <Link
-              href="/ndis"
-              className="inline-flex items-center gap-1 text-sm text-white/80 hover:text-white mb-4"
+              href="/"
+              className="inline-flex items-center gap-1 text-sm text-white/80 hover:text-white mb-6 uppercase tracking-widest font-bold"
             >
-              Home
+              Back to Home
             </Link>
-            <h1 className="hero-title tracking-tight text-white leading-[1.1]">
-              Understanding the NDIS
+            <h1 className="hero-title tracking-tight text-white leading-[1.1] opacity-60">
+              NDIS Support & Care
             </h1>
-            <p className="subtitle text-zinc-200 mt-4 max-w-2xl">
-              The National Disability Insurance Scheme (NDIS) is an Australian government initiative designed to provide support and assistance to individuals with disabilities.
-            </p>
           </motion.div>
         </Container>
       </section>
+
+      <NDISBrandingBar title="Understanding the NDIS" />
 
       <Section className="bg-white dark:bg-zinc-950 border-t border-zinc-200 dark:border-zinc-800 overflow-hidden">
         {/* Intro - full width */}

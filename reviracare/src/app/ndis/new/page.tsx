@@ -6,6 +6,7 @@ import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { NDISBrandingBar } from "@/components/ui/NDISBrandingBar";
 
 const ELIGIBILITY_ITEMS = [
   "An Australian citizen or hold a Permanent or a Special Category visa.",
@@ -17,19 +18,19 @@ const ELIGIBILITY_ITEMS = [
 export default function NewToNdisPage(): React.ReactElement {
   return (
     <main className="min-h-screen bg-zinc-50 dark:bg-zinc-950 text-zinc-900 dark:text-white">
-      <section className="relative w-full h-[70vh] min-h-[500px] max-h-[900px] flex items-center overflow-hidden">
+      <section className="relative w-full h-[40vh] min-h-[350px] flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0 w-full h-full">
           <Image
             src="/images/ndis/new.png"
-            alt="New to the NDIS"
+            alt="ReviraCare Support"
             fill
             className="object-cover object-center w-full h-full dark:opacity-70"
             priority
             sizes="100vw"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-zinc-50 dark:from-black/80 dark:via-black/50 dark:to-zinc-950" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-transparent dark:from-black/80 dark:to-transparent" />
         </div>
-        <Container className="relative z-10">
+        <Container className="relative z-10 pt-20">
           <motion.div
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
@@ -38,19 +39,18 @@ export default function NewToNdisPage(): React.ReactElement {
           >
             <Link
               href="/ndis"
-              className="inline-flex items-center gap-1 text-sm text-white/80 hover:text-white mb-4"
+              className="inline-flex items-center gap-1 text-sm text-white/80 hover:text-white mb-6 uppercase tracking-widest font-bold"
             >
-              Home
+              Back to NDIS
             </Link>
-            <h1 className="hero-title tracking-tight text-white leading-[1.1]">
-              New to the NDIS?
+            <h1 className="hero-title tracking-tight text-white leading-[1.1] opacity-60">
+              Welcome to NDIS
             </h1>
-            <p className="subtitle text-zinc-200 mt-4 max-w-2xl">
-              If you&apos;re new to the National Disability Insurance Scheme (NDIS), it&apos;s an Australian government initiative designed to provide support and assistance to individuals with disabilities.
-            </p>
           </motion.div>
         </Container>
       </section>
+
+      <NDISBrandingBar title="New to the NDIS?" />
 
       <Section className="bg-white dark:bg-zinc-950">
         <Container className="max-w-3xl">

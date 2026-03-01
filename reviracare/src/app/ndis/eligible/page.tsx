@@ -6,6 +6,7 @@ import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
 import { ArrowRight, MapPin, Phone } from "lucide-react";
+import { NDISBrandingBar } from "@/components/ui/NDISBrandingBar";
 
 const CRITERIA = [
   "Be under the age of 65.",
@@ -16,19 +17,19 @@ const CRITERIA = [
 export default function EligibleNdisPage(): React.ReactElement {
   return (
     <main className="min-h-screen bg-zinc-50 dark:bg-zinc-950 text-zinc-900 dark:text-white">
-      <section className="relative w-full h-[70vh] min-h-[500px] max-h-[900px] flex items-center overflow-hidden">
+      <section className="relative w-full h-[40vh] min-h-[350px] flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0 w-full h-full">
           <Image
             src="/images/ndis/eligibility.png"
-            alt="Are You Eligible For The NDIS?"
+            alt="ReviraCare Eligibility"
             fill
             className="object-cover object-center w-full h-full dark:opacity-70"
             priority
             sizes="100vw"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-zinc-50 dark:from-black/80 dark:via-black/50 dark:to-zinc-950" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-transparent dark:from-black/80 dark:to-transparent" />
         </div>
-        <Container className="relative z-10">
+        <Container className="relative z-10 pt-20">
           <motion.div
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
@@ -37,19 +38,18 @@ export default function EligibleNdisPage(): React.ReactElement {
           >
             <Link
               href="/ndis"
-              className="inline-flex items-center gap-1 text-sm text-white/80 hover:text-white mb-4"
+              className="inline-flex items-center gap-1 text-sm text-white/80 hover:text-white mb-6 uppercase tracking-widest font-bold"
             >
-              Home
+              Back to NDIS
             </Link>
-            <h1 className="hero-title tracking-tight text-white leading-[1.1]">
-              Are You Eligible For The NDIS?
+            <h1 className="hero-title tracking-tight text-white leading-[1.1] opacity-60">
+              NDIS Eligibility
             </h1>
-            <p className="subtitle text-zinc-200 mt-4 max-w-2xl">
-              Eligibility for the National Disability Insurance Scheme (NDIS) in Australia is based on specific criteria.
-            </p>
           </motion.div>
         </Container>
       </section>
+
+      <NDISBrandingBar title="Are You Eligible For The NDIS?" />
 
       <Section className="bg-white dark:bg-zinc-950">
         <Container className="max-w-3xl">

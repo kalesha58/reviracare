@@ -8,13 +8,14 @@ import Link from "next/link";
 import Image from "next/image";
 import { useParams } from "next/navigation";
 import { cn } from "@/lib/utils";
+import { NDISBrandingBar } from "@/components/ui/NDISBrandingBar";
 
 const SERVICE_DATA: Record<string, any> = {
     "in-home": {
         title: "In-Home And Community Support",
         subtitle: "Professional, compassionate support in the comfort of your home.",
         image: "/images/ndis/service-in-home.png",
-        accent: "emerald",
+        accent: "purple",
         content: `
       ReviraCare is dedicated to providing exceptional support to individuals with disabilities, ensuring they receive the care and assistance they need in the comfort of their homes. Our Home Care services are tailored to promote independence, dignity, and a high quality of life for all our clients.
       
@@ -63,7 +64,7 @@ const SERVICE_DATA: Record<string, any> = {
         title: "Social And Community Participation",
         subtitle: "Fostering inclusion, social interaction, and a sense of belonging.",
         image: "/images/ndis/service-social.png",
-        accent: "blue",
+        accent: "purple",
         content: `
       Social and community participation is a critical aspect of a person’s well-being. At ReviraCare, we understand the importance of fostering inclusion, social interaction, and a sense of belonging within the community for people with disabilities. This service is designed to encourage active involvement in social activities.
     `,
@@ -145,7 +146,7 @@ const SERVICE_DATA: Record<string, any> = {
         title: "Supported Independent Living (SIL)",
         subtitle: "Tailored support for living independently in the community.",
         image: "/images/ndis/service-sil.png",
-        accent: "amber",
+        accent: "purple",
         content: `
       Supported Independent Living (SIL) is all about helping you live as independently as possible while receiving the help you need with daily tasks. Whether you live in a shared home or alone, our team provides 24/7 support.
     `,
@@ -170,7 +171,7 @@ const SERVICE_DATA: Record<string, any> = {
         title: "Daily Living And Life Skills",
         subtitle: "Empowering you with the skills for everyday success.",
         image: "/images/ndis/service-life-skills.png",
-        accent: "rose",
+        accent: "purple",
         content: `
       Developing daily living and life skills is essential for independence. We work with you to master the tasks that matter most, from cooking healthy meals to managing your budget and using public transport.
     `,
@@ -195,7 +196,7 @@ const SERVICE_DATA: Record<string, any> = {
         title: "Specialised Disability Accommodation (SDA)",
         subtitle: "Modern, accessible housing designed for your needs.",
         image: "/images/ndis/service-sda.png",
-        accent: "cyan",
+        accent: "purple",
         content: `
       Specialised Disability Accommodation (SDA) refers to housing for people who require very high support needs. Our SDA properties are designed to be accessible, functional, and beautiful, ensuring a high quality of life.
     `,
@@ -220,7 +221,7 @@ const SERVICE_DATA: Record<string, any> = {
         title: "Coordination Of Supports",
         subtitle: "Connecting you with services that align with your NDIS goals.",
         image: "/images/ndis/service-group.png",
-        accent: "violet",
+        accent: "purple",
         content: `
       Assisting participants in managing their NDIS plans by connecting them with services that align with their goals. Our coordinators simplify the process to ensure effective use of resources.
     `,
@@ -245,7 +246,7 @@ const SERVICE_DATA: Record<string, any> = {
         title: "Short/Medium Term Accommodation",
         subtitle: "Temporary housing for respite and transitional care.",
         image: "/images/ndis/service-sil.png",
-        accent: "violet",
+        accent: "purple",
         content: `
       Offering temporary housing solutions for individuals needing respite or transitional care. Our accommodations are designed to provide comfort, support, and opportunities for skill development.
     `,
@@ -270,7 +271,7 @@ const SERVICE_DATA: Record<string, any> = {
         title: "Housing And Tenancy",
         subtitle: "Finding, securing, and maintaining the right home for you.",
         image: "/images/ndis/service-sda.png",
-        accent: "indigo",
+        accent: "purple",
         content: `
       Providing assistance with finding, securing, and maintaining appropriate housing. Our team helps individuals understand their tenancy rights and responsibilities while ensuring a stable living environment.
     `,
@@ -295,7 +296,7 @@ const SERVICE_DATA: Record<string, any> = {
         title: "Nursing Care",
         subtitle: "Professional nursing services tailored to your health needs.",
         image: "/images/ndis/service-in-home.png",
-        accent: "teal",
+        accent: "purple",
         content: `
       Delivering professional nursing services to address medical and health needs, including wound care, medication management, and monitoring chronic conditions. We provide compassionate and skilled care tailored to individual requirements.
     `,
@@ -320,7 +321,7 @@ const SERVICE_DATA: Record<string, any> = {
         title: "Assist Travel/Transport",
         subtitle: "Reliable, safe travel support tailored to your schedule.",
         image: "/images/ndis/service-social.png",
-        accent: "sky",
+        accent: "purple",
         content: `
       True freedom starts with a worry-free journey. At ReviraCare, we offer reliable and safe travel support, carefully tailored to your unique schedule and needs. We're here to build your confidence, helping you reach medical appointments, enjoy social outings, and stay connected with your community.
     `,
@@ -385,10 +386,10 @@ export default function ServiceDetailPage() {
         );
     }
 
-    const accentClass = ACCENTS[service.accent] || ACCENTS.emerald;
+    const accentClass = ACCENTS[service.accent] || ACCENTS.purple;
 
     return (
-        <main className="bg-zinc-50 dark:bg-zinc-950 min-h-screen">
+        <main className="bg-zinc-50 dark:bg-zinc-950 min-h-screen [--primary:var(--secondary)] [--accent:var(--purple-100)] [--accent-foreground:var(--purple-700)] dark:[--accent:#3b0764] dark:[--accent-foreground:#f3e8ff]">
             {/* Hero Section */}
             <section className="relative h-[40vh] min-h-[400px] flex items-center overflow-hidden">
                 <Image
@@ -398,7 +399,7 @@ export default function ServiceDetailPage() {
                     className="object-cover dark:opacity-40"
                     priority
                 />
-                <div className="absolute inset-0 bg-gradient-to-b from-transparent to-zinc-50/90 dark:from-black/60 dark:via-black/30 dark:to-zinc-950" />
+                <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-transparent dark:from-black/80 dark:to-transparent" />
 
                 <Container className="relative z-10 pt-20">
                     <motion.div
@@ -408,19 +409,18 @@ export default function ServiceDetailPage() {
                     >
                         <Link
                             href="/"
-                            className="inline-flex items-center gap-2 text-zinc-500 hover:text-zinc-900 dark:hover:text-white transition-colors mb-8 font-bold text-sm bg-white/50 dark:bg-white/5 backdrop-blur-md px-4 py-2 rounded-full border border-zinc-200 dark:border-white/10 w-fit"
+                            className="inline-flex items-center gap-2 text-white/80 hover:text-white transition-colors mb-8 font-bold text-sm bg-white/10 backdrop-blur-md px-4 py-2 rounded-full border border-white/10 w-fit"
                         >
                             <ArrowLeft className="w-4 h-4" /> Back to Services
                         </Link>
-                        <h1 className="text-4xl md:text-6xl font-black text-zinc-900 dark:text-white leading-[1.1] mb-6">
+                        <h1 className="hero-title tracking-tight text-white leading-[1.1] opacity-60">
                             {service.title}
                         </h1>
-                        <p className="text-lg md:text-xl text-zinc-600 dark:text-zinc-400 font-medium max-w-2xl">
-                            {service.subtitle}
-                        </p>
                     </motion.div>
                 </Container>
             </section>
+
+            <NDISBrandingBar title={service.title} />
 
             {/* Main Content */}
             <Section className="py-20">
