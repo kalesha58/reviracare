@@ -19,8 +19,9 @@ const IMAGE_SRC = "/images/ndis/provider-section.png";
 
 export function NDISProviderSection(): React.ReactElement {
   return (
-    <Section className="bg-background text-foreground border-t border-border overflow-hidden">
-      <Container>
+    <Section className="bg-background text-foreground border-t border-border overflow-hidden relative">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_0%_0%,rgba(147,51,234,0.03),transparent_40%),radial-gradient(circle_at_100%_100%,rgba(147,51,234,0.03),transparent_40%)] pointer-events-none" />
+      <Container className="relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           {/* Image: rich, warm editorial treatment */}
           <motion.div
@@ -39,13 +40,13 @@ export function NDISProviderSection(): React.ReactElement {
                 sizes="(max-width: 1024px) 100vw, 45vw"
                 priority={false}
               />
-              {/* Warm, rich overlay for editorial feel */}
+              {/* Purple-themed editorial overlay */}
               <div
-                className="absolute inset-0 bg-gradient-to-t from-zinc-900/40 via-transparent to-amber-950/10"
+                className="absolute inset-0 bg-gradient-to-t from-purple-950/40 via-transparent to-secondary/10"
                 aria-hidden
               />
               <div
-                className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-background/5"
+                className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-secondary/5"
                 aria-hidden
               />
             </div>
@@ -62,7 +63,7 @@ export function NDISProviderSection(): React.ReactElement {
             <h2 className="section-title text-foreground mb-6">
               NDIS Provider Australia
             </h2>
-            <p className="text-muted-foreground text-base md:text-lg leading-relaxed mb-8 bg-primary/5 dark:bg-primary/10 border border-primary/10 rounded-2xl p-6">
+            <p className="text-muted-foreground text-base md:text-lg leading-relaxed mb-8 bg-secondary/5 dark:bg-secondary/10 border border-secondary/10 rounded-2xl p-6">
               We are committed to supporting NDIS participants in living a healthy
               lifestyle on their own terms as a reputable NDIS provider in Australia.
               By giving you the most individualized support and assisting you in
@@ -80,7 +81,7 @@ export function NDISProviderSection(): React.ReactElement {
                   key={item}
                   className="flex items-center gap-3 text-muted-foreground"
                 >
-                  <span className="w-2 h-2 rounded-full bg-primary shrink-0" />
+                  <span className="w-2 h-2 rounded-full bg-secondary shrink-0" />
                   <span>{item}</span>
                 </li>
               ))}
@@ -89,7 +90,7 @@ export function NDISProviderSection(): React.ReactElement {
               href="/contact"
               className="inline-flex items-center gap-2 px-6 py-3.5 bg-primary text-primary-foreground font-bold rounded-2xl hover:opacity-90 transition-opacity"
             >
-              Connect With Revira Care
+              Connect With ReviraCare
               <ArrowRight className="w-5 h-5" />
             </Link>
           </motion.div>

@@ -15,22 +15,22 @@ import { useState } from "react";
 
 const VALUES = [
   {
-    icon: <Heart className="w-8 h-8 text-rose-500" />,
+    icon: <Heart className="w-8 h-8 text-primary" />,
     title: "Compassion",
     description: "We lead with empathy and understanding, ensuring every individual feels heard and valued.",
   },
   {
-    icon: <Shield className="w-8 h-8 text-emerald-500" />,
+    icon: <Shield className="w-8 h-8 text-purple-600" />,
     title: "Integrity",
     description: "We maintain the highest standards of professional ethics and transparency in all our actions.",
   },
   {
-    icon: <Zap className="w-8 h-8 text-blue-500" />,
+    icon: <Zap className="w-8 h-8 text-primary" />,
     title: "Empowerment",
     description: "We provide the tools and support needed for individuals to take control of their own lives.",
   },
   {
-    icon: <Award className="w-8 h-8 text-purple-500" />,
+    icon: <Award className="w-8 h-8 text-purple-600" />,
     title: "Excellence",
     description: "We are committed to delivering the highest quality of care through continuous improvement.",
   },
@@ -40,39 +40,39 @@ const METHODOLOGY = [
   {
     step: "01",
     title: "Discovery",
-    icon: <Search className="w-6 h-6 text-emerald-400" />,
+    icon: <Search className="w-6 h-6 text-primary" />,
     description: "We start by listening to your story, understanding your goals, and identifying your unique needs."
   },
   {
     step: "02",
     title: "Planning",
-    icon: <FileText className="w-6 h-6 text-blue-400" />,
+    icon: <FileText className="w-6 h-6 text-purple-500" />,
     description: "Together, we craft a personalized support plan that aligns perfectly with your NDIS budget and aspirations."
   },
   {
     step: "03",
     title: "Matching",
-    icon: <Handshake className="w-6 h-6 text-purple-400" />,
+    icon: <Handshake className="w-6 h-6 text-primary" />,
     description: "We match you with the right support workers who share your interests and respect your preferences."
   },
   {
     step: "04",
     title: "Support",
-    icon: <Activity className="w-6 h-6 text-rose-400" />,
+    icon: <Activity className="w-6 h-6 text-purple-500" />,
     description: "Implementation of your plan with consistent, high-quality care that focuses on your daily well-being."
   },
   {
     step: "05",
     title: "Review",
-    icon: <RotateCcw className="w-6 h-6 text-amber-400" />,
+    icon: <RotateCcw className="w-6 h-6 text-primary" />,
     description: "Regular check-ins and adjustments ensure your support evolves as your needs and goals change."
   }
 ];
 
 const FAQS = [
   {
-    question: "Is Revira Care a registered NDIS provider?",
-    answer: "Yes, Revira Care is a fully registered NDIS provider. We comply with all NDIS Quality and Safeguards Commission standards to ensure the highest level of care and safety."
+    question: "Is ReviraCare a registered NDIS provider?",
+    answer: "Yes, ReviraCare is a fully registered NDIS provider. We comply with all NDIS Quality and Safeguards Commission standards to ensure the highest level of care and safety."
   },
   {
     question: "What areas do you provide services in?",
@@ -95,10 +95,10 @@ function FAQItem({ question, answer }: { question: string, answer: string }) {
     <div className="border-b border-zinc-200 dark:border-white/10 last:border-0 overflow-hidden">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full py-6 flex items-center justify-between text-left text-zinc-900 dark:text-white hover:text-emerald-500 dark:hover:text-emerald-400 transition-colors"
+        className="w-full py-6 flex items-center justify-between text-left text-zinc-900 dark:text-white hover:text-primary transition-colors"
       >
         <span className="text-lg font-bold pr-8">{question}</span>
-        <ChevronDown className={`w-5 h-5 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} />
+        <ChevronDown className={`w-5 h-5 transition-transform duration-300 ${isOpen ? 'rotate-180 text-primary' : ''}`} />
       </button>
       <AnimatePresence>
         {isOpen && (
@@ -126,7 +126,7 @@ export default function AboutPage(): React.ReactElement {
         <div className="absolute inset-0 z-0">
           <Image
             src="/images/hero/team-v3.png"
-            alt="Revira Care Professional Team"
+            alt="ReviraCare Professional Team"
             fill
             className="object-cover dark:opacity-70"
             priority
@@ -134,8 +134,8 @@ export default function AboutPage(): React.ReactElement {
           <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/30 to-zinc-50 dark:from-black/80 dark:via-black/40 dark:to-zinc-950" />
 
           {/* Decorative Elements */}
-          <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-emerald-500/10 blur-[120px] rounded-full" />
-          <div className="absolute bottom-1/4 left-1/4 w-96 h-96 bg-blue-500/10 blur-[120px] rounded-full" />
+          <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-primary/10 blur-[120px] rounded-full" />
+          <div className="absolute bottom-1/4 left-1/4 w-96 h-96 bg-purple-500/10 blur-[120px] rounded-full" />
         </div>
 
         <Container className="relative z-10">
@@ -145,18 +145,18 @@ export default function AboutPage(): React.ReactElement {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="max-w-3xl"
           >
-            <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-zinc-900/5 dark:bg-white/5 border border-zinc-900/10 dark:border-white/10 text-emerald-600 dark:text-emerald-400 section-label font-bold uppercase tracking-[0.2em] mb-6">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+            <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-zinc-900/5 dark:bg-white/5 border border-zinc-900/10 dark:border-white/10 text-primary section-label font-bold uppercase tracking-[0.2em] mb-6">
+              <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
               Trusted NDIS Partner
             </div>
             <h1 className="hero-title mb-5 tracking-tight leading-[1.1] text-white">
               Reimagining <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-white to-blue-500">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-white to-purple-400">
                 The Care Experience
               </span>
             </h1>
             <p className="subtitle text-zinc-300 dark:text-zinc-400 font-medium leading-relaxed max-w-xl">
-              Revira Care is more than a service provider. We are your partners in creating a life characterized by empowerment, independence, and joy.
+              ReviraCare is more than a service provider. We are your partners in creating a life characterized by empowerment, independence, and joy.
             </p>
           </motion.div>
         </Container>
@@ -180,7 +180,7 @@ export default function AboutPage(): React.ReactElement {
                 transition={{ delay: i * 0.1 }}
                 className="bg-zinc-100 dark:bg-zinc-900/80 backdrop-blur-xl border border-zinc-200 dark:border-white/10 p-4 rounded-xl flex items-center gap-3.5 shadow-xl shadow-zinc-900/10 dark:shadow-black/20"
               >
-                <div className="w-9 h-9 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-600 dark:text-emerald-400 flex-shrink-0">
+                <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center text-primary flex-shrink-0">
                   {badge.icon}
                 </div>
                 <div>
@@ -203,10 +203,10 @@ export default function AboutPage(): React.ReactElement {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <h2 className="text-indigo-500 dark:text-indigo-400 font-bold uppercase text-[10px] tracking-[0.3em] mb-4">Our Heritage</h2>
+              <h2 className="text-secondary font-bold uppercase text-[10px] tracking-[0.3em] mb-4">Our Heritage</h2>
               <h3 className="text-3xl md:text-4xl font-bold mb-5 leading-tight text-zinc-900 dark:text-white">Founded on Faith, <br /> Built for Impact</h3>
               <p className="text-zinc-600 dark:text-zinc-500 text-base leading-relaxed mb-5">
-                Revira Care began with a simple vision: to bridge the gap between clinical support and authentic human connection. We saw individuals being treated as "cases" rather than "people," and we knew we could do better.
+                ReviraCare began with a simple vision: to bridge the gap between clinical support and authentic human connection. We saw individuals being treated as "cases" rather than "people," and we knew we could do better.
               </p>
               <p className="text-zinc-600 dark:text-zinc-500 text-base leading-relaxed mb-8">
                 Today, we stand as a beacon of quality in the community care sector, driven by a diverse team that shares one common goal: seeing our participants thrive, grow, and achieve what they once thought was impossible.
@@ -231,7 +231,7 @@ export default function AboutPage(): React.ReactElement {
               transition={{ duration: 0.8 }}
               className="relative"
             >
-              <div className="absolute -inset-4 bg-gradient-to-tr from-emerald-500/10 to-blue-500/10 blur-2xl rounded-[3rem]" />
+              <div className="absolute -inset-4 bg-gradient-to-tr from-primary/10 to-secondary/10 blur-2xl rounded-[3rem]" />
               <div className="relative aspect-[16/10] lg:aspect-[4/3] rounded-3xl overflow-hidden border border-zinc-200 dark:border-white/5 shadow-2xl">
                 <Image
                   src="/images/hero/disability-support.png"
@@ -253,10 +253,10 @@ export default function AboutPage(): React.ReactElement {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="p-8 rounded-2xl bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-white/5 hover:border-emerald-500/30 transition-colors group"
+              className="p-8 rounded-2xl bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-white/5 hover:border-primary/30 transition-colors group"
             >
-              <div className="w-12 h-12 rounded-xl bg-emerald-500/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <Target className="w-6 h-6 text-emerald-500" />
+              <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                <Target className="w-6 h-6 text-primary" />
               </div>
               <h3 className="text-xl font-bold mb-3 text-zinc-900 dark:text-white">Our Mission</h3>
               <p className="text-zinc-600 dark:text-zinc-400 text-sm leading-relaxed">
@@ -269,10 +269,10 @@ export default function AboutPage(): React.ReactElement {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="p-8 rounded-2xl bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-white/5 hover:border-blue-500/30 transition-colors group"
+              className="p-8 rounded-2xl bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-white/5 hover:border-secondary/30 transition-colors group"
             >
-              <div className="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <Lightbulb className="w-6 h-6 text-blue-500" />
+              <div className="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                <Lightbulb className="w-6 h-6 text-secondary" />
               </div>
               <h3 className="text-xl font-bold mb-3 text-zinc-900 dark:text-white">Our Vision</h3>
               <p className="text-zinc-600 dark:text-zinc-400 text-sm leading-relaxed">
@@ -316,7 +316,7 @@ export default function AboutPage(): React.ReactElement {
       <Section className="bg-zinc-100 dark:bg-zinc-900/40 border-y border-zinc-200 dark:border-white/5 py-24">
         <Container>
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <h2 className="text-emerald-600 dark:text-emerald-400 font-bold uppercase text-[10px] tracking-[0.3em] mb-4">How We Work</h2>
+            <h2 className="text-primary font-bold uppercase text-[10px] tracking-[0.3em] mb-4">How We Work</h2>
             <h3 className="text-3xl md:text-4xl font-bold mb-4 text-zinc-900 dark:text-white">Your Journey With Us</h3>
             <p className="text-zinc-600 dark:text-zinc-500 text-base">
               We follow a rigorous, person-centered methodology to ensure your support is as unique as you are.
@@ -336,7 +336,7 @@ export default function AboutPage(): React.ReactElement {
                 transition={{ delay: i * 0.1 }}
                 className="relative z-10 flex flex-col items-center text-center group"
               >
-                <div className="w-14 h-14 rounded-xl bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-white/10 flex items-center justify-center mb-5 group-hover:scale-110 group-hover:border-emerald-500/50 transition-all duration-500 shadow-sm">
+                <div className="w-14 h-14 rounded-xl bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-white/10 flex items-center justify-center mb-5 group-hover:scale-110 group-hover:border-primary/50 transition-all duration-500 shadow-sm">
                   {step.icon}
                 </div>
                 <div className="text-[10px] font-bold text-zinc-500 dark:text-zinc-600 mb-1.5 uppercase tracking-tighter">{step.step}</div>
@@ -375,12 +375,13 @@ export default function AboutPage(): React.ReactElement {
               viewport={{ once: true }}
               className="order-1 lg:order-2"
             >
-              <h2 className="text-blue-600 dark:text-blue-400 font-bold uppercase text-[10px] tracking-[0.3em] mb-4">Broad Support</h2>
+              <h2 className="text-secondary font-bold uppercase text-[10px] tracking-[0.3em] mb-4">Broad Support</h2>
               <h3 className="text-3xl md:text-4xl font-bold mb-5 text-zinc-900 dark:text-white">A Holistic Approach to Well-being</h3>
               <p className="text-zinc-600 dark:text-zinc-500 text-base leading-relaxed mb-6">
                 Our services extend beyond basic care. We look at the "whole person"—their social life, their health, their skills, and their happiness.
               </p>
               <ul className="space-y-3.5">
+                {/* Update list items if needed to use secondary/primary */}
                 {[
                   "Personalized Allied Health Coordination",
                   "Social & Community Participation",
@@ -388,7 +389,7 @@ export default function AboutPage(): React.ReactElement {
                   "Complex Nursing Care Support"
                 ].map((item) => (
                   <li key={item} className="flex items-center gap-3 text-zinc-600 dark:text-zinc-400 text-[15px] font-medium">
-                    <div className="w-1.5 h-1.5 rounded-full bg-blue-500/80" />
+                    <div className="w-1.5 h-1.5 rounded-full bg-secondary/80" />
                     {item}
                   </li>
                 ))}
@@ -408,9 +409,9 @@ export default function AboutPage(): React.ReactElement {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
-              { title: "NDIS Compliance", desc: "Strict adherence to the NDIS Quality and Safeguards Commission standards.", icon: <Scale className="w-7 h-7 text-emerald-500" /> },
-              { title: "Rigorous Vetting", desc: "All staff undergo extensive police checks and Working with Children checks.", icon: <Lock className="w-7 h-7 text-blue-500" /> },
-              { title: "Ongoing Training", desc: "Continuous professional development for all our support workers and nurses.", icon: <Rocket className="w-7 h-7 text-rose-500" /> }
+              { title: "NDIS Compliance", desc: "Strict adherence to the NDIS Quality and Safeguards Commission standards.", icon: <Scale className="w-7 h-7 text-primary" /> },
+              { title: "Rigorous Vetting", desc: "All staff undergo extensive police checks and Working with Children checks.", icon: <Lock className="w-7 h-7 text-secondary" /> },
+              { title: "Ongoing Training", desc: "Continuous professional development for all our support workers and nurses.", icon: <Rocket className="w-7 h-7 text-primary" /> }
             ].map((item, i) => (
               <motion.div
                 key={item.title}
@@ -438,7 +439,7 @@ export default function AboutPage(): React.ReactElement {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-rose-500 dark:text-rose-400 font-bold uppercase text-[10px] tracking-[0.3em] mb-4">Our Impact</h2>
+              <h2 className="text-secondary font-bold uppercase text-[10px] tracking-[0.3em] mb-4">Our Impact</h2>
               <h3 className="text-3xl md:text-4xl font-bold mb-5 leading-tight text-zinc-900 dark:text-white">Real Progress, <br /> Real Lives</h3>
               <p className="text-zinc-600 dark:text-zinc-500 text-base leading-relaxed mb-8">
                 Success is measured by the smiles on our participants' faces and the goals checked off their lists. Whether it's learning a new skill or becoming more active in the community, every victory is celebrated.
@@ -449,10 +450,10 @@ export default function AboutPage(): React.ReactElement {
                   <Quote className="w-12 h-12 text-zinc-900 dark:text-white" />
                 </div>
                 <p className="text-zinc-600 dark:text-zinc-300 italic text-[15px] mb-6 leading-relaxed relative z-10">
-                  "Revira Care has completely transformed how I approach my daily goals. I feel empowered and truly supported for the first time."
+                  "ReviraCare has completely transformed how I approach my daily goals. I feel empowered and truly supported for the first time."
                 </p>
                 <div className="flex items-center gap-3.5 relative z-10">
-                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-emerald-400/80 to-blue-500/80 p-px">
+                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary/80 to-secondary/80 p-px">
                     <div className="w-full h-full rounded-full bg-zinc-100 dark:bg-zinc-900 flex items-center justify-center text-[10px] font-bold text-zinc-900 dark:text-white">SJ</div>
                   </div>
                   <div>
@@ -504,9 +505,9 @@ export default function AboutPage(): React.ReactElement {
         <Container>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
             {[
-              { icon: <Star className="w-8 h-8 text-amber-400" />, title: "Quality First", desc: "Never compromising on the safety and standard of our care." },
-              { icon: <Users className="w-8 h-8 text-indigo-400" />, title: "Inclusive Community", desc: "Fostering an environment where everyone belongs." },
-              { icon: <Globe className="w-8 h-8 text-emerald-400" />, title: "Local Presence", desc: "Deeply connected to the communities we serve." }
+              { icon: <Star className="w-8 h-8 text-primary" />, title: "Quality First", desc: "Never compromising on the safety and standard of our care." },
+              { icon: <Users className="w-8 h-8 text-secondary" />, title: "Inclusive Community", desc: "Fostering an environment where everyone belongs." },
+              { icon: <Globe className="w-8 h-8 text-primary" />, title: "Local Presence", desc: "Deeply connected to the communities we serve." }
             ].map((feature, i) => (
               <motion.div
                 key={feature.title}
@@ -532,12 +533,12 @@ export default function AboutPage(): React.ReactElement {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="relative rounded-[2.5rem] overflow-hidden bg-gradient-to-br from-emerald-600/20 via-blue-600/10 to-zinc-100 dark:to-zinc-900 border border-zinc-200 dark:border-white/10 p-12 md:p-20 text-center"
+            className="relative rounded-[2.5rem] overflow-hidden bg-gradient-to-br from-primary/20 via-secondary/10 to-zinc-100 dark:to-zinc-900 border border-zinc-200 dark:border-white/10 p-12 md:p-20 text-center"
           >
             <div className="relative z-10">
               <h2 className="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight text-zinc-900 dark:text-white">
                 Start Your <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 to-blue-500 dark:from-emerald-400 dark:to-blue-300">New Chapter</span>
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary dark:from-primary dark:to-purple-300">New Chapter</span>
               </h2>
               <p className="text-zinc-600 dark:text-zinc-400 text-lg mb-10 max-w-xl mx-auto leading-relaxed">
                 We&apos;re ready to listen, plan, and support you. Your journey towards more independence starts with a single conversation.
@@ -559,8 +560,8 @@ export default function AboutPage(): React.ReactElement {
             </div>
 
             {/* Background Decorations */}
-            <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/5 blur-3xl rounded-full" />
-            <div className="absolute bottom-0 left-0 w-64 h-64 bg-blue-500/5 blur-3xl rounded-full" />
+            <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 blur-3xl rounded-full" />
+            <div className="absolute bottom-0 left-0 w-64 h-64 bg-secondary/5 blur-3xl rounded-full" />
           </motion.div>
         </Container>
       </Section>

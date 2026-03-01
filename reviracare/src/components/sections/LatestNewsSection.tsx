@@ -5,9 +5,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
-import { ArrowUpRight, Clock } from "lucide-react";
+import { Clock, ArrowUpRight } from "lucide-react";
 import type { Variants } from "framer-motion";
 import { ALL_BLOG_POSTS, type IBlogPost } from "@/data/blogs.data";
+import { cn } from "@/lib/utils";
 
 const LATEST_POSTS = ALL_BLOG_POSTS.slice(0, 4);
 
@@ -39,7 +40,7 @@ function BlogCard({
     <motion.article
       variants={ITEM_VARIANTS}
       custom={index}
-      className="group flex flex-col rounded-2xl overflow-hidden bg-background border border-border shadow-sm hover:shadow-lg hover:border-primary/20 dark:hover:border-primary/30 transition-all duration-300 h-full"
+      className="group flex flex-col rounded-2xl overflow-hidden bg-background border border-border shadow-sm hover:shadow-xl hover:border-purple-400/30 dark:hover:border-purple-400/20 transition-all duration-300 h-full"
     >
       <Link href={post.href} className="flex flex-col h-full">
         <div className="relative w-full aspect-[16/10] overflow-hidden bg-muted rounded-t-2xl">
@@ -53,7 +54,7 @@ function BlogCard({
         </div>
         <div className="flex flex-col flex-1 p-5 sm:p-6">
           <div className="flex flex-wrap items-center gap-x-4 gap-y-1 mb-3">
-            <span className="px-2.5 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider bg-primary/10 dark:bg-primary/20 text-primary border border-primary/20">
+            <span className="px-2.5 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider border bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 border-purple-200 dark:border-purple-800">
               {post.category}
             </span>
             <span className="flex items-center gap-1.5 text-muted-foreground text-xs">
@@ -63,14 +64,14 @@ function BlogCard({
               {post.date}
             </span>
           </div>
-          <h3 className="card-title text-foreground group-hover:text-primary transition-colors tracking-tight leading-snug line-clamp-2 mb-3">
+          <h3 className="card-title text-foreground group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors tracking-tight leading-snug line-clamp-2 mb-3">
             {post.title}
           </h3>
           <p className="text-muted-foreground text-sm leading-relaxed line-clamp-2 mb-5">
             {post.excerpt}
           </p>
           <div className="mt-auto">
-            <span className="inline-flex items-center gap-1.5 text-primary font-bold text-sm group/btn">
+            <span className="inline-flex items-center gap-1.5 text-purple-600 dark:text-purple-400 font-bold text-sm group/btn">
               Read Article
               <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </span>
@@ -95,7 +96,7 @@ export function LatestNewsSection(): React.ReactElement {
           <motion.span
             variants={ITEM_VARIANTS}
             custom={0}
-            className="section-label text-primary uppercase block mb-3"
+            className="section-label text-purple-600 dark:text-purple-400 uppercase block mb-3"
           >
             Latest News
           </motion.span>
@@ -129,7 +130,7 @@ export function LatestNewsSection(): React.ReactElement {
         >
           <Link
             href="/blogs"
-            className="inline-flex items-center gap-2 text-foreground font-bold text-sm hover:text-primary transition-colors"
+            className="inline-flex items-center gap-2 text-foreground font-bold text-sm hover:text-purple-600 dark:hover:text-purple-400 transition-colors"
           >
             View All Articles
             <ArrowUpRight className="w-4 h-4" />

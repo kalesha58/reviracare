@@ -45,7 +45,7 @@ export function Header(): React.ReactElement {
         "fixed top-0 left-0 right-0 transition-all duration-300 border-b",
         mobileOpen ? "z-[1000]" : "z-[100]",
         scrolled
-          ? "bg-white/90 dark:bg-zinc-950/90 backdrop-blur-md border-zinc-200 dark:border-zinc-800 py-3"
+          ? "bg-white/90 dark:bg-purple-950/90 backdrop-blur-md border-purple-100 dark:border-purple-900/50 py-3"
           : "bg-transparent border-transparent py-5"
       )}
     >
@@ -83,15 +83,15 @@ export function Header(): React.ReactElement {
                 className={cn(
                   "nav-link px-4 py-2 rounded-full transition-colors relative",
                   isActive
-                    ? "text-zinc-900 dark:text-zinc-50"
-                    : "text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-50 hover:bg-zinc-100 dark:hover:bg-zinc-800"
+                    ? "text-primary dark:text-primary font-semibold"
+                    : "text-slate-600 dark:text-purple-200 hover:text-primary dark:hover:text-primary hover:bg-primary/5 dark:hover:bg-primary/10"
                 )}
               >
                 {link.label}
                 {isActive && (
                   <motion.div
                     layoutId="active-nav"
-                    className="absolute inset-0 bg-zinc-900/5 dark:bg-zinc-50/5 rounded-full -z-10"
+                    className="absolute inset-0 bg-primary/5 dark:bg-primary/10 rounded-full -z-10"
                     transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
                   />
                 )}
@@ -105,7 +105,7 @@ export function Header(): React.ReactElement {
           <ThemeToggle />
           <Link
             href="/contact"
-            className="nav-link px-5 py-2.5 bg-zinc-900 text-zinc-50 dark:bg-zinc-50 dark:text-zinc-900 rounded-full hover:opacity-90 transition-opacity flex items-center gap-2 group shadow-lg shadow-zinc-900/10"
+            className="nav-link px-6 py-2.5 bg-primary text-white rounded-full hover:opacity-90 transition-opacity flex items-center gap-2 group shadow-lg shadow-primary/20 font-bold"
           >
             Get Started
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -141,7 +141,7 @@ export function Header(): React.ReactElement {
                 <div className="absolute top-6 right-6 flex items-center gap-4 z-10">
                   <ThemeToggle />
                   <button
-                    className="p-2 text-zinc-900 dark:text-zinc-50 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-full transition-colors"
+                    className="p-2 text-slate-900 dark:text-purple-100 hover:bg-primary/10 rounded-full transition-colors"
                     onClick={() => setMobileOpen(false)}
                   >
                     <X className="w-8 h-8" />
@@ -167,12 +167,12 @@ export function Header(): React.ReactElement {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.5 }}
-                  className="mt-auto border-t border-zinc-200 dark:border-zinc-800 pt-8 pb-10 space-y-6"
+                  className="mt-auto border-t border-purple-100 dark:border-purple-900/50 pt-8 pb-10 space-y-6"
                 >
                   <Link
                     href="/contact"
                     onClick={() => setMobileOpen(false)}
-                    className="w-full py-4 bg-zinc-900 text-zinc-50 dark:bg-zinc-50 dark:text-zinc-900 rounded-2xl font-semibold flex items-center justify-center gap-2 shadow-xl shadow-zinc-900/10 active:scale-[0.98] transition-all"
+                    className="w-full py-4 bg-primary text-white rounded-2xl font-bold flex items-center justify-center gap-2 shadow-xl shadow-primary/20 active:scale-[0.98] transition-all"
                   >
                     Get Started
                     <ArrowRight className="w-5 h-5" />
@@ -229,14 +229,14 @@ function MobileNavItem({
             className={cn(
               "flex items-center justify-between w-full p-4 rounded-2xl transition-all duration-300",
               isExpanded
-                ? "bg-zinc-100 dark:bg-zinc-900 text-zinc-900 dark:text-zinc-50"
-                : "text-zinc-600 dark:text-zinc-400 hover:bg-zinc-50 dark:hover:bg-zinc-900/50"
+                ? "bg-primary/5 dark:bg-primary/10 text-primary"
+                : "text-slate-600 dark:text-purple-200 hover:bg-primary/5 dark:hover:bg-primary/10"
             )}
           >
             <div className="flex items-center gap-4">
               <div className={cn(
                 "w-10 h-10 rounded-xl flex items-center justify-center transition-colors",
-                isExpanded ? "bg-zinc-900 text-zinc-50 dark:bg-zinc-50 dark:text-zinc-900" : "bg-zinc-100 dark:bg-zinc-800"
+                isExpanded ? "bg-primary text-white" : "bg-slate-100 dark:bg-purple-900/50 text-slate-600 dark:text-purple-200"
               )}>
                 <Icon className="w-5 h-5" />
               </div>
@@ -265,8 +265,8 @@ function MobileNavItem({
                       key={child.href}
                       href={child.href}
                       onClick={() => setMobileOpen(false)}
-                    className={cn(
-                      "nav-link-dropdown py-3 px-4 rounded-xl transition-colors flex items-center justify-between group",
+                      className={cn(
+                        "nav-link-dropdown py-3 px-4 rounded-xl transition-colors flex items-center justify-between group",
                         pathname === child.href
                           ? "bg-zinc-900/5 dark:bg-zinc-50/5 text-zinc-900 dark:text-zinc-50 font-medium"
                           : "text-zinc-500 dark:text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-50"
@@ -288,13 +288,13 @@ function MobileNavItem({
           className={cn(
             "flex items-center gap-4 p-4 rounded-2xl transition-all duration-300",
             isActive
-              ? "bg-zinc-100 dark:bg-zinc-900 text-zinc-900 dark:text-zinc-50"
-              : "text-zinc-600 dark:text-zinc-400 hover:bg-zinc-50 dark:hover:bg-zinc-900/50"
+              ? "bg-primary/5 dark:bg-primary/10 text-primary"
+              : "text-slate-600 dark:text-purple-200 hover:bg-primary/5 dark:hover:bg-primary/10"
           )}
         >
           <div className={cn(
             "w-10 h-10 rounded-xl flex items-center justify-center transition-colors",
-            isActive ? "bg-zinc-900 text-zinc-50 dark:bg-zinc-50 dark:text-zinc-900" : "bg-zinc-100 dark:bg-zinc-800"
+            isActive ? "bg-primary text-white" : "bg-slate-100 dark:bg-purple-900/50 text-slate-600 dark:text-purple-200"
           )}>
             <Icon className="w-5 h-5" />
           </div>

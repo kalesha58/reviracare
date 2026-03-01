@@ -135,18 +135,18 @@ export function ChatSupport({ welcomeMessage }: IChatSupportProps): React.ReactE
             className={cn(
               "fixed z-[2001] flex flex-col rounded-t-2xl sm:rounded-2xl shadow-2xl border border-zinc-200 dark:border-zinc-800",
               "bg-[var(--background)] text-[var(--foreground)]",
-              "left-0 right-0 sm:left-auto sm:right-6 sm:w-[380px] sm:h-[520px] sm:max-h-[calc(100vh-5rem)]",
+              "left-0 right-0 sm:left-auto sm:right-6 sm:bottom-6 sm:w-[380px] sm:h-[520px] sm:max-h-[calc(100vh-5rem)]",
               "max-sm:bottom-0 max-sm:top-[var(--chat-top,0)] max-sm:h-[var(--chat-height,85vh)]"
             )}
             style={
               viewport
                 ? {
-                    ["--chat-height" as string]: `${viewport.height}px`,
-                    ["--chat-top" as string]: `${viewport.top}px`,
-                    top: viewport.top,
-                    height: viewport.height,
-                    bottom: "auto",
-                  }
+                  ["--chat-height" as string]: `${viewport.height}px`,
+                  ["--chat-top" as string]: `${viewport.top}px`,
+                  top: viewport.top,
+                  height: viewport.height,
+                  bottom: "auto",
+                }
                 : undefined
             }
             onClick={(e) => e.stopPropagation()}

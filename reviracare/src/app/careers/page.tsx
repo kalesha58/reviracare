@@ -17,14 +17,14 @@ import { useState, useRef } from "react";
 const CLEARANCES = [
   {
     title: "NDIS Worker Check",
-    icon: <ShieldCheck className="w-8 h-8 text-emerald-500" />,
+    icon: <ShieldCheck className="w-8 h-8 text-primary" />,
     cost: "$105",
     location: "Service NSW",
     description: "Essential clearance for all NDIS support workers."
   },
   {
     title: "Working with Children",
-    icon: <UsersIcon className="w-8 h-8 text-blue-500" />,
+    icon: <UsersIcon className="w-8 h-8 text-secondary" />,
     cost: "$105",
     location: "Service NSW",
     description: "Required for supporting participants under 18."
@@ -100,7 +100,7 @@ export default function CareersPage() {
         <div className="absolute inset-0 z-0">
           <Image
             src="/images/careers/hero.png"
-            alt="Join Revira Care"
+            alt="Join ReviraCare"
             fill
             className="object-cover dark:opacity-60"
             priority
@@ -115,21 +115,21 @@ export default function CareersPage() {
             transition={{ duration: 0.8 }}
             className="max-w-3xl"
           >
-            <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 section-label font-bold uppercase tracking-[0.2em] mb-6 backdrop-blur-md">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+            <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary section-label font-bold uppercase tracking-[0.2em] mb-6 backdrop-blur-md">
+              <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
               Join Our Care Team
             </div>
             <h1 className="hero-title font-extrabold mb-6 tracking-tight leading-[1.05] text-white">
               Make a <br />
-              <span className="text-emerald-400">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-white to-purple-400">
                 Meaningful Difference
               </span>
             </h1>
             <p className="subtitle text-zinc-300 font-medium leading-relaxed max-w-xl mb-10">
-              Joining Revira Care Australia offers an exciting opportunity to empower individuals with disabilities and foster a more inclusive community.
+              Joining ReviraCare Australia offers an exciting opportunity to empower individuals with disabilities and foster a more inclusive community.
             </p>
             <div className="flex flex-wrap gap-4">
-              <a href="#how-to-apply" className="px-8 py-4 bg-emerald-500 text-white rounded-2xl font-bold text-sm hover:bg-emerald-600 transition-all hover:scale-105 inline-flex items-center gap-2 shadow-xl shadow-emerald-500/20 group">
+              <a href="#how-to-apply" className="px-8 py-4 bg-primary text-white rounded-2xl font-bold text-sm hover:opacity-90 transition-all hover:scale-105 inline-flex items-center gap-2 shadow-xl shadow-primary/20 group">
                 Begin Your Journey
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </a>
@@ -163,9 +163,9 @@ export default function CareersPage() {
 
               <div className="space-y-4">
                 {[
-                  { title: "Empathy & Reliability", icon: <Heart className="w-5 h-5 text-rose-500" /> },
-                  { title: "Strong Commitment", icon: <Award className="w-5 h-5 text-amber-500" /> },
-                  { title: "Inclusive Environment", icon: <UsersIcon className="w-5 h-5 text-blue-500" /> }
+                  { title: "Empathy & Reliability", icon: <Heart className="w-5 h-5 text-primary" /> },
+                  { title: "Strong Commitment", icon: <Award className="w-5 h-5 text-secondary" /> },
+                  { title: "Inclusive Environment", icon: <UsersIcon className="w-5 h-5 text-primary" /> }
                 ].map((item, i) => (
                   <div key={i} className="flex items-center gap-3.5 p-4 rounded-xl bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-white/5 shadow-sm">
                     <div className="w-10 h-10 rounded-lg bg-zinc-50 dark:bg-zinc-950 flex items-center justify-center">
@@ -191,10 +191,10 @@ export default function CareersPage() {
                   className="object-cover"
                 />
               </div>
-              <div className="absolute -bottom-10 -right-10 bg-emerald-500 dark:bg-emerald-600 p-8 rounded-3xl shadow-2xl hidden md:block max-w-[280px]">
+              <div className="absolute -bottom-10 -right-10 bg-primary p-8 rounded-3xl shadow-2xl hidden md:block max-w-[280px]">
                 <Rocket className="w-8 h-8 text-white mb-4" />
                 <h4 className="text-white font-bold mb-2">Build Your Career</h4>
-                <p className="text-emerald-50/80 text-xs leading-relaxed">
+                <p className="text-green-50/80 text-xs leading-relaxed">
                   We provide a supportive environment where every team member can thrive and achieve their personal goals.
                 </p>
               </div>
@@ -244,15 +244,15 @@ export default function CareersPage() {
                 <h4 className="text-2xl font-bold mb-6">Required NDIS Courses</h4>
                 <div className="space-y-4 mb-8">
                   {ONLINE_COURSES.map((course, i) => (
-                    <div key={i} className="flex items-center gap-4 p-4 rounded-2xl bg-zinc-50 dark:bg-zinc-900 border border-border group hover:border-emerald-500/30 transition-all">
-                      <div className="w-8 h-8 rounded-full bg-emerald-500/10 flex items-center justify-center text-emerald-500">
+                    <div key={i} className="flex items-center gap-4 p-4 rounded-2xl bg-zinc-50 dark:bg-zinc-900 border border-border group hover:border-primary/30 transition-all">
+                      <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary">
                         <CheckCircle2 className="w-5 h-5" />
                       </div>
                       <div className="flex-1">
                         <div className="text-sm font-bold">{course.title}</div>
                         <div className="text-[10px] text-zinc-500 uppercase font-bold tracking-tighter">{course.provider} Provided</div>
                       </div>
-                      <div className="text-[10px] font-black uppercase text-emerald-500">{course.status}</div>
+                      <div className="text-[10px] font-black uppercase text-primary">{course.status}</div>
                     </div>
                   ))}
                 </div>
@@ -283,7 +283,7 @@ export default function CareersPage() {
             <div className="bg-zinc-900 dark:bg-zinc-900/80 rounded-[3rem] overflow-hidden shadow-3xl text-white">
               <div className="grid grid-cols-1 lg:grid-cols-12">
                 {/* Left Info Column */}
-                <div className="lg:col-span-5 p-10 md:p-14 bg-emerald-700 flex flex-col justify-between">
+                <div className="lg:col-span-5 p-10 md:p-14 bg-secondary flex flex-col justify-between">
                   <div>
                     <h3 className="text-3xl md:text-4xl font-bold mb-6">Ready to Apply?</h3>
                     <p className="text-white/80 leading-relaxed mb-10">
@@ -313,7 +313,7 @@ export default function CareersPage() {
                           <ul className="space-y-2">
                             {REQUIRED_DOCS.slice(0, 5).map(doc => (
                               <li key={doc} className="text-xs flex items-center gap-2">
-                                <Check className="w-3 h-3 text-emerald-400" /> {doc}
+                                <Check className="w-3 h-3 text-primary" /> {doc}
                               </li>
                             ))}
                             <li className="text-[10px] text-white/40 mt-2">+ 3 Identifications & First Aid</li>
@@ -342,7 +342,7 @@ export default function CareersPage() {
                           <User className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-400" />
                           <input
                             type="text"
-                            className="w-full bg-zinc-50 dark:bg-zinc-950 border border-zinc-200 dark:border-white/10 rounded-xl px-12 py-3 text-sm focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 outline-none transition-all text-zinc-900 dark:text-white"
+                            className="w-full bg-zinc-50 dark:bg-zinc-950 border border-zinc-200 dark:border-white/10 rounded-xl px-12 py-3 text-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all text-zinc-900 dark:text-white"
                             placeholder="John Doe"
                           />
                         </div>
@@ -353,7 +353,7 @@ export default function CareersPage() {
                           <Phone className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-400" />
                           <input
                             type="tel"
-                            className="w-full bg-zinc-50 dark:bg-zinc-950 border border-zinc-200 dark:border-white/10 rounded-xl px-12 py-3 text-sm focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 outline-none transition-all text-zinc-900 dark:text-white"
+                            className="w-full bg-zinc-50 dark:bg-zinc-950 border border-zinc-200 dark:border-white/10 rounded-xl px-12 py-3 text-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all text-zinc-900 dark:text-white"
                             placeholder="+61 400 000 000"
                           />
                         </div>
@@ -401,7 +401,7 @@ export default function CareersPage() {
                       <label className="text-xs font-bold text-zinc-500 uppercase tracking-widest">Document Uploads (Max 10 files, PDF preferred)</label>
                       <div
                         onClick={() => fileInputRef.current?.click()}
-                        className="border-2 border-dashed border-zinc-200 dark:border-white/10 rounded-2xl p-8 text-center cursor-pointer hover:border-emerald-500/50 hover:bg-zinc-50 dark:hover:bg-white/5 transition-all group"
+                        className="border-2 border-dashed border-zinc-200 dark:border-white/10 rounded-2xl p-8 text-center cursor-pointer hover:border-primary/50 hover:bg-zinc-50 dark:hover:bg-white/5 transition-all group"
                       >
                         <input
                           type="file"
@@ -411,8 +411,8 @@ export default function CareersPage() {
                           accept=".pdf,.jpg,.jpeg,.png"
                           onChange={handleFileChange}
                         />
-                        <div className="w-12 h-12 bg-emerald-500/10 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-                          <Upload className="w-6 h-6 text-emerald-500" />
+                        <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                          <Upload className="w-6 h-6 text-primary" />
                         </div>
                         <p className="text-sm font-bold mb-1">Click to upload or drag & drop</p>
                         <p className="text-[10px] text-zinc-500 font-medium">NDIS Checks, WWCC, First Aid, CPR, ID (Max 10MB per file)</p>
@@ -435,7 +435,7 @@ export default function CareersPage() {
                                 className="flex items-center justify-between p-3 bg-zinc-50 dark:bg-white/5 rounded-xl border border-border"
                               >
                                 <div className="flex items-center gap-3">
-                                  <FileText className="w-4 h-4 text-emerald-500" />
+                                  <FileText className="w-4 h-4 text-primary" />
                                   <span className="text-xs font-bold truncate max-w-[200px] text-zinc-900 dark:text-zinc-200">{file.name}</span>
                                   <span className="text-[10px] text-zinc-400">{(file.size / (1024 * 1024)).toFixed(2)}MB</span>
                                 </div>
@@ -454,12 +454,12 @@ export default function CareersPage() {
 
                     <button
                       type="button"
-                      className="w-full py-4 bg-zinc-900 dark:bg-emerald-500 text-white rounded-2xl font-bold text-sm hover:scale-[1.02] transition-all shadow-xl shadow-emerald-500/10 active:scale-[0.98]"
+                      className="w-full py-4 bg-primary text-white rounded-2xl font-bold text-sm hover:scale-[1.02] transition-all shadow-xl shadow-primary/10 active:scale-[0.98]"
                     >
                       Submit Application
                     </button>
                     <p className="text-[10px] text-center text-zinc-500 font-medium px-10">
-                      By submitting, you agree to Revira Care's recruitment privacy policy and confirm that all uploaded documents are authentic.
+                      By submitting, you agree to ReviraCare's recruitment privacy policy and confirm that all uploaded documents are authentic.
                     </p>
                   </form>
                 </div>

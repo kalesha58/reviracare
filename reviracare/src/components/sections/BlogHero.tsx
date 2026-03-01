@@ -29,14 +29,14 @@ export function BlogHero() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6 }}
                     >
-                        <div className="section-label inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary uppercase tracking-widest mb-6 backdrop-blur-sm">
+                        <div className="section-label inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary/10 border border-secondary/20 text-secondary uppercase tracking-widest mb-6 backdrop-blur-sm">
                             <Sparkles className="w-3.5 h-3.5" />
                             <span>Premium Blog Resource</span>
                         </div>
 
-                        <h1 className="hero-title text-foreground tracking-tight leading-[1.1] mb-6">
+                        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground tracking-tight leading-[1.1] mb-6">
                             Insights & <br />
-                            <span className="text-primary italic">Knowledge</span>
+                            <span className="text-secondary italic">Knowledge</span>
                         </h1>
 
                         <p className="subtitle text-muted-foreground leading-relaxed mb-10 max-w-2xl">
@@ -70,9 +70,9 @@ export function BlogHero() {
 
                             <div className="h-4 w-px bg-border hidden sm:block" />
 
-                            <div className="flex items-center gap-2 text-sm font-semibold text-primary group cursor-default">
+                            <div className="flex items-center gap-2 text-sm font-semibold text-secondary group cursor-default">
                                 <span>Expertly Curated</span>
-                                <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+                                <div className="w-2 h-2 rounded-full bg-secondary animate-pulse" />
                             </div>
                         </div>
                     </motion.div>
@@ -85,7 +85,7 @@ export function BlogHero() {
                 transition={{ delay: 1.2, duration: 1 }}
                 className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden lg:block"
             >
-                <ArrowDown className="w-6 h-6 text-primary animate-bounce" />
+                <ArrowDown className="w-6 h-6 text-secondary animate-bounce" />
             </motion.div>
         </Section>
     );

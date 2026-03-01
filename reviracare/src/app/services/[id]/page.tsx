@@ -16,9 +16,9 @@ const SERVICE_DATA: Record<string, any> = {
         image: "/images/ndis/service-in-home.png",
         accent: "emerald",
         content: `
-      Revira Care is dedicated to providing exceptional support to individuals with disabilities, ensuring they receive the care and assistance they need in the comfort of their homes. Our Home Care services are tailored to promote independence, dignity, and a high quality of life for all our clients.
+      ReviraCare is dedicated to providing exceptional support to individuals with disabilities, ensuring they receive the care and assistance they need in the comfort of their homes. Our Home Care services are tailored to promote independence, dignity, and a high quality of life for all our clients.
       
-      Home care refers to professional, compassionate support provided in a person’s home to help them with daily living activities, medical needs, or companionship. It is an ideal solution for those who want to maintain their independence while receiving the support they need. Revira Care ensures that every home care plan is customized to meet the unique needs of individuals with disabilities.
+      Home care refers to professional, compassionate support provided in a person’s home to help them with daily living activities, medical needs, or companionship. It is an ideal solution for those who want to maintain their independence while receiving the support they need. ReviraCare ensures that every home care plan is customized to meet the unique needs of individuals with disabilities.
     `,
         benefits: [
             {
@@ -41,7 +41,7 @@ const SERVICE_DATA: Record<string, any> = {
         sections: [
             {
                 title: "Nursing Care Support",
-                content: "At Revira Care, we offer high-quality nursing care services tailored specifically for individuals with disabilities. Our skilled nursing team is trained to meet unique medical and personal needs.",
+                content: "At ReviraCare, we offer high-quality nursing care services tailored specifically for individuals with disabilities. Our skilled nursing team is trained to meet unique medical and personal needs.",
                 subtopics: [
                     { title: "Medication Management", description: "Timely and accurate administration." },
                     { title: "Wound Care", description: "Essential support to prevent infections and promote healing." },
@@ -65,7 +65,7 @@ const SERVICE_DATA: Record<string, any> = {
         image: "/images/ndis/service-social.png",
         accent: "blue",
         content: `
-      Social and community participation is a critical aspect of a person’s well-being. At Revira Care, we understand the importance of fostering inclusion, social interaction, and a sense of belonging within the community for people with disabilities. This service is designed to encourage active involvement in social activities.
+      Social and community participation is a critical aspect of a person’s well-being. At ReviraCare, we understand the importance of fostering inclusion, social interaction, and a sense of belonging within the community for people with disabilities. This service is designed to encourage active involvement in social activities.
     `,
         benefits: [
             {
@@ -215,6 +215,131 @@ const SERVICE_DATA: Record<string, any> = {
                 ]
             }
         ]
+    },
+    "coordination": {
+        title: "Coordination Of Supports",
+        subtitle: "Connecting you with services that align with your NDIS goals.",
+        image: "/images/ndis/service-group.png",
+        accent: "violet",
+        content: `
+      Assisting participants in managing their NDIS plans by connecting them with services that align with their goals. Our coordinators simplify the process to ensure effective use of resources.
+    `,
+        benefits: [
+            { title: "Plan Management", description: "Support to navigate and use your NDIS plan effectively." },
+            { title: "Service Linking", description: "Connecting you with the right providers for your goals." },
+            { title: "Resource Optimisation", description: "Making the most of your allocated supports." }
+        ],
+        sections: [
+            {
+                title: "How We Help",
+                content: "Our coordinators work with you to simplify the NDIS process and connect you with services that align with your goals.",
+                subtopics: [
+                    { title: "Goal Alignment", description: "Matching services to your plan and aspirations." },
+                    { title: "Process Simplification", description: "Reducing complexity so you can focus on what matters." },
+                    { title: "Ongoing Support", description: "Continuous assistance as your needs evolve." }
+                ]
+            }
+        ]
+    },
+    "short-term-accommodation": {
+        title: "Short/Medium Term Accommodation",
+        subtitle: "Temporary housing for respite and transitional care.",
+        image: "/images/ndis/service-sil.png",
+        accent: "violet",
+        content: `
+      Offering temporary housing solutions for individuals needing respite or transitional care. Our accommodations are designed to provide comfort, support, and opportunities for skill development.
+    `,
+        benefits: [
+            { title: "Respite", description: "A break for you and your carers in a supportive setting." },
+            { title: "Transitional Care", description: "Stable accommodation during life transitions." },
+            { title: "Skill Development", description: "Opportunities to build independence in a safe environment." }
+        ],
+        sections: [
+            {
+                title: "What We Offer",
+                content: "Comfortable, supportive accommodation for short or medium stays.",
+                subtopics: [
+                    { title: "Comfort", description: "A welcoming environment that feels like home." },
+                    { title: "Support", description: "Staff on hand to assist with daily needs." },
+                    { title: "Skill Building", description: "Programs to develop independence and confidence." }
+                ]
+            }
+        ]
+    },
+    "housing-tenancy": {
+        title: "Housing And Tenancy",
+        subtitle: "Finding, securing, and maintaining the right home for you.",
+        image: "/images/ndis/service-sda.png",
+        accent: "indigo",
+        content: `
+      Providing assistance with finding, securing, and maintaining appropriate housing. Our team helps individuals understand their tenancy rights and responsibilities while ensuring a stable living environment.
+    `,
+        benefits: [
+            { title: "Finding Housing", description: "Support to search for and secure suitable accommodation." },
+            { title: "Tenancy Rights", description: "Understanding your rights and responsibilities." },
+            { title: "Stable Living", description: "Ongoing support to maintain a stable living environment." }
+        ],
+        sections: [
+            {
+                title: "Our Support",
+                content: "We help you navigate the housing journey from search to ongoing tenancy.",
+                subtopics: [
+                    { title: "Search Support", description: "Guidance in finding appropriate and accessible housing." },
+                    { title: "Applications", description: "Help with applications and paperwork." },
+                    { title: "Sustaining Tenancy", description: "Support to maintain a stable and secure home." }
+                ]
+            }
+        ]
+    },
+    "nursing-care": {
+        title: "Nursing Care",
+        subtitle: "Professional nursing services tailored to your health needs.",
+        image: "/images/ndis/service-in-home.png",
+        accent: "teal",
+        content: `
+      Delivering professional nursing services to address medical and health needs, including wound care, medication management, and monitoring chronic conditions. We provide compassionate and skilled care tailored to individual requirements.
+    `,
+        benefits: [
+            { title: "Wound Care", description: "Expert care to prevent infection and promote healing." },
+            { title: "Medication Management", description: "Safe and timely administration and monitoring." },
+            { title: "Chronic Condition Monitoring", description: "Ongoing support for long-term health needs." }
+        ],
+        sections: [
+            {
+                title: "Our Nursing Services",
+                content: "Compassionate, skilled care delivered in the comfort of your home or accommodation.",
+                subtopics: [
+                    { title: "Wound Care", description: "Essential support to prevent infections and promote healing." },
+                    { title: "Medication Management", description: "Timely and accurate administration." },
+                    { title: "Routine Monitoring", description: "Monitoring vital signs and managing chronic conditions." }
+                ]
+            }
+        ]
+    },
+    "assist-travel-transport": {
+        title: "Assist Travel/Transport",
+        subtitle: "Reliable, safe travel support tailored to your schedule.",
+        image: "/images/ndis/service-social.png",
+        accent: "sky",
+        content: `
+      True freedom starts with a worry-free journey. At ReviraCare, we offer reliable and safe travel support, carefully tailored to your unique schedule and needs. We're here to build your confidence, helping you reach medical appointments, enjoy social outings, and stay connected with your community.
+    `,
+        benefits: [
+            { title: "Reliable & Safe", description: "Dependable transport so you can plan with confidence." },
+            { title: "Tailored to You", description: "Scheduled around your appointments and activities." },
+            { title: "Community Access", description: "Reach medical appointments, social outings, and more." }
+        ],
+        sections: [
+            {
+                title: "How We Support Your Travel",
+                content: "We provide safe, accessible transport so you can get where you need to go.",
+                subtopics: [
+                    { title: "Medical Appointments", description: "On-time transport to healthcare visits." },
+                    { title: "Social Outings", description: "Travel to community and social activities." },
+                    { title: "Accessible Vehicles", description: "Vehicles equipped for your mobility needs." }
+                ]
+            }
+        ]
     }
 };
 
@@ -222,9 +347,26 @@ const ACCENTS: Record<string, string> = {
     emerald: "text-emerald-600 dark:text-emerald-400 border-emerald-500/20 bg-emerald-500/5",
     blue: "text-blue-600 dark:text-blue-400 border-blue-500/20 bg-blue-500/5",
     purple: "text-purple-600 dark:text-purple-400 border-purple-500/20 bg-purple-500/5",
+    violet: "text-violet-600 dark:text-violet-400 border-violet-500/20 bg-violet-500/5",
+    indigo: "text-indigo-600 dark:text-indigo-400 border-indigo-500/20 bg-indigo-500/5",
+    teal: "text-teal-600 dark:text-teal-400 border-teal-500/20 bg-teal-500/5",
+    sky: "text-sky-600 dark:text-sky-400 border-sky-500/20 bg-sky-500/5",
     amber: "text-amber-600 dark:text-amber-400 border-amber-500/20 bg-amber-500/5",
     rose: "text-rose-600 dark:text-rose-400 border-rose-500/20 bg-rose-500/5",
     cyan: "text-cyan-600 dark:text-cyan-400 border-cyan-500/20 bg-cyan-500/5",
+};
+
+const ACCENT_DOT: Record<string, string> = {
+    emerald: "bg-emerald-500",
+    blue: "bg-blue-500",
+    purple: "bg-purple-500",
+    violet: "bg-violet-500",
+    indigo: "bg-indigo-500",
+    teal: "bg-teal-500",
+    sky: "bg-sky-500",
+    amber: "bg-amber-500",
+    rose: "bg-rose-500",
+    cyan: "bg-cyan-500",
 };
 
 export default function ServiceDetailPage() {
@@ -309,7 +451,7 @@ export default function ServiceDetailPage() {
                                                         className="p-6 rounded-2xl bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-white/5 shadow-sm"
                                                     >
                                                         <h3 className="font-bold text-zinc-900 dark:text-white mb-2 flex items-center gap-3">
-                                                            <span className={cn("w-1.5 h-1.5 rounded-full", service.accent === 'emerald' ? 'bg-emerald-500' : 'bg-blue-500')} />
+                                                            <span className={cn("w-1.5 h-1.5 rounded-full", ACCENT_DOT[service.accent] ?? "bg-emerald-500")} />
                                                             {sub.title}
                                                         </h3>
                                                         <p className="text-sm text-zinc-500 dark:text-zinc-400">
