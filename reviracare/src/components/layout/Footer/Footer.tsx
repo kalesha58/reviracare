@@ -116,12 +116,12 @@ export function Footer(): React.ReactElement {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10">
               {/* Phone */}
               <div className="flex items-start gap-5">
-                <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center shrink-0">
-                  <Phone className="w-6 h-6 text-primary" />
+                <div className="w-12 h-12 rounded-2xl bg-green-brand/10 flex items-center justify-center shrink-0">
+                  <Phone className="w-6 h-6 text-green-brand" />
                 </div>
                 <div>
                   <p className="text-sm font-bold text-white/60 uppercase tracking-widest mb-1">Call Us</p>
-                  <a href="tel:0288606462" className="text-xl md:text-2xl font-black text-white hover:text-primary transition-colors">
+                  <a href="tel:0288606462" className="text-xl md:text-2xl font-black text-white hover:text-green-brand transition-colors">
                     02 8860 6462
                   </a>
                 </div>
@@ -129,8 +129,8 @@ export function Footer(): React.ReactElement {
 
               {/* Address */}
               <div className="flex items-start gap-5">
-                <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center shrink-0">
-                  <MapPin className="w-6 h-6 text-primary" />
+                <div className="w-12 h-12 rounded-2xl bg-green-brand/10 flex items-center justify-center shrink-0">
+                  <MapPin className="w-6 h-6 text-green-brand" />
                 </div>
                 <div>
                   <p className="text-sm font-bold text-white/60 uppercase tracking-widest mb-1">Location</p>
@@ -142,12 +142,12 @@ export function Footer(): React.ReactElement {
 
               {/* Email */}
               <div className="flex items-start gap-5">
-                <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center shrink-0">
-                  <Mail className="w-6 h-6 text-primary" />
+                <div className="w-12 h-12 rounded-2xl bg-green-brand/10 flex items-center justify-center shrink-0">
+                  <Mail className="w-6 h-6 text-green-brand" />
                 </div>
                 <div>
                   <p className="text-sm font-bold text-white/60 uppercase tracking-widest mb-1">Email Us</p>
-                  <a href="mailto:info@reviracare.com.au" className="text-sm md:text-base text-white/95 font-semibold hover:text-primary transition-colors underline decoration-primary/30 underline-offset-4">
+                  <a href="mailto:info@reviracare.com.au" className="text-sm md:text-base text-white/95 font-semibold hover:text-green-brand transition-colors underline decoration-green-brand/30 underline-offset-4">
                     info@reviracare.com.au
                   </a>
                 </div>
@@ -155,8 +155,8 @@ export function Footer(): React.ReactElement {
 
               {/* Hours */}
               <div className="flex items-start gap-5">
-                <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center shrink-0">
-                  <Clock className="w-6 h-6 text-primary" />
+                <div className="w-12 h-12 rounded-2xl bg-green-brand/10 flex items-center justify-center shrink-0">
+                  <Clock className="w-6 h-6 text-green-brand" />
                 </div>
                 <div>
                   <p className="text-sm font-bold text-white/60 uppercase tracking-widest mb-1">Working Hours</p>
@@ -191,9 +191,9 @@ export function Footer(): React.ReactElement {
         <div className="pt-10 pb-12 border-t border-white/15">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-end">
             <div className="space-y-4 max-w-2xl">
-              <div className="flex items-center gap-3 text-red-400">
+              <div className="flex items-center gap-3 text-green-brand">
                 <Heart className="w-5 h-5 fill-current shrink-0" />
-                <span className="footer-legal uppercase tracking-wider text-red-400/90">
+                <span className="footer-legal uppercase tracking-wider text-green-brand/90">
                   Acknowledgement of Country
                 </span>
               </div>

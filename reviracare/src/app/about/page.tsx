@@ -148,8 +148,8 @@ export default function AboutPage(): React.ReactElement {
             <div className="absolute inset-0 bg-gradient-to-r from-zinc-900/60 via-zinc-900/20 to-transparent" aria-hidden />
 
             {/* Decorative Elements */}
-            <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-primary/10 blur-[120px] rounded-full" />
-            <div className="absolute bottom-1/4 left-1/4 w-96 h-96 bg-purple-brand/20 blur-[120px] rounded-full" />
+            <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-white/10 blur-[120px] rounded-full" />
+            <div className="absolute bottom-1/4 left-1/4 w-96 h-96 bg-white/10 blur-[120px] rounded-full" />
           </motion.div>
         </div>
 
@@ -163,17 +163,17 @@ export default function AboutPage(): React.ReactElement {
                 transition={{ duration: 0.8, ease: "easeOut" }}
                 className="w-full min-w-0"
               >
-                <div className="section-label inline-flex items-center gap-2 px-2.5 sm:px-3 py-1.5 rounded-full bg-white/95 dark:bg-white/5 border border-zinc-200 dark:border-white/10 text-emerald-600 dark:text-emerald-400 font-bold uppercase tracking-[0.2em] mb-4 sm:mb-6 shadow-sm text-[10px] sm:text-xs">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                <div className="inline-flex items-center gap-2 px-2.5 sm:px-3 py-1.5 rounded-full bg-white/10 border border-white/20 text-white text-xs font-bold uppercase tracking-[0.2em] mb-4 sm:mb-6 shadow-sm">
+                  <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
                   Trusted NDIS Partner
                 </div>
                 <h1 className="hero-title font-extrabold tracking-tight text-white leading-[1.15] mb-4 sm:mb-6 drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)] break-words">
                   Reimagining <br className="hidden sm:block" />
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-white to-purple-brand">
+                  <span className="text-white">
                     The Care Experience
                   </span>
                 </h1>
-                <p className="subtitle text-white dark:text-zinc-400 leading-relaxed mb-6 sm:mb-10 max-w-xl drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)] font-medium min-w-0">
+                <p className="subtitle text-white dark:text-zinc-400 leading-relaxed mb-6 sm:mb-10 max-w-xl drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)] font-medium min-w-0 text-sm">
                   Revira Care is more than a service provider. We are your partners in creating a life characterized by empowerment, independence, and joy.
                 </p>
               </motion.div>
@@ -259,7 +259,7 @@ export default function AboutPage(): React.ReactElement {
             transition={{ delay: 1.2, duration: 1 }}
             className="flex flex-col items-center gap-2"
           >
-            <div className="w-px h-8 bg-gradient-to-b from-emerald-500 to-transparent" />
+            <div className="w-px h-8 bg-gradient-to-b from-white to-transparent" />
             <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-white/90 dark:text-zinc-400">Scroll</span>
           </motion.div>
 

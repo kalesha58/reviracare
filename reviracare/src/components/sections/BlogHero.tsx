@@ -30,18 +30,18 @@ export function BlogHero() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6 }}
                     >
-                        <div className="section-label inline-flex items-center gap-2 px-2.5 sm:px-3 py-1.5 rounded-full bg-white/95 dark:bg-white/5 border border-zinc-200 dark:border-white/10 text-emerald-600 dark:text-emerald-400 font-bold uppercase tracking-[0.2em] mb-4 sm:mb-6 shadow-sm text-[10px] sm:text-xs">
+                        <div className="inline-flex items-center gap-2 px-2.5 sm:px-3 py-1.5 rounded-full bg-white/10 border border-white/20 text-white text-xs font-bold uppercase tracking-[0.2em] mb-4 sm:mb-6 shadow-sm">
                             <Sparkles className="w-3.5 h-3.5" />
-                            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                            <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
                             Premium Blog Resource
                         </div>
 
                         <h1 className="hero-title font-extrabold tracking-tight text-white leading-[1.15] mb-4 sm:mb-6 drop-shadow-[0_1px_2px_rgba(0,0,0,0.3)]">
                             Insights &{" "}
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-white to-purple-400 italic">Knowledge</span>
+                            <span className="text-white italic">Knowledge</span>
                         </h1>
 
-                        <p className="subtitle text-white dark:text-zinc-400 leading-relaxed mb-8 sm:mb-10 max-w-2xl drop-shadow-[0_1px_2px_rgba(0,0,0,0.3)]">
+                        <p className="subtitle text-white dark:text-zinc-400 leading-relaxed mb-8 sm:mb-10 max-w-2xl drop-shadow-[0_1px_2px_rgba(0,0,0,0.3)] text-sm">
                             A curated collection of research, advocacy, and community stories designed to empower and inform the disability support network. Our commitment to quality ensures you get the most relevant insights every time.
                         </p>
 
@@ -70,9 +70,9 @@ export function BlogHero() {
 
                             <div className="h-4 w-px bg-white/30 hidden sm:block" />
 
-                            <div className="flex items-center gap-2 text-sm font-semibold text-white/90 dark:text-emerald-300">
+                            <div className="flex items-center gap-2 text-sm font-semibold text-white/90 dark:text-zinc-300">
                                 <span>Expertly Curated</span>
-                                <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+                                <div className="w-2 h-2 rounded-full bg-white animate-pulse" />
                             </div>
                         </div>
                     </motion.div>
@@ -86,7 +86,7 @@ export function BlogHero() {
                 className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden lg:block"
             >
                 <div className="flex flex-col items-center gap-2">
-                    <div className="w-px h-8 bg-gradient-to-b from-emerald-500 to-transparent" />
+                    <div className="w-px h-8 bg-gradient-to-b from-white to-transparent" />
                     <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-white/90 dark:text-zinc-400">Scroll</span>
                 </div>
             </motion.div>

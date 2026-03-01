@@ -116,21 +116,21 @@ export default function CareersPage() {
             transition={{ duration: 0.8 }}
             className="max-w-3xl"
           >
-            <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-purple-brand/10 border border-purple-brand/20 text-purple-brand dark:text-purple-200 section-label font-bold uppercase tracking-[0.2em] mb-6 backdrop-blur-md">
-              <span className="w-1.5 h-1.5 rounded-full bg-purple-brand dark:bg-purple-200 animate-pulse" />
+            <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/20 text-white text-xs font-bold uppercase tracking-[0.2em] mb-6 backdrop-blur-md">
+              <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
               Join Our Care Team
             </div>
             <h1 className="hero-title font-extrabold mb-6 tracking-tight leading-[1.05] text-white">
               Make a <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-brand via-white to-purple-brand">
+              <span className="text-white">
                 Meaningful Difference
               </span>
             </h1>
-            <p className="subtitle text-zinc-300 font-medium leading-relaxed max-w-xl mb-10">
+            <p className="subtitle text-zinc-300 font-medium leading-relaxed max-w-xl mb-10 text-sm">
               Joining Revira Care Australia offers an exciting opportunity to empower individuals with disabilities and foster a more inclusive community.
             </p>
             <div className="flex flex-wrap gap-4">
-              <a href="#how-to-apply" className="px-8 py-4 bg-purple-brand text-white rounded-2xl font-bold text-sm hover:opacity-90 transition-all hover:scale-105 inline-flex items-center gap-2 shadow-xl shadow-purple-brand/20 group">
+              <a href="#how-to-apply" className="px-8 py-4 bg-white/10 border border-white/20 text-white rounded-2xl font-bold text-sm hover:bg-white/20 transition-all hover:scale-105 inline-flex items-center gap-2 group">
                 Begin Your Journey
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </a>

@@ -71,8 +71,8 @@ export default function ContactPage() {
             transition={{ duration: 0.8 }}
             className="max-w-3xl"
           >
-            <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-purple-brand/10 border border-purple-brand/20 text-purple-brand dark:text-purple-200 section-label uppercase tracking-[0.2em] mb-6 backdrop-blur-md">
-              <span className="w-1.5 h-1.5 rounded-full bg-purple-brand dark:bg-purple-200 animate-pulse" />
+            <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/20 text-white text-xs font-bold uppercase tracking-[0.2em] mb-6 backdrop-blur-md">
+              <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
               Get In Touch
             </div>
             <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 mb-6">
@@ -86,11 +86,11 @@ export default function ContactPage() {
               <div>
                 <h1 className="hero-title tracking-tight leading-tight text-white">
                   Feel Free To{" "}
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-brand via-white to-purple-brand">Contact Us</span>
+                  <span className="text-white">Contact Us</span>
                 </h1>
               </div>
             </div>
-            <p className="subtitle text-zinc-200 font-medium leading-relaxed max-w-2xl">
+            <p className="subtitle text-zinc-200 font-medium leading-relaxed max-w-2xl text-sm">
               Revira Care provides comprehensive services tailored to individuals with disabilities, ensuring accessibility, independence, and empowerment. From personalized care plans to community integration support, we focus on enhancing quality of life.
             </p>
           </motion.div>
