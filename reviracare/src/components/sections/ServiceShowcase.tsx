@@ -239,7 +239,7 @@ export function ServiceShowcase() {
                                     <h3 className="text-[13px] sm:text-sm font-bold text-white leading-tight line-clamp-3 drop-shadow-sm">
                                         {service.title}
                                     </h3>
-                                    <span className="mt-2 inline-flex items-center gap-1 text-purple-600 dark:text-purple-400 text-xs font-bold uppercase tracking-wider">
+                                    <span className="mt-2 inline-flex items-center gap-1 text-purple-brand dark:text-purple-100 text-xs font-bold uppercase tracking-wider">
                                         Learn more <ArrowRight className="w-3 h-3 opacity-80" />
                                     </span>
                                 </div>

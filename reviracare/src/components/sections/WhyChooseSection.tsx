@@ -83,7 +83,7 @@ function ConnectorLines() {
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeDasharray="4 4"
-                    className={i % 2 === 0 ? "text-primary/30" : "text-purple-400/30"}
+                    className={i % 2 === 0 ? "text-primary/30" : "text-purple-brand/30"}
                     initial={{ strokeDashoffset: 32, opacity: 0 }}
                     whileInView={{ strokeDashoffset: 0, opacity: 1 }}
                     viewport={{ once: true }}
@@ -175,7 +175,7 @@ function ConnectorLines() {
 
 export function WhyChooseSection(): React.ReactElement {
   return (
-    <Section className="bg-purple-50 dark:bg-purple-950/20 text-foreground border-t border-purple-100 dark:border-purple-900/50 overflow-hidden">
+    <Section className="bg-purple-brand/5 dark:bg-purple-brand/20 text-foreground border-t border-purple-brand/20 dark:border-purple-brand/30 overflow-hidden">
       <Container>
         <motion.div
           initial="hidden"

@@ -86,7 +86,7 @@ export default function ContactPage() {
               <div>
                 <h1 className="hero-title tracking-tight leading-tight text-white">
                   Feel Free To{" "}
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-white to-purple-400">Contact Us</span>
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-white to-purple-brand">Contact Us</span>
                 </h1>
               </div>
             </div>

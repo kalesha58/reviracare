@@ -161,7 +161,7 @@ export default function HomePage(): React.ReactElement {
                         <>
                           {rest}
                           {rest && ' '}
-                          <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-white to-purple-400">
+                          <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-white to-purple-brand">
                             {lastTwo}
                           </span>
                         </>
@@ -239,7 +239,7 @@ export default function HomePage(): React.ReactElement {
       <SupportConfidenceSection />
 
       {/* Welcome Section */}
-      <Section className="bg-white dark:bg-zinc-950 text-foreground border-t border-purple-100 dark:border-purple-900/50 overflow-hidden">
+      <Section className="bg-white dark:bg-zinc-950 text-foreground border-t border-purple-brand/20 dark:border-purple-brand/30 overflow-hidden">
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-16 items-start">
             {/* Left: Intro + highlights */}
@@ -284,14 +284,14 @@ export default function HomePage(): React.ReactElement {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="group relative overflow-hidden rounded-2xl sm:rounded-3xl border border-purple-100 dark:border-purple-900/50 bg-white dark:bg-zinc-900/80 p-6 sm:p-8 flex flex-col justify-between shadow-sm hover:shadow-lg transition-all duration-300"
+                className="group relative overflow-hidden rounded-3xl border border-purple-brand/20 dark:border-purple-brand/30 bg-white dark:bg-zinc-900/80 p-8 flex flex-col justify-between shadow-sm hover:shadow-lg transition-all duration-300"
               >
-                <div className="absolute top-0 right-0 w-32 h-32 bg-purple-50 dark:bg-purple-900/20 rounded-full -translate-y-1/2 translate-x-1/2 group-hover:scale-150 transition-transform duration-500" aria-hidden />
+                <div className="absolute top-0 right-0 w-32 h-32 bg-purple-brand/10 dark:bg-purple-brand/20 rounded-full -translate-y-1/2 translate-x-1/2 group-hover:scale-150 transition-transform duration-500" aria-hidden />
                 <div className="relative">
-                  <span className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-purple-900 dark:text-purple-100 tracking-tight">500+</span>
-                  <p className="caption text-purple-500 dark:text-purple-400 uppercase tracking-wider mt-2">Clients Supported</p>
+                  <span className="text-4xl sm:text-5xl font-extrabold text-purple-brand dark:text-purple-100 tracking-tight">500+</span>
+                  <p className="caption text-purple-brand dark:text-purple-100 uppercase tracking-wider mt-2">Clients Supported</p>
                 </div>
-                <p className="body-sm text-slate-600 dark:text-purple-200/70 mt-3 sm:mt-4 relative">
+                <p className="body-sm text-slate-600 dark:text-white/70 mt-4 relative">
                   Individuals and families who trust us for quality, person-centred care.
                 </p>
               </motion.div>

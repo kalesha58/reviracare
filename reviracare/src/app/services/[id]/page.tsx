@@ -347,7 +347,7 @@ const SERVICE_DATA: Record<string, any> = {
 const ACCENTS: Record<string, string> = {
     emerald: "text-emerald-600 dark:text-emerald-400 border-emerald-500/20 bg-emerald-500/5",
     blue: "text-blue-600 dark:text-blue-400 border-blue-500/20 bg-blue-500/5",
-    purple: "text-purple-600 dark:text-purple-400 border-purple-500/20 bg-purple-500/5",
+    purple: "text-purple-brand dark:text-purple-100 border-purple-brand/20 bg-purple-brand/5",
     violet: "text-violet-600 dark:text-violet-400 border-violet-500/20 bg-violet-500/5",
     indigo: "text-indigo-600 dark:text-indigo-400 border-indigo-500/20 bg-indigo-500/5",
     teal: "text-teal-600 dark:text-teal-400 border-teal-500/20 bg-teal-500/5",
@@ -360,7 +360,7 @@ const ACCENTS: Record<string, string> = {
 const ACCENT_DOT: Record<string, string> = {
     emerald: "bg-emerald-500",
     blue: "bg-blue-500",
-    purple: "bg-purple-500",
+    purple: "bg-purple-brand",
     violet: "bg-violet-500",
     indigo: "bg-indigo-500",
     teal: "bg-teal-500",
@@ -389,7 +389,7 @@ export default function ServiceDetailPage() {
     const accentClass = ACCENTS[service.accent] || ACCENTS.purple;
 
     return (
-        <main className="bg-zinc-50 dark:bg-zinc-950 min-h-screen [--primary:var(--secondary)] [--accent:var(--purple-100)] [--accent-foreground:var(--purple-700)] dark:[--accent:#3b0764] dark:[--accent-foreground:#f3e8ff]">
+        <main className="bg-zinc-50 dark:bg-zinc-950 min-h-screen [--primary:var(--secondary)] [--accent:var(--purple-100)] [--accent-foreground:var(--purple-700)] dark:[--accent:var(--purple-950)] dark:[--accent-foreground:var(--purple-100)]">
             {/* Hero Section */}
             <section className="relative min-h-[85vh] flex items-center pt-24 pb-20 overflow-hidden">
                 {/* Background Image & Overlays */}
@@ -428,7 +428,7 @@ export default function ServiceDetailPage() {
                                 return (
                                     <>
                                         {rest}{' '}
-                                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-white to-purple-400">
+                                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-white to-purple-brand">
                                             {lastTwo}
                                         </span>
                                     </>
