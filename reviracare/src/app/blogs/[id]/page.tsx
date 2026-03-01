@@ -20,7 +20,6 @@ import {
     Linkedin,
     MessageCircle,
     Menu,
-    ArrowUpRight,
 } from "lucide-react";
 import { ALL_BLOG_POSTS } from "@/data/blogs.data";
 
@@ -164,23 +163,6 @@ export default function BlogDetailPage({ params }: { params: Promise<{ id: strin
                                         ))}
                                     </div>
 
-                                    {/* Enhanced CTA */}
-                                    <div className="mt-20 p-8 sm:p-12 rounded-[2.5rem] bg-zinc-900 text-white relative overflow-hidden group">
-                                        <div className="relative z-10 max-w-lg">
-                                            <h3 className="text-3xl font-bold mb-4">Let's build your accessible future together</h3>
-                                            <p className="text-zinc-400 mb-8 leading-relaxed">
-                                                Every project begins with a conversation. Speak with our experts to learn how we can make your home safer and more comfortable.
-                                            </p>
-                                            <Link
-                                                href="/contact"
-                                                className="inline-flex items-center gap-3 px-8 py-4 rounded-2xl bg-secondary text-white font-bold hover:scale-105 active:scale-95 transition-all shadow-xl shadow-secondary/20"
-                                            >
-                                                Start Your Project
-                                                <ArrowUpRight className="w-5 h-5" />
-                                            </Link>
-                                        </div>
-                                        <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-secondary/20 to-transparent pointer-events-none group-hover:from-secondary/30 transition-all duration-500" />
-                                    </div>
                                 </div>
                             </Container>
                         </Section>
