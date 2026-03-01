@@ -124,7 +124,7 @@ export default function AboutPage(): React.ReactElement {
   return (
     <main className="min-h-screen bg-zinc-50 dark:bg-zinc-950 text-zinc-900 dark:text-white">
       {/* Hero Section */}
-      <section className="relative min-h-[85vh] md:min-h-[90vh] flex items-center pt-24 md:pt-28 pb-36 md:pb-20 overflow-hidden">
+      <section className="relative min-h-[80vh] sm:min-h-[95vh] md:min-h-[92vh] flex items-center pt-20 sm:pt-24 md:pt-28 pb-32 sm:pb-64 md:pb-24 overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0 z-0 bg-white dark:bg-zinc-950 overflow-hidden">
           <motion.div
@@ -167,13 +167,13 @@ export default function AboutPage(): React.ReactElement {
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
                   Trusted NDIS Partner
                 </div>
-                <h1 className="hero-title font-extrabold tracking-tight text-white leading-[1.15] mb-6 drop-shadow-[0_1px_2px_rgba(0,0,0,0.3)]">
-                  Reimagining <br />
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-white to-purple-400">
+                <h1 className="hero-title font-extrabold tracking-tight text-white leading-[1.15] mb-4 sm:mb-6 drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]">
+                  Reimagining <br className="hidden sm:block" />
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-white to-purple-brand">
                     The Care Experience
                   </span>
                 </h1>
-                <p className="subtitle text-white dark:text-zinc-400 leading-relaxed mb-10 max-w-xl drop-shadow-[0_1px_2px_rgba(0,0,0,0.3)]">
+                <p className="subtitle text-white dark:text-zinc-400 leading-relaxed mb-6 sm:mb-10 max-w-xl drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)] font-medium">
                   Revira Care is more than a service provider. We are your partners in creating a life characterized by empowerment, independence, and joy.
                 </p>
               </motion.div>
@@ -264,7 +264,7 @@ export default function AboutPage(): React.ReactElement {
           </motion.div>
 
           {/* Mobile Horizontal Badges */}
-          <div className="lg:hidden flex flex-wrap justify-center items-center gap-3 px-4 w-full max-w-lg mx-auto overflow-x-auto no-scrollbar scroll-smooth pb-2">
+          <div className="lg:hidden flex flex-wrap justify-center items-center gap-2 sm:gap-3 px-4 w-full max-w-lg mx-auto overflow-x-auto no-scrollbar scroll-smooth pb-4">
             {[
               {
                 id: "ndis-official-mobile",

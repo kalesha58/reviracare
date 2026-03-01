@@ -129,8 +129,8 @@ export function Footer(): React.ReactElement {
 
               {/* Address */}
               <div className="flex items-start gap-5">
-                <div className="w-12 h-12 rounded-2xl bg-secondary/10 flex items-center justify-center shrink-0">
-                  <MapPin className="w-6 h-6 text-secondary" />
+                <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center shrink-0">
+                  <MapPin className="w-6 h-6 text-primary" />
                 </div>
                 <div>
                   <p className="text-sm font-bold text-white/60 uppercase tracking-widest mb-1">Location</p>
@@ -155,8 +155,8 @@ export function Footer(): React.ReactElement {
 
               {/* Hours */}
               <div className="flex items-start gap-5">
-                <div className="w-12 h-12 rounded-2xl bg-secondary/10 flex items-center justify-center shrink-0">
-                  <Clock className="w-6 h-6 text-secondary" />
+                <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center shrink-0">
+                  <Clock className="w-6 h-6 text-primary" />
                 </div>
                 <div>
                   <p className="text-sm font-bold text-white/60 uppercase tracking-widest mb-1">Working Hours</p>
