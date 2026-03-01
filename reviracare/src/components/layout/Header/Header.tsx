@@ -15,6 +15,7 @@ import { NAV_LINKS } from "@/constants/navigation";
 import { cn } from "@/lib/utils";
 import { ThemeToggle } from "@/components/theme/ThemeToggle";
 import Image from "next/image";
+import { BrandLogo } from "@/components/ui/BrandLogo";
 
 export function Header(): React.ReactElement {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -58,13 +59,12 @@ export function Header(): React.ReactElement {
           className="flex items-center gap-2 group"
           onClick={() => setMobileOpen(false)}
         >
-          <div className="relative w-40 h-14 transition-transform group-hover:scale-105">
-            <Image
-              src="/images/logo.png"
-              alt={SITE_NAME}
-              fill
-              className="object-contain dark:brightness-0 dark:invert"
+          <div className="transition-transform group-hover:scale-105">
+            <BrandLogo
+              width={160}
+              height={56}
               priority
+              imageClassName="dark:brightness-0 dark:invert"
             />
           </div>
         </Link>

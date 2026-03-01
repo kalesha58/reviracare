@@ -6,6 +6,7 @@ import { SITE_NAME } from "@/constants/site";
 import { Phone, Mail, MapPin, Clock, Facebook, Instagram, Linkedin, ArrowRight, Heart } from "lucide-react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { BrandLogo } from "@/components/ui/BrandLogo";
 
 export function Footer(): React.ReactElement {
   const currentYear = new Date().getFullYear();
@@ -17,14 +18,11 @@ export function Footer(): React.ReactElement {
           {/* Mission & Branding */}
           <div className="space-y-6">
             <Link href="/" className="flex items-center gap-2 group">
-              <div className="relative w-48 h-12">
-                <Image
-                  src="/images/logo.png"
-                  alt={SITE_NAME}
-                  fill
-                  className="object-contain brightness-0 invert"
-                />
-              </div>
+              <BrandLogo
+                width={192}
+                height={48}
+                imageClassName="brightness-0 invert"
+              />
             </Link>
             <p className="body-sm text-purple-100/70 leading-relaxed">
               Our mission is to provide high-quality, person-centred care that empowers individuals with disabilities to lead fulfilling and independent lives.
