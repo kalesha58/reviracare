@@ -17,7 +17,7 @@ import { useState } from "react";
 
 const VALUES = [
   {
-    icon: <Heart className="w-8 h-8 text-primary" />,
+    icon: <Heart className="w-8 h-8 text-purple-brand" />,
     title: "Compassion",
     description: "We lead with empathy and understanding, ensuring every individual feels heard and valued.",
   },
@@ -27,7 +27,7 @@ const VALUES = [
     description: "We maintain the highest standards of professional ethics and transparency in all our actions.",
   },
   {
-    icon: <Zap className="w-8 h-8 text-primary" />,
+    icon: <Zap className="w-8 h-8 text-purple-brand" />,
     title: "Empowerment",
     description: "We provide the tools and support needed for individuals to take control of their own lives.",
   },
@@ -42,7 +42,7 @@ const METHODOLOGY = [
   {
     step: "01",
     title: "Discovery",
-    icon: <Search className="w-6 h-6 text-primary" />,
+    icon: <Search className="w-6 h-6 text-purple-brand" />,
     description: "We start by listening to your story, understanding your goals, and identifying your unique needs."
   },
   {
@@ -54,7 +54,7 @@ const METHODOLOGY = [
   {
     step: "03",
     title: "Matching",
-    icon: <Handshake className="w-6 h-6 text-primary" />,
+    icon: <Handshake className="w-6 h-6 text-purple-brand" />,
     description: "We match you with the right support workers who share your interests and respect your preferences."
   },
   {
@@ -66,7 +66,7 @@ const METHODOLOGY = [
   {
     step: "05",
     title: "Review",
-    icon: <RotateCcw className="w-6 h-6 text-primary" />,
+    icon: <RotateCcw className="w-6 h-6 text-purple-brand" />,
     description: "Regular check-ins and adjustments ensure your support evolves as your needs and goals change."
   }
 ];
@@ -395,11 +395,11 @@ export default function AboutPage(): React.ReactElement {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="p-6 sm:p-8 rounded-2xl bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-white/5 hover:border-primary/30 transition-colors group"
+              className="p-6 sm:p-8 rounded-2xl bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-white/5 hover:border-purple-brand/30 transition-colors group"
             >
               <div className="flex items-center gap-4 mb-6">
-                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center group-hover:scale-110 transition-transform shrink-0">
-                  <Target className="w-6 h-6 text-primary" />
+                <div className="w-12 h-12 rounded-xl bg-purple-brand/10 flex items-center justify-center group-hover:scale-110 transition-transform shrink-0">
+                  <Target className="w-6 h-6 text-purple-brand" />
                 </div>
                 <h3 className="text-xl font-bold text-zinc-900 dark:text-white">Our Mission</h3>
               </div>
@@ -413,11 +413,11 @@ export default function AboutPage(): React.ReactElement {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="p-6 sm:p-8 rounded-2xl bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-white/5 hover:border-secondary/30 transition-colors group"
+              className="p-6 sm:p-8 rounded-2xl bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-white/5 hover:border-purple-brand/30 transition-colors group"
             >
               <div className="flex items-center gap-4 mb-6">
-                <div className="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center group-hover:scale-110 transition-transform shrink-0">
-                  <Lightbulb className="w-6 h-6 text-secondary" />
+                <div className="w-12 h-12 rounded-xl bg-purple-brand/10 flex items-center justify-center group-hover:scale-110 transition-transform shrink-0">
+                  <Lightbulb className="w-6 h-6 text-purple-brand" />
                 </div>
                 <h3 className="text-xl font-bold text-zinc-900 dark:text-white">Our Vision</h3>
               </div>
@@ -464,7 +464,7 @@ export default function AboutPage(): React.ReactElement {
       <Section className="bg-zinc-100 dark:bg-zinc-900/40 border-y border-zinc-200 dark:border-white/5 py-16 sm:py-20 md:py-24">
         <Container>
           <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-12 md:mb-16">
-            <h2 className="text-primary font-bold uppercase text-[10px] tracking-[0.3em] mb-4">How We Work</h2>
+            <h2 className="text-purple-brand font-bold uppercase text-[10px] tracking-[0.3em] mb-4">How We Work</h2>
             <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 text-zinc-900 dark:text-white">Your Journey With Us</h3>
             <p className="text-zinc-600 dark:text-zinc-500 text-base">
               We follow a rigorous, person-centered methodology to ensure your support is as unique as you are.
@@ -484,7 +484,7 @@ export default function AboutPage(): React.ReactElement {
                 transition={{ delay: i * 0.1 }}
                 className="relative z-10 flex flex-col items-center text-center group"
               >
-                <div className="w-14 h-14 rounded-xl bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-white/10 flex items-center justify-center mb-5 group-hover:scale-110 group-hover:border-primary/50 transition-all duration-500 shadow-sm">
+                <div className="w-14 h-14 rounded-xl bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-white/10 flex items-center justify-center mb-5 group-hover:scale-110 group-hover:border-purple-brand/50 transition-all duration-500 shadow-sm">
                   {step.icon}
                 </div>
                 <div className="text-[10px] font-bold text-zinc-500 dark:text-zinc-600 mb-1.5 uppercase tracking-tighter">{step.step}</div>
@@ -557,9 +557,9 @@ export default function AboutPage(): React.ReactElement {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
             {[
-              { title: "NDIS Compliance", desc: "Strict adherence to the NDIS Quality and Safeguards Commission standards.", icon: <Scale className="w-7 h-7 text-primary" /> },
-              { title: "Rigorous Vetting", desc: "All staff undergo extensive police checks and Working with Children checks.", icon: <Lock className="w-7 h-7 text-secondary" /> },
-              { title: "Ongoing Training", desc: "Continuous professional development for all our support workers and nurses.", icon: <Rocket className="w-7 h-7 text-primary" /> }
+              { title: "NDIS Compliance", desc: "Strict adherence to the NDIS Quality and Safeguards Commission standards.", icon: <Scale className="w-7 h-7 text-purple-brand" /> },
+              { title: "Rigorous Vetting", desc: "All staff undergo extensive police checks and Working with Children checks.", icon: <Lock className="w-7 h-7 text-purple-brand" /> },
+              { title: "Ongoing Training", desc: "Continuous professional development for all our support workers and nurses.", icon: <Rocket className="w-7 h-7 text-purple-brand" /> }
             ].map((item, i) => (
               <motion.div
                 key={item.title}
@@ -651,13 +651,13 @@ export default function AboutPage(): React.ReactElement {
       </Section>
 
       {/* Community Section */}
-      <Section className="py-16 sm:py-20 md:py-24 bg-white dark:bg-transparent">
+      <Section className="py-16 sm:py-20 md:py-24 pb-32 bg-white dark:bg-transparent">
         <Container>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10 md:gap-12 text-center">
             {[
-              { icon: <Star className="w-8 h-8 text-primary" />, title: "Quality First", desc: "Never compromising on the safety and standard of our care." },
-              { icon: <Users className="w-8 h-8 text-secondary" />, title: "Inclusive Community", desc: "Fostering an environment where everyone belongs." },
-              { icon: <Globe className="w-8 h-8 text-primary" />, title: "Local Presence", desc: "Deeply connected to the communities we serve." }
+              { icon: <Star className="w-8 h-8 text-purple-brand" />, title: "Quality First", desc: "Never compromising on the safety and standard of our care." },
+              { icon: <Users className="w-8 h-8 text-purple-brand" />, title: "Inclusive Community", desc: "Fostering an environment where everyone belongs." },
+              { icon: <Globe className="w-8 h-8 text-purple-brand" />, title: "Local Presence", desc: "Deeply connected to the communities we serve." }
             ].map((feature, i) => (
               <motion.div
                 key={feature.title}
@@ -677,46 +677,6 @@ export default function AboutPage(): React.ReactElement {
               </motion.div>
             ))}
           </div>
-        </Container>
-      </Section>
-
-      {/* CTA Section */}
-      <Section className="pb-32">
-        <Container>
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="relative rounded-[2.5rem] overflow-hidden bg-gradient-to-br from-primary/20 via-secondary/10 to-zinc-100 dark:to-zinc-900 border border-zinc-200 dark:border-white/10 p-12 md:p-20 text-center"
-          >
-            <div className="relative z-10">
-              <h2 className="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight text-zinc-900 dark:text-white">
-                Start Your <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary dark:from-primary dark:to-purple-100">New Chapter</span>
-              </h2>
-              <p className="text-zinc-600 dark:text-zinc-400 text-lg mb-10 max-w-xl mx-auto leading-relaxed">
-                We&apos;re ready to listen, plan, and support you. Your journey towards more independence starts with a single conversation.
-              </p>
-              <div className="flex flex-wrap justify-center gap-4">
-                <Link
-                  href="/contact"
-                  className="px-8 py-3.5 bg-zinc-900 dark:bg-white text-white dark:text-zinc-950 rounded-xl font-bold text-sm hover:bg-zinc-800 dark:hover:bg-zinc-200 transition-all hover:scale-105 shadow-xl shadow-emerald-500/5"
-                >
-                  Book a Consultation
-                </Link>
-                <Link
-                  href="/services"
-                  className="px-8 py-3.5 bg-white/80 dark:bg-white/5 backdrop-blur-md border border-zinc-300 dark:border-white/20 text-zinc-900 dark:text-white rounded-xl font-bold text-sm hover:bg-white dark:hover:bg-white/10 transition-all"
-                >
-                  Explore Services
-                </Link>
-              </div>
-            </div>
-
-            {/* Background Decorations */}
-            <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 blur-3xl rounded-full" />
-            <div className="absolute bottom-0 left-0 w-64 h-64 bg-secondary/5 blur-3xl rounded-full" />
-          </motion.div>
         </Container>
       </Section>
     </main>
