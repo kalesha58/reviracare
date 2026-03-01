@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
+import { BrandLogo } from "@/components/ui/BrandLogo";
 import {
   Phone, Mail, MapPin, Clock,
   Send, MessageSquare, User,
@@ -74,10 +75,21 @@ export default function ContactPage() {
               <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
               Get In Touch
             </div>
-            <h1 className="hero-title mb-6 tracking-tight leading-tight text-white">
-              Feel Free To <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-white to-purple-400">Contact Us</span>
-            </h1>
+            <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 mb-6">
+              <div className="shrink-0 p-3 rounded-2xl bg-white/95 dark:bg-zinc-900/90 backdrop-blur-md border border-white/20 shadow-lg">
+                <BrandLogo
+                  width={140}
+                  height={48}
+                  imageClassName="dark:brightness-0 dark:invert"
+                />
+              </div>
+              <div>
+                <h1 className="hero-title tracking-tight leading-tight text-white">
+                  Feel Free To{" "}
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-white to-purple-400">Contact Us</span>
+                </h1>
+              </div>
+            </div>
             <p className="subtitle text-zinc-200 font-medium leading-relaxed max-w-2xl">
               Revira Care provides comprehensive services tailored to individuals with disabilities, ensuring accessibility, independence, and empowerment. From personalized care plans to community integration support, we focus on enhancing quality of life.
             </p>
@@ -85,8 +97,8 @@ export default function ContactPage() {
         </Container>
       </section>
 
-      {/* Info Cards */}
-      <div className="relative z-20 mt-[-60px]">
+      {/* Info Cards - below hero, no overlap */}
+      <section className="relative z-10 bg-zinc-50 dark:bg-zinc-950 pt-12 pb-8">
         <Container>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {CONTACT_INFO.map((item, i) => (
@@ -100,17 +112,19 @@ export default function ContactPage() {
                 transition={{ duration: 0.5, delay: i * 0.1 }}
                 className="bg-white dark:bg-zinc-900 p-8 rounded-[2rem] border border-zinc-200 dark:border-white/5 shadow-xl shadow-black/5 hover:shadow-2xl hover:scale-[1.02] transition-all group"
               >
-                <div className="w-12 h-12 rounded-2xl bg-zinc-50 dark:bg-zinc-950 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                  {item.icon}
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="shrink-0 w-12 h-12 rounded-2xl bg-zinc-50 dark:bg-zinc-950 flex items-center justify-center group-hover:scale-110 transition-transform">
+                    {item.icon}
+                  </div>
+                  <h3 className="text-xs font-bold text-zinc-400 uppercase tracking-widest">{item.title}</h3>
                 </div>
-                <h3 className="text-xs font-bold text-zinc-400 uppercase tracking-widest mb-2">{item.title}</h3>
                 <p className="text-xl font-bold mb-1 text-zinc-900 dark:text-white">{item.value}</p>
                 <p className="text-sm text-zinc-500 dark:text-zinc-400 font-medium">{item.description}</p>
               </motion.a>
             ))}
           </div>
         </Container>
-      </div>
+      </section>
 
       {/* Map and Form Section */}
       <Section className="py-24">
