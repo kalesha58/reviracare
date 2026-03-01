@@ -391,7 +391,7 @@ export default function ServiceDetailPage() {
     return (
         <main className="bg-zinc-50 dark:bg-zinc-950 min-h-screen [--primary:var(--secondary)] [--accent:var(--purple-100)] [--accent-foreground:var(--purple-700)] dark:[--accent:var(--purple-950)] dark:[--accent-foreground:var(--purple-100)]">
             {/* Hero Section */}
-            <section className="relative min-h-[85vh] flex items-center pt-24 pb-20 overflow-hidden">
+            <section className="relative min-h-[75vh] min-[480px]:min-h-[80vh] sm:min-h-[85vh] md:min-h-[90vh] flex items-center pt-20 sm:pt-24 md:pt-28 pb-28 sm:pb-32 md:pb-20 overflow-hidden">
                 {/* Background Image & Overlays */}
                 <div className="absolute inset-0 z-0 bg-zinc-950">
                     <Image
@@ -414,29 +414,16 @@ export default function ServiceDetailPage() {
                     >
                         <Link
                             href="/"
-                            className="section-label inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-emerald-400 font-bold uppercase tracking-[0.2em] mb-8 hover:bg-white/20 transition-all w-fit"
+                            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 border border-white/20 text-white text-xs font-bold uppercase tracking-[0.2em] mb-6 sm:mb-8 hover:bg-white/20 transition-all w-fit"
                         >
                             <ArrowLeft className="w-4 h-4" /> Back to Services
                         </Link>
 
-                        <h1 className="hero-title font-extrabold tracking-tight text-white leading-[1.15] mb-6 drop-shadow-[0_1px_2px_rgba(0,0,0,0.3)]">
-                            {(() => {
-                                const words = service.title.split(' ');
-                                if (words.length <= 2) return service.title;
-                                const lastTwo = words.slice(-2).join(' ');
-                                const rest = words.slice(0, -2).join(' ');
-                                return (
-                                    <>
-                                        {rest}{' '}
-                                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-white to-purple-brand">
-                                            {lastTwo}
-                                        </span>
-                                    </>
-                                );
-                            })()}
+                        <h1 className="hero-title font-extrabold tracking-tight text-white leading-[1.15] mb-4 sm:mb-6 drop-shadow-[0_1px_2px_rgba(0,0,0,0.3)]">
+                            {service.title}
                         </h1>
 
-                        <p className="subtitle text-white dark:text-zinc-400 leading-relaxed max-w-2xl drop-shadow-[0_1px_2px_rgba(0,0,0,0.3)]">
+                        <p className="subtitle text-white dark:text-zinc-400 leading-relaxed max-w-2xl drop-shadow-[0_1px_2px_rgba(0,0,0,0.3)] text-sm">
                             {service.subtitle}
                         </p>
                     </motion.div>

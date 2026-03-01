@@ -235,12 +235,12 @@ export function ServiceShowcase() {
                                     className="object-cover transition-transform duration-500 group-active:scale-105"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/60 to-transparent" />
-                                <div className="absolute inset-0 p-3 sm:p-4 flex flex-col justify-end">
-                                    <h3 className="text-[13px] sm:text-sm font-bold text-white leading-tight line-clamp-3 drop-shadow-sm">
+                                <div className="absolute inset-x-0 bottom-0 p-3 sm:p-4 pt-12 flex flex-col justify-end min-h-[45%]">
+                                    <h3 className="text-[13px] sm:text-sm font-bold text-white leading-tight line-clamp-3 drop-shadow-sm flex-shrink-0">
                                         {service.title}
                                     </h3>
-                                    <span className="mt-2 inline-flex items-center gap-1 text-purple-brand dark:text-purple-100 text-xs font-bold uppercase tracking-wider">
-                                        Learn more <ArrowRight className="w-3 h-3 opacity-80" />
+                                    <span className="mt-2 sm:mt-2.5 flex-shrink-0 inline-flex items-center gap-1.5 text-white font-bold text-xs sm:text-sm uppercase tracking-wider">
+                                        Learn more <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                                     </span>
                                 </div>
                             </Link>

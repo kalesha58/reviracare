@@ -207,8 +207,8 @@ export default function HomePage(): React.ReactElement {
             <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-white/90 dark:text-zinc-400">Scroll</span>
           </motion.div>
 
-          {/* Mobile/Tablet Horizontal Badges - show when desktop badges hidden */}
-          <div className="xl:hidden flex flex-nowrap justify-start sm:justify-center items-stretch gap-2 sm:gap-3 px-4 sm:px-6 w-full overflow-x-auto overflow-y-hidden scroll-smooth pb-4 sm:pb-6 [scrollbar-width:thin] [scrollbar-color:rgba(255,255,255,0.3)_transparent]">
+          {/* Mobile/Tablet Horizontal Badges - scroll left to right */}
+          <div className="xl:hidden flex flex-nowrap justify-start items-stretch gap-2 sm:gap-3 pl-4 pr-4 sm:pl-6 sm:pr-6 w-full overflow-x-auto overflow-y-hidden scroll-smooth pb-4 sm:pb-6 [scrollbar-width:thin] [scrollbar-color:rgba(255,255,255,0.3)_transparent] [&::-webkit-scrollbar]:h-1 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-white/20" style={{ WebkitOverflowScrolling: 'touch' }}>
             {BADGES.map((badge, index) => (
               <motion.div
                 key={`mobile-${badge.id}`}
@@ -220,6 +220,7 @@ export default function HomePage(): React.ReactElement {
                 {badge.content}
               </motion.div>
             ))}
+            <div className="flex-shrink-0 w-2" aria-hidden />
           </div>
         </div>
       </section>
