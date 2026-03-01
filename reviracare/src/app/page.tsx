@@ -108,9 +108,9 @@ export default function HomePage(): React.ReactElement {
   }, []);
 
   return (
-    <main className="relative min-h-screen">
+    <main className="relative min-h-screen overflow-x-hidden">
       {/* Hero Content */}
-      <section className="relative min-h-[80vh] sm:min-h-[85vh] md:min-h-[90vh] flex items-center pt-20 sm:pt-24 md:pt-28 pb-32 sm:pb-36 md:pb-20 overflow-hidden">
+      <section className="relative min-h-[75vh] min-[480px]:min-h-[80vh] sm:min-h-[85vh] md:min-h-[90vh] flex items-center pt-20 sm:pt-24 md:pt-28 pb-28 sm:pb-32 md:pb-20 overflow-hidden">
         {/* Background Carousel */}
         <div className="absolute inset-0 z-0 bg-white dark:bg-zinc-950 overflow-hidden">
           <AnimatePresence initial={false}>
@@ -136,9 +136,9 @@ export default function HomePage(): React.ReactElement {
           </AnimatePresence>
         </div>
         <Container className="relative z-20">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-12 items-center">
+          <div className="grid grid-cols-1 xl:grid-cols-12 gap-8 sm:gap-10 xl:gap-12 items-center">
             {/* Left Content */}
-            <div className="lg:col-span-8 flex flex-col items-start text-left">
+            <div className="xl:col-span-8 flex flex-col items-start text-left min-w-0 max-w-full">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={currentImage}
@@ -146,13 +146,13 @@ export default function HomePage(): React.ReactElement {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -15 }}
                   transition={{ duration: 0.6, ease: "easeOut" }}
-                  className="w-full"
+                  className="w-full min-w-0"
                 >
                   <div className="section-label inline-flex items-center gap-2 px-2.5 sm:px-3 py-1.5 rounded-full bg-white/95 dark:bg-white/5 border border-zinc-200 dark:border-white/10 text-emerald-600 dark:text-emerald-400 font-bold uppercase tracking-[0.2em] mb-4 sm:mb-6 shadow-sm text-[10px] sm:text-xs">
                     <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
                     Trusted Healthcare Partner
                   </div>
-                  <h1 className="hero-title font-extrabold tracking-tight text-white leading-[1.15] mb-4 sm:mb-6 drop-shadow-[0_1px_2px_rgba(0,0,0,0.3)]">
+                  <h1 className="hero-title font-extrabold tracking-tight text-white leading-[1.15] mb-4 sm:mb-6 drop-shadow-[0_1px_2px_rgba(0,0,0,0.3)] break-words">
                     {(() => {
                       const words = HERO_CONTENT[currentImage].title.split(' ');
                       const lastTwo = words.slice(-2).join(' ');
@@ -169,7 +169,7 @@ export default function HomePage(): React.ReactElement {
                     })()}
                   </h1>
 
-                  <p className="subtitle text-white dark:text-zinc-400 leading-relaxed mb-6 sm:mb-10 max-w-xl drop-shadow-[0_1px_2px_rgba(0,0,0,0.3)]">
+                  <p className="subtitle text-white dark:text-zinc-400 leading-relaxed mb-6 sm:mb-10 max-w-xl drop-shadow-[0_1px_2px_rgba(0,0,0,0.3)] min-w-0">
                     {HERO_CONTENT[currentImage].description}
                   </p>
                 </motion.div>
@@ -177,8 +177,8 @@ export default function HomePage(): React.ReactElement {
 
             </div>
 
-            {/* Right Badges (Desktop/Tablet) */}
-            <div className="hidden lg:flex lg:col-span-4 flex-col items-end gap-3.5">
+            {/* Right Badges (Desktop/Tablet) - only on xl to avoid overlap */}
+            <div className="hidden xl:flex xl:col-span-4 flex-col items-end gap-3.5 flex-shrink-0">
               {BADGES.map((badge, index) => (
                 <motion.div
                   key={badge.id}
@@ -206,8 +206,8 @@ export default function HomePage(): React.ReactElement {
             <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-white/90 dark:text-zinc-400">Scroll</span>
           </motion.div>
 
-          {/* Mobile Horizontal Badges */}
-          <div className="lg:hidden flex flex-wrap justify-center items-center gap-2 sm:gap-3 px-4 w-full max-w-lg mx-auto overflow-x-auto no-scrollbar scroll-smooth pb-2">
+          {/* Mobile/Tablet Horizontal Badges - show when desktop badges hidden */}
+          <div className="xl:hidden flex flex-wrap justify-center items-center gap-2 sm:gap-3 px-4 w-full max-w-lg mx-auto overflow-x-auto no-scrollbar scroll-smooth pb-2">
             {BADGES.map((badge, index) => (
               <motion.div
                 key={`mobile-${badge.id}`}

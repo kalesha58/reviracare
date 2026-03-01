@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, use, useEffect } from "react";
+import { useState, use } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
@@ -20,38 +20,15 @@ import {
     Linkedin,
     MessageCircle,
     Menu,
-    ChevronRight,
     ArrowUpRight,
-    Hash
 } from "lucide-react";
 import { ALL_BLOG_POSTS } from "@/data/blogs.data";
 
 export default function BlogDetailPage({ params }: { params: Promise<{ id: string }> }) {
     const { id } = use(params);
     const [isKidsMode, setIsKidsMode] = useState(false);
-    const [activeSection, setActiveSection] = useState("");
-    const [isHierarchyOpen, setIsHierarchyOpen] = useState(false);
 
     const post = ALL_BLOG_POSTS.find((p) => p.id === id);
-
-    useEffect(() => {
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        setActiveSection(entry.target.id);
-                    }
-                });
-            },
-            { threshold: 0.5 }
-        );
-
-        document.querySelectorAll("section[id]").forEach((section) => {
-            observer.observe(section);
-        });
-
-        return () => observer.disconnect();
-    }, [post, isKidsMode]);
 
     if (!post) {
         notFound();
@@ -112,32 +89,6 @@ export default function BlogDetailPage({ params }: { params: Promise<{ id: strin
                         exit={{ opacity: 0 }}
                         className="relative"
                     >
-                        {/* Professional Hierarchy Sidebar - Floating Desktop Right */}
-                        <aside className="fixed right-8 top-32 w-64 hidden xl:block">
-                            <div className="p-6 rounded-2xl border border-border bg-background/50 backdrop-blur-sm">
-                                <h4 className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-6">Article Hierarchy</h4>
-                                <nav className="space-y-1">
-                                    {post.sections.map((section, idx) => {
-                                        const sectionId = `section-${idx}`;
-                                        return (
-                                            <a
-                                                key={sectionId}
-                                                href={`#${sectionId}`}
-                                                className={`group flex items-center gap-3 py-2 text-sm font-medium transition-all ${activeSection === sectionId
-                                                    ? "text-secondary translate-x-1"
-                                                    : "text-muted-foreground hover:text-foreground"
-                                                    }`}
-                                            >
-                                                <div className={`w-1.5 h-1.5 rounded-full transition-all ${activeSection === sectionId ? "bg-secondary scale-125" : "bg-border group-hover:bg-muted-foreground"
-                                                    }`} />
-                                                {section.title}
-                                            </a>
-                                        );
-                                    })}
-                                </nav>
-                            </div>
-                        </aside>
-
                         {/* Professional Content */}
                         <Section className="pt-12 sm:pt-20">
                             <Container>
