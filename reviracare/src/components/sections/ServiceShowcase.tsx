@@ -15,88 +15,88 @@ const SERVICES = [
         title: "In-Home And Community Support",
         description: "Personalized care delivered in your home to support daily activities like hygiene, meal preparation, and housekeeping. Our team ensures comfort, safety, and independence for individuals with disabilities.",
         image: "/images/services/in-home-support.png",
-        color: "from-emerald-500/20 to-emerald-500/0",
-        accent: "text-emerald-400",
+        color: "from-green-500/20 to-green-500/0",
+        accent: "text-green-400",
     },
     {
         id: "social",
         title: "Social And Community Participation",
         description: "Helping individuals engage in social and recreational activities to foster connections and enhance confidence. From outings to group hobbies, we support active and fulfilling participation.",
         image: "/images/services/social-participation.png",
-        color: "from-blue-500/20 to-blue-500/0",
-        accent: "text-blue-400",
+        color: "from-green-500/20 to-green-500/0",
+        accent: "text-green-400",
     },
     {
         id: "group",
         title: "Group Activities And Community Programs",
         description: "Organizing interactive group activities and programs that promote skill-building, social bonding, and recreational enjoyment. These activities are tailored to meet diverse interests and abilities.",
         image: "/images/services/group-activities.png",
-        color: "from-purple-500/20 to-purple-500/0",
-        accent: "text-purple-400",
+        color: "from-green-500/20 to-green-500/0",
+        accent: "text-green-400",
     },
     {
         id: "sil",
         title: "Supported Independent Living (SIL)",
         description: "Offering tailored support for individuals to live independently in shared or individual housing. Our services ensure a safe environment while fostering independence and personal growth.",
         image: "/images/services/sil.png",
-        color: "from-amber-500/20 to-amber-500/0",
-        accent: "text-amber-400",
+        color: "from-green-500/20 to-green-500/0",
+        accent: "text-green-400",
     },
     {
         id: "skills",
         title: "Development Of Daily Living And Life Skills",
         description: "Providing training and support to help individuals develop essential life skills like cooking, budgeting, and personal care. These programs are designed to promote autonomy and confidence.",
         image: "/images/services/life-skills.png",
-        color: "from-rose-500/20 to-rose-500/0",
-        accent: "text-rose-400",
+        color: "from-green-500/20 to-green-500/0",
+        accent: "text-green-400",
     },
     {
         id: "sda",
         title: "Specialised Disability Accommodation (SDA)",
         description: "Delivering accessible and comfortable housing solutions for individuals with significant disability support needs. Our accommodations prioritize safety, functionality, and independence.",
         image: "/images/services/sda.png",
-        color: "from-cyan-500/20 to-cyan-500/0",
-        accent: "text-cyan-400",
+        color: "from-green-500/20 to-green-500/0",
+        accent: "text-green-400",
     },
     {
         id: "coordination",
         title: "Coordination Of Supports",
         description: "Assisting participants in managing their NDIS plans by connecting them with services that align with their goals. Our coordinators simplify the process to ensure effective use of resources.",
         image: "/images/services/group-activities.png",
-        color: "from-violet-500/20 to-violet-500/0",
-        accent: "text-violet-400",
+        color: "from-green-500/20 to-green-500/0",
+        accent: "text-green-400",
     },
     {
         id: "short-term-accommodation",
         title: "Short/Medium Term Accommodation",
         description: "Offering temporary housing solutions for individuals needing respite or transitional care. Our accommodations are designed to provide comfort, support, and opportunities for skill development.",
         image: "/images/services/sil.png",
-        color: "from-violet-500/30 to-violet-500/0",
-        accent: "text-violet-400",
+        color: "from-purple-500/20 to-purple-500/0",
+        accent: "text-purple-400",
     },
     {
         id: "housing-tenancy",
         title: "Housing And Tenancy",
         description: "Providing assistance with finding, securing, and maintaining appropriate housing. Our team helps individuals understand their tenancy rights and responsibilities while ensuring a stable living environment.",
         image: "/images/services/sda.png",
-        color: "from-indigo-500/20 to-indigo-500/0",
-        accent: "text-indigo-400",
+        color: "from-green-500/20 to-green-500/0",
+        accent: "text-green-400",
     },
     {
         id: "nursing-care",
         title: "Nursing Care",
         description: "Delivering professional nursing services to address medical and health needs, including wound care, medication management, and monitoring chronic conditions. We provide compassionate and skilled care tailored to individual requirements.",
         image: "/images/services/in-home-support.png",
-        color: "from-teal-500/20 to-teal-500/0",
-        accent: "text-teal-400",
+        color: "from-purple-500/20 to-purple-500/0",
+        accent: "text-purple-400",
     },
     {
         id: "assist-travel-transport",
         title: "Assist Travel/Transport",
-        description: "True freedom starts with a worry-free journey. At Revira Care, we offer reliable and safe travel support, carefully tailored to your unique schedule and needs. We're here to build your confidence, helping you reach medical appointments, enjoy social outings.",
+        description: "True freedom starts with a worry-free journey. At ReviraCare, we offer reliable and safe travel support, carefully tailored to your unique schedule and needs. We're here to build your confidence, helping you reach medical appointments, enjoy social outings.",
         image: "/images/services/social-participation.png",
-        color: "from-sky-500/20 to-sky-500/0",
-        accent: "text-sky-400",
+        color: "from-green-500/20 to-green-500/0",
+        accent: "text-green-400",
     },
 ];
 
@@ -104,15 +104,15 @@ export function ServiceShowcase() {
     const [hoveredIndex, setHoveredIndex] = useState<number | null>(0);
 
     return (
-        <Section className="bg-zinc-50 dark:bg-zinc-950 overflow-hidden relative">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(16,185,129,0.05),transparent_70%)] pointer-events-none" />
+        <Section className="bg-background dark:bg-zinc-950 overflow-hidden relative">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(34,197,94,0.05),transparent_70%)] pointer-events-none" />
 
             <Container className="relative z-10">
                 <div className="mb-16">
                     <motion.span
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        className="section-label text-emerald-600 dark:text-emerald-500 uppercase tracking-[0.3em] block mb-4"
+                        className="section-label text-primary uppercase tracking-[0.3em] block mb-4"
                     >
                         Explore Our Services
                     </motion.span>
@@ -120,9 +120,9 @@ export function ServiceShowcase() {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.1 }}
-                        className="section-title text-zinc-900 dark:text-white max-w-2xl leading-[1.1]"
+                        className="section-title text-foreground max-w-2xl leading-[1.1]"
                     >
-                        Our Support Services As A <span className="text-zinc-500 italic">Leading NDIS Provider</span>
+                        Our Support Services As A <span className="text-primary italic">Leading NDIS Provider</span>
                     </motion.h2>
                 </div>
 
@@ -150,13 +150,12 @@ export function ServiceShowcase() {
                                             isHovered ? "opacity-60 dark:opacity-40" : "opacity-90 dark:opacity-20 group-hover:opacity-100"
                                         )}
                                     />
-                                    {/* Dark gradient for text contrast in both light and dark mode */}
+                                    {/* Neutral dark gradient for text contrast */}
                                     <div className={cn(
                                         "absolute inset-0 bg-gradient-to-t",
-                                        "from-zinc-900/95 via-zinc-900/50 to-transparent",
-                                        "dark:from-zinc-950 dark:via-zinc-950/40 dark:to-transparent"
+                                        "from-black/95 via-black/50 to-transparent",
+                                        "dark:from-black dark:via-black/70 dark:to-transparent"
                                     )} />
-                                    <div className={cn("absolute inset-0 bg-gradient-to-r opacity-80", service.color)} />
                                 </div>
 
                                 {/* Content Overlay */}
@@ -170,7 +169,7 @@ export function ServiceShowcase() {
                                                 "w-10 h-10 rounded-xl bg-white/10 backdrop-blur-md flex items-center justify-center border border-white/20 transition-transform duration-500",
                                                 isHovered && "rotate-90 scale-110"
                                             )}>
-                                                <Plus className={cn("w-5 h-5", service.accent)} />
+                                                <Plus className="w-5 h-5 text-white" />
                                             </div>
                                             <h3 className={cn(
                                                 "text-xl font-bold text-white transition-all duration-500 drop-shadow-md",
@@ -193,7 +192,7 @@ export function ServiceShowcase() {
                                                     </p>
                                                     <Link
                                                         href={`/services/${service.id}`}
-                                                        className="inline-flex items-center gap-2 text-white font-bold text-sm hover:gap-4 transition-all drop-shadow-sm"
+                                                        className="inline-flex items-center gap-2 text-purple-600 dark:text-purple-400 font-bold text-sm hover:gap-4 transition-all drop-shadow-sm"
                                                     >
                                                         Learn More <ArrowRight className="w-4 h-4" />
                                                     </Link>
@@ -235,13 +234,12 @@ export function ServiceShowcase() {
                                     sizes="(max-width: 640px) 50vw, 25vw"
                                     className="object-cover transition-transform duration-500 group-active:scale-105"
                                 />
-                                <div className="absolute inset-0 bg-gradient-to-t from-zinc-900/90 via-zinc-900/40 to-transparent" />
-                                <div className={cn("absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-60", service.color)} />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
                                 <div className="absolute inset-0 p-3 sm:p-4 flex flex-col justify-end">
                                     <h3 className="text-[13px] sm:text-sm font-bold text-white leading-tight line-clamp-3 drop-shadow-sm">
                                         {service.title}
                                     </h3>
-                                    <span className="mt-2 inline-flex items-center gap-1 text-white/90 text-xs font-medium">
+                                    <span className="mt-2 inline-flex items-center gap-1 text-purple-600 dark:text-purple-400 text-xs font-bold uppercase tracking-wider">
                                         Learn more <ArrowRight className="w-3 h-3 opacity-80" />
                                     </span>
                                 </div>

@@ -11,7 +11,7 @@ export function Footer(): React.ReactElement {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-purple-brand text-white border-t border-white/10 pt-20 pb-10">
+    <footer className="bg-purple-brand text-white border-t border-white/5 pt-20 pb-10">
       <Container>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
           {/* Mission & Branding */}
@@ -26,17 +26,17 @@ export function Footer(): React.ReactElement {
                 />
               </div>
             </Link>
-            <p className="body-sm text-zinc-300 leading-relaxed">
+            <p className="body-sm text-purple-100/70 leading-relaxed">
               Our mission is to provide high-quality, person-centred care that empowers individuals with disabilities to lead fulfilling and independent lives.
             </p>
             <div className="flex items-center gap-4">
-              <a href="#" className="p-2 rounded-full bg-white/5 text-zinc-400 hover:text-emerald-400 transition-colors">
+              <a href="#" className="p-2 rounded-full bg-white/5 text-purple-200/50 hover:text-primary transition-colors hover:bg-white/10">
                 <Facebook className="w-5 h-5" />
               </a>
-              <a href="#" className="p-2 rounded-full bg-white/5 text-zinc-400 hover:text-emerald-400 transition-colors">
+              <a href="#" className="p-2 rounded-full bg-white/5 text-purple-200/50 hover:text-primary transition-colors hover:bg-white/10">
                 <Linkedin className="w-5 h-5" />
               </a>
-              <a href="#" className="p-2 rounded-full bg-white/5 text-zinc-400 hover:text-emerald-400 transition-colors">
+              <a href="#" className="p-2 rounded-full bg-white/5 text-purple-200/50 hover:text-primary transition-colors hover:bg-white/10">
                 <Instagram className="w-5 h-5" />
               </a>
             </div>
@@ -44,29 +44,29 @@ export function Footer(): React.ReactElement {
 
           {/* Contact Info */}
           <div className="space-y-6">
-            <h4 className="footer-heading text-white uppercase tracking-widest">Contact Us</h4>
+            <h4 className="footer-heading text-white uppercase tracking-widest opacity-80">Contact Us</h4>
             <div className="space-y-4">
               <a href="tel:0288606462" className="flex items-start gap-3 group">
-                <div className="p-2 rounded-lg bg-emerald-500/10 text-emerald-400 group-hover:bg-emerald-500 group-hover:text-white transition-all">
+                <div className="p-2 rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-all">
                   <Phone className="w-4 h-4" />
                 </div>
                 <div className="body-sm">
                   <span className="block text-white font-bold italic">Call Us Now</span>
-                  <span className="text-zinc-400">02 8860 6462</span>
+                  <span className="text-purple-100/70">02 8860 6462</span>
                 </div>
               </a>
               <div className="flex items-start gap-3">
-                <div className="p-2 rounded-lg bg-blue-500/10 text-blue-400">
+                <div className="p-2 rounded-lg bg-white/5 text-purple-200">
                   <MapPin className="w-4 h-4" />
                 </div>
                 <div className="body-sm">
                   <span className="block text-white font-bold italic">Our Address</span>
-                  <address className="not-italic text-zinc-400 leading-relaxed">
+                  <address className="not-italic text-purple-100/70 leading-relaxed">
                     Level 5, Nexus Building,<br />
                     4 Columbia Court,<br />
                     Norwest NSW 2153 Australia
                   </address>
-                  <span className="block mt-2 caption text-zinc-500 uppercase">ABN: 38681225785</span>
+                  <span className="block mt-2 caption text-purple-200/40 uppercase">ABN: 38681225785</span>
                 </div>
               </div>
             </div>
@@ -74,37 +74,37 @@ export function Footer(): React.ReactElement {
 
           {/* Operating Hours */}
           <div className="space-y-6">
-            <h4 className="footer-heading text-white uppercase tracking-widest">Working Hours</h4>
+            <h4 className="footer-heading text-white uppercase tracking-widest opacity-80">Working Hours</h4>
             <div className="space-y-4">
               <div className="p-4 rounded-2xl bg-white/5 border border-white/10">
                 <div className="flex items-center gap-3 mb-2">
-                  <Clock className="w-4 h-4 text-emerald-400" />
+                  <Clock className="w-4 h-4 text-primary" />
                   <span className="text-sm font-bold text-white italic">Office Hours</span>
                 </div>
-                <p className="body-sm text-zinc-400">Mon-Fri: 9 AM - 5 PM</p>
+                <p className="body-sm text-purple-100/70">Mon-Fri: 9 AM - 5 PM</p>
               </div>
-              <div className="p-4 rounded-2xl bg-emerald-500/10 border border-emerald-500/20">
+              <div className="p-4 rounded-2xl bg-primary/10 border border-primary/20">
                 <div className="flex items-center gap-3 mb-2">
-                  <div className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                  <span className="text-sm font-bold text-emerald-400 italic">Service Hours</span>
+                  <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+                  <span className="text-sm font-bold text-primary italic">Service Hours</span>
                 </div>
-                <p className="body-sm text-emerald-400 font-bold">Available 24/7</p>
+                <p className="body-sm text-primary font-bold">Available 24/7</p>
               </div>
             </div>
           </div>
 
           {/* Quick Links */}
           <div className="space-y-6">
-            <h4 className="footer-heading text-white uppercase tracking-widest">Company</h4>
+            <h4 className="footer-heading text-white uppercase tracking-widest opacity-80">Company</h4>
             <nav className="flex flex-col gap-4">
-              <Link href="/services" className="body-sm text-zinc-300 hover:text-emerald-400 transition-colors flex items-center gap-2">
-                Services <ArrowRight className="w-3 h-3" />
+              <Link href="/services" className="body-sm text-purple-100/70 hover:text-primary transition-colors flex items-center gap-2 group">
+                Services <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
               </Link>
-              <Link href="/about" className="body-sm text-zinc-300 hover:text-emerald-400 transition-colors flex items-center gap-2">
-                Our Mission <ArrowRight className="w-3 h-3" />
+              <Link href="/about" className="body-sm text-purple-100/70 hover:text-primary transition-colors flex items-center gap-2 group">
+                Our Mission <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
               </Link>
-              <Link href="/contact" className="body-sm text-zinc-300 hover:text-emerald-400 transition-colors flex items-center gap-2">
-                Contact Us <ArrowRight className="w-3 h-3" />
+              <Link href="/contact" className="body-sm text-purple-100/70 hover:text-primary transition-colors flex items-center gap-2 group">
+                Contact Us <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
               </Link>
             </nav>
           </div>

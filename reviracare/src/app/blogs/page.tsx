@@ -38,7 +38,7 @@ function BlogCard({
     <motion.article
       variants={ITEM_VARIANTS}
       custom={index}
-      className="group flex flex-col h-full rounded-2xl overflow-hidden bg-background border border-border shadow-sm hover:shadow-lg hover:border-primary/20 dark:hover:border-primary/30 transition-all duration-300"
+      className="group flex flex-col h-full rounded-2xl overflow-hidden bg-background border border-border shadow-sm hover:shadow-lg hover:border-secondary/20 dark:hover:border-secondary/30 transition-all duration-300"
     >
       <Link href={post.href} className="flex flex-col h-full">
         <div className="relative w-full aspect-[16/10] overflow-hidden bg-muted rounded-t-2xl">
@@ -52,7 +52,7 @@ function BlogCard({
         </div>
         <div className="flex flex-col flex-1 p-5 sm:p-6">
           <div className="flex flex-wrap items-center gap-x-4 gap-y-1 mb-3">
-            <span className="px-2.5 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider bg-primary/10 dark:bg-primary/20 text-primary border border-primary/20">
+            <span className="px-2.5 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider bg-secondary/10 dark:bg-secondary/20 text-secondary border border-secondary/20">
               {post.category}
             </span>
             <span className="flex items-center gap-1.5 text-muted-foreground text-xs">
@@ -62,13 +62,13 @@ function BlogCard({
               {post.date}
             </span>
           </div>
-          <h2 className="font-bold text-foreground group-hover:text-primary transition-colors tracking-tight leading-snug text-base sm:text-lg line-clamp-2 mb-3 flex-1">
+          <h2 className="font-bold text-foreground group-hover:text-secondary transition-colors tracking-tight leading-snug text-base sm:text-lg line-clamp-2 mb-3 flex-1">
             {post.title}
           </h2>
           <p className="text-muted-foreground text-sm leading-relaxed line-clamp-2 mb-5">
             {post.excerpt}
           </p>
-          <span className="inline-flex items-center gap-1.5 text-primary font-bold text-sm group/btn w-fit">
+          <span className="inline-flex items-center gap-1.5 text-secondary font-bold text-sm group/btn w-fit">
             Read Article
             <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </span>

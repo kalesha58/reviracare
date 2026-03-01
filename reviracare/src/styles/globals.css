@@ -5,16 +5,45 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
-  --primary: #0d9488;
+  --foreground: #0f172a;
+
+  /* Brand Palette - Deep Purple & Vibrant Green */
+  --purple-50: #faf5ff;
+  --purple-100: #f3e8ff;
+  --purple-200: #e9d5ff;
+  --purple-600: #9333ea;
+  --purple-700: #7e22ce;
+  --purple-800: #6b21a8;
+  --purple-900: #581c87;
+  --purple-950: #3b0764;
+
+  --green-50: #f0fdf4;
+  --green-100: #dcfce7;
+  --green-500: #22c55e;
+  --green-600: #16a34a;
+  --green-700: #15803d;
+
+  /* Semantic Variables */
+  --primary: var(--green-600);
   --primary-foreground: #ffffff;
-  --muted: #f4f4f5;
-  --muted-foreground: #71717a;
-  --border: #e4e4e7;
-  --radius: 0.5rem;
+  --secondary: var(--purple-600);
+  --secondary-foreground: #ffffff;
+  --accent: var(--green-100);
+  --accent-foreground: var(--green-700);
+
+  --purple-brand: #381c4a;
+  --purple-brand-dark: #2d163c;
+  --green-brand: #10b981;
+
+  --muted: #f1f5f9;
+  --muted-foreground: #64748b;
+  --border: #e2e8f0;
+
+  --radius: 0.75rem;
   --container-max: 1280px;
   --section-py: 5rem;
   --section-px: 1.5rem;
+
   /* Section typography - use across home, about, careers, blogs */
   --text-section-label-size: 0.75rem;
   --text-section-label-tracking: 0.2em;
@@ -34,7 +63,7 @@
   --text-nav-mobile-size: 1.25rem;
   --text-nav-dropdown-size: 1.125rem;
   --text-footer-heading-size: 0.75rem;
-  --purple-brand: #381c4a;
+
   /* Font weights - consistent across header, sections, titles, subtitles */
   --font-weight-nav: 500;
   --font-weight-label: 700;
@@ -48,13 +77,18 @@
 
 .dark {
   --background: #09090b;
-  --foreground: #fafafa;
-  --primary: #0d9488;
+  --foreground: #f8fafc;
+  --primary: var(--green-500);
   --primary-foreground: #ffffff;
-  --muted: #27272a;
-  --muted-foreground: #a1a1aa;
-  --border: #27272a;
-  --purple-brand: #2a1538;
+  --secondary: var(--purple-600);
+  --secondary-foreground: #ffffff;
+  --accent: #064e3b;
+  --accent-foreground: #dcfce7;
+  --muted: #1e293b;
+  --muted-foreground: #94a3b8;
+  --border: #1e293b;
+  --purple-brand: #1e0f28;
+  --purple-brand-dark: #120918;
 }
 
 @theme inline {
@@ -62,10 +96,16 @@
   --color-foreground: var(--foreground);
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
   --color-border: var(--border);
   --color-purple-brand: var(--purple-brand);
+  --color-purple-brand-dark: var(--purple-brand-dark);
+  --color-green-brand: var(--green-brand);
   --font-sans: var(--font-inter), system-ui, -apple-system, sans-serif;
 }
 

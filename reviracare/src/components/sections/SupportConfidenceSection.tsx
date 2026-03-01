@@ -6,6 +6,7 @@ import { Section } from "@/components/ui/Section";
 import { Footprints, Heart, Users, Sparkles } from "lucide-react";
 import type { Variants } from "framer-motion";
 import type { ISupportPoint } from "./SupportConfidenceSection.interfaces";
+import { cn } from "@/lib/utils";
 
 const SUPPORT_POINTS: ISupportPoint[] = [
   {
@@ -89,7 +90,7 @@ export function SupportConfidenceSection(): React.ReactElement {
           >
             Support at every step.
             <br />
-            <span className="text-primary">Confidence in every moment.</span>
+            <span className="text-secondary">Confidence in every moment.</span>
           </motion.h2>
           <motion.p
             variants={ITEM_VARIANTS}
@@ -112,9 +113,9 @@ export function SupportConfidenceSection(): React.ReactElement {
           <motion.div
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "-100px" }}
             variants={LINE_VARIANTS}
-            className="absolute left-[19px] sm:left-6 top-8 bottom-8 w-px bg-gradient-to-b from-primary via-primary/50 to-primary origin-top hidden sm:block"
+            className="absolute left-[19px] sm:left-6 top-8 bottom-8 w-px bg-gradient-to-b from-secondary via-purple-600 to-secondary origin-top hidden sm:block"
             aria-hidden
           />
 
@@ -132,13 +133,18 @@ export function SupportConfidenceSection(): React.ReactElement {
                     whileInView={{ scale: [1, 1.1, 1] }}
                     viewport={{ once: true }}
                     transition={{ duration: 1, delay: 0.5 + index * 0.1 }}
-                    className="relative z-10 flex shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-background border-2 border-primary/30 dark:border-primary/40 flex items-center justify-center text-primary shadow-sm group-hover:border-primary group-hover:scale-110 transition-all duration-300"
+                    className={cn(
+                      "relative z-10 flex shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-background border-2 flex items-center justify-center shadow-sm transition-all duration-300",
+                      index % 2 === 0
+                        ? "border-secondary/30 text-secondary group-hover:border-secondary group-hover:bg-secondary/5"
+                        : "border-purple-400/30 text-purple-600 dark:text-purple-400 group-hover:border-purple-600 dark:group-hover:border-purple-400 group-hover:bg-purple-50 dark:group-hover:bg-purple-900/20"
+                    )}
                     aria-hidden
                   >
                     <Icon className="w-5 h-5 sm:w-6 sm:h-6" />
                   </motion.div>
                   <div className="flex-1 min-w-0 pt-0.5">
-                    <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-3 tracking-tight group-hover:text-primary transition-colors">
+                    <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-3 tracking-tight group-hover:text-secondary transition-colors">
                       {point.title}
                     </h3>
                     <p className="text-muted-foreground text-sm sm:text-lg leading-relaxed max-w-xl">

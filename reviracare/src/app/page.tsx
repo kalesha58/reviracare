@@ -14,9 +14,9 @@ import { LatestNewsSection } from "@/components/sections/LatestNewsSection";
 import { SupportConfidenceSection } from "@/components/sections/SupportConfidenceSection";
 
 const CAROUSEL_IMAGES = [
-  "/images/hero/elderly-care.png",
-  "/images/hero/disability-support.png",
-  "/images/hero/team.png",
+  "/images/hero/Hero-1.jpg",
+  "/images/hero/Hero-2.jpg",
+  "/images/hero/Hero-3.jpg",
 ];
 
 const HERO_CONTENT = [
@@ -36,13 +36,35 @@ const HERO_CONTENT = [
 
 const BADGES = [
   {
-    id: "ndis",
+    id: "ndis-official",
     content: (
-      <div className="flex items-center gap-3 bg-[#6A2B86] text-white px-5 py-3 rounded-2xl shadow-xl shadow-purple-500/20 border border-white/10">
-        <span className="font-bold text-xl tracking-tighter">ndis</span>
-        <div className="w-px h-6 bg-white/20" />
-        <div className="text-[10px] leading-tight font-bold uppercase text-left">
-          Registered <br /> Provider
+      <div className="flex flex-col items-center bg-white/95 dark:bg-white/90 backdrop-blur-xl px-4 py-2 rounded-2xl border border-white/20 shadow-xl overflow-hidden min-h-[54px]">
+        <Image
+          src="/images/hero/National_Disability_Insurance_Scheme_logo.svg.png"
+          alt="NDIS Registered Provider"
+          width={100}
+          height={32}
+          className="object-contain h-8 w-auto mb-1"
+        />
+        <div className="text-[8px] font-bold text-zinc-500 uppercase tracking-tighter leading-none text-center">
+          Registered NDIS Provider <br /> No: 4053379341
+        </div>
+      </div>
+    ),
+  },
+  {
+    id: "ndis-support",
+    content: (
+      <div className="flex items-center gap-3 px-4 py-2.5 bg-white/95 dark:bg-white/90 backdrop-blur-xl rounded-2xl border border-primary/20 shadow-xl h-[54px]">
+        <Image
+          src="/images/hero/We-Support-NDIS-150-x-150-px-5.png"
+          alt="We Support NDIS"
+          width={36}
+          height={36}
+          className="object-contain h-full w-auto"
+        />
+        <div className="text-[10px] leading-tight font-bold uppercase text-primary text-left">
+          Official <br /> Registered
         </div>
       </div>
     ),
@@ -50,27 +72,18 @@ const BADGES = [
   {
     id: "phone",
     content: (
-      <div className="flex items-center gap-3 px-5 py-3 bg-white/95 dark:bg-white/10 backdrop-blur-xl rounded-2xl border border-zinc-200 dark:border-white/20 shadow-xl">
+      <div className="flex items-center gap-3 px-5 py-3 bg-white/95 dark:bg-white/10 backdrop-blur-xl rounded-2xl border border-primary/20 shadow-xl h-[54px]">
         <span className="text-xl" aria-hidden>📱</span>
-        <span className="text-xs font-bold text-emerald-700 dark:text-emerald-400 tracking-wider uppercase">1800 REVIRA</span>
+        <span className="text-xs font-bold text-primary tracking-wider uppercase">1800 REVIRA</span>
       </div>
     ),
   },
   {
     id: "support",
     content: (
-      <div className="flex items-center gap-3 px-5 py-3 bg-white/95 dark:bg-white/10 backdrop-blur-xl rounded-2xl border border-zinc-200 dark:border-white/20 shadow-xl">
-        <div className="text-xl font-bold text-blue-700 dark:text-blue-400 leading-none">24/7</div>
-        <div className="text-[10px] font-bold text-zinc-700 dark:text-zinc-400 uppercase tracking-wider">Support</div>
-      </div>
-    ),
-  },
-  {
-    id: "covid",
-    content: (
-      <div className="flex items-center gap-3 px-5 py-3 bg-cyan-100 dark:bg-[#00A3E0]/20 backdrop-blur-xl text-cyan-800 dark:text-[#00A3E0] rounded-2xl border border-cyan-200 dark:border-[#00A3E0]/40 shadow-xl">
-        <CheckCircle2 className="w-5 h-5" />
-        <span className="text-[11px] font-bold tracking-wider uppercase">COVID Safe</span>
+      <div className="flex items-center gap-3 px-5 py-3 bg-white/95 dark:bg-white/10 backdrop-blur-xl rounded-2xl border border-purple-200 dark:border-purple-800 shadow-xl h-[54px]">
+        <div className="text-xl font-bold text-purple-600 dark:text-purple-400 leading-none">24/7</div>
+        <div className="text-[10px] font-bold text-purple-900/50 dark:text-purple-300/50 uppercase tracking-wider">Support <br /> Services</div>
       </div>
     ),
   },
@@ -89,7 +102,7 @@ export default function HomePage(): React.ReactElement {
   return (
     <main className="relative min-h-screen">
       {/* Hero Content */}
-      <section className="relative min-h-[600px] md:h-[65vh] md:min-h-[500px] flex items-center pt-24 md:pt-24 pb-32 md:pb-12 overflow-hidden">
+      <section className="relative min-h-[85vh] md:min-h-[90vh] flex items-center pt-24 md:pt-28 pb-36 md:pb-20 overflow-hidden">
         {/* Background Carousel */}
         <div className="absolute inset-0 z-0 bg-white dark:bg-zinc-950 overflow-hidden">
           <AnimatePresence initial={false}>
@@ -140,7 +153,7 @@ export default function HomePage(): React.ReactElement {
                         <>
                           {rest}
                           {rest && ' '}
-                          <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-white to-blue-500">
+                          <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-white to-purple-400">
                             {lastTwo}
                           </span>
                         </>
@@ -218,16 +231,16 @@ export default function HomePage(): React.ReactElement {
       <SupportConfidenceSection />
 
       {/* Welcome Section */}
-      <Section className="bg-zinc-50 dark:bg-zinc-950 text-zinc-900 dark:text-white border-t border-zinc-200 dark:border-white/5 overflow-hidden">
+      <Section className="bg-white dark:bg-zinc-950 text-foreground border-t border-purple-100 dark:border-purple-900/50 overflow-hidden">
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
             {/* Left: Intro + highlights */}
             <div className="lg:col-span-7">
-              <span className="section-label inline-flex items-center gap-2 text-emerald-600 dark:text-emerald-400 uppercase tracking-[0.2em] mb-4">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+              <span className="section-label inline-flex items-center gap-2 text-primary uppercase tracking-[0.2em] mb-4">
+                <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
                 Why ReviraCare
               </span>
-              <h2 className="section-title text-zinc-900 dark:text-white mb-6 leading-tight">
+              <h2 className="section-title text-foreground mb-6 leading-tight">
                 Welcome to ReviraCare
               </h2>
               <p className="subtitle text-zinc-600 dark:text-zinc-400 leading-relaxed mb-8 max-w-xl">
@@ -241,18 +254,18 @@ export default function HomePage(): React.ReactElement {
                   "Community participation and in-home care when you need it",
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-3 text-zinc-700 dark:text-zinc-300 body-sm leading-relaxed">
-                    <CheckCircle2 className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" />
+                    <CheckCircle2 className="w-5 h-5 text-secondary shrink-0 mt-0.5" />
                     <span>{item}</span>
                   </li>
                 ))}
               </ul>
-              <div className="inline-flex items-center gap-3 px-5 py-3 rounded-2xl bg-emerald-500/10 dark:bg-emerald-500/15 border border-emerald-500/20 dark:border-emerald-500/30">
-                <div className="w-10 h-10 rounded-xl bg-emerald-500/20 dark:bg-emerald-500/30 flex items-center justify-center">
-                  <CheckCircle2 className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />
+              <div className="inline-flex items-center gap-3 px-5 py-3 rounded-2xl bg-primary/10 border border-primary/20">
+                <div className="w-10 h-10 rounded-xl bg-primary/20 flex items-center justify-center">
+                  <CheckCircle2 className="w-5 h-5 text-primary" />
                 </div>
                 <div>
-                  <span className="block font-semibold text-zinc-900 dark:text-white body-sm">Government Registered Provider</span>
-                  <span className="block caption text-zinc-500 dark:text-zinc-400 uppercase tracking-wider">NDIS Quality & Safeguards</span>
+                  <span className="block font-semibold text-foreground body-sm">Government Registered Provider</span>
+                  <span className="block caption text-muted-foreground uppercase tracking-wider">NDIS Quality & Safeguards</span>
                 </div>
               </div>
             </div>
@@ -263,14 +276,14 @@ export default function HomePage(): React.ReactElement {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="group relative overflow-hidden rounded-3xl border border-zinc-200 dark:border-white/5 bg-white dark:bg-zinc-900/80 p-8 flex flex-col justify-between shadow-sm hover:shadow-lg hover:border-zinc-300 dark:hover:border-white/10 transition-all duration-300"
+                className="group relative overflow-hidden rounded-3xl border border-purple-100 dark:border-purple-900/50 bg-white dark:bg-zinc-900/80 p-8 flex flex-col justify-between shadow-sm hover:shadow-lg transition-all duration-300"
               >
-                <div className="absolute top-0 right-0 w-32 h-32 bg-zinc-100 dark:bg-zinc-800 rounded-full -translate-y-1/2 translate-x-1/2 group-hover:scale-150 transition-transform duration-500" aria-hidden />
+                <div className="absolute top-0 right-0 w-32 h-32 bg-purple-50 dark:bg-purple-900/20 rounded-full -translate-y-1/2 translate-x-1/2 group-hover:scale-150 transition-transform duration-500" aria-hidden />
                 <div className="relative">
-                  <span className="text-4xl sm:text-5xl font-extrabold text-zinc-900 dark:text-white tracking-tight">500+</span>
-                  <p className="caption text-zinc-500 dark:text-zinc-400 uppercase tracking-wider mt-2">Clients Supported</p>
+                  <span className="text-4xl sm:text-5xl font-extrabold text-purple-900 dark:text-purple-100 tracking-tight">500+</span>
+                  <p className="caption text-purple-500 dark:text-purple-400 uppercase tracking-wider mt-2">Clients Supported</p>
                 </div>
-                <p className="body-sm text-zinc-600 dark:text-zinc-400 mt-4 relative">
+                <p className="body-sm text-slate-600 dark:text-purple-200/70 mt-4 relative">
                   Individuals and families who trust us for quality, person-centred care.
                 </p>
               </motion.div>
@@ -279,14 +292,14 @@ export default function HomePage(): React.ReactElement {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 }}
-                className="group relative overflow-hidden rounded-3xl border border-emerald-500/20 dark:border-emerald-500/30 bg-gradient-to-br from-emerald-500/5 to-emerald-500/10 dark:from-emerald-500/10 dark:to-emerald-500/5 p-8 flex flex-col justify-between shadow-sm hover:shadow-lg hover:shadow-emerald-500/5 transition-all duration-300"
+                className="group relative overflow-hidden rounded-3xl border border-primary/20 bg-gradient-to-br from-primary/5 to-primary/10 p-8 flex flex-col justify-between shadow-sm hover:shadow-lg hover:shadow-primary/5 transition-all duration-300"
               >
-                <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-500/10 rounded-full -translate-y-1/2 translate-x-1/2 group-hover:scale-150 transition-transform duration-500" aria-hidden />
+                <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-full -translate-y-1/2 translate-x-1/2 group-hover:scale-150 transition-transform duration-500" aria-hidden />
                 <div className="relative">
-                  <span className="text-4xl sm:text-5xl font-extrabold text-emerald-600 dark:text-emerald-400 tracking-tight">24/7</span>
-                  <p className="caption text-emerald-600/80 dark:text-emerald-400/80 uppercase tracking-wider mt-2">Available Support</p>
+                  <span className="text-4xl sm:text-5xl font-extrabold text-primary tracking-tight">24/7</span>
+                  <p className="caption text-primary/80 uppercase tracking-wider mt-2">Available Support</p>
                 </div>
-                <p className="body-sm text-zinc-600 dark:text-zinc-400 mt-4 relative">
+                <p className="body-sm text-slate-600 dark:text-slate-300 mt-4 relative">
                   Round-the-clock availability so you’re never without support when it matters.
                 </p>
               </motion.div>

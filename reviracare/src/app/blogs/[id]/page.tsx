@@ -73,7 +73,7 @@ export default function BlogDetailPage({ params }: { params: Promise<{ id: strin
                         <div className="flex items-center gap-4">
                             <Link
                                 href="/blogs"
-                                className="flex items-center gap-2 text-sm font-semibold text-muted-foreground hover:text-primary transition-colors"
+                                className="flex items-center gap-2 text-sm font-semibold text-muted-foreground hover:text-secondary transition-colors"
                             >
                                 <ArrowLeft className="w-4 h-4" />
                                 <span className="hidden sm:inline">Back to Blogs</span>
@@ -85,7 +85,7 @@ export default function BlogDetailPage({ params }: { params: Promise<{ id: strin
                                 onClick={() => setIsKidsMode(!isKidsMode)}
                                 className={`relative flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full border-2 transition-all duration-500 overflow-hidden group ${isKidsMode
                                     ? "bg-yellow-400/10 border-yellow-400 text-yellow-600 dark:text-yellow-400"
-                                    : "bg-primary/5 border-primary/20 text-primary"
+                                    : "bg-secondary/5 border-secondary/20 text-secondary"
                                     }`}
                             >
                                 <motion.div
@@ -124,11 +124,11 @@ export default function BlogDetailPage({ params }: { params: Promise<{ id: strin
                                                 key={sectionId}
                                                 href={`#${sectionId}`}
                                                 className={`group flex items-center gap-3 py-2 text-sm font-medium transition-all ${activeSection === sectionId
-                                                    ? "text-primary translate-x-1"
+                                                    ? "text-secondary translate-x-1"
                                                     : "text-muted-foreground hover:text-foreground"
                                                     }`}
                                             >
-                                                <div className={`w-1.5 h-1.5 rounded-full transition-all ${activeSection === sectionId ? "bg-primary scale-125" : "bg-border group-hover:bg-muted-foreground"
+                                                <div className={`w-1.5 h-1.5 rounded-full transition-all ${activeSection === sectionId ? "bg-secondary scale-125" : "bg-border group-hover:bg-muted-foreground"
                                                     }`} />
                                                 {section.title}
                                             </a>
@@ -144,7 +144,7 @@ export default function BlogDetailPage({ params }: { params: Promise<{ id: strin
                                 <div className="max-w-3xl mx-auto">
                                     <header className="mb-12">
                                         <div className="flex flex-wrap items-center gap-4 mb-6">
-                                            <span className="px-3 py-1 rounded-full bg-primary/10 text-primary text-[10px] font-bold uppercase tracking-widest border border-primary/20">
+                                            <span className="px-3 py-1 rounded-full bg-secondary/10 text-secondary text-[10px] font-bold uppercase tracking-widest border border-secondary/20">
                                                 {post.category}
                                             </span>
                                             <div className="flex items-center gap-4 text-muted-foreground text-xs font-medium">
@@ -159,7 +159,7 @@ export default function BlogDetailPage({ params }: { params: Promise<{ id: strin
                                             </div>
                                         </div>
 
-                                        <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-foreground leading-[1.05] tracking-tight mb-8">
+                                        <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground leading-tight tracking-tight mb-8">
                                             {post.title}
                                         </h1>
 
@@ -190,7 +190,7 @@ export default function BlogDetailPage({ params }: { params: Promise<{ id: strin
                                         {post.sections.map((section, idx) => (
                                             <section key={idx} id={`section-${idx}`} className="scroll-mt-32">
                                                 <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-6 flex items-center gap-4">
-                                                    <span className="text-primary/20 font-black text-4xl leading-none">0{idx + 1}</span>
+                                                    <span className="text-secondary/20 font-black text-4xl leading-none">0{idx + 1}</span>
                                                     {section.title}
                                                 </h2>
                                                 <div className="prose prose-lg dark:prose-invert max-w-none">
@@ -222,13 +222,13 @@ export default function BlogDetailPage({ params }: { params: Promise<{ id: strin
                                             </p>
                                             <Link
                                                 href="/contact"
-                                                className="inline-flex items-center gap-3 px-8 py-4 rounded-2xl bg-primary text-white font-bold hover:scale-105 active:scale-95 transition-all shadow-xl shadow-primary/20"
+                                                className="inline-flex items-center gap-3 px-8 py-4 rounded-2xl bg-secondary text-white font-bold hover:scale-105 active:scale-95 transition-all shadow-xl shadow-secondary/20"
                                             >
                                                 Start Your Project
                                                 <ArrowUpRight className="w-5 h-5" />
                                             </Link>
                                         </div>
-                                        <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-primary/20 to-transparent pointer-events-none group-hover:from-primary/30 transition-all duration-500" />
+                                        <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-secondary/20 to-transparent pointer-events-none group-hover:from-secondary/30 transition-all duration-500" />
                                     </div>
                                 </div>
                             </Container>
@@ -277,7 +277,7 @@ export default function BlogDetailPage({ params }: { params: Promise<{ id: strin
                                             </div>
                                         </div>
 
-                                        <div className="p-8 sm:p-10 rounded-[3rem] bg-primary text-white border-2 border-primary/20 relative group hover:rotate-1 transition-transform">
+                                        <div className="p-8 sm:p-10 rounded-[3rem] bg-secondary text-white border-2 border-secondary/20 relative group hover:rotate-1 transition-transform">
                                             <div className="flex gap-6 items-center mb-4">
                                                 <div className="w-12 h-12 rounded-2xl bg-white/20 backdrop-blur flex items-center justify-center">
                                                     <Lightbulb className="w-6 h-6" />
@@ -306,7 +306,7 @@ export default function BlogDetailPage({ params }: { params: Promise<{ id: strin
                 )}
             </AnimatePresence>
 
-            <div className="h-2 w-full bg-gradient-to-r from-primary via-yellow-400 to-primary/50" />
+            <div className="h-2 w-full bg-gradient-to-r from-secondary via-yellow-400 to-secondary/50" />
         </div>
     );
 }

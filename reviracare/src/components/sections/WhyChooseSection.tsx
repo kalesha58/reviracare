@@ -83,7 +83,7 @@ function ConnectorLines() {
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeDasharray="4 4"
-                    className="text-primary/30"
+                    className={i % 2 === 0 ? "text-primary/30" : "text-purple-400/30"}
                     initial={{ strokeDashoffset: 32, opacity: 0 }}
                     whileInView={{ strokeDashoffset: 0, opacity: 1 }}
                     viewport={{ once: true }}
@@ -175,7 +175,7 @@ function ConnectorLines() {
 
 export function WhyChooseSection(): React.ReactElement {
   return (
-    <Section className="bg-muted/50 dark:bg-muted/20 text-foreground border-t border-border overflow-hidden">
+    <Section className="bg-purple-50 dark:bg-purple-950/20 text-foreground border-t border-purple-100 dark:border-purple-900/50 overflow-hidden">
       <Container>
         <motion.div
           initial="hidden"
@@ -187,7 +187,7 @@ export function WhyChooseSection(): React.ReactElement {
           <motion.span
             variants={CARD_VARIANTS}
             custom={0}
-            className="section-label text-primary uppercase tracking-[0.2em] block mb-4"
+            className="section-label text-secondary uppercase tracking-[0.2em] block mb-4"
           >
             Why Choose Us
           </motion.span>
@@ -196,14 +196,14 @@ export function WhyChooseSection(): React.ReactElement {
             custom={1}
             className="section-title text-foreground mb-6 leading-tight"
           >
-            Why Choose Revira Care?
+            Why Choose ReviraCare?
           </motion.h2>
           <motion.p
             variants={CARD_VARIANTS}
             custom={2}
             className="text-muted-foreground text-base md:text-lg leading-relaxed"
           >
-            Revira Care provides compassionate, personalized support and a wide
+            ReviraCare provides compassionate, personalized support and a wide
             range of services tailored to empower individuals with disabilities.
             Our dedicated team ensures dignity, independence, and a better quality
             of life for every individual we serve.
@@ -226,7 +226,7 @@ export function WhyChooseSection(): React.ReactElement {
                 custom={index}
                 className="group relative flex flex-col p-6 sm:p-8 rounded-2xl bg-background border border-border shadow-sm hover:shadow-lg hover:border-primary/20 dark:hover:border-primary/30 transition-all duration-300"
               >
-                <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 dark:bg-primary/20 text-primary border border-primary/10 dark:border-primary/20 group-hover:bg-primary/15 dark:group-hover:bg-primary/25 transition-colors duration-300">
+                <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-secondary/10 dark:bg-secondary/20 text-secondary border border-secondary/10 dark:border-secondary/20 group-hover:bg-secondary/20 dark:group-hover:bg-secondary/30 transition-colors duration-300">
                   <feature.icon className="h-6 w-6 sm:h-7 sm:w-7" aria-hidden />
                 </div>
                 <h3 className="text-lg font-bold text-foreground mb-2">

@@ -322,7 +322,7 @@ const SERVICE_DATA: Record<string, any> = {
         image: "/images/ndis/service-social.png",
         accent: "sky",
         content: `
-      True freedom starts with a worry-free journey. At Revira Care, we offer reliable and safe travel support, carefully tailored to your unique schedule and needs. We're here to build your confidence, helping you reach medical appointments, enjoy social outings, and stay connected with your community.
+      True freedom starts with a worry-free journey. At ReviraCare, we offer reliable and safe travel support, carefully tailored to your unique schedule and needs. We're here to build your confidence, helping you reach medical appointments, enjoy social outings, and stay connected with your community.
     `,
         benefits: [
             { title: "Reliable & Safe", description: "Dependable transport so you can plan with confidence." },
