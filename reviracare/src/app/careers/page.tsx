@@ -95,9 +95,9 @@ export default function CareersPage() {
   };
 
   return (
-    <main className="min-h-screen bg-zinc-50 dark:bg-zinc-950 text-zinc-900 dark:text-white pb-32">
+    <main className="min-h-screen bg-zinc-50 dark:bg-zinc-950 text-zinc-900 dark:text-white pb-16">
       {/* Hero Section */}
-      <section className="relative h-[65vh] min-h-[500px] flex items-center overflow-hidden">
+      <section className="relative h-[55vh] min-h-[420px] flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
             src="/images/careers/hero.png"
@@ -165,7 +165,7 @@ export default function CareersPage() {
       </section>
 
       {/* Philosophy & Cert IV Info */}
-      <Section className="py-24 overflow-hidden">
+      <Section className="py-16 md:py-20 overflow-hidden">
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <motion.div
@@ -222,31 +222,22 @@ export default function CareersPage() {
       </Section>
 
       {/* Pre-Employment Grid */}
-      <Section id="how-to-apply" className="bg-zinc-100 dark:bg-zinc-900/50 py-24 border-y border-zinc-200 dark:border-white/5">
+      <Section id="how-to-apply" className="bg-zinc-100 dark:bg-zinc-900/50 py-16 md:py-20 border-y border-zinc-200 dark:border-white/5">
         <Container>
-          <div className="flex flex-col items-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-purple-brand dark:text-purple-200 font-bold uppercase text-[10px] tracking-[0.3em] mb-6">Mandatory Steps</h2>
-            <div className="flex flex-row items-center justify-center gap-5 md:gap-6 mb-8 w-full flex-wrap sm:flex-nowrap">
-              <div className="shrink-0 p-3 md:p-4 bg-white dark:bg-zinc-800 rounded-2xl shadow-xl shadow-purple-brand/5 border border-zinc-200 dark:border-white/5 transition-transform hover:scale-105">
-                <BrandLogo
-                  width={120}
-                  height={42}
-                  imageClassName="dark:brightness-0 dark:invert"
-                />
-              </div>
-              <h3 className="text-2xl sm:text-3xl md:text-5xl font-extrabold tracking-tight text-zinc-900 dark:text-white leading-[1.15] text-center sm:text-left">
-                Pre-Employment{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-brand via-purple-500 to-secondary dark:from-purple-brand dark:to-purple-200">
-                  Requirements
-                </span>
-              </h3>
-            </div>
+          <div className="flex flex-col items-center max-w-3xl mx-auto mb-10">
+            <h2 className="text-purple-brand dark:text-purple-200 font-bold uppercase text-[10px] tracking-[0.3em] mb-4">Mandatory Steps</h2>
+            <h3 className="text-2xl sm:text-3xl md:text-5xl font-extrabold tracking-tight text-zinc-900 dark:text-white leading-[1.15] text-center mb-6">
+              Pre-Employment{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-brand via-purple-500 to-secondary dark:from-purple-brand dark:to-purple-200">
+                Requirements
+              </span>
+            </h3>
             <p className="text-zinc-600 dark:text-zinc-400 text-base leading-relaxed text-center max-w-2xl">
               To ensure the highest standards of care and compliance with the NDIS Commission, all candidates must complete these prior to starting.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
             {CLEARANCES.map((clearance, i) => (
               <motion.div
                 key={i}
@@ -314,7 +305,7 @@ export default function CareersPage() {
       </Section>
 
       {/* Application Form Section */}
-      <Section className="py-24">
+      <Section className="py-16 md:py-20">
         <Container>
           <div className="max-w-5xl mx-auto">
             <div className="bg-zinc-900 dark:bg-zinc-900/80 rounded-[3rem] overflow-hidden shadow-3xl text-white">
@@ -507,21 +498,37 @@ export default function CareersPage() {
       </Section>
 
       {/* Trust & Compliance Footer */}
-      <Container className="mt-20">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 opacity-60">
-          {[
-            { text: "NDIS Registered", icon: <ShieldCheck className="w-4 h-4" /> },
-            { text: "Fully Compliant", icon: <Lock className="w-4 h-4" /> },
-            { text: "Quality Care", icon: <Award className="w-4 h-4" /> },
-            { text: "Person Centered", icon: <Heart className="w-4 h-4" /> }
-          ].map((item, i) => (
-            <div key={i} className="flex flex-col items-center gap-2">
-              <div className="text-zinc-400">{item.icon}</div>
-              <span className="text-[10px] font-bold uppercase tracking-widest text-zinc-500">{item.text}</span>
-            </div>
-          ))}
-        </div>
-      </Container>
+      <Section className="py-10 mt-8 mb-12">
+        <Container>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+            {[
+              { text: "NDIS Registered", icon: ShieldCheck },
+              { text: "Fully Compliant", icon: Lock },
+              { text: "Quality Care", icon: Award },
+              { text: "Person Centered", icon: Heart },
+            ].map((item, i) => {
+              const Icon = item.icon;
+              return (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 12 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.05 }}
+                  className="group flex flex-col items-center text-center p-5 sm:p-6 rounded-2xl bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 shadow-lg shadow-zinc-200/50 dark:shadow-zinc-950 hover:shadow-xl hover:shadow-purple-brand/10 dark:hover:shadow-purple-brand/10 hover:border-purple-brand/30 dark:hover:border-purple-brand/40 transition-all duration-300"
+                >
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-purple-brand/10 dark:bg-purple-brand/20 flex items-center justify-center text-purple-brand dark:text-purple-200 mb-3 sm:mb-4 group-hover:scale-110 group-hover:bg-purple-brand/15 dark:group-hover:bg-purple-brand/30 transition-all duration-300">
+                    <Icon className="w-6 h-6 sm:w-7 sm:h-7" />
+                  </div>
+                  <span className="text-xs sm:text-sm font-bold uppercase tracking-wider text-zinc-900 dark:text-white">
+                    {item.text}
+                  </span>
+                </motion.div>
+              );
+            })}
+          </div>
+        </Container>
+      </Section>
     </main>
   );
 }

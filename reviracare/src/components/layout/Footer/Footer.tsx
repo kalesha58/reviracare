@@ -188,31 +188,27 @@ export function Footer(): React.ReactElement {
         </div>
 
         {/* Acknowledgement and Copyright */}
-        <div className="pt-10 pb-12 border-t border-white/15">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-end">
-            <div className="space-y-4 max-w-2xl">
-              <div className="flex items-center gap-3 text-green-brand">
-                <Heart className="w-5 h-5 fill-current shrink-0" />
-                <span className="footer-legal uppercase tracking-wider text-green-brand/90">
+        <div className="pt-8 pb-10 border-t border-white/15">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            <div className="space-y-3 max-w-2xl">
+              <div className="flex items-center gap-2 text-green-brand">
+                <Heart className="w-4 h-4 fill-current shrink-0" />
+                <span className="footer-legal font-semibold uppercase tracking-wider text-green-brand/90">
                   Acknowledgement of Country
                 </span>
               </div>
-              <p className="footer-body text-white/70 leading-relaxed italic">
-                Revira Care acknowledges the traditional owners of the land in
-                which we work and pay our respect to their elders, past and
-                present.
+              <p className="footer-body text-sm text-white/75 leading-relaxed">
+                Revira Care acknowledges the traditional owners of the land in which we work and pay our respect to their elders, past and present.
               </p>
             </div>
-            <div className="flex flex-col md:flex-row items-start md:items-center justify-end gap-4 md:gap-8">
-              <div className="flex flex-wrap gap-6 footer-legal uppercase tracking-wider text-white/60">
-                <Link href="/privacy" className="hover:text-white transition-colors">
-                  Privacy Policy
-                </Link>
-                <Link href="/terms" className="hover:text-white transition-colors">
-                  Terms Of Service
-                </Link>
-              </div>
-              <p className="footer-legal uppercase tracking-wider text-white/60">
+            <div className="flex flex-col sm:flex-row flex-wrap items-start sm:items-center gap-3 sm:gap-6 lg:justify-end">
+              <Link href="/privacy" className="footer-legal text-white/70 hover:text-white transition-colors">
+                Privacy Policy
+              </Link>
+              <Link href="/terms" className="footer-legal text-white/70 hover:text-white transition-colors">
+                Terms Of Service
+              </Link>
+              <p className="footer-legal text-white/70">
                 © {currentYear} Revira Care. All Rights Reserved.
               </p>
             </div>
