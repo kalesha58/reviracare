@@ -15,7 +15,7 @@ export default function NewProviderNdisPage(): React.ReactElement {
         <div className="absolute inset-0 z-0 w-full h-full">
           <Image
             src="/images/ndis/provider.png"
-            alt="ReviraCare NDIS Provider"
+            alt="Revira Care NDIS Provider"
             fill
             className="object-cover object-center w-full h-full dark:opacity-70"
             priority

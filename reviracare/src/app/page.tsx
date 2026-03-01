@@ -22,15 +22,15 @@ const CAROUSEL_IMAGES = [
 const HERO_CONTENT = [
   {
     title: "Tailored Care For Every Journey",
-    description: "ReviraCare offers personalized support services designed to meet the unique needs of individuals with disabilities. Our goal is to foster independence, confidence, and a better quality of life.",
+    description: "Revira Care offers personalized support services designed to meet the unique needs of individuals with disabilities. Our goal is to foster independence, confidence, and a better quality of life.",
   },
   {
     title: "Your Partner In Independence And Care",
-    description: "We provide comprehensive disability support, from in-home care to skill development programs. At ReviraCare, we empower individuals to achieve their goals with dignity and respect.",
+    description: "We provide comprehensive disability support, from in-home care to skill development programs. At Revira Care, we empower individuals to achieve their goals with dignity and respect.",
   },
   {
     title: "Inclusive Services For A Better Tomorrow",
-    description: "With a focus on accessibility and community engagement, our services promote social inclusion and personal growth. ReviraCare is here to support you every step of the way.",
+    description: "With a focus on accessibility and community engagement, our services promote social inclusion and personal growth. Revira Care is here to support you every step of the way.",
   },
 ];
 
@@ -38,16 +38,18 @@ const BADGES = [
   {
     id: "ndis-official",
     content: (
-      <div className="flex flex-col items-center bg-white/95 dark:bg-white/90 backdrop-blur-xl px-4 py-2 rounded-2xl border border-white/20 shadow-xl overflow-hidden min-h-[54px]">
-        <Image
-          src="/images/hero/National_Disability_Insurance_Scheme_logo.svg.png"
-          alt="NDIS Registered Provider"
-          width={100}
-          height={32}
-          className="object-contain h-8 w-auto mb-1"
-        />
-        <div className="text-[8px] font-bold text-zinc-500 uppercase tracking-tighter leading-none text-center">
-          Registered NDIS Provider <br /> No: 4053379341
+      <div className="flex items-center justify-start gap-4 bg-white/95 dark:bg-zinc-900/90 backdrop-blur-xl px-5 py-2 rounded-2xl border border-zinc-200 dark:border-white/10 shadow-xl w-64 h-[72px]">
+        <div className="w-12 flex shrink-0 items-center justify-center">
+          <Image
+            src="/images/hero/National_Disability_Insurance_Scheme_logo.svg.png"
+            alt="NDIS Registered Provider"
+            width={48}
+            height={28}
+            className="object-contain h-8 w-auto"
+          />
+        </div>
+        <div className="text-xs font-extrabold text-zinc-800 dark:text-zinc-200 uppercase leading-snug">
+          Registered <br /> NDIS Provider
         </div>
       </div>
     ),
@@ -55,15 +57,17 @@ const BADGES = [
   {
     id: "ndis-support",
     content: (
-      <div className="flex items-center gap-3 px-4 py-2.5 bg-white/95 dark:bg-white/90 backdrop-blur-xl rounded-2xl border border-primary/20 shadow-xl h-[54px]">
-        <Image
-          src="/images/hero/We-Support-NDIS-150-x-150-px-5.png"
-          alt="We Support NDIS"
-          width={36}
-          height={36}
-          className="object-contain h-full w-auto"
-        />
-        <div className="text-[10px] leading-tight font-bold uppercase text-primary text-left">
+      <div className="flex items-center justify-start gap-4 bg-white/95 dark:bg-zinc-900/90 backdrop-blur-xl px-5 py-2 rounded-2xl border border-zinc-200 dark:border-white/10 shadow-xl w-64 h-[72px]">
+        <div className="w-12 flex shrink-0 items-center justify-center">
+          <Image
+            src="/images/hero/We-Support-NDIS-150-x-150-px-5.png"
+            alt="We Support NDIS"
+            width={40}
+            height={40}
+            className="object-contain h-10 w-auto"
+          />
+        </div>
+        <div className="text-xs font-extrabold text-zinc-800 dark:text-zinc-200 uppercase leading-snug">
           Official <br /> Registered
         </div>
       </div>
@@ -72,18 +76,22 @@ const BADGES = [
   {
     id: "phone",
     content: (
-      <div className="flex items-center gap-3 px-5 py-3 bg-white/95 dark:bg-white/10 backdrop-blur-xl rounded-2xl border border-primary/20 shadow-xl h-[54px]">
-        <span className="text-xl" aria-hidden>📱</span>
-        <span className="text-xs font-bold text-primary tracking-wider uppercase">1800 REVIRA</span>
+      <div className="flex items-center justify-start gap-4 bg-white/95 dark:bg-zinc-900/90 backdrop-blur-xl px-5 py-2 rounded-2xl border border-zinc-200 dark:border-white/10 shadow-xl w-64 h-[72px]">
+        <div className="w-12 flex shrink-0 items-center justify-center">
+          <span className="text-2xl" aria-hidden>📱</span>
+        </div>
+        <span className="text-xs font-extrabold text-zinc-800 dark:text-zinc-200 uppercase tracking-wider">1800 REVIRA</span>
       </div>
     ),
   },
   {
     id: "support",
     content: (
-      <div className="flex items-center gap-3 px-5 py-3 bg-white/95 dark:bg-white/10 backdrop-blur-xl rounded-2xl border border-purple-200 dark:border-purple-800 shadow-xl h-[54px]">
-        <div className="text-xl font-bold text-purple-600 dark:text-purple-400 leading-none">24/7</div>
-        <div className="text-[10px] font-bold text-purple-900/50 dark:text-purple-300/50 uppercase tracking-wider">Support <br /> Services</div>
+      <div className="flex items-center justify-start gap-4 bg-white/95 dark:bg-zinc-900/90 backdrop-blur-xl px-5 py-2 rounded-2xl border border-zinc-200 dark:border-white/10 shadow-xl w-64 h-[72px]">
+        <div className="w-12 flex shrink-0 items-center justify-center">
+          <div className="text-xl font-black text-primary leading-none">24/7</div>
+        </div>
+        <div className="text-xs font-extrabold text-zinc-800 dark:text-zinc-200 uppercase leading-snug">Support <br /> Services</div>
       </div>
     ),
   },
@@ -118,7 +126,7 @@ export default function HomePage(): React.ReactElement {
                 src={CAROUSEL_IMAGES[currentImage % CAROUSEL_IMAGES.length]}
                 alt="Healthcare support"
                 fill
-                className="object-cover object-center dark:opacity-60"
+                className="object-cover object-top dark:opacity-60"
                 priority
               />
               <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-zinc-50/80 dark:from-black/80 dark:via-black/40 dark:to-zinc-950" />
@@ -177,7 +185,7 @@ export default function HomePage(): React.ReactElement {
                   initial={{ opacity: 0, x: 50 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.8, delay: 0.4 + (index * 0.1) }}
-                  className="w-fit"
+                  className="w-64"
                 >
                   {badge.content}
                 </motion.div>
@@ -206,7 +214,7 @@ export default function HomePage(): React.ReactElement {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 1.4 + (index * 0.1) }}
-                className="scale-90 flex-shrink-0"
+                className="scale-90 flex-shrink-0 w-64"
               >
                 {badge.content}
               </motion.div>
@@ -221,7 +229,7 @@ export default function HomePage(): React.ReactElement {
       {/* NDIS Provider Australia */}
       <NDISProviderSection />
 
-      {/* Why Choose ReviraCare */}
+      {/* Why Choose Revira Care */}
       <WhyChooseSection />
 
       {/* Latest News / Blogs */}
@@ -238,10 +246,10 @@ export default function HomePage(): React.ReactElement {
             <div className="lg:col-span-7">
               <span className="section-label inline-flex items-center gap-2 text-primary uppercase tracking-[0.2em] mb-4">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
-                Why ReviraCare
+                Why Revira Care
               </span>
               <h2 className="section-title text-foreground mb-6 leading-tight">
-                Welcome to ReviraCare
+                Welcome to Revira Care
               </h2>
               <p className="subtitle text-zinc-600 dark:text-zinc-400 leading-relaxed mb-8 max-w-xl">
                 We provide person-centred support to help you live the life you choose. Our dedicated team works closely with you to understand your goals and provide the care you deserve.

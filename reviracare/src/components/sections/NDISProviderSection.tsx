@@ -90,7 +90,7 @@ export function NDISProviderSection(): React.ReactElement {
               href="/contact"
               className="inline-flex items-center gap-2 px-6 py-3.5 bg-primary text-primary-foreground font-bold rounded-2xl hover:opacity-90 transition-opacity"
             >
-              Connect With ReviraCare
+              Connect With Revira Care
               <ArrowRight className="w-5 h-5" />
             </Link>
           </motion.div>

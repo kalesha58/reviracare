@@ -196,14 +196,14 @@ export function WhyChooseSection(): React.ReactElement {
             custom={1}
             className="section-title text-foreground mb-6 leading-tight"
           >
-            Why Choose ReviraCare?
+            Why Choose Revira Care?
           </motion.h2>
           <motion.p
             variants={CARD_VARIANTS}
             custom={2}
             className="text-muted-foreground text-base md:text-lg leading-relaxed"
           >
-            ReviraCare provides compassionate, personalized support and a wide
+            Revira Care provides compassionate, personalized support and a wide
             range of services tailored to empower individuals with disabilities.
             Our dedicated team ensures dignity, independence, and a better quality
             of life for every individual we serve.
@@ -224,14 +224,16 @@ export function WhyChooseSection(): React.ReactElement {
                 key={feature.title}
                 variants={CARD_VARIANTS}
                 custom={index}
-                className="group relative flex flex-col p-6 sm:p-8 rounded-2xl bg-background border border-border shadow-sm hover:shadow-lg hover:border-primary/20 dark:hover:border-primary/30 transition-all duration-300"
+                className="group relative flex flex-col p-6 rounded-2xl bg-background border border-border shadow-sm hover:shadow-lg hover:border-primary/20 dark:hover:border-primary/30 transition-all duration-300"
               >
-                <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-secondary/10 dark:bg-secondary/20 text-secondary border border-secondary/10 dark:border-secondary/20 group-hover:bg-secondary/20 dark:group-hover:bg-secondary/30 transition-colors duration-300">
-                  <feature.icon className="h-6 w-6 sm:h-7 sm:w-7" aria-hidden />
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="flex shrink-0 h-10 w-10 items-center justify-center rounded-lg bg-secondary/10 dark:bg-secondary/20 text-secondary border border-secondary/10 dark:border-secondary/20 group-hover:bg-secondary/20 dark:group-hover:bg-secondary/30 transition-colors duration-300">
+                    <feature.icon className="h-5 w-5" aria-hidden />
+                  </div>
+                  <h3 className="text-lg font-bold text-foreground leading-tight">
+                    {feature.title}
+                  </h3>
                 </div>
-                <h3 className="text-lg font-bold text-foreground mb-2">
-                  {feature.title}
-                </h3>
                 <p className="text-muted-foreground text-sm sm:text-base leading-relaxed flex-1">
                   {feature.description}
                 </p>

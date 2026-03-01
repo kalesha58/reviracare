@@ -22,7 +22,7 @@ export default function NewToNdisPage(): React.ReactElement {
         <div className="absolute inset-0 z-0 w-full h-full">
           <Image
             src="/images/ndis/new.png"
-            alt="ReviraCare Support"
+            alt="Revira Care Support"
             fill
             className="object-cover object-center w-full h-full dark:opacity-70"
             priority

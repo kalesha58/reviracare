@@ -117,7 +117,7 @@ export function Footer(): React.ReactElement {
                 <span className="caption uppercase tracking-[0.2em]">Acknowledgement of Country</span>
               </div>
               <p className="body-sm leading-relaxed text-zinc-400 italic">
-                ReviraCare acknowledges the traditional owners of the land in which we work and pay our respect to their elders, past and present.
+                Revira Care acknowledges the traditional owners of the land in which we work and pay our respect to their elders, past and present.
               </p>
             </div>
             <div className="flex flex-col md:flex-row items-center justify-end gap-6 md:gap-12">
@@ -126,7 +126,7 @@ export function Footer(): React.ReactElement {
                 <Link href="/terms" className="hover:text-white transition-colors">Terms Of Service</Link>
               </div>
               <p className="caption uppercase tracking-widest text-zinc-500">
-                © {currentYear} ReviraCare. All Rights Reserved.
+                © {currentYear} Revira Care. All Rights Reserved.
               </p>
             </div>
           </div>

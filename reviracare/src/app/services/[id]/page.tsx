@@ -17,9 +17,9 @@ const SERVICE_DATA: Record<string, any> = {
         image: "/images/services/In-Home-Care-Community-Support.jpg",
         accent: "purple",
         content: `
-      ReviraCare is dedicated to providing exceptional support to individuals with disabilities, ensuring they receive the care and assistance they need in the comfort of their homes. Our Home Care services are tailored to promote independence, dignity, and a high quality of life for all our clients.
+      Revira Care is dedicated to providing exceptional support to individuals with disabilities, ensuring they receive the care and assistance they need in the comfort of their homes. Our Home Care services are tailored to promote independence, dignity, and a high quality of life for all our clients.
       
-      Home care refers to professional, compassionate support provided in a person’s home to help them with daily living activities, medical needs, or companionship. It is an ideal solution for those who want to maintain their independence while receiving the support they need. ReviraCare ensures that every home care plan is customized to meet the unique needs of individuals with disabilities.
+      Home care refers to professional, compassionate support provided in a person’s home to help them with daily living activities, medical needs, or companionship. It is an ideal solution for those who want to maintain their independence while receiving the support they need. Revira Care ensures that every home care plan is customized to meet the unique needs of individuals with disabilities.
     `,
         benefits: [
             {
@@ -42,7 +42,7 @@ const SERVICE_DATA: Record<string, any> = {
         sections: [
             {
                 title: "Nursing Care Support",
-                content: "At ReviraCare, we offer high-quality nursing care services tailored specifically for individuals with disabilities. Our skilled nursing team is trained to meet unique medical and personal needs.",
+                content: "At Revira Care, we offer high-quality nursing care services tailored specifically for individuals with disabilities. Our skilled nursing team is trained to meet unique medical and personal needs.",
                 subtopics: [
                     { title: "Medication Management", description: "Timely and accurate administration." },
                     { title: "Wound Care", description: "Essential support to prevent infections and promote healing." },
@@ -66,7 +66,7 @@ const SERVICE_DATA: Record<string, any> = {
         image: "/images/services/save-and-community-participation.jpg",
         accent: "purple",
         content: `
-      Social and community participation is a critical aspect of a person’s well-being. At ReviraCare, we understand the importance of fostering inclusion, social interaction, and a sense of belonging within the community for people with disabilities. This service is designed to encourage active involvement in social activities.
+      Social and community participation is a critical aspect of a person’s well-being. At Revira Care, we understand the importance of fostering inclusion, social interaction, and a sense of belonging within the community for people with disabilities. This service is designed to encourage active involvement in social activities.
     `,
         benefits: [
             {
@@ -323,7 +323,7 @@ const SERVICE_DATA: Record<string, any> = {
         image: "/images/services/assist-travel-transport.jpg",
         accent: "purple",
         content: `
-      True freedom starts with a worry-free journey. At ReviraCare, we offer reliable and safe travel support, carefully tailored to your unique schedule and needs. We're here to build your confidence, helping you reach medical appointments, enjoy social outings, and stay connected with your community.
+      True freedom starts with a worry-free journey. At Revira Care, we offer reliable and safe travel support, carefully tailored to your unique schedule and needs. We're here to build your confidence, helping you reach medical appointments, enjoy social outings, and stay connected with your community.
     `,
         benefits: [
             { title: "Reliable & Safe", description: "Dependable transport so you can plan with confidence." },

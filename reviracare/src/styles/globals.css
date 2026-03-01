@@ -65,7 +65,7 @@
   --text-footer-heading-size: 0.75rem;
 
   /* Font weights - consistent across header, sections, titles, subtitles */
-  --font-weight-nav: 500;
+  --font-weight-nav: 600;
   --font-weight-label: 700;
   --font-weight-title: 700;
   --font-weight-hero: 800;
@@ -186,7 +186,7 @@ body {
 
 .nav-link-mobile {
   font-size: var(--text-nav-mobile-size);
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .nav-link-dropdown {

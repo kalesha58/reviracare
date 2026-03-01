@@ -71,8 +71,8 @@ const METHODOLOGY = [
 
 const FAQS = [
   {
-    question: "Is ReviraCare a registered NDIS provider?",
-    answer: "Yes, ReviraCare is a fully registered NDIS provider. We comply with all NDIS Quality and Safeguards Commission standards to ensure the highest level of care and safety."
+    question: "Is Revira Care a registered NDIS provider?",
+    answer: "Yes, Revira Care is a fully registered NDIS provider. We comply with all NDIS Quality and Safeguards Commission standards to ensure the highest level of care and safety."
   },
   {
     question: "What areas do you provide services in?",
@@ -122,76 +122,140 @@ export default function AboutPage(): React.ReactElement {
   return (
     <main className="min-h-screen bg-zinc-50 dark:bg-zinc-950 text-zinc-900 dark:text-white">
       {/* Hero Section */}
-      <section className="relative h-[60vh] min-h-[450px] flex items-center overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="/images/hero/team-v3.png"
-            alt="ReviraCare Professional Team"
-            fill
-            className="object-cover dark:opacity-70"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/30 to-zinc-50 dark:from-black/80 dark:via-black/40 dark:to-zinc-950" />
+      <section className="relative min-h-[85vh] md:min-h-[90vh] flex items-center pt-24 md:pt-28 pb-36 md:pb-20 overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0 bg-white dark:bg-zinc-950 overflow-hidden">
+          <motion.div
+            initial={{ opacity: 0, scale: 1.05 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1.2, ease: "easeInOut" }}
+            className="absolute inset-0"
+          >
+            <Image
+              src="/images/hero/team-v3.png"
+              alt="Revira Care Professional Team"
+              fill
+              className="object-cover object-top dark:opacity-60"
+              priority
+              sizes="100vw"
+            />
+            {/* Main Overlays */}
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-zinc-50/80 dark:from-black/80 dark:via-black/40 dark:to-zinc-950" />
 
-          {/* Decorative Elements */}
-          <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-primary/10 blur-[120px] rounded-full" />
-          <div className="absolute bottom-1/4 left-1/4 w-96 h-96 bg-purple-500/10 blur-[120px] rounded-full" />
+            {/* Scrim behind text for readable contrast */}
+            <div className="absolute inset-0 bg-gradient-to-r from-zinc-900/50 via-zinc-900/10 to-transparent" aria-hidden />
+
+            {/* Decorative Elements */}
+            <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-primary/10 blur-[120px] rounded-full" />
+            <div className="absolute bottom-1/4 left-1/4 w-96 h-96 bg-purple-500/10 blur-[120px] rounded-full" />
+          </motion.div>
         </div>
 
-        <Container className="relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="max-w-3xl"
-          >
-            <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-zinc-900/5 dark:bg-white/5 border border-zinc-900/10 dark:border-white/10 text-primary section-label font-bold uppercase tracking-[0.2em] mb-6">
-              <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
-              Trusted NDIS Partner
-            </div>
-            <h1 className="hero-title mb-5 tracking-tight leading-[1.1] text-white">
-              Reimagining <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-white to-purple-400">
-                The Care Experience
-              </span>
-            </h1>
-            <p className="subtitle text-zinc-300 dark:text-zinc-400 font-medium leading-relaxed max-w-xl">
-              ReviraCare is more than a service provider. We are your partners in creating a life characterized by empowerment, independence, and joy.
-            </p>
-          </motion.div>
-        </Container>
-      </section>
-
-      {/* Trust Badges */}
-      <div className="relative z-20 -mt-8 mb-16">
-        <Container>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-            {[
-              { label: "Registered Provider", sub: "NDIS Accredited", icon: <ShieldCheck className="w-4 h-4" /> },
-              { label: "24/7 Availability", sub: "Always Support", icon: <Zap className="w-4 h-4" /> },
-              { label: "Certified Staff", sub: "Highly Vetted", icon: <Award className="w-4 h-4" /> },
-              { label: "Client Focused", sub: "100% Person Centered", icon: <Heart className="w-4 h-4" /> }
-            ].map((badge, i) => (
+        <Container className="relative z-20">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            {/* Left Content */}
+            <div className="lg:col-span-8 flex flex-col items-start text-left">
               <motion.div
-                key={badge.label}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="bg-zinc-100 dark:bg-zinc-900/80 backdrop-blur-xl border border-zinc-200 dark:border-white/10 p-4 rounded-xl flex items-center gap-3.5 shadow-xl shadow-zinc-900/10 dark:shadow-black/20"
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+                className="w-full"
               >
-                <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center text-primary flex-shrink-0">
-                  {badge.icon}
+                <div className="section-label inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/95 dark:bg-white/5 border border-zinc-200 dark:border-white/10 text-emerald-600 dark:text-emerald-400 font-bold uppercase tracking-[0.2em] mb-6 shadow-sm">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                  Trusted NDIS Partner
                 </div>
-                <div>
-                  <div className="text-xs font-bold text-zinc-900 dark:text-white">{badge.label}</div>
-                  <div className="text-[9px] text-zinc-500 dark:text-zinc-500 font-bold uppercase tracking-wider">{badge.sub}</div>
+                <h1 className="hero-title font-extrabold tracking-tight text-white leading-[1.15] mb-6 drop-shadow-[0_1px_2px_rgba(0,0,0,0.3)]">
+                  Reimagining <br />
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-white to-purple-400">
+                    The Care Experience
+                  </span>
+                </h1>
+                <p className="subtitle text-white dark:text-zinc-400 leading-relaxed mb-10 max-w-xl drop-shadow-[0_1px_2px_rgba(0,0,0,0.3)]">
+                  Revira Care is more than a service provider. We are your partners in creating a life characterized by empowerment, independence, and joy.
+                </p>
+              </motion.div>
+            </div>
+
+            {/* Right Badges (Desktop/Tablet) */}
+            <div className="hidden lg:flex lg:col-span-4 flex-col items-end gap-3.5">
+              {[
+                { label: "Registered Provider", sub: "NDIS Accredited", icon: <ShieldCheck className="w-6 h-6 text-primary" /> },
+                { label: "24/7 Availability", sub: "Always Support", icon: <Zap className="w-6 h-6 text-secondary" /> },
+                { label: "Certified Staff", sub: "Highly Vetted", icon: <Award className="w-6 h-6 text-primary" /> },
+                { label: "Client Focused", sub: "100% Person Centered", icon: <Heart className="w-6 h-6 text-secondary" /> }
+              ].map((badge, index) => (
+                <motion.div
+                  key={badge.label}
+                  initial={{ opacity: 0, x: 50 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.8, delay: 0.4 + (index * 0.1) }}
+                  className="w-64"
+                >
+                  <div className="flex items-center justify-start gap-4 bg-white/95 dark:bg-zinc-900/90 backdrop-blur-xl px-5 py-2 rounded-2xl border border-zinc-200 dark:border-white/10 shadow-xl w-64 h-[72px]">
+                    <div className="w-12 flex shrink-0 items-center justify-center">
+                      {badge.icon}
+                    </div>
+                    <div className="flex flex-col">
+                      <div className="text-xs font-extrabold text-zinc-900 dark:text-zinc-100 uppercase leading-snug">
+                        {badge.label}
+                      </div>
+                      <div className="text-[10px] text-zinc-500 font-bold uppercase tracking-wider">
+                        {badge.sub}
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </Container>
+
+        {/* Scroll Indicator & Mobile Badges */}
+        <div className="absolute bottom-4 left-0 right-0 flex flex-col items-center gap-6 z-20">
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.2, duration: 1 }}
+            className="flex flex-col items-center gap-2"
+          >
+            <div className="w-px h-8 bg-gradient-to-b from-emerald-500 to-transparent" />
+            <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-white/90 dark:text-zinc-400">Scroll</span>
+          </motion.div>
+
+          {/* Mobile Horizontal Badges */}
+          <div className="lg:hidden flex flex-wrap justify-center items-center gap-3 px-4 w-full max-w-lg mx-auto overflow-x-auto no-scrollbar scroll-smooth pb-2">
+            {[
+              { label: "Registered Provider", sub: "NDIS Accredited", icon: <ShieldCheck className="w-6 h-6 text-primary" /> },
+              { label: "24/7 Availability", sub: "Always Support", icon: <Zap className="w-6 h-6 text-secondary" /> },
+              { label: "Certified Staff", sub: "Highly Vetted", icon: <Award className="w-6 h-6 text-primary" /> },
+              { label: "Client Focused", sub: "100% Person Centered", icon: <Heart className="w-6 h-6 text-secondary" /> }
+            ].map((badge, index) => (
+              <motion.div
+                key={`mobile-${badge.label}`}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 1.4 + (index * 0.1) }}
+                className="scale-90 flex-shrink-0 w-64"
+              >
+                <div className="flex items-center justify-start gap-4 bg-white/95 dark:bg-zinc-900/90 backdrop-blur-xl px-5 py-2 rounded-2xl border border-zinc-200 dark:border-white/10 shadow-xl w-64 h-[72px]">
+                  <div className="w-12 flex shrink-0 items-center justify-center">
+                    {badge.icon}
+                  </div>
+                  <div className="flex flex-col">
+                    <div className="text-xs font-extrabold text-zinc-900 dark:text-zinc-100 uppercase leading-snug">
+                      {badge.label}
+                    </div>
+                    <div className="text-[10px] text-zinc-500 font-bold uppercase tracking-wider">
+                      {badge.sub}
+                    </div>
+                  </div>
                 </div>
               </motion.div>
             ))}
           </div>
-        </Container>
-      </div>
+        </div>
+      </section>
 
       {/* Our Story & History */}
       <Section id="story" className="overflow-hidden pt-12 pb-24 bg-white dark:bg-transparent">
@@ -206,7 +270,7 @@ export default function AboutPage(): React.ReactElement {
               <h2 className="text-secondary font-bold uppercase text-[10px] tracking-[0.3em] mb-4">Our Heritage</h2>
               <h3 className="text-3xl md:text-4xl font-bold mb-5 leading-tight text-zinc-900 dark:text-white">Founded on Faith, <br /> Built for Impact</h3>
               <p className="text-zinc-600 dark:text-zinc-500 text-base leading-relaxed mb-5">
-                ReviraCare began with a simple vision: to bridge the gap between clinical support and authentic human connection. We saw individuals being treated as "cases" rather than "people," and we knew we could do better.
+                Revira Care began with a simple vision: to bridge the gap between clinical support and authentic human connection. We saw individuals being treated as "cases" rather than "people," and we knew we could do better.
               </p>
               <p className="text-zinc-600 dark:text-zinc-500 text-base leading-relaxed mb-8">
                 Today, we stand as a beacon of quality in the community care sector, driven by a diverse team that shares one common goal: seeing our participants thrive, grow, and achieve what they once thought was impossible.
@@ -255,10 +319,12 @@ export default function AboutPage(): React.ReactElement {
               viewport={{ once: true }}
               className="p-8 rounded-2xl bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-white/5 hover:border-primary/30 transition-colors group"
             >
-              <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <Target className="w-6 h-6 text-primary" />
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center group-hover:scale-110 transition-transform shrink-0">
+                  <Target className="w-6 h-6 text-primary" />
+                </div>
+                <h3 className="text-xl font-bold text-zinc-900 dark:text-white">Our Mission</h3>
               </div>
-              <h3 className="text-xl font-bold mb-3 text-zinc-900 dark:text-white">Our Mission</h3>
               <p className="text-zinc-600 dark:text-zinc-400 text-sm leading-relaxed">
                 To provide high-quality, inclusive support services that empower individuals to achieve their goals, enhance their independence, and live their best possible lives within their community.
               </p>
@@ -271,10 +337,12 @@ export default function AboutPage(): React.ReactElement {
               transition={{ delay: 0.1 }}
               className="p-8 rounded-2xl bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-white/5 hover:border-secondary/30 transition-colors group"
             >
-              <div className="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <Lightbulb className="w-6 h-6 text-secondary" />
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center group-hover:scale-110 transition-transform shrink-0">
+                  <Lightbulb className="w-6 h-6 text-secondary" />
+                </div>
+                <h3 className="text-xl font-bold text-zinc-900 dark:text-white">Our Vision</h3>
               </div>
-              <h3 className="text-xl font-bold mb-3 text-zinc-900 dark:text-white">Our Vision</h3>
               <p className="text-zinc-600 dark:text-zinc-400 text-sm leading-relaxed">
                 To be the leading innovator in disability support, fostering a world where accessibility and inclusion are the standard, and every individual is empowered to reach their full potential.
               </p>
@@ -303,8 +371,10 @@ export default function AboutPage(): React.ReactElement {
                 transition={{ delay: index * 0.1 }}
                 className="p-7 rounded-2xl bg-zinc-100 dark:bg-white/5 border border-zinc-200 dark:border-white/10 hover:bg-zinc-200/80 dark:hover:bg-white/[0.08] transition-all hover:-translate-y-1"
               >
-                <div className="mb-5">{value.icon}</div>
-                <h4 className="text-lg font-bold mb-2.5 text-zinc-900 dark:text-white">{value.title}</h4>
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="shrink-0">{value.icon}</div>
+                  <h4 className="text-lg font-bold text-zinc-900 dark:text-white">{value.title}</h4>
+                </div>
                 <p className="text-zinc-600 dark:text-zinc-400 text-[13px] leading-relaxed">{value.description}</p>
               </motion.div>
             ))}
@@ -421,8 +491,10 @@ export default function AboutPage(): React.ReactElement {
                 transition={{ delay: i * 0.1 }}
                 className="p-8 rounded-2xl bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-white/5 hover:border-zinc-300 dark:hover:border-white/10 transition-all shadow-sm"
               >
-                <div className="mb-5">{item.icon}</div>
-                <h4 className="text-lg font-bold mb-3 text-zinc-900 dark:text-white">{item.title}</h4>
+                <div className="flex items-center gap-4 mb-5">
+                  <div className="shrink-0">{item.icon}</div>
+                  <h4 className="text-lg font-bold text-zinc-900 dark:text-white">{item.title}</h4>
+                </div>
                 <p className="text-zinc-600 dark:text-zinc-500 text-[13px] leading-relaxed">{item.desc}</p>
               </motion.div>
             ))}
@@ -450,7 +522,7 @@ export default function AboutPage(): React.ReactElement {
                   <Quote className="w-12 h-12 text-zinc-900 dark:text-white" />
                 </div>
                 <p className="text-zinc-600 dark:text-zinc-300 italic text-[15px] mb-6 leading-relaxed relative z-10">
-                  "ReviraCare has completely transformed how I approach my daily goals. I feel empowered and truly supported for the first time."
+                  "Revira Care has completely transformed how I approach my daily goals. I feel empowered and truly supported for the first time."
                 </p>
                 <div className="flex items-center gap-3.5 relative z-10">
                   <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary/80 to-secondary/80 p-px">
@@ -517,8 +589,12 @@ export default function AboutPage(): React.ReactElement {
                 transition={{ delay: i * 0.1 }}
                 className="flex flex-col items-center"
               >
-                <div className="mb-5 p-3 rounded-2xl bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-white/5">{feature.icon}</div>
-                <h4 className="text-lg font-bold mb-3 text-zinc-900 dark:text-white">{feature.title}</h4>
+                <div className="flex items-center gap-4 mb-5">
+                  <div className="p-3 rounded-2xl bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-white/5 shrink-0">
+                    {feature.icon}
+                  </div>
+                  <h4 className="text-lg font-bold text-zinc-900 dark:text-white">{feature.title}</h4>
+                </div>
                 <p className="text-zinc-600 dark:text-zinc-500 text-[13px] leading-relaxed max-w-[240px]">{feature.desc}</p>
               </motion.div>
             ))}

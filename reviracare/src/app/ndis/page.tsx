@@ -73,7 +73,7 @@ export default function UnderstandingNdisPage(): React.ReactElement {
         <div className="absolute inset-0 z-0 w-full h-full">
           <Image
             src="/images/ndis/understanding.png"
-            alt="ReviraCare Support Services"
+            alt="Revira Care Support Services"
             fill
             className="object-cover object-top w-full h-full dark:opacity-70"
             priority

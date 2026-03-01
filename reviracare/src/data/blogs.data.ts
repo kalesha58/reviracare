@@ -33,7 +33,7 @@ export const ALL_BLOG_POSTS: IBlogPost[] = [
     id: "home-modifications",
     title: "What Steps Do You Take To Make Home Modifications Accessible And Affordable?",
     excerpt:
-      "Creating an accessible living environment shouldn't be a financial burden. Discover ReviraCare's structured approach to affordable home modifications.",
+      "Creating an accessible living environment shouldn't be a financial burden. Discover Revira Care's structured approach to affordable home modifications.",
     href: "/blogs/home-modifications",
     image: "/images/blogs/accessibility-kitchen-v2.png",
     imageAlt: "Ultra-modern accessible kitchen",
@@ -48,55 +48,55 @@ export const ALL_BLOG_POSTS: IBlogPost[] = [
     sections: [
       {
         title: "Introduction",
-        content: "Creating an accessible and comfortable living environment for individuals with disabilities or specific needs is a critical component of fostering independence and well-being. At ReviraCare, we understand the transformative impact that home modifications can have on daily living. However, accessibility alone is not enough; affordability is equally important to ensure these modifications are available to everyone who needs them. ReviraCare has developed a structured, thoughtful approach to make home modifications both accessible and affordable, ensuring that clients can enjoy safe, functional, and supportive spaces without financial strain.",
+        content: "Creating an accessible and comfortable living environment for individuals with disabilities or specific needs is a critical component of fostering independence and well-being. At Revira Care, we understand the transformative impact that home modifications can have on daily living. However, accessibility alone is not enough; affordability is equally important to ensure these modifications are available to everyone who needs them. Revira Care has developed a structured, thoughtful approach to make home modifications both accessible and affordable, ensuring that clients can enjoy safe, functional, and supportive spaces without financial strain.",
       },
       {
         title: "Comprehensive Needs Assessment",
-        content: "The first step in any successful home modification project is understanding the unique needs and goals of the individual. ReviraCare begins with a comprehensive needs assessment, during which our experts evaluate the client’s living environment, mobility requirements, and functional limitations. This assessment involves consultations with the client, their caregivers, and, if necessary, medical or occupational therapists.",
+        content: "The first step in any successful home modification project is understanding the unique needs and goals of the individual. Revira Care begins with a comprehensive needs assessment, during which our experts evaluate the client’s living environment, mobility requirements, and functional limitations. This assessment involves consultations with the client, their caregivers, and, if necessary, medical or occupational therapists.",
       },
       {
         title: "Client-Centered Design Solutions",
-        content: "Once the needs assessment is complete, our team works closely with the client to develop design solutions that align with their preferences and lifestyle. ReviraCare prioritizes client involvement throughout the planning process, ensuring that modifications reflect their personal tastes and daily routines. Whether it’s installing a wheelchair ramp, widening doorways, or creating an accessible bathroom, our goal is to create functional spaces that feel like home.",
+        content: "Once the needs assessment is complete, our team works closely with the client to develop design solutions that align with their preferences and lifestyle. Revira Care prioritizes client involvement throughout the planning process, ensuring that modifications reflect their personal tastes and daily routines. Whether it’s installing a wheelchair ramp, widening doorways, or creating an accessible bathroom, our goal is to create functional spaces that feel like home.",
       },
       {
         title: "Leveraging Cost-Effective Materials And Techniques",
-        content: "Affordability is a key consideration in every project, and ReviraCare is committed to finding cost-effective solutions without compromising quality or safety. We leverage our expertise to identify materials and techniques that provide durability and functionality at a reasonable cost. By working with trusted suppliers and contractors, we negotiate competitive pricing for essential components, such as grab bars, non-slip flooring, and accessible fixtures.",
+        content: "Affordability is a key consideration in every project, and Revira Care is committed to finding cost-effective solutions without compromising quality or safety. We leverage our expertise to identify materials and techniques that provide durability and functionality at a reasonable cost. By working with trusted suppliers and contractors, we negotiate competitive pricing for essential components, such as grab bars, non-slip flooring, and accessible fixtures.",
       },
       {
         title: "Utilizing Government Programs And Funding Assistance",
-        content: "Many clients are eligible for financial assistance through government programs, grants, or insurance plans like the NDIS. ReviraCare takes an active role in helping clients navigate these resources, ensuring they can access the funding they need. Our team assists with applications, documentation, and communication with funding agencies, simplifying what can often be a complex process.",
+        content: "Many clients are eligible for financial assistance through government programs, grants, or insurance plans like the NDIS. Revira Care takes an active role in helping clients navigate these resources, ensuring they can access the funding they need. Our team assists with applications, documentation, and communication with funding agencies, simplifying what can often be a complex process.",
       },
       {
         title: "Prioritizing Essential Modifications",
-        content: "For clients with budget constraints, ReviraCare focuses on implementing the most critical modifications first. By prioritizing essential changes that have the greatest impact on safety and functionality, we ensure that clients experience immediate improvements in their living conditions. For example, installing a stairlift or modifying a bathroom for wheelchair accessibility may take precedence over cosmetic updates.",
+        content: "For clients with budget constraints, Revira Care focuses on implementing the most critical modifications first. By prioritizing essential changes that have the greatest impact on safety and functionality, we ensure that clients experience immediate improvements in their living conditions. For example, installing a stairlift or modifying a bathroom for wheelchair accessibility may take precedence over cosmetic updates.",
       },
       {
         title: "Emphasizing Energy Efficiency And Long-Term Savings",
-        content: "In addition to immediate accessibility improvements, ReviraCare considers the long-term financial implications of home modifications. By incorporating energy-efficient solutions, such as LED lighting, insulated windows, or water-saving fixtures, we help clients reduce utility costs over time. This forward-thinking approach ensures that clients benefit from both immediate and lasting value.",
+        content: "In addition to immediate accessibility improvements, Revira Care considers the long-term financial implications of home modifications. By incorporating energy-efficient solutions, such as LED lighting, insulated windows, or water-saving fixtures, we help clients reduce utility costs over time. This forward-thinking approach ensures that clients benefit from both immediate and lasting value.",
       },
       {
         title: "Partnering With Community Organizations And Charities",
-        content: "ReviraCare collaborates with local community organizations and charities to extend financial support and resources to clients in need. These partnerships allow us to connect clients with additional funding opportunities, volunteer labor, or donated materials that can significantly reduce project costs. This collaborative spirit reflects our commitment to inclusivity and social responsibility.",
+        content: "Revira Care collaborates with local community organizations and charities to extend financial support and resources to clients in need. These partnerships allow us to connect clients with additional funding opportunities, volunteer labor, or donated materials that can significantly reduce project costs. This collaborative spirit reflects our commitment to inclusivity and social responsibility.",
       },
       {
         title: "Offering Flexible Payment Plans",
-        content: "To further ease the financial burden on clients, ReviraCare offers flexible payment plans that allow modifications to be completed without upfront payment in full. These plans are tailored to each client’s financial situation, providing manageable installment options that fit within their budget.",
+        content: "To further ease the financial burden on clients, Revira Care offers flexible payment plans that allow modifications to be completed without upfront payment in full. These plans are tailored to each client’s financial situation, providing manageable installment options that fit within their budget.",
       },
       {
         title: "Ensuring Quality And Compliance",
-        content: "Affordability should never come at the expense of quality or safety. ReviraCare is dedicated to upholding the highest standards of workmanship and compliance with accessibility regulations. Our team of skilled professionals ensures that every modification meets relevant building codes, safety standards, and disability guidelines.",
+        content: "Affordability should never come at the expense of quality or safety. Revira Care is dedicated to upholding the highest standards of workmanship and compliance with accessibility regulations. Our team of skilled professionals ensures that every modification meets relevant building codes, safety standards, and disability guidelines.",
       },
       {
         title: "Providing Education And Training",
-        content: "For many clients, adapting to a newly modified home requires a period of adjustment. ReviraCare provides education and training to help clients and their families make the most of their new environment. This includes guidance on using adaptive equipment, maintaining accessible features, and optimizing the functionality of the space.",
+        content: "For many clients, adapting to a newly modified home requires a period of adjustment. Revira Care provides education and training to help clients and their families make the most of their new environment. This includes guidance on using adaptive equipment, maintaining accessible features, and optimizing the functionality of the space.",
       },
       {
         title: "Fostering Innovation In Accessibility Design",
-        content: "ReviraCare stays at the forefront of accessibility design by exploring new technologies and solutions that enhance functionality and affordability. From smart home systems that improve convenience to modular designs that adapt to changing needs, we embrace innovation to deliver cutting-edge solutions.",
+        content: "Revira Care stays at the forefront of accessibility design by exploring new technologies and solutions that enhance functionality and affordability. From smart home systems that improve convenience to modular designs that adapt to changing needs, we embrace innovation to deliver cutting-edge solutions.",
       },
       {
         title: "Continuous Improvement And Client Feedback",
-        content: "ReviraCare values feedback from clients as an essential component of our commitment to excellence. After each project, we actively seek input to evaluate the effectiveness of our processes, materials, and designs. By continuously refining our approach, we ensure that our services remain responsive to the evolving needs of our clients.",
+        content: "Revira Care values feedback from clients as an essential component of our commitment to excellence. After each project, we actively seek input to evaluate the effectiveness of our processes, materials, and designs. By continuously refining our approach, we ensure that our services remain responsive to the evolving needs of our clients.",
       },
     ],
     kidsVersion: {
@@ -173,7 +173,7 @@ export const ALL_BLOG_POSTS: IBlogPost[] = [
     id: "nursing-care",
     title: "How Is Nursing Care Tailored To Individuals With Complex Health Needs?",
     excerpt:
-      "Complex health needs require a meticulous, patient-centered approach. Discover how ReviraCare designs nursing care plans that prioritize physical and emotional well-being.",
+      "Complex health needs require a meticulous, patient-centered approach. Discover how Revira Care designs nursing care plans that prioritize physical and emotional well-being.",
     href: "/blogs/nursing-care",
     image: "/images/blogs/nursing-care-v2.png",
     imageAlt: "Professional nursing care in a modern home",
@@ -233,7 +233,7 @@ export const ALL_BLOG_POSTS: IBlogPost[] = [
     id: "supported-living",
     title: "Supported Independent Living: What to Expect",
     excerpt:
-      "A clear guide to SIL services, how they work, and how ReviraCare supports you to live independently in a shared or solo setting.",
+      "A clear guide to SIL services, how they work, and how Revira Care supports you to live independently in a shared or solo setting.",
     href: "/blogs/supported-living",
     image: "/images/blogs/life-skills-workshop.png",
     imageAlt: "Supported living and life skills",
@@ -317,7 +317,7 @@ export const ALL_BLOG_POSTS: IBlogPost[] = [
     id: "accessible-housing",
     title: "Understanding SDA: Specialist Disability Accommodation",
     excerpt:
-      "What SDA is, who it's for, and how ReviraCare helps you find and settle into accommodation that supports your needs.",
+      "What SDA is, who it's for, and how Revira Care helps you find and settle into accommodation that supports your needs.",
     href: "/blogs/accessible-housing",
     image: "/images/blogs/accessibility-kitchen-v2.png",
     imageAlt: "Accessible housing",

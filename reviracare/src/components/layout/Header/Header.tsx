@@ -86,8 +86,8 @@ export function Header(): React.ReactElement {
                 className={cn(
                   "nav-link px-4 py-2 rounded-full transition-colors relative",
                   isActive
-                    ? "text-primary dark:text-primary font-semibold"
-                    : "text-slate-600 dark:text-purple-200 hover:text-primary dark:hover:text-primary hover:bg-primary/5 dark:hover:bg-primary/10"
+                    ? "text-primary dark:text-primary font-bold"
+                    : "text-slate-900 dark:text-zinc-100 hover:text-primary dark:hover:text-primary hover:bg-primary/5 dark:hover:bg-primary/10"
                 )}
               >
                 {link.label}
@@ -232,8 +232,8 @@ function MobileNavItem({
             className={cn(
               "flex items-center justify-between w-full p-4 rounded-2xl transition-all duration-300",
               isExpanded
-                ? "bg-primary/5 dark:bg-primary/10 text-primary"
-                : "text-slate-600 dark:text-purple-200 hover:bg-primary/5 dark:hover:bg-primary/10"
+                ? "bg-primary/5 dark:bg-primary/10 text-primary font-bold"
+                : "text-slate-900 dark:text-zinc-100 hover:bg-primary/5 dark:hover:bg-primary/10"
             )}
           >
             <div className="flex items-center gap-4">
@@ -291,8 +291,8 @@ function MobileNavItem({
           className={cn(
             "flex items-center gap-4 p-4 rounded-2xl transition-all duration-300",
             isActive
-              ? "bg-primary/5 dark:bg-primary/10 text-primary"
-              : "text-slate-600 dark:text-purple-200 hover:bg-primary/5 dark:hover:bg-primary/10"
+              ? "bg-primary/5 dark:bg-primary/10 text-primary font-bold"
+              : "text-slate-900 dark:text-zinc-100 hover:bg-primary/5 dark:hover:bg-primary/10"
           )}
         >
           <div className={cn(
@@ -331,8 +331,8 @@ function NavDropdown({ link, isActive }: { link: (typeof NAV_LINKS)[number] & { 
         className={cn(
           "nav-link px-4 py-2 rounded-full transition-colors flex items-center gap-1.5",
           isActive
-            ? "text-primary dark:text-primary font-semibold bg-primary/5 dark:bg-primary/10"
-            : "text-zinc-600 dark:text-purple-200 hover:text-primary dark:hover:text-primary hover:bg-primary/5 dark:hover:bg-primary/10"
+            ? "text-primary dark:text-primary font-bold bg-primary/5 dark:bg-primary/10"
+            : "text-slate-900 dark:text-zinc-100 hover:text-primary dark:hover:text-primary hover:bg-primary/5 dark:hover:bg-primary/10"
         )}
       >
         {link.label}
