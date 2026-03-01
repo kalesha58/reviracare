@@ -14,7 +14,7 @@ const SERVICE_DATA: Record<string, any> = {
     "in-home": {
         title: "In-Home And Community Support",
         subtitle: "Professional, compassionate support in the comfort of your home.",
-        image: "/images/ndis/service-in-home.png",
+        image: "/images/services/In-Home-Care-Community-Support.jpg",
         accent: "purple",
         content: `
       ReviraCare is dedicated to providing exceptional support to individuals with disabilities, ensuring they receive the care and assistance they need in the comfort of their homes. Our Home Care services are tailored to promote independence, dignity, and a high quality of life for all our clients.
@@ -63,7 +63,7 @@ const SERVICE_DATA: Record<string, any> = {
     "social": {
         title: "Social And Community Participation",
         subtitle: "Fostering inclusion, social interaction, and a sense of belonging.",
-        image: "/images/ndis/service-social.png",
+        image: "/images/services/save-and-community-participation.jpg",
         accent: "purple",
         content: `
       Social and community participation is a critical aspect of a person’s well-being. At ReviraCare, we understand the importance of fostering inclusion, social interaction, and a sense of belonging within the community for people with disabilities. This service is designed to encourage active involvement in social activities.
@@ -102,7 +102,7 @@ const SERVICE_DATA: Record<string, any> = {
     "group": {
         title: "Group Activities And Community Programs",
         subtitle: "Meaningful, enjoyable, and enriching group experiences.",
-        image: "/images/ndis/service-group.png",
+        image: "/images/services/Group-activity-and-community-program.jpg",
         accent: "purple",
         content: `
       We are committed to providing a wide range of group activities and community programs designed to promote independence, improve social skills, and enhance overall well-being. Our programs are carefully crafted to ensure meaningful engagement.
@@ -145,7 +145,7 @@ const SERVICE_DATA: Record<string, any> = {
     "sil": {
         title: "Supported Independent Living (SIL)",
         subtitle: "Tailored support for living independently in the community.",
-        image: "/images/ndis/service-sil.png",
+        image: "/images/services/support-independent.jpg",
         accent: "purple",
         content: `
       Supported Independent Living (SIL) is all about helping you live as independently as possible while receiving the help you need with daily tasks. Whether you live in a shared home or alone, our team provides 24/7 support.
@@ -170,7 +170,7 @@ const SERVICE_DATA: Record<string, any> = {
     "skills": {
         title: "Daily Living And Life Skills",
         subtitle: "Empowering you with the skills for everyday success.",
-        image: "/images/ndis/service-life-skills.png",
+        image: "/images/services/development-of-daily-living.jpg",
         accent: "purple",
         content: `
       Developing daily living and life skills is essential for independence. We work with you to master the tasks that matter most, from cooking healthy meals to managing your budget and using public transport.
@@ -195,7 +195,7 @@ const SERVICE_DATA: Record<string, any> = {
     "sda": {
         title: "Specialised Disability Accommodation (SDA)",
         subtitle: "Modern, accessible housing designed for your needs.",
-        image: "/images/ndis/service-sda.png",
+        image: "/images/services/specialised-disability.jpg",
         accent: "purple",
         content: `
       Specialised Disability Accommodation (SDA) refers to housing for people who require very high support needs. Our SDA properties are designed to be accessible, functional, and beautiful, ensuring a high quality of life.
@@ -220,7 +220,7 @@ const SERVICE_DATA: Record<string, any> = {
     "coordination": {
         title: "Coordination Of Supports",
         subtitle: "Connecting you with services that align with your NDIS goals.",
-        image: "/images/ndis/service-group.png",
+        image: "/images/services/coordination-support.jpg",
         accent: "purple",
         content: `
       Assisting participants in managing their NDIS plans by connecting them with services that align with their goals. Our coordinators simplify the process to ensure effective use of resources.
@@ -245,7 +245,7 @@ const SERVICE_DATA: Record<string, any> = {
     "short-term-accommodation": {
         title: "Short/Medium Term Accommodation",
         subtitle: "Temporary housing for respite and transitional care.",
-        image: "/images/ndis/service-sil.png",
+        image: "/images/services/short-and-medium-term.avif",
         accent: "purple",
         content: `
       Offering temporary housing solutions for individuals needing respite or transitional care. Our accommodations are designed to provide comfort, support, and opportunities for skill development.
@@ -270,7 +270,7 @@ const SERVICE_DATA: Record<string, any> = {
     "housing-tenancy": {
         title: "Housing And Tenancy",
         subtitle: "Finding, securing, and maintaining the right home for you.",
-        image: "/images/ndis/service-sda.png",
+        image: "/images/services/Housing-and-tenancy.jpg",
         accent: "purple",
         content: `
       Providing assistance with finding, securing, and maintaining appropriate housing. Our team helps individuals understand their tenancy rights and responsibilities while ensuring a stable living environment.
@@ -295,7 +295,7 @@ const SERVICE_DATA: Record<string, any> = {
     "nursing-care": {
         title: "Nursing Care",
         subtitle: "Professional nursing services tailored to your health needs.",
-        image: "/images/ndis/service-in-home.png",
+        image: "/images/services/Nursing-care.jpg",
         accent: "purple",
         content: `
       Delivering professional nursing services to address medical and health needs, including wound care, medication management, and monitoring chronic conditions. We provide compassionate and skilled care tailored to individual requirements.
@@ -320,7 +320,7 @@ const SERVICE_DATA: Record<string, any> = {
     "assist-travel-transport": {
         title: "Assist Travel/Transport",
         subtitle: "Reliable, safe travel support tailored to your schedule.",
-        image: "/images/ndis/service-social.png",
+        image: "/images/services/assist-travel-transport.jpg",
         accent: "purple",
         content: `
       True freedom starts with a worry-free journey. At ReviraCare, we offer reliable and safe travel support, carefully tailored to your unique schedule and needs. We're here to build your confidence, helping you reach medical appointments, enjoy social outings, and stay connected with your community.
@@ -391,31 +391,54 @@ export default function ServiceDetailPage() {
     return (
         <main className="bg-zinc-50 dark:bg-zinc-950 min-h-screen [--primary:var(--secondary)] [--accent:var(--purple-100)] [--accent-foreground:var(--purple-700)] dark:[--accent:#3b0764] dark:[--accent-foreground:#f3e8ff]">
             {/* Hero Section */}
-            <section className="relative h-[40vh] min-h-[400px] flex items-center overflow-hidden">
-                <Image
-                    src={service.image}
-                    alt={service.title}
-                    fill
-                    className="object-cover dark:opacity-40"
-                    priority
-                />
-                <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-transparent dark:from-black/80 dark:to-transparent" />
+            <section className="relative min-h-[85vh] flex items-center pt-24 pb-20 overflow-hidden">
+                {/* Background Image & Overlays */}
+                <div className="absolute inset-0 z-0 bg-zinc-950">
+                    <Image
+                        src={service.image}
+                        alt={service.title}
+                        fill
+                        className="object-cover object-center opacity-90 dark:opacity-60"
+                        priority
+                    />
+                    {/* Cinematic Gradients */}
+                    <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-zinc-50/80 dark:from-black/80 dark:via-black/40 dark:to-zinc-950" />
+                    <div className="absolute inset-0 bg-gradient-to-r from-zinc-900/60 via-zinc-900/20 to-transparent" aria-hidden />
+                </div>
 
-                <Container className="relative z-10 pt-20">
+                <Container className="relative z-20">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        className="max-w-3xl"
+                        className="max-w-4xl"
                     >
                         <Link
                             href="/"
-                            className="inline-flex items-center gap-2 text-white/80 hover:text-white transition-colors mb-8 font-bold text-sm bg-white/10 backdrop-blur-md px-4 py-2 rounded-full border border-white/10 w-fit"
+                            className="section-label inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-emerald-400 font-bold uppercase tracking-[0.2em] mb-8 hover:bg-white/20 transition-all w-fit"
                         >
                             <ArrowLeft className="w-4 h-4" /> Back to Services
                         </Link>
-                        <h1 className="hero-title tracking-tight text-white leading-[1.1] opacity-60">
-                            {service.title}
+
+                        <h1 className="hero-title font-extrabold tracking-tight text-white leading-[1.15] mb-6 drop-shadow-[0_1px_2px_rgba(0,0,0,0.3)]">
+                            {(() => {
+                                const words = service.title.split(' ');
+                                if (words.length <= 2) return service.title;
+                                const lastTwo = words.slice(-2).join(' ');
+                                const rest = words.slice(0, -2).join(' ');
+                                return (
+                                    <>
+                                        {rest}{' '}
+                                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-white to-purple-400">
+                                            {lastTwo}
+                                        </span>
+                                    </>
+                                );
+                            })()}
                         </h1>
+
+                        <p className="subtitle text-white dark:text-zinc-400 leading-relaxed max-w-2xl drop-shadow-[0_1px_2px_rgba(0,0,0,0.3)]">
+                            {service.subtitle}
+                        </p>
                     </motion.div>
                 </Container>
             </section>
