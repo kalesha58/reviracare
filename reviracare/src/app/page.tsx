@@ -39,18 +39,18 @@ const BADGES = [
   {
     id: "ndis-official",
     content: (
-      <div className="flex items-center justify-start gap-3 sm:gap-4 bg-white/95 dark:bg-zinc-900/90 backdrop-blur-xl px-4 sm:px-5 py-2 rounded-2xl border border-zinc-200 dark:border-white/10 shadow-xl w-full min-w-[140px] max-w-[200px] sm:max-w-[240px] lg:w-64 h-[64px] sm:h-[72px]">
-        <div className="w-10 sm:w-12 flex shrink-0 items-center justify-center">
+      <div className="flex items-center justify-start gap-2 sm:gap-3 md:gap-4 bg-white/95 dark:bg-zinc-900/90 backdrop-blur-xl px-3 py-2.5 sm:px-4 sm:py-3 md:px-5 md:py-2 rounded-xl sm:rounded-2xl border-2 border-zinc-200 dark:border-white/10 shadow-xl w-full min-w-0 min-h-[56px] sm:min-h-[64px] md:h-[72px] box-border">
+        <div className="w-9 sm:w-10 md:w-12 flex shrink-0 items-center justify-center">
           <Image
             src="/images/hero/National_Disability_Insurance_Scheme_logo.svg.png"
             alt="NDIS Registered Provider"
             width={48}
             height={28}
-            className="object-contain h-6 sm:h-8 w-auto"
+            className="object-contain h-5 sm:h-6 md:h-8 w-auto"
           />
         </div>
-        <div className="text-[10px] sm:text-xs font-extrabold text-zinc-800 dark:text-zinc-200 uppercase leading-snug">
-          Registered <br /> NDIS Provider
+        <div className="text-[10px] sm:text-xs font-extrabold text-zinc-800 dark:text-zinc-200 uppercase leading-snug truncate min-w-0">
+          Registered <br className="hidden sm:block" /> NDIS Provider
         </div>
       </div>
     ),
@@ -58,18 +58,18 @@ const BADGES = [
   {
     id: "ndis-support",
     content: (
-      <div className="flex items-center justify-start gap-3 sm:gap-4 bg-white/95 dark:bg-zinc-900/90 backdrop-blur-xl px-4 sm:px-5 py-2 rounded-2xl border border-zinc-200 dark:border-white/10 shadow-xl w-full min-w-[140px] max-w-[200px] sm:max-w-[240px] lg:w-64 h-[64px] sm:h-[72px]">
-        <div className="w-10 sm:w-12 flex shrink-0 items-center justify-center">
+      <div className="flex items-center justify-start gap-2 sm:gap-3 md:gap-4 bg-white/95 dark:bg-zinc-900/90 backdrop-blur-xl px-3 py-2.5 sm:px-4 sm:py-3 md:px-5 md:py-2 rounded-xl sm:rounded-2xl border-2 border-zinc-200 dark:border-white/10 shadow-xl w-full min-w-0 min-h-[56px] sm:min-h-[64px] md:h-[72px] box-border">
+        <div className="w-9 sm:w-10 md:w-12 flex shrink-0 items-center justify-center">
           <Image
             src="/images/hero/We-Support-NDIS-150-x-150-px-5.png"
             alt="We Support NDIS"
             width={40}
             height={40}
-            className="object-contain h-8 sm:h-10 w-auto"
+            className="object-contain h-6 sm:h-8 md:h-10 w-auto"
           />
         </div>
-        <div className="text-[10px] sm:text-xs font-extrabold text-zinc-800 dark:text-zinc-200 uppercase leading-snug">
-          Official <br /> Registered
+        <div className="text-[10px] sm:text-xs font-extrabold text-zinc-800 dark:text-zinc-200 uppercase leading-snug truncate min-w-0">
+          Official <br className="hidden sm:block" /> Registered
         </div>
       </div>
     ),
@@ -77,22 +77,22 @@ const BADGES = [
   {
     id: "phone",
     content: (
-      <div className="flex items-center justify-start gap-3 sm:gap-4 bg-white/95 dark:bg-zinc-900/90 backdrop-blur-xl px-4 sm:px-5 py-2 rounded-2xl border border-zinc-200 dark:border-white/10 shadow-xl w-full min-w-[140px] max-w-[200px] sm:max-w-[240px] lg:w-64 h-[64px] sm:h-[72px]">
-        <div className="w-10 sm:w-12 flex shrink-0 items-center justify-center">
-          <span className="text-xl sm:text-2xl" aria-hidden>📱</span>
+      <div className="flex items-center justify-start gap-2 sm:gap-3 md:gap-4 bg-white/95 dark:bg-zinc-900/90 backdrop-blur-xl px-3 py-2.5 sm:px-4 sm:py-3 md:px-5 md:py-2 rounded-xl sm:rounded-2xl border-2 border-zinc-200 dark:border-white/10 shadow-xl w-full min-w-0 min-h-[56px] sm:min-h-[64px] md:h-[72px] box-border">
+        <div className="w-9 sm:w-10 md:w-12 flex shrink-0 items-center justify-center">
+          <span className="text-lg sm:text-xl md:text-2xl" aria-hidden>📱</span>
         </div>
-        <span className="text-[10px] sm:text-xs font-extrabold text-zinc-800 dark:text-zinc-200 uppercase tracking-wider">1800 REVIRA</span>
+        <span className="text-[10px] sm:text-xs font-extrabold text-zinc-800 dark:text-zinc-200 uppercase tracking-wider truncate min-w-0">1800 REVIRA</span>
       </div>
     ),
   },
   {
     id: "support",
     content: (
-      <div className="flex items-center justify-start gap-3 sm:gap-4 bg-white/95 dark:bg-zinc-900/90 backdrop-blur-xl px-4 sm:px-5 py-2 rounded-2xl border border-zinc-200 dark:border-white/10 shadow-xl w-full min-w-[140px] max-w-[200px] sm:max-w-[240px] lg:w-64 h-[64px] sm:h-[72px]">
-        <div className="w-10 sm:w-12 flex shrink-0 items-center justify-center">
-          <div className="text-lg sm:text-xl font-black text-purple-brand dark:text-purple-200 leading-none">24/7</div>
+      <div className="flex items-center justify-start gap-2 sm:gap-3 md:gap-4 bg-white/95 dark:bg-zinc-900/90 backdrop-blur-xl px-3 py-2.5 sm:px-4 sm:py-3 md:px-5 md:py-2 rounded-xl sm:rounded-2xl border-2 border-zinc-200 dark:border-white/10 shadow-xl w-full min-w-0 min-h-[56px] sm:min-h-[64px] md:h-[72px] box-border">
+        <div className="w-9 sm:w-10 md:w-12 flex shrink-0 items-center justify-center">
+          <div className="text-base sm:text-lg md:text-xl font-black text-purple-brand dark:text-purple-200 leading-none">24/7</div>
         </div>
-        <div className="text-[10px] sm:text-xs font-extrabold text-zinc-800 dark:text-zinc-200 uppercase leading-snug">Support <br /> Services</div>
+        <div className="text-[10px] sm:text-xs font-extrabold text-zinc-800 dark:text-zinc-200 uppercase leading-snug truncate min-w-0">Support <br className="hidden sm:block" /> Services</div>
       </div>
     ),
   },
@@ -149,8 +149,8 @@ export default function HomePage(): React.ReactElement {
                   transition={{ duration: 0.6, ease: "easeOut" }}
                   className="w-full min-w-0"
                 >
-                  <div className="section-label inline-flex items-center gap-2 px-2.5 sm:px-3 py-1.5 rounded-full bg-white/95 dark:bg-white/5 border border-zinc-200 dark:border-white/10 text-purple-600 dark:text-purple-400 font-bold uppercase tracking-[0.2em] mb-4 sm:mb-6 shadow-sm text-[10px] sm:text-xs">
-                    <span className="w-1.5 h-1.5 rounded-full bg-purple-500 animate-pulse" />
+                  <div className="inline-flex items-center gap-2 px-2.5 sm:px-3 py-1.5 rounded-full bg-white/10 border border-white/20 text-white text-xs font-bold uppercase tracking-[0.2em] mb-4 sm:mb-6 shadow-sm">
+                    <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
                     Trusted Healthcare Partner
                   </div>
                   <h1 className="hero-title font-extrabold tracking-tight text-white leading-[1.15] mb-4 sm:mb-6 drop-shadow-[0_1px_2px_rgba(0,0,0,0.3)] break-words">
@@ -162,7 +162,7 @@ export default function HomePage(): React.ReactElement {
                         <>
                           {rest}
                           {rest && ' '}
-                          <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-white to-purple-brand">
+                          <span className="text-white">
                             {lastTwo}
                           </span>
                         </>
@@ -170,7 +170,7 @@ export default function HomePage(): React.ReactElement {
                     })()}
                   </h1>
 
-                  <p className="subtitle text-white dark:text-zinc-400 leading-relaxed mb-6 sm:mb-10 max-w-xl drop-shadow-[0_1px_2px_rgba(0,0,0,0.3)] min-w-0">
+                  <p className="subtitle text-white dark:text-zinc-400 leading-relaxed mb-6 sm:mb-10 max-w-xl drop-shadow-[0_1px_2px_rgba(0,0,0,0.3)] min-w-0 text-sm">
                     {HERO_CONTENT[currentImage].description}
                   </p>
                 </motion.div>
@@ -179,14 +179,14 @@ export default function HomePage(): React.ReactElement {
             </div>
 
             {/* Right Badges (Desktop/Tablet) - only on xl to avoid overlap */}
-            <div className="hidden xl:flex xl:col-span-4 flex-col items-end gap-3.5 flex-shrink-0">
+            <div className="hidden xl:flex xl:col-span-4 flex-col items-end gap-3 sm:gap-3.5 flex-shrink-0">
               {BADGES.map((badge, index) => (
                 <motion.div
                   key={badge.id}
                   initial={{ opacity: 0, x: 50 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.8, delay: 0.4 + (index * 0.1) }}
-                  className="w-64"
+                  className="w-full max-w-[16rem] xl:w-64"
                 >
                   {badge.content}
                 </motion.div>
@@ -203,19 +203,19 @@ export default function HomePage(): React.ReactElement {
             transition={{ delay: 1.2, duration: 1 }}
             className="flex flex-col items-center gap-2"
           >
-            <div className="w-px h-8 bg-gradient-to-b from-purple-500 to-transparent" />
+            <div className="w-px h-8 bg-gradient-to-b from-white to-transparent" />
             <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-white/90 dark:text-zinc-400">Scroll</span>
           </motion.div>
 
           {/* Mobile/Tablet Horizontal Badges - show when desktop badges hidden */}
-          <div className="xl:hidden flex flex-wrap justify-center items-center gap-2 sm:gap-3 px-4 w-full max-w-lg mx-auto overflow-x-auto no-scrollbar scroll-smooth pb-2">
+          <div className="xl:hidden flex flex-nowrap justify-start sm:justify-center items-stretch gap-2 sm:gap-3 px-4 sm:px-6 w-full overflow-x-auto overflow-y-hidden scroll-smooth pb-4 sm:pb-6 [scrollbar-width:thin] [scrollbar-color:rgba(255,255,255,0.3)_transparent]">
             {BADGES.map((badge, index) => (
               <motion.div
                 key={`mobile-${badge.id}`}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 1.4 + (index * 0.1) }}
-                className="scale-[0.85] sm:scale-90 flex-shrink-0 w-[180px] sm:w-64"
+                className="flex-shrink-0 w-[150px] min-w-[150px] sm:w-52 sm:min-w-[13rem] md:w-56 md:min-w-[14rem]"
               >
                 {badge.content}
               </motion.div>

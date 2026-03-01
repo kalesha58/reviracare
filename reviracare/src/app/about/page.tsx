@@ -180,7 +180,7 @@ export default function AboutPage(): React.ReactElement {
             </div>
 
             {/* Right Badges (Desktop only - xl to avoid overlap on tablet) */}
-            <div className="hidden xl:flex xl:col-span-4 flex-col items-end gap-3.5 flex-shrink-0">
+            <div className="hidden xl:flex xl:col-span-4 flex-col items-end gap-3 sm:gap-3.5 flex-shrink-0">
               {[
                 {
                   id: "ndis-official",
@@ -190,7 +190,7 @@ export default function AboutPage(): React.ReactElement {
                       alt="NDIS Registered Provider"
                       width={48}
                       height={28}
-                      className="object-contain h-8 w-auto"
+                      className="object-contain h-6 sm:h-8 w-auto"
                     />
                   ),
                   label: "Registered NDIS Provider"
@@ -203,14 +203,14 @@ export default function AboutPage(): React.ReactElement {
                       alt="We Support NDIS"
                       width={40}
                       height={40}
-                      className="object-contain h-10 w-auto"
+                      className="object-contain h-8 sm:h-10 w-auto"
                     />
                   ),
                   label: "Official Registered"
                 },
                 {
                   id: "phone",
-                  logo: <span className="text-2xl" aria-hidden>📱</span>,
+                  logo: <span className="text-xl sm:text-2xl" aria-hidden>📱</span>,
                   label: "1800 REVIRA"
                 },
                 {
@@ -224,13 +224,13 @@ export default function AboutPage(): React.ReactElement {
                   initial={{ opacity: 0, x: 50 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.8, delay: 0.4 + (index * 0.1) }}
-                  className="w-64"
+                  className="w-full max-w-[16rem] xl:w-64"
                 >
-                  <div className="flex items-center justify-start gap-3 sm:gap-4 bg-white/95 dark:bg-zinc-900/90 backdrop-blur-xl px-4 sm:px-5 py-2 rounded-2xl border border-zinc-200 dark:border-white/10 shadow-xl w-full min-w-[140px] max-w-[200px] sm:max-w-[240px] lg:w-64 h-[64px] sm:h-[72px]">
-                    <div className="w-12 flex shrink-0 items-center justify-center">
+                  <div className="flex items-center justify-start gap-2 sm:gap-3 md:gap-4 bg-white/95 dark:bg-zinc-900/90 backdrop-blur-xl px-3 py-2.5 sm:px-4 sm:py-3 md:px-5 md:py-2 rounded-xl sm:rounded-2xl border-2 border-zinc-200 dark:border-white/10 shadow-xl w-full min-w-0 min-h-[56px] sm:min-h-[64px] md:h-[72px] box-border">
+                    <div className="w-9 sm:w-10 md:w-12 flex shrink-0 items-center justify-center">
                       {badge.logo}
                     </div>
-                    <div className="text-xs font-extrabold text-zinc-800 dark:text-zinc-200 uppercase leading-snug">
+                    <div className="text-[10px] sm:text-xs font-extrabold text-zinc-800 dark:text-zinc-200 uppercase leading-snug min-w-0">
                       {badge.label.split(' ').length > 2 ? (
                         <>
                           {badge.label.split(' ').slice(0, 1).join(' ')} <br />
@@ -264,7 +264,7 @@ export default function AboutPage(): React.ReactElement {
           </motion.div>
 
           {/* Mobile/Tablet Horizontal Badges */}
-          <div className="xl:hidden flex flex-wrap justify-center items-center gap-2 sm:gap-3 px-4 w-full max-w-lg mx-auto overflow-x-auto no-scrollbar scroll-smooth pb-4">
+          <div className="xl:hidden flex flex-nowrap justify-start sm:justify-center items-stretch gap-2 sm:gap-3 px-4 sm:px-6 w-full overflow-x-auto overflow-y-hidden scroll-smooth pb-4 sm:pb-6 [scrollbar-width:thin] [scrollbar-color:rgba(255,255,255,0.3)_transparent]">
             {[
               {
                 id: "ndis-official-mobile",
@@ -274,7 +274,7 @@ export default function AboutPage(): React.ReactElement {
                     alt="NDIS Registered Provider"
                     width={48}
                     height={28}
-                    className="object-contain h-8 w-auto"
+                    className="object-contain h-6 sm:h-8 w-auto"
                   />
                 ),
                 label: "Registered NDIS Provider"
@@ -287,14 +287,14 @@ export default function AboutPage(): React.ReactElement {
                     alt="We Support NDIS"
                     width={40}
                     height={40}
-                    className="object-contain h-10 w-auto"
+                    className="object-contain h-8 sm:h-10 w-auto"
                   />
                 ),
                 label: "Official Registered"
               },
               {
                 id: "phone-mobile",
-                logo: <span className="text-2xl" aria-hidden>📱</span>,
+                logo: <span className="text-xl sm:text-2xl" aria-hidden>📱</span>,
                 label: "1800 REVIRA"
               },
               {
@@ -308,13 +308,13 @@ export default function AboutPage(): React.ReactElement {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 1.4 + (index * 0.1) }}
-                className="scale-[0.85] sm:scale-90 flex-shrink-0 w-[180px] sm:w-64"
+                className="flex-shrink-0 w-[150px] min-w-[150px] sm:w-52 sm:min-w-[13rem] md:w-56 md:min-w-[14rem]"
               >
-                <div className="flex items-center justify-start gap-3 sm:gap-4 bg-white/95 dark:bg-zinc-900/90 backdrop-blur-xl px-4 sm:px-5 py-2 rounded-2xl border border-zinc-200 dark:border-white/10 shadow-xl w-full min-w-[140px] max-w-[200px] sm:max-w-[240px] lg:w-64 h-[64px] sm:h-[72px]">
-                  <div className="w-12 flex shrink-0 items-center justify-center">
+                <div className="flex items-center justify-start gap-2 sm:gap-3 md:gap-4 bg-white/95 dark:bg-zinc-900/90 backdrop-blur-xl px-3 py-2.5 sm:px-4 sm:py-3 md:px-5 md:py-2 rounded-xl sm:rounded-2xl border-2 border-zinc-200 dark:border-white/10 shadow-xl w-full min-w-0 min-h-[56px] sm:min-h-[64px] md:h-[72px] box-border h-full">
+                  <div className="w-9 sm:w-10 md:w-12 flex shrink-0 items-center justify-center">
                     {badge.logo}
                   </div>
-                  <div className="text-xs font-extrabold text-zinc-800 dark:text-zinc-200 uppercase leading-snug text-left">
+                  <div className="text-[10px] sm:text-xs font-extrabold text-zinc-800 dark:text-zinc-200 uppercase leading-snug text-left min-w-0">
                     {badge.label.split(' ').length > 2 ? (
                       <>
                         {badge.label.split(' ').slice(0, 1).join(' ')} <br />
