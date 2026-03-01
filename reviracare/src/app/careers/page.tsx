@@ -11,7 +11,7 @@ import {
   User, Home, MessageSquare
 } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
+import { BrandLogo } from "@/components/ui/BrandLogo";
 import { useState, useRef } from "react";
 
 const CLEARANCES = [
@@ -206,10 +206,24 @@ export default function CareersPage() {
       {/* Pre-Employment Grid */}
       <Section id="how-to-apply" className="bg-zinc-100 dark:bg-zinc-900/50 py-24 border-y border-zinc-200 dark:border-white/5">
         <Container>
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-blue-500 font-bold uppercase text-[10px] tracking-[0.3em] mb-4">Mandatory Steps</h2>
-            <h3 className="text-3xl md:text-4xl font-bold mb-5 text-zinc-900 dark:text-white">Pre-Employment Requirements</h3>
-            <p className="text-zinc-600 dark:text-zinc-400 text-base leading-relaxed">
+          <div className="flex flex-col items-center max-w-3xl mx-auto mb-16">
+            <h2 className="text-blue-500 font-bold uppercase text-[10px] tracking-[0.3em] mb-6">Mandatory Steps</h2>
+            <div className="flex flex-row items-center justify-center gap-5 md:gap-6 mb-8 w-full flex-wrap sm:flex-nowrap">
+              <div className="shrink-0 p-3 md:p-4 bg-white dark:bg-zinc-800 rounded-2xl shadow-xl shadow-primary/5 border border-zinc-200 dark:border-white/5 transition-transform hover:scale-105">
+                <BrandLogo
+                  width={120}
+                  height={42}
+                  imageClassName="dark:brightness-0 dark:invert"
+                />
+              </div>
+              <h3 className="text-2xl sm:text-3xl md:text-5xl font-extrabold tracking-tight text-zinc-900 dark:text-white leading-[1.15] text-center sm:text-left">
+                Pre-Employment{" "}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-purple-500 to-secondary dark:from-primary dark:to-purple-400">
+                  Requirements
+                </span>
+              </h3>
+            </div>
+            <p className="text-zinc-600 dark:text-zinc-400 text-base leading-relaxed text-center max-w-2xl">
               To ensure the highest standards of care and compliance with the NDIS Commission, all candidates must complete these prior to starting.
             </p>
           </div>
@@ -224,8 +238,10 @@ export default function CareersPage() {
                 transition={{ delay: i * 0.1 }}
                 className="bg-white dark:bg-zinc-900 p-8 rounded-3xl border border-zinc-200 dark:border-white/5 relative overflow-hidden group shadow-sm hover:shadow-xl transition-all"
               >
-                <div className="mb-6 group-hover:scale-110 transition-transform">{clearance.icon}</div>
-                <h4 className="text-xl font-bold mb-3">{clearance.title}</h4>
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="shrink-0 group-hover:scale-110 transition-transform">{clearance.icon}</div>
+                  <h4 className="text-xl font-bold">{clearance.title}</h4>
+                </div>
                 <p className="text-zinc-500 dark:text-zinc-400 text-sm mb-6 leading-relaxed">{clearance.description}</p>
                 <div className="pt-6 border-t border-zinc-100 dark:border-white/5 flex items-center justify-between">
                   <div className="text-xs font-bold text-zinc-400 uppercase tracking-widest">{clearance.location}</div>

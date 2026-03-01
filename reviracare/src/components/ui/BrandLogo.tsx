@@ -8,6 +8,7 @@ import { cn } from "@/lib/utils";
 interface BrandLogoProps {
     className?: string;
     imageClassName?: string;
+    textClassName?: string;
     width?: number;
     height?: number;
     priority?: boolean;
@@ -17,9 +18,11 @@ interface BrandLogoProps {
 export function BrandLogo({
     className,
     imageClassName,
+    textClassName,
     width = 200,
     height = 60,
     priority = false,
+    showText = false,
 }: BrandLogoProps) {
     return (
         <div className={cn("relative flex items-center gap-2", className)}>
@@ -35,6 +38,11 @@ export function BrandLogo({
                     priority={priority}
                 />
             </div>
+            {showText && (
+                <span className={cn("text-xl font-bold tracking-tight text-zinc-900 dark:text-white", textClassName)}>
+                    {SITE_NAME}
+                </span>
+            )}
         </div>
     );
 }

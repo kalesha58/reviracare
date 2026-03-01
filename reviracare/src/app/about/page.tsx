@@ -95,9 +95,9 @@ function FAQItem({ question, answer }: { question: string, answer: string }) {
     <div className="border-b border-zinc-200 dark:border-white/10 last:border-0 overflow-hidden">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full py-6 flex items-center justify-between text-left text-zinc-900 dark:text-white hover:text-primary transition-colors"
+        className="w-full py-4 sm:py-6 flex items-center justify-between text-left text-zinc-900 dark:text-white hover:text-primary transition-colors"
       >
-        <span className="text-lg font-bold pr-8">{question}</span>
+        <span className="text-base sm:text-lg font-bold pr-6 sm:pr-8">{question}</span>
         <ChevronDown className={`w-5 h-5 transition-transform duration-300 ${isOpen ? 'rotate-180 text-primary' : ''}`} />
       </button>
       <AnimatePresence>
@@ -108,7 +108,7 @@ function FAQItem({ question, answer }: { question: string, answer: string }) {
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3 }}
           >
-            <p className="pb-6 text-zinc-600 dark:text-zinc-400 leading-relaxed">
+            <p className="pb-4 sm:pb-6 text-zinc-600 dark:text-zinc-400 leading-relaxed text-sm sm:text-base">
               {answer}
             </p>
           </motion.div>
@@ -122,7 +122,7 @@ export default function AboutPage(): React.ReactElement {
   return (
     <main className="min-h-screen bg-zinc-50 dark:bg-zinc-950 text-zinc-900 dark:text-white">
       {/* Hero Section */}
-      <section className="relative min-h-[85vh] md:min-h-[90vh] flex items-center pt-24 md:pt-28 pb-36 md:pb-20 overflow-hidden">
+      <section className="relative min-h-[80vh] sm:min-h-[85vh] md:min-h-[90vh] flex items-center pt-20 sm:pt-24 md:pt-28 pb-32 sm:pb-36 md:pb-20 overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0 z-0 bg-white dark:bg-zinc-950 overflow-hidden">
           <motion.div
@@ -152,7 +152,7 @@ export default function AboutPage(): React.ReactElement {
         </div>
 
         <Container className="relative z-20">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-12 items-center">
             {/* Left Content */}
             <div className="lg:col-span-8 flex flex-col items-start text-left">
               <motion.div
@@ -161,17 +161,17 @@ export default function AboutPage(): React.ReactElement {
                 transition={{ duration: 0.8, ease: "easeOut" }}
                 className="w-full"
               >
-                <div className="section-label inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/95 dark:bg-white/5 border border-zinc-200 dark:border-white/10 text-emerald-600 dark:text-emerald-400 font-bold uppercase tracking-[0.2em] mb-6 shadow-sm">
+                <div className="section-label inline-flex items-center gap-2 px-2.5 sm:px-3 py-1.5 rounded-full bg-white/95 dark:bg-white/5 border border-zinc-200 dark:border-white/10 text-emerald-600 dark:text-emerald-400 font-bold uppercase tracking-[0.2em] mb-4 sm:mb-6 shadow-sm text-[10px] sm:text-xs">
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
                   Trusted NDIS Partner
                 </div>
-                <h1 className="hero-title font-extrabold tracking-tight text-white leading-[1.15] mb-6 drop-shadow-[0_1px_2px_rgba(0,0,0,0.3)]">
-                  Reimagining <br />
+                <h1 className="hero-title font-extrabold tracking-tight text-white leading-[1.15] mb-4 sm:mb-6 drop-shadow-[0_1px_2px_rgba(0,0,0,0.3)]">
+                  Reimagining <br className="hidden sm:block" />
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-white to-purple-400">
                     The Care Experience
                   </span>
                 </h1>
-                <p className="subtitle text-white dark:text-zinc-400 leading-relaxed mb-10 max-w-xl drop-shadow-[0_1px_2px_rgba(0,0,0,0.3)]">
+                <p className="subtitle text-white dark:text-zinc-400 leading-relaxed mb-6 sm:mb-10 max-w-xl drop-shadow-[0_1px_2px_rgba(0,0,0,0.3)]">
                   Revira Care is more than a service provider. We are your partners in creating a life characterized by empowerment, independence, and joy.
                 </p>
               </motion.div>
@@ -192,7 +192,7 @@ export default function AboutPage(): React.ReactElement {
                   transition={{ duration: 0.8, delay: 0.4 + (index * 0.1) }}
                   className="w-64"
                 >
-                  <div className="flex items-center justify-start gap-4 bg-white/95 dark:bg-zinc-900/90 backdrop-blur-xl px-5 py-2 rounded-2xl border border-zinc-200 dark:border-white/10 shadow-xl w-64 h-[72px]">
+                  <div className="flex items-center justify-start gap-3 sm:gap-4 bg-white/95 dark:bg-zinc-900/90 backdrop-blur-xl px-4 sm:px-5 py-2 rounded-2xl border border-zinc-200 dark:border-white/10 shadow-xl w-full min-w-[140px] max-w-[200px] sm:max-w-[240px] lg:w-64 h-[64px] sm:h-[72px]">
                     <div className="w-12 flex shrink-0 items-center justify-center">
                       {badge.icon}
                     </div>
@@ -224,7 +224,7 @@ export default function AboutPage(): React.ReactElement {
           </motion.div>
 
           {/* Mobile Horizontal Badges */}
-          <div className="lg:hidden flex flex-wrap justify-center items-center gap-3 px-4 w-full max-w-lg mx-auto overflow-x-auto no-scrollbar scroll-smooth pb-2">
+          <div className="lg:hidden flex flex-wrap justify-center items-center gap-2 sm:gap-3 px-4 w-full max-w-lg mx-auto overflow-x-auto no-scrollbar scroll-smooth pb-2">
             {[
               { label: "Registered Provider", sub: "NDIS Accredited", icon: <ShieldCheck className="w-6 h-6 text-primary" /> },
               { label: "24/7 Availability", sub: "Always Support", icon: <Zap className="w-6 h-6 text-secondary" /> },
@@ -236,9 +236,9 @@ export default function AboutPage(): React.ReactElement {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 1.4 + (index * 0.1) }}
-                className="scale-90 flex-shrink-0 w-64"
+                className="scale-[0.85] sm:scale-90 flex-shrink-0 w-[180px] sm:w-64"
               >
-                <div className="flex items-center justify-start gap-4 bg-white/95 dark:bg-zinc-900/90 backdrop-blur-xl px-5 py-2 rounded-2xl border border-zinc-200 dark:border-white/10 shadow-xl w-64 h-[72px]">
+                <div className="flex items-center justify-start gap-3 sm:gap-4 bg-white/95 dark:bg-zinc-900/90 backdrop-blur-xl px-4 sm:px-5 py-2 rounded-2xl border border-zinc-200 dark:border-white/10 shadow-xl w-full min-w-[140px] max-w-[200px] sm:max-w-[240px] lg:w-64 h-[64px] sm:h-[72px]">
                   <div className="w-12 flex shrink-0 items-center justify-center">
                     {badge.icon}
                   </div>
@@ -258,9 +258,9 @@ export default function AboutPage(): React.ReactElement {
       </section>
 
       {/* Our Story & History */}
-      <Section id="story" className="overflow-hidden pt-12 pb-24 bg-white dark:bg-transparent">
+      <Section id="story" className="overflow-hidden pt-8 sm:pt-12 pb-16 sm:pb-24 bg-white dark:bg-transparent">
         <Container>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-16 items-center">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -268,7 +268,7 @@ export default function AboutPage(): React.ReactElement {
               transition={{ duration: 0.8 }}
             >
               <h2 className="text-secondary font-bold uppercase text-[10px] tracking-[0.3em] mb-4">Our Heritage</h2>
-              <h3 className="text-3xl md:text-4xl font-bold mb-5 leading-tight text-zinc-900 dark:text-white">Founded on Faith, <br /> Built for Impact</h3>
+              <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-5 leading-tight text-zinc-900 dark:text-white">Founded on Faith, <br className="hidden sm:block" /> Built for Impact</h3>
               <p className="text-zinc-600 dark:text-zinc-500 text-base leading-relaxed mb-5">
                 Revira Care began with a simple vision: to bridge the gap between clinical support and authentic human connection. We saw individuals being treated as "cases" rather than "people," and we knew we could do better.
               </p>
@@ -276,7 +276,7 @@ export default function AboutPage(): React.ReactElement {
                 Today, we stand as a beacon of quality in the community care sector, driven by a diverse team that shares one common goal: seeing our participants thrive, grow, and achieve what they once thought was impossible.
               </p>
 
-              <div className="flex gap-10">
+              <div className="flex flex-wrap gap-8 sm:gap-10">
                 <div>
                   <div className="text-3xl font-bold text-zinc-900 dark:text-white mb-0.5">500+</div>
                   <div className="text-zinc-500 dark:text-zinc-500 text-[10px] font-bold uppercase tracking-widest">Lives Touched</div>
@@ -310,14 +310,14 @@ export default function AboutPage(): React.ReactElement {
       </Section>
 
       {/* Mission & Vision */}
-      <Section className="bg-zinc-100 dark:bg-zinc-900/50 py-24">
+      <Section className="bg-zinc-100 dark:bg-zinc-900/50 py-16 sm:py-20 md:py-24">
         <Container>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="p-8 rounded-2xl bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-white/5 hover:border-primary/30 transition-colors group"
+              className="p-6 sm:p-8 rounded-2xl bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-white/5 hover:border-primary/30 transition-colors group"
             >
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center group-hover:scale-110 transition-transform shrink-0">
@@ -335,7 +335,7 @@ export default function AboutPage(): React.ReactElement {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="p-8 rounded-2xl bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-white/5 hover:border-secondary/30 transition-colors group"
+              className="p-6 sm:p-8 rounded-2xl bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-white/5 hover:border-secondary/30 transition-colors group"
             >
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center group-hover:scale-110 transition-transform shrink-0">
@@ -352,16 +352,16 @@ export default function AboutPage(): React.ReactElement {
       </Section>
 
       {/* Core Values */}
-      <Section className="py-24 bg-white dark:bg-transparent">
+      <Section className="py-16 sm:py-20 md:py-24 bg-white dark:bg-transparent">
         <Container>
-          <div className="text-center max-w-2xl mx-auto mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-zinc-900 dark:text-white">Our Core Values</h2>
+          <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-12 md:mb-16">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 text-zinc-900 dark:text-white">Our Core Values</h2>
             <p className="text-zinc-600 dark:text-zinc-400 text-base leading-relaxed">
               These principles guide everything we do, from the way we interact with our participants to how we develop our support programs.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {VALUES.map((value, index) => (
               <motion.div
                 key={value.title}
@@ -369,7 +369,7 @@ export default function AboutPage(): React.ReactElement {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="p-7 rounded-2xl bg-zinc-100 dark:bg-white/5 border border-zinc-200 dark:border-white/10 hover:bg-zinc-200/80 dark:hover:bg-white/[0.08] transition-all hover:-translate-y-1"
+                className="p-5 sm:p-7 rounded-2xl bg-zinc-100 dark:bg-white/5 border border-zinc-200 dark:border-white/10 hover:bg-zinc-200/80 dark:hover:bg-white/[0.08] transition-all hover:-translate-y-1"
               >
                 <div className="flex items-center gap-4 mb-4">
                   <div className="shrink-0">{value.icon}</div>
@@ -383,17 +383,17 @@ export default function AboutPage(): React.ReactElement {
       </Section>
 
       {/* Our Methodology (Step-by-Step) */}
-      <Section className="bg-zinc-100 dark:bg-zinc-900/40 border-y border-zinc-200 dark:border-white/5 py-24">
+      <Section className="bg-zinc-100 dark:bg-zinc-900/40 border-y border-zinc-200 dark:border-white/5 py-16 sm:py-20 md:py-24">
         <Container>
-          <div className="text-center max-w-2xl mx-auto mb-16">
+          <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-12 md:mb-16">
             <h2 className="text-primary font-bold uppercase text-[10px] tracking-[0.3em] mb-4">How We Work</h2>
-            <h3 className="text-3xl md:text-4xl font-bold mb-4 text-zinc-900 dark:text-white">Your Journey With Us</h3>
+            <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 text-zinc-900 dark:text-white">Your Journey With Us</h3>
             <p className="text-zinc-600 dark:text-zinc-500 text-base">
               We follow a rigorous, person-centered methodology to ensure your support is as unique as you are.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 relative">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 sm:gap-8 relative">
             {/* Connecting Line (Desktop) */}
             <div className="hidden lg:block absolute top-1/2 left-0 w-full h-px bg-gradient-to-r from-transparent via-zinc-300 dark:via-white/10 to-transparent z-0" />
 
@@ -419,9 +419,9 @@ export default function AboutPage(): React.ReactElement {
       </Section>
 
       {/* Holistic Care Section (Image Right) */}
-      <Section className="py-24 bg-white dark:bg-transparent">
+      <Section className="py-16 sm:py-20 md:py-24 bg-white dark:bg-transparent">
         <Container>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-16 items-center">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -446,7 +446,7 @@ export default function AboutPage(): React.ReactElement {
               className="order-1 lg:order-2"
             >
               <h2 className="text-secondary font-bold uppercase text-[10px] tracking-[0.3em] mb-4">Broad Support</h2>
-              <h3 className="text-3xl md:text-4xl font-bold mb-5 text-zinc-900 dark:text-white">A Holistic Approach to Well-being</h3>
+              <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-5 text-zinc-900 dark:text-white">A Holistic Approach to Well-being</h3>
               <p className="text-zinc-600 dark:text-zinc-500 text-base leading-relaxed mb-6">
                 Our services extend beyond basic care. We look at the "whole person"—their social life, their health, their skills, and their happiness.
               </p>
@@ -470,14 +470,14 @@ export default function AboutPage(): React.ReactElement {
       </Section>
 
       {/* Quality & Safety grid */}
-      <Section className="bg-zinc-100 dark:bg-zinc-900/50 py-24">
+      <Section className="bg-zinc-100 dark:bg-zinc-900/50 py-16 sm:py-20 md:py-24">
         <Container>
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-3 text-zinc-900 dark:text-white">Committed to Quality & Safety</h2>
+          <div className="text-center mb-10 sm:mb-12 md:mb-16">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 sm:mb-3 text-zinc-900 dark:text-white">Committed to Quality & Safety</h2>
             <p className="text-zinc-600 dark:text-zinc-500 text-sm">How we maintain the highest standards of care.</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
             {[
               { title: "NDIS Compliance", desc: "Strict adherence to the NDIS Quality and Safeguards Commission standards.", icon: <Scale className="w-7 h-7 text-primary" /> },
               { title: "Rigorous Vetting", desc: "All staff undergo extensive police checks and Working with Children checks.", icon: <Lock className="w-7 h-7 text-secondary" /> },
@@ -489,7 +489,7 @@ export default function AboutPage(): React.ReactElement {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="p-8 rounded-2xl bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-white/5 hover:border-zinc-300 dark:hover:border-white/10 transition-all shadow-sm"
+                className="p-6 sm:p-8 rounded-2xl bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-white/5 hover:border-zinc-300 dark:hover:border-white/10 transition-all shadow-sm"
               >
                 <div className="flex items-center gap-4 mb-5">
                   <div className="shrink-0">{item.icon}</div>
@@ -503,16 +503,16 @@ export default function AboutPage(): React.ReactElement {
       </Section>
 
       {/* Our Impact (Image Left) */}
-      <Section className="py-24 bg-white dark:bg-transparent">
+      <Section className="py-16 sm:py-20 md:py-24 bg-white dark:bg-transparent">
         <Container>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-16 items-center">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-secondary font-bold uppercase text-[10px] tracking-[0.3em] mb-4">Our Impact</h2>
-              <h3 className="text-3xl md:text-4xl font-bold mb-5 leading-tight text-zinc-900 dark:text-white">Real Progress, <br /> Real Lives</h3>
+              <h2 className="text-secondary font-bold uppercase text-[10px] tracking-[0.3em] mb-3 sm:mb-4">Our Impact</h2>
+              <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-5 leading-tight text-zinc-900 dark:text-white">Real Progress, <br className="hidden sm:block" /> Real Lives</h3>
               <p className="text-zinc-600 dark:text-zinc-500 text-base leading-relaxed mb-8">
                 Success is measured by the smiles on our participants' faces and the goals checked off their lists. Whether it's learning a new skill or becoming more active in the community, every victory is celebrated.
               </p>
@@ -555,15 +555,15 @@ export default function AboutPage(): React.ReactElement {
       </Section>
 
       {/* FAQ Section */}
-      <Section className="bg-zinc-100 dark:bg-zinc-900/30 py-24">
+      <Section className="bg-zinc-100 dark:bg-zinc-900/30 py-16 sm:py-20 md:py-24">
         <Container>
           <div className="max-w-3xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold mb-3 text-zinc-900 dark:text-white">Common Questions</h2>
+            <div className="text-center mb-10 sm:mb-12 md:mb-16">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 sm:mb-3 text-zinc-900 dark:text-white">Common Questions</h2>
               <p className="text-zinc-600 dark:text-zinc-500 text-sm">Everything you need to know about getting started.</p>
             </div>
 
-            <div className="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-white/5 rounded-2xl p-6 md:p-8 shadow-sm">
+            <div className="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-white/5 rounded-2xl p-4 sm:p-6 md:p-8 shadow-sm">
               {FAQS.map((faq) => (
                 <FAQItem key={faq.question} question={faq.question} answer={faq.answer} />
               ))}
@@ -573,9 +573,9 @@ export default function AboutPage(): React.ReactElement {
       </Section>
 
       {/* Community Section */}
-      <Section className="py-24 bg-white dark:bg-transparent">
+      <Section className="py-16 sm:py-20 md:py-24 bg-white dark:bg-transparent">
         <Container>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10 md:gap-12 text-center">
             {[
               { icon: <Star className="w-8 h-8 text-primary" />, title: "Quality First", desc: "Never compromising on the safety and standard of our care." },
               { icon: <Users className="w-8 h-8 text-secondary" />, title: "Inclusive Community", desc: "Fostering an environment where everyone belongs." },
@@ -603,23 +603,23 @@ export default function AboutPage(): React.ReactElement {
       </Section>
 
       {/* CTA Section */}
-      <Section className="pb-32">
+      <Section className="pb-24 sm:pb-32">
         <Container>
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="relative rounded-[2.5rem] overflow-hidden bg-gradient-to-br from-primary/20 via-secondary/10 to-zinc-100 dark:to-zinc-900 border border-zinc-200 dark:border-white/10 p-12 md:p-20 text-center"
+            className="relative rounded-2xl sm:rounded-[2.5rem] overflow-hidden bg-gradient-to-br from-primary/20 via-secondary/10 to-zinc-100 dark:to-zinc-900 border border-zinc-200 dark:border-white/10 p-8 sm:p-12 md:p-20 text-center"
           >
             <div className="relative z-10">
-              <h2 className="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight text-zinc-900 dark:text-white">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 sm:mb-6 tracking-tight text-zinc-900 dark:text-white">
                 Start Your <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary dark:from-primary dark:to-purple-300">New Chapter</span>
               </h2>
-              <p className="text-zinc-600 dark:text-zinc-400 text-lg mb-10 max-w-xl mx-auto leading-relaxed">
+              <p className="text-zinc-600 dark:text-zinc-400 text-base sm:text-lg mb-8 sm:mb-10 max-w-xl mx-auto leading-relaxed">
                 We&apos;re ready to listen, plan, and support you. Your journey towards more independence starts with a single conversation.
               </p>
-              <div className="flex flex-wrap justify-center gap-4">
+              <div className="flex flex-wrap justify-center gap-3 sm:gap-4">
                 <Link
                   href="/contact"
                   className="px-8 py-3.5 bg-zinc-900 dark:bg-white text-white dark:text-zinc-950 rounded-xl font-bold text-sm hover:bg-zinc-800 dark:hover:bg-zinc-200 transition-all hover:scale-105 shadow-xl shadow-emerald-500/5"

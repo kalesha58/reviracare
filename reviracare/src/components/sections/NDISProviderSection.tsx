@@ -22,7 +22,7 @@ export function NDISProviderSection(): React.ReactElement {
     <Section className="bg-background text-foreground border-t border-border overflow-hidden relative">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_0%_0%,rgba(147,51,234,0.03),transparent_40%),radial-gradient(circle_at_100%_100%,rgba(147,51,234,0.03),transparent_40%)] pointer-events-none" />
       <Container className="relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-16 items-center">
           {/* Image: rich, warm editorial treatment */}
           <motion.div
             initial={{ opacity: 0, x: -24 }}
@@ -63,7 +63,7 @@ export function NDISProviderSection(): React.ReactElement {
             <h2 className="section-title text-foreground mb-6">
               NDIS Provider Australia
             </h2>
-            <p className="text-muted-foreground text-base md:text-lg leading-relaxed mb-8 bg-secondary/5 dark:bg-secondary/10 border border-secondary/10 rounded-2xl p-6">
+            <p className="text-muted-foreground text-sm sm:text-base md:text-lg leading-relaxed mb-6 sm:mb-8 bg-secondary/5 dark:bg-secondary/10 border border-secondary/10 rounded-2xl p-4 sm:p-6">
               We are committed to supporting NDIS participants in living a healthy
               lifestyle on their own terms as a reputable NDIS provider in Australia.
               By giving you the most individualized support and assisting you in

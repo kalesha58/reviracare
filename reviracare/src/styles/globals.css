@@ -41,8 +41,8 @@
 
   --radius: 0.75rem;
   --container-max: 1280px;
-  --section-py: 5rem;
-  --section-px: 1.5rem;
+  --section-py: 3rem;
+  --section-px: 1rem;
 
   /* Section typography - use across home, about, careers, blogs */
   --text-section-label-size: 0.75rem;
@@ -129,9 +129,23 @@ body {
   font-weight: var(--font-weight-title);
 }
 
+@media (min-width: 640px) {
+  :root {
+    --section-px: 1.25rem;
+    --section-py: 4rem;
+  }
+}
+
 @media (min-width: 768px) {
   .section-title {
     font-size: var(--text-section-title-size-md);
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --section-px: 1.5rem;
+    --section-py: 5rem;
   }
 }
 

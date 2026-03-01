@@ -182,7 +182,7 @@ export function WhyChooseSection(): React.ReactElement {
           whileInView="visible"
           viewport={{ once: true, margin: "-80px" }}
           variants={CONTAINER_VARIANTS}
-          className="text-center max-w-3xl mx-auto mb-12 md:mb-16"
+          className="text-center max-w-3xl mx-auto mb-8 sm:mb-12 md:mb-16"
         >
           <motion.span
             variants={CARD_VARIANTS}

@@ -108,7 +108,7 @@ export function ServiceShowcase() {
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(34,197,94,0.05),transparent_70%)] pointer-events-none" />
 
             <Container className="relative z-10">
-                <div className="mb-16">
+                <div className="mb-10 sm:mb-12 md:mb-16">
                     <motion.span
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -127,7 +127,7 @@ export function ServiceShowcase() {
                 </div>
 
                 {/* Desktop Showcase: Horizontal Expanding Slices */}
-                <div className="hidden lg:flex h-[500px] gap-2 items-stretch">
+                <div className="hidden lg:flex h-[420px] xl:h-[500px] gap-2 items-stretch">
                     {SERVICES.map((service, index) => {
                         const isHovered = hoveredIndex === index;
                         return (
