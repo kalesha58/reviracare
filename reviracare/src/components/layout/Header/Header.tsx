@@ -56,18 +56,18 @@ export function Header(): React.ReactElement {
       <Container className="flex items-center justify-between">
         <Link
           href="/"
-          className="flex flex-col items-start gap-0.5 sm:gap-1 group"
+          className="flex items-center gap-3 group"
           onClick={() => setMobileOpen(false)}
         >
-          <div className="transition-transform group-hover:scale-105">
+          <div className="transition-transform group-hover:scale-105 shrink-0">
             <BrandLogo
-              width={160}
-              height={56}
+              width={140}
+              height={48}
               priority
               imageClassName="dark:brightness-0 dark:invert"
             />
           </div>
-          <span className="text-xs sm:text-sm font-bold text-slate-900 dark:text-zinc-100 tracking-tight group-hover:text-purple-brand dark:group-hover:text-purple-200 transition-colors">
+          <span className="font-display text-lg sm:text-xl font-bold text-slate-900 dark:text-zinc-100 tracking-tight group-hover:text-purple-brand dark:group-hover:text-purple-200 transition-colors">
             {SITE_NAME}
           </span>
         </Link>
