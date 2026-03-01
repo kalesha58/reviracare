@@ -167,13 +167,30 @@ export default function AboutPage(): React.ReactElement {
                   <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
                   Trusted NDIS Partner
                 </div>
-                <h1 className="hero-title font-extrabold tracking-tight text-white leading-[1.15] mb-4 sm:mb-6 drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)] break-words">
-                  Reimagining <br className="hidden sm:block" />
-                  <span className="text-white">
-                    The Care Experience
-                  </span>
-                </h1>
-                <p className="subtitle text-white dark:text-zinc-400 leading-relaxed mb-6 sm:mb-10 max-w-xl drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)] min-w-0">
+                <div className="overflow-visible py-1">
+                  <h1 className="hero-title font-extrabold tracking-tight leading-[1.2] mb-4 sm:mb-6 drop-shadow-[0_1px_2px_rgba(0,0,0,0.3)] break-words">
+                    {(() => {
+                      const title = "Reimagining The Care Experience";
+                      const words = title.split(" ");
+                      return (
+                        <>
+                          {words.map((word, i) => (
+                            <span
+                              key={`about-hero-${i}-${word}`}
+                              className={i % 2 === 1 ? "hero-word-accent" : "hero-word-solid"}
+                            >
+                              {word}
+                              {i === 0 ? <br className="hidden sm:block" /> : null}
+                              {i < words.length - 1 && i !== 0 ? " " : ""}
+                              {i === 0 ? " " : ""}
+                            </span>
+                          ))}
+                        </>
+                      );
+                    })()}
+                  </h1>
+                </div>
+                <p className="subtitle text-white leading-relaxed mb-6 sm:mb-10 max-w-xl drop-shadow-[0_1px_2px_rgba(0,0,0,0.3)] min-w-0">
                   Revira Care is more than a service provider. We are your partners in creating a life characterized by empowerment, independence, and joy.
                 </p>
               </motion.div>

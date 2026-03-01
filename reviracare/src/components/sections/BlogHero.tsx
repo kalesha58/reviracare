@@ -36,12 +36,29 @@ export function BlogHero() {
                             Premium Blog Resource
                         </div>
 
-                        <h1 className="hero-title font-extrabold tracking-tight text-white leading-[1.15] mb-4 sm:mb-6 drop-shadow-[0_1px_2px_rgba(0,0,0,0.3)]">
-                            Insights &{" "}
-                            <span className="text-white italic">Knowledge</span>
-                        </h1>
+                        <div className="overflow-visible py-1">
+                            <h1 className="hero-title font-extrabold tracking-tight leading-[1.2] mb-4 sm:mb-6 drop-shadow-[0_1px_2px_rgba(0,0,0,0.3)] break-words">
+                                {(() => {
+                                    const title = "Insights & Knowledge";
+                                    const words = title.split(" ");
+                                    return (
+                                        <>
+                                            {words.map((word, i) => (
+                                                <span
+                                                    key={`blog-hero-${i}-${word}`}
+                                                    className={i % 2 === 1 ? "hero-word-accent" : "hero-word-solid"}
+                                                >
+                                                    {word}
+                                                    {i < words.length - 1 ? " " : ""}
+                                                </span>
+                                            ))}
+                                        </>
+                                    );
+                                })()}
+                            </h1>
+                        </div>
 
-                        <p className="subtitle text-white dark:text-zinc-400 leading-relaxed mb-8 sm:mb-10 max-w-2xl drop-shadow-[0_1px_2px_rgba(0,0,0,0.3)] text-sm">
+                        <p className="subtitle text-white leading-relaxed mb-8 sm:mb-10 max-w-2xl drop-shadow-[0_1px_2px_rgba(0,0,0,0.3)] min-w-0">
                             A curated collection of research, advocacy, and community stories designed to empower and inform the disability support network. Our commitment to quality ensures you get the most relevant insights every time.
                         </p>
 

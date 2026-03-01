@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
 import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
@@ -15,6 +14,8 @@ import {
   KeyRound,
   RefreshCw,
   Info,
+  CheckCircle2,
+  Phone,
 } from "lucide-react";
 import { NDISBrandingBar } from "@/components/ui/NDISBrandingBar";
 
@@ -31,103 +32,62 @@ const SECTION_ICONS: Record<string, React.ComponentType<{ className?: string }>>
 const SECTIONS = [
   {
     id: "purpose",
-    title: "Purpose and Principles",
-    content: "The NDIS operates under the principle that every person with a disability has unique needs and aspirations. It seeks to provide individualised support based on these needs, focusing on choice and control for participants. The primary goal is to enable individuals with disabilities to enhance their independence, well-being, and social participation.",
+    title: "Goals And Principles",
+    content: "It is the idea behind the NDIS that each person with a disability has their own wants and goals. The NDIS strives to provide customized support to each individual, emphasizing their autonomy and self-determination. People with disabilities should be able to improve their freedom, health, and ability to participate in society.",
   },
   {
     id: "eligibility",
-    title: "Eligibility and Access",
-    content: "To be eligible for the NDIS, an individual must be under the age of 65 and have a permanent and significant disability that affects their ability to participate in daily activities. Eligibility criteria may include functional impairments, duration, and impact on daily life. Once eligible, individuals can apply for access to the NDIS.",
+    title: "Eligibility And Getting In",
+    content: "To qualify for the NDIS, individuals must be under 65 years old and have a permanent, significant disability that makes it difficult for them to perform daily tasks. Criteria for eligibility may include functional problems, how long they last, and how they affect daily life. Once qualified, individuals can apply for access to the NDIS.",
   },
   {
     id: "planning",
-    title: "Planning and Supports",
-    content: "NDIS participants go through a planning process to identify their goals, aspirations, and support needs. This involves creating a personalised plan that outlines the necessary supports and services. Supports can include assistance with daily living, therapy services, mobility aids, community participation, and more. The plan is regularly reviewed and adjusted to meet evolving needs.",
+    title: "Making Plans And Giving Help",
+    content: "People who are part of the NDIS plan to figure out their goals, ambitions, and support needs. This entails creating a personalized plan that outlines the necessary services and supports. Supports can include things like help with daily tasks, therapy, mobility tools, being involved in the community, and more. We often review and adjust plans to adapt to evolving circumstances.",
   },
   {
     id: "choice",
-    title: "Choice and Control",
-    content: "The NDIS emphasises giving participants control over their support arrangements. They have the flexibility to choose their service providers, decide on the types of support they require, and manage their funding through individualised budgets. This person-centered approach aims to enhance autonomy and enable participants to make decisions that best suit their individual circumstances.",
+    title: "Choice And Power",
+    content: "The NDIS puts a lot of emphasis on giving people power over how they get help. Individualized budgets give them the freedom to pick their own service providers, decide what kinds of help they need, and handle their money. The goal of this person-centered approach is to give people more freedom and help them make choices that are best for them.",
   },
   {
     id: "early",
-    title: "Early Intervention",
-    content: "The NDIS recognises the importance of early intervention for children with disabilities. Early intervention services are available to support the development and well-being of children, focusing on maximising their potential and minimising the impact of disabilities on their lives. Early intervention aims to provide timely support to address challenges and promote positive outcomes.",
+    title: "Getting Help Early",
+    content: "The NDIS knows how important it is to help disabled kids as soon as possible. Early intervention services are available to help kids grow and stay healthy, with the goal of helping them reach their full potential and reducing the effects of disabilities on their lives. The goal of early intervention is to help people deal with problems and make things better as soon as possible.",
   },
   {
     id: "accessing",
-    title: "Accessing Services",
-    content: "Once an NDIS plan is in place, participants can access a range of services and supports. These can include allied health professionals, assistive technology, therapies, home modifications, employment assistance, and more. The NDIS also supports community participation and social inclusion, enabling individuals to engage in activities that interest them and foster meaningful connections.",
+    title: "Getting To Services",
+    content: "Individuals with an NDIS plan have access to a wide range of services and assistance. Some of these services include access to allied health experts, assistive technology, therapies, home modifications, job placement assistance, and more. The NDIS also encourages people to be a part of their communities and make friends so they can do things that interest them and make real bonds.",
   },
   {
     id: "continuity",
-    title: "Continuity of Support",
-    content: "The NDIS works closely with existing disability support systems to ensure a smooth transition for participants. It focuses on maintaining continuity of support and minimising disruptions during the transition period. The NDIS collaborates with various service providers and government agencies to ensure a holistic approach to disability support.",
+    title: "Support That Doesn't Stop",
+    content: "Existing disability support services and the NDIS work together to make sure that participants have a smooth transition. Its main goal is to keep support going and keep problems to a minimum during the transition time. The NDIS collaborates with various service providers and government departments to ensure comprehensive provision of disability assistance.",
   },
+];
+
+const EXPERTISE_ITEMS = [
+  "Support Coordination",
+  "Supported Independent Living (SIL)",
+  "Specialist Disability Accommodation",
+  "Community Participation & Care",
+  "In-Home Assistance",
+];
+
+const WHY_CHOOSE_ITEMS = [
+  "We endeavour to be the leading NDIS Providers in Australia.",
+  "All our support coordinators are well updated with every 'norm' of NDIS and can assist you at any stage.",
+  "Our health carers are professionally trained, qualified, and have years of experience.",
+  "Our core values revolve around honesty, respect, integrity, authenticity, compassion, and achievement.",
+  "We believe in a holistic and person-centered approach.",
+  "We are local, with exceptional service provider networks and community knowledge.",
+  "We provide a wide range of services that meet even the complex needs of participants.",
 ];
 
 export default function UnderstandingNdisPage(): React.ReactElement {
   return (
-    <main className="min-h-screen bg-zinc-50 dark:bg-zinc-950 text-zinc-900 dark:text-white">
-      {/* Hero – same treatment as About: image + purple-brand (footer) overlays */}
-      <section className="relative min-h-[95vh] md:min-h-[92vh] flex items-center pt-24 md:pt-28 pb-64 md:pb-24 overflow-hidden">
-        <div className="absolute inset-0 z-0 bg-purple-brand dark:bg-zinc-950 overflow-hidden">
-          <motion.div
-            initial={{ opacity: 0, scale: 1.05 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1.2, ease: "easeInOut" }}
-            className="absolute inset-0"
-          >
-            <Image
-              src="/images/ndis/understanding.png"
-              alt="Revira Care NDIS Support Services"
-              fill
-              className="object-cover object-top dark:opacity-60"
-              priority
-              sizes="100vw"
-            />
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-purple-brand/90 dark:from-black/80 dark:via-black/40 dark:to-zinc-950" />
-            <div className="absolute inset-0 bg-gradient-to-r from-purple-brand/80 via-purple-brand/30 to-transparent dark:from-zinc-900/80 dark:via-zinc-900/30 dark:to-transparent" aria-hidden />
-            <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-purple-brand/20 dark:bg-zinc-800/40 blur-[120px] rounded-full" />
-            <div className="absolute bottom-1/4 left-1/4 w-96 h-96 bg-primary/10 blur-[120px] rounded-full" />
-          </motion.div>
-        </div>
-
-        <Container className="relative z-20">
-          <motion.div
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="max-w-3xl"
-          >
-            <Link
-              href="/"
-              className="inline-flex items-center gap-1 text-sm text-white/80 hover:text-white mb-6 uppercase tracking-widest font-bold"
-            >
-              Back to Home
-            </Link>
-            <h1 className="hero-title font-extrabold tracking-tight text-white leading-[1.15] mb-6 drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]">
-              NDIS Support & Care
-            </h1>
-            <p className="subtitle text-white/90 leading-relaxed max-w-xl drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)] font-medium">
-              Understanding the NDIS and how we support you to live your best life.
-            </p>
-          </motion.div>
-        </Container>
-
-        <div className="absolute bottom-4 left-0 right-0 flex flex-col items-center gap-2 z-20">
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1.2, duration: 1 }}
-            className="flex flex-col items-center gap-2"
-          >
-            <div className="w-px h-8 bg-gradient-to-b from-white/80 to-transparent" />
-            <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-white/90">Scroll</span>
-          </motion.div>
-        </div>
-      </section>
-
+    <main className="min-h-screen bg-zinc-50 dark:bg-zinc-950 text-zinc-900 dark:text-white pt-24 md:pt-28">
       <NDISBrandingBar title="Understanding the NDIS" />
 
       <Section className="bg-white dark:bg-zinc-950 border-t border-zinc-200 dark:border-zinc-800 overflow-hidden">
@@ -145,7 +105,7 @@ export default function UnderstandingNdisPage(): React.ReactElement {
                 Overview
               </span>
               <p className="text-base sm:text-lg md:text-xl text-zinc-600 dark:text-zinc-400 leading-relaxed max-w-3xl mx-auto">
-                It is a comprehensive and person-centric approach that aims to empower people with disabilities to live fulfilling lives and participate actively in their communities.
+                The Australian government runs the National Disability Insurance Scheme (NDIS) as a program to help and support people with disabilities. The goal of this all-around and person-centered method is to give disabled people the tools they need to live full lives and be involved in their communities.
               </p>
             </motion.div>
           </Container>
@@ -185,6 +145,20 @@ export default function UnderstandingNdisPage(): React.ReactElement {
           })}
         </div>
 
+        {/* Closing paragraph - full width */}
+        <div className="w-full py-10 sm:py-12 md:py-16 bg-zinc-50 dark:bg-zinc-900/40">
+          <Container className="max-w-5xl">
+            <motion.p
+              initial={{ opacity: 0, y: 12 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-base sm:text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed max-w-3xl mx-auto text-center"
+            >
+              In Australia, the NDIS represents a significant shift in the way we support people with disabilities. It helps people with disabilities live full lives and reach their full potential by putting them at the center and giving them the freedom, control, and supports that are just right for them.
+            </motion.p>
+          </Container>
+        </div>
+
         {/* Important notice - full width */}
         <div className="w-full py-10 sm:py-12 md:py-16 bg-amber-50/80 dark:bg-amber-950/20 border-y border-amber-200/60 dark:border-amber-800/30">
           <Container className="max-w-5xl">
@@ -200,9 +174,61 @@ export default function UnderstandingNdisPage(): React.ReactElement {
               <div className="min-w-0 flex-1">
                 <h3 className="text-lg sm:text-xl font-semibold text-zinc-900 dark:text-white mb-2">Important notice</h3>
                 <p className="text-sm sm:text-base text-zinc-600 dark:text-zinc-400 leading-relaxed">
-                  It&apos;s important to note that while this content provides a general understanding of the NDIS, the scheme itself is complex, and the specific details and processes may vary. It&apos;s advisable to refer to official NDIS resources, consult with the NDIS directly, or seek professional advice for comprehensive and up-to-date information based on your specific circumstances.
+                  Please keep in mind that while this article gives you a general idea of the NDIS, the program is very complicated, and the exact details and steps may be different for each person. If you want complete and up-to-date information that applies to your particular situation, you should use official NDIS resources, talk to the NDIS directly, or get professional help.
                 </p>
               </div>
+            </motion.div>
+          </Container>
+        </div>
+
+        {/* Our Registered NDIS Provider Expertise - full width */}
+        <div className="w-full py-10 sm:py-12 md:py-16 bg-white dark:bg-zinc-950">
+          <Container className="max-w-5xl">
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-xl sm:text-2xl font-bold text-zinc-900 dark:text-white mb-6">
+                Our Registered NDIS Provider Expertise in:
+              </h2>
+              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+                {EXPERTISE_ITEMS.map((item) => (
+                  <li
+                    key={item}
+                    className="flex items-center gap-3 text-zinc-600 dark:text-zinc-400"
+                  >
+                    <span className="w-2 h-2 rounded-full bg-[var(--primary)] shrink-0" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+          </Container>
+        </div>
+
+        {/* Why Choose Revira Care - full width */}
+        <div className="w-full py-10 sm:py-12 md:py-16 bg-zinc-50 dark:bg-zinc-900/40">
+          <Container className="max-w-5xl">
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-xl sm:text-2xl font-bold text-zinc-900 dark:text-white mb-6">
+                Why Choose Revira Care for NDIS Services?
+              </h2>
+              <ul className="space-y-3 sm:space-y-4">
+                {WHY_CHOOSE_ITEMS.map((item) => (
+                  <li
+                    key={item.slice(0, 40)}
+                    className="flex items-start gap-3 text-zinc-600 dark:text-zinc-400"
+                  >
+                    <CheckCircle2 className="w-5 h-5 text-[var(--primary)] shrink-0 mt-0.5" />
+                    <span className="leading-relaxed">{item}</span>
+                  </li>
+                ))}
+              </ul>
             </motion.div>
           </Container>
         </div>
@@ -210,12 +236,27 @@ export default function UnderstandingNdisPage(): React.ReactElement {
         {/* CTAs - full width */}
         <div className="w-full py-12 sm:py-16 bg-white dark:bg-zinc-950">
           <Container className="max-w-5xl">
+            <motion.p
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              className="text-zinc-600 dark:text-zinc-400 mb-6"
+            >
+              For more information, feel free to contact us or call us anytime. Our representatives are more than happy to address your queries.
+            </motion.p>
             <motion.div
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              className="flex flex-wrap gap-4 sm:gap-5"
+              className="flex flex-wrap gap-4 sm:gap-5 items-center"
             >
+              <a
+                href="tel:0433435959"
+                className="inline-flex items-center gap-2 px-6 py-3.5 sm:px-8 sm:py-4 rounded-xl bg-purple-brand text-white font-semibold hover:opacity-90 transition-opacity shadow-lg shadow-purple-brand/20 text-sm sm:text-base"
+              >
+                <Phone className="w-5 h-5" />
+                0433 43 5959
+              </a>
               <Link
                 href="/ndis/new"
                 className="inline-flex items-center gap-2 px-6 py-3.5 sm:px-8 sm:py-4 rounded-xl bg-[var(--primary)] text-[var(--primary-foreground)] font-semibold hover:opacity-90 transition-opacity shadow-lg shadow-[var(--primary)]/20 text-sm sm:text-base"

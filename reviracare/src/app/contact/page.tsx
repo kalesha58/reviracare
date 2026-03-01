@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
-import { BrandLogo } from "@/components/ui/BrandLogo";
 import {
   Phone, Mail, MapPin, Clock,
   Send, MessageSquare, User,
@@ -75,22 +74,28 @@ export default function ContactPage() {
               <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
               Get In Touch
             </div>
-            <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 mb-6">
-              <div className="shrink-0 p-3 rounded-2xl bg-white/95 dark:bg-zinc-900/90 backdrop-blur-md border border-white/20 shadow-lg">
-                <BrandLogo
-                  width={140}
-                  height={48}
-                  imageClassName="dark:brightness-0 dark:invert"
-                />
-              </div>
-              <div>
-                <h1 className="hero-title tracking-tight leading-tight text-white">
-                  Feel Free To{" "}
-                  <span className="text-white">Contact Us</span>
+            <div>
+              <h1 className="hero-title font-extrabold tracking-tight leading-[1.2] drop-shadow-[0_1px_2px_rgba(0,0,0,0.3)] break-words">
+                  {(() => {
+                    const title = "Feel Free To Contact Us";
+                    const words = title.split(" ");
+                    return (
+                      <>
+                        {words.map((word, i) => (
+                          <span
+                            key={`contact-hero-${i}-${word}`}
+                            className={i % 2 === 1 ? "hero-word-accent" : "hero-word-solid"}
+                          >
+                            {word}
+                            {i < words.length - 1 ? " " : ""}
+                          </span>
+                        ))}
+                      </>
+                    );
+                  })()}
                 </h1>
-              </div>
             </div>
-            <p className="subtitle text-zinc-200 font-medium leading-relaxed max-w-2xl text-sm">
+            <p className="subtitle text-white leading-relaxed max-w-2xl drop-shadow-[0_1px_2px_rgba(0,0,0,0.3)] min-w-0 mt-6">
               Revira Care provides comprehensive services tailored to individuals with disabilities, ensuring accessibility, independence, and empowerment. From personalized care plans to community integration support, we focus on enhancing quality of life.
             </p>
           </motion.div>
@@ -230,7 +235,7 @@ export default function ContactPage() {
                     <button
                       disabled={formStatus === "submitting"}
                       type="submit"
-                      className="w-full py-5 bg-zinc-900 dark:bg-purple-brand text-white rounded-[1.5rem] font-bold text-sm lg:text-base hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-3 disabled:opacity-50 disabled:scale-100 shadow-xl shadow-black/10"
+                      className="w-full py-5 bg-purple-brand text-white rounded-[1.5rem] font-bold text-sm lg:text-base hover:opacity-90 active:scale-[0.98] transition-all flex items-center justify-center gap-3 disabled:opacity-50 disabled:scale-100 shadow-xl shadow-purple-brand/20"
                     >
                       {formStatus === "submitting" ? (
                         <>
@@ -264,18 +269,18 @@ export default function ContactPage() {
       </Section>
 
       {/* Trust Quote */}
-      <Section className="pb-32">
+      <Section className="py-12 md:py-16">
         <Container>
           <div className="max-w-4xl mx-auto text-center">
-            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-purple-brand/10 mb-8">
-              <Heart className="w-8 h-8 text-purple-brand dark:text-purple-200 fill-purple-brand/20" />
+            <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-purple-brand/10 mb-5">
+              <Heart className="w-7 h-7 text-purple-brand dark:text-purple-200 fill-purple-brand/20" />
             </div>
-            <h2 className="text-2xl md:text-3xl font-bold text-zinc-900 dark:text-white mb-8 italic leading-relaxed">
+            <h2 className="text-xl md:text-2xl font-bold text-zinc-900 dark:text-white mb-5 italic leading-relaxed">
               "Revira Care provides comprehensive services tailored to individuals with disabilities, ensuring accessibility, independence, and empowerment."
             </h2>
-            <div className="flex flex-col items-center gap-4">
-              <div className="w-px h-12 bg-zinc-200 dark:bg-zinc-800" />
-              <p className="text-sm font-bold uppercase tracking-[0.3em] text-zinc-400">Enhancing Quality of Life</p>
+            <div className="flex flex-col items-center gap-3">
+              <div className="w-px h-8 bg-zinc-200 dark:bg-zinc-800" />
+              <p className="text-xs font-bold uppercase tracking-[0.25em] text-zinc-400">Enhancing Quality of Life</p>
             </div>
           </div>
         </Container>

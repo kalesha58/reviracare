@@ -2,7 +2,6 @@
 
 import { useState, useCallback } from "react";
 import { motion } from "framer-motion";
-import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
 import { Upload, User, FileText, Target, CreditCard, AlertTriangle, CheckCircle2 } from "lucide-react";
@@ -221,64 +220,7 @@ export default function ReferralPage(): React.ReactElement {
   }
 
   return (
-    <main className="min-h-screen bg-zinc-50 dark:bg-zinc-950 text-zinc-900 dark:text-white pb-32 [--primary:var(--secondary)] [--accent:var(--purple-100)] [--accent-foreground:var(--purple-700)] dark:[--accent:var(--purple-950)] dark:[--accent-foreground:var(--purple-100)]">
-      {/* Hero – same as main NDIS: purple-brand (footer) + image */}
-      <section className="relative min-h-[95vh] md:min-h-[92vh] flex items-center pt-24 md:pt-28 pb-64 md:pb-24 overflow-hidden">
-        <div className="absolute inset-0 z-0 bg-purple-brand dark:bg-zinc-950 overflow-hidden">
-          <motion.div
-            initial={{ opacity: 0, scale: 1.05 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1.2, ease: "easeInOut" }}
-            className="absolute inset-0"
-          >
-            <Image
-              src="/images/ndis/referral.png"
-              alt="NDIS Referral"
-              fill
-              className="object-cover object-top dark:opacity-60"
-              priority
-              sizes="100vw"
-            />
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-purple-brand/90 dark:from-black/80 dark:via-black/40 dark:to-purple-brand" />
-            <div className="absolute inset-0 bg-gradient-to-r from-purple-brand/80 via-purple-brand/30 to-transparent" aria-hidden />
-            <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-purple-brand/20 blur-[120px] rounded-full" />
-            <div className="absolute bottom-1/4 left-1/4 w-96 h-96 bg-primary/10 blur-[120px] rounded-full" />
-          </motion.div>
-        </div>
-        <Container className="relative z-20">
-          <motion.div
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="max-w-3xl"
-          >
-            <Link
-              href="/"
-              className="inline-flex items-center gap-1 text-sm text-white/80 hover:text-white mb-6 uppercase tracking-widest font-bold"
-            >
-              Back to Home
-            </Link>
-            <h1 className="hero-title font-extrabold tracking-tight text-white leading-[1.15] mb-6 drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]">
-              NDIS Referral Form
-            </h1>
-            <p className="subtitle text-white/90 leading-relaxed max-w-xl drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)] font-medium">
-              Connect with our crew and start your journey with Revira Care.
-            </p>
-          </motion.div>
-        </Container>
-        <div className="absolute bottom-4 left-0 right-0 flex flex-col items-center gap-2 z-20">
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1.2, duration: 1 }}
-            className="flex flex-col items-center gap-2"
-          >
-            <div className="w-px h-8 bg-gradient-to-b from-white/80 to-transparent" />
-            <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-white/90">Scroll</span>
-          </motion.div>
-        </div>
-      </section>
-
+    <main className="min-h-screen bg-zinc-50 dark:bg-zinc-950 text-zinc-900 dark:text-white pb-32 pt-24 md:pt-28 [--primary:var(--secondary)] [--accent:var(--purple-100)] [--accent-foreground:var(--purple-700)] dark:[--accent:var(--purple-950)] dark:[--accent-foreground:var(--purple-100)]">
       <NDISBrandingBar title="Connect With Our Crew" />
 
       <Section className="pt-10">

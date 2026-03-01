@@ -120,13 +120,30 @@ export default function CareersPage() {
               <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
               Join Our Care Team
             </div>
-            <h1 className="hero-title font-extrabold mb-6 tracking-tight leading-[1.05] text-white">
-              Make a <br />
-              <span className="text-white">
-                Meaningful Difference
-              </span>
-            </h1>
-            <p className="subtitle text-zinc-300 font-medium leading-relaxed max-w-xl mb-10 text-sm">
+            <div className="overflow-visible py-1">
+              <h1 className="hero-title font-extrabold tracking-tight leading-[1.2] mb-6 drop-shadow-[0_1px_2px_rgba(0,0,0,0.3)] break-words">
+                {(() => {
+                  const title = "Make a Meaningful Difference";
+                  const words = title.split(" ");
+                  return (
+                    <>
+                      {words.map((word, i) => (
+                        <span
+                          key={`careers-hero-${i}-${word}`}
+                          className={i % 2 === 1 ? "hero-word-accent" : "hero-word-solid"}
+                        >
+                          {word}
+                          {i === 1 ? <br className="hidden sm:block" /> : null}
+                          {i < words.length - 1 && i !== 1 ? " " : ""}
+                          {i === 1 ? " " : ""}
+                        </span>
+                      ))}
+                    </>
+                  );
+                })()}
+              </h1>
+            </div>
+            <p className="subtitle text-white leading-relaxed max-w-xl mb-10 drop-shadow-[0_1px_2px_rgba(0,0,0,0.3)] min-w-0">
               Joining Revira Care Australia offers an exciting opportunity to empower individuals with disabilities and foster a more inclusive community.
             </p>
             <div className="flex flex-wrap gap-4">
