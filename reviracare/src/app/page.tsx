@@ -49,7 +49,7 @@ const BADGES = [
             className="object-contain h-5 sm:h-6 md:h-8 w-auto"
           />
         </div>
-        <div className="text-[10px] sm:text-xs font-extrabold text-zinc-800 dark:text-zinc-200 uppercase leading-snug truncate min-w-0">
+        <div className="text-caption text-zinc-800 dark:text-zinc-200 uppercase leading-snug truncate min-w-0">
           Registered <br className="hidden sm:block" /> NDIS Provider
         </div>
       </div>
@@ -68,7 +68,7 @@ const BADGES = [
             className="object-contain h-6 sm:h-8 md:h-10 w-auto"
           />
         </div>
-        <div className="text-[10px] sm:text-xs font-extrabold text-zinc-800 dark:text-zinc-200 uppercase leading-snug truncate min-w-0">
+        <div className="text-caption text-zinc-800 dark:text-zinc-200 uppercase leading-snug truncate min-w-0">
           Official <br className="hidden sm:block" /> Registered
         </div>
       </div>
@@ -81,7 +81,7 @@ const BADGES = [
         <div className="w-9 sm:w-10 md:w-12 flex shrink-0 items-center justify-center">
           <span className="text-lg sm:text-xl md:text-2xl" aria-hidden>📱</span>
         </div>
-        <span className="text-[10px] sm:text-xs font-extrabold text-zinc-800 dark:text-zinc-200 uppercase tracking-wider truncate min-w-0">1800 REVIRA</span>
+        <span className="text-caption text-zinc-800 dark:text-zinc-200 uppercase tracking-wider truncate min-w-0">1800 REVIRA</span>
       </div>
     ),
   },
@@ -92,7 +92,7 @@ const BADGES = [
         <div className="w-9 sm:w-10 md:w-12 flex shrink-0 items-center justify-center">
           <div className="text-base sm:text-lg md:text-xl font-black text-purple-brand dark:text-purple-200 leading-none">24/7</div>
         </div>
-        <div className="text-[10px] sm:text-xs font-extrabold text-zinc-800 dark:text-zinc-200 uppercase leading-snug truncate min-w-0">Support <br className="hidden sm:block" /> Services</div>
+        <div className="text-caption text-zinc-800 dark:text-zinc-200 uppercase leading-snug truncate min-w-0">Support <br className="hidden sm:block" /> Services</div>
       </div>
     ),
   },
@@ -131,7 +131,6 @@ export default function HomePage(): React.ReactElement {
                 priority
               />
               <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-zinc-50/80 dark:from-black/80 dark:via-black/40 dark:to-zinc-950" />
-              {/* Scrim behind text for readable contrast on all image areas */}
               <div className="absolute inset-0 bg-gradient-to-r from-zinc-900/50 via-zinc-900/10 to-transparent" aria-hidden />
             </motion.div>
           </AnimatePresence>
@@ -139,7 +138,7 @@ export default function HomePage(): React.ReactElement {
         <Container className="relative z-20">
           <div className="grid grid-cols-1 xl:grid-cols-12 gap-8 sm:gap-10 xl:gap-12 items-center">
             {/* Left Content */}
-            <div className="xl:col-span-8 flex flex-col items-start text-left min-w-0 max-w-full">
+            <div className="xl:col-span-8 flex flex-col items-start text-left min-w-0 max-w-full overflow-visible">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={currentImage}
@@ -147,30 +146,38 @@ export default function HomePage(): React.ReactElement {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -15 }}
                   transition={{ duration: 0.6, ease: "easeOut" }}
-                  className="w-full min-w-0"
+                  className="w-full min-w-0 overflow-visible"
                 >
-                  <div className="inline-flex items-center gap-2 px-2.5 sm:px-3 py-1.5 rounded-full bg-white/10 border border-white/20 text-white text-xs font-bold uppercase tracking-[0.2em] mb-4 sm:mb-6 shadow-sm">
+                  <div className="inline-flex items-center gap-2 px-2.5 sm:px-3 py-1.5 rounded-full bg-white/10 border border-white/20 text-white section-label uppercase tracking-[0.2em] mb-4 sm:mb-6 shadow-sm">
                     <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
                     Trusted Healthcare Partner
                   </div>
-                  <h1 className="hero-title font-extrabold tracking-tight text-white leading-[1.15] mb-4 sm:mb-6 drop-shadow-[0_1px_2px_rgba(0,0,0,0.3)] break-words">
-                    {(() => {
-                      const words = HERO_CONTENT[currentImage].title.split(' ');
-                      const lastTwo = words.slice(-2).join(' ');
-                      const rest = words.slice(0, -2).join(' ');
-                      return (
-                        <>
-                          {rest}
-                          {rest && ' '}
-                          <span className="text-white">
-                            {lastTwo}
-                          </span>
-                        </>
-                      );
-                    })()}
-                  </h1>
+                  <div className="overflow-visible py-1">
+                    <h1 className="hero-title font-extrabold tracking-tight leading-[1.2] mb-4 sm:mb-6 drop-shadow-[0_1px_2px_rgba(0,0,0,0.3)] break-words text-white">
+                      {(() => {
+                        const title = HERO_CONTENT[currentImage].title;
+                        const words = title.split(" ");
+                        return (
+                          <>
+                            {words.map((word, i) => {
+                              const isAccent = i % 2 === 1;
+                              return (
+                                <span
+                                  key={`${currentImage}-${i}-${word}`}
+                                  className={isAccent ? "hero-word-accent" : "hero-word-solid"}
+                                >
+                                  {word}
+                                  {i < words.length - 1 ? " " : ""}
+                                </span>
+                              );
+                            })}
+                          </>
+                        );
+                      })()}
+                    </h1>
+                  </div>
 
-                  <p className="subtitle text-white dark:text-zinc-400 leading-relaxed mb-6 sm:mb-10 max-w-xl drop-shadow-[0_1px_2px_rgba(0,0,0,0.3)] min-w-0 text-sm">
+                  <p className="subtitle text-white leading-relaxed mb-6 sm:mb-10 max-w-xl drop-shadow-[0_1px_2px_rgba(0,0,0,0.3)] min-w-0">
                     {HERO_CONTENT[currentImage].description}
                   </p>
                 </motion.div>
@@ -204,7 +211,7 @@ export default function HomePage(): React.ReactElement {
             className="flex flex-col items-center gap-2"
           >
             <div className="w-px h-8 bg-gradient-to-b from-white to-transparent" />
-            <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-white/90 dark:text-zinc-400">Scroll</span>
+            <span className="caption text-white/90 dark:text-zinc-400">Scroll</span>
           </motion.div>
 
           {/* Mobile/Tablet Horizontal Badges - scroll left to right */}
@@ -263,7 +270,7 @@ export default function HomePage(): React.ReactElement {
                   "Experienced support workers who respect your independence",
                   "Community participation and in-home care when you need it",
                 ].map((item, i) => (
-                  <li key={i} className="flex items-start gap-3 text-zinc-700 dark:text-zinc-300 body-sm leading-relaxed">
+                  <li key={i} className="flex items-start gap-3 text-zinc-700 dark:text-zinc-300 body leading-relaxed">
                     <CheckCircle2 className="w-5 h-5 text-secondary shrink-0 mt-0.5" />
                     <span>{item}</span>
                   </li>
@@ -274,7 +281,7 @@ export default function HomePage(): React.ReactElement {
                   <CheckCircle2 className="w-5 h-5 text-primary" />
                 </div>
                 <div>
-                  <span className="block font-semibold text-purple-brand dark:text-purple-200 body-sm">Government Registered Provider</span>
+                  <span className="block font-semibold text-purple-brand dark:text-purple-200 body">Government Registered Provider</span>
                   <span className="block caption text-purple-brand/80 dark:text-purple-200/90 uppercase tracking-wider">NDIS Quality & Safeguards</span>
                 </div>
               </div>
@@ -293,7 +300,7 @@ export default function HomePage(): React.ReactElement {
                   <span className="text-4xl sm:text-5xl font-extrabold text-purple-brand dark:text-purple-100 tracking-tight">500+</span>
                   <p className="caption text-purple-brand dark:text-purple-100 uppercase tracking-wider mt-2">Clients Supported</p>
                 </div>
-                <p className="body-sm text-slate-600 dark:text-white/70 mt-4 relative">
+                <p className="body text-slate-600 dark:text-white/70 mt-4 relative">
                   Individuals and families who trust us for quality, person-centred care.
                 </p>
               </motion.div>
@@ -309,7 +316,7 @@ export default function HomePage(): React.ReactElement {
                   <span className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-purple-brand dark:text-purple-200 tracking-tight">24/7</span>
                   <p className="caption text-purple-brand/80 dark:text-purple-200/90 uppercase tracking-wider mt-2">Available Support</p>
                 </div>
-                <p className="body-sm text-slate-600 dark:text-slate-300 mt-3 sm:mt-4 relative">
+                <p className="body text-slate-600 dark:text-slate-300 mt-3 sm:mt-4 relative">
                   Round-the-clock availability so you’re never without support when it matters.
                 </p>
               </motion.div>

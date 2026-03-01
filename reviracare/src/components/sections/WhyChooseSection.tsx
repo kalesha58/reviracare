@@ -201,7 +201,7 @@ export function WhyChooseSection(): React.ReactElement {
           <motion.p
             variants={CARD_VARIANTS}
             custom={2}
-            className="text-muted-foreground text-base md:text-lg leading-relaxed"
+            className="subtitle text-muted-foreground leading-relaxed"
           >
             Revira Care provides compassionate, personalized support and a wide
             range of services tailored to empower individuals with disabilities.
@@ -230,11 +230,11 @@ export function WhyChooseSection(): React.ReactElement {
                   <div className="flex shrink-0 h-10 w-10 items-center justify-center rounded-lg bg-secondary/10 dark:bg-secondary/20 text-secondary border border-secondary/10 dark:border-secondary/20 group-hover:bg-secondary/20 dark:group-hover:bg-secondary/30 transition-colors duration-300">
                     <feature.icon className="h-5 w-5" aria-hidden />
                   </div>
-                  <h3 className="text-lg font-bold text-foreground leading-tight">
+                  <h3 className="subsection-title text-foreground leading-tight">
                     {feature.title}
                   </h3>
                 </div>
-                <p className="text-muted-foreground text-sm sm:text-base leading-relaxed flex-1">
+                <p className="body-sm text-muted-foreground leading-relaxed flex-1">
                   {feature.description}
                 </p>
               </motion.article>

@@ -105,13 +105,13 @@ function TestimonialCard({
       <div className="mb-3">
         <StarRating rating={item.rating} />
       </div>
-      <p className="body-sm text-foreground/80 flex-1 line-clamp-4 leading-relaxed italic">
+                <p className="body text-foreground/80 flex-1 line-clamp-4 leading-relaxed italic">
         "{item.snippet}"
       </p>
       <div className="mt-4 pt-4 border-t border-border/40 flex items-center justify-between">
         <div className="flex items-center gap-1.5">
           <CheckCircle2 className="w-3.5 h-3.5 text-purple-brand dark:text-purple-200 shrink-0" aria-label="Verified" />
-          <span className="text-[10px] font-bold tracking-wider text-muted-foreground uppercase">Verified Review</span>
+          <span className="caption tracking-wider text-muted-foreground uppercase">Verified Review</span>
         </div>
         {item.readMoreHref && (
           <a
@@ -220,7 +220,7 @@ export function TestimonialsSection({
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
           {/* Left: Summary rating */}
           <div className="lg:col-span-4 flex flex-col items-center lg:items-start text-center lg:text-left">
-            <div className="inline-flex items-center px-3 py-1 rounded-full bg-purple-brand/10 dark:bg-purple-brand/20 text-purple-brand dark:text-purple-200 text-[10px] font-bold tracking-widest uppercase mb-4">
+            <div className="inline-flex items-center px-3 py-1 rounded-full bg-purple-brand/10 dark:bg-purple-brand/20 text-purple-brand dark:text-purple-200 section-label uppercase tracking-widest mb-4">
               Testimonials
             </div>
             <h2 id="testimonials-heading" className="section-title text-foreground mb-4 !text-4xl lg:!text-5xl tracking-tight">

@@ -51,7 +51,7 @@ const ITEM_VARIANTS: Variants = {
     scale: 1,
     transition: {
       duration: 0.8,
-      ease: [0.16, 1, 0.3, 1], // Custom cubic-bezier for "premium" feel
+      ease: [0.16, 1, 0.3, 1],
       delay: i * 0.1
     },
   }),
@@ -74,8 +74,74 @@ const ICONS = [Footprints, Heart, Users, Sparkles] as const;
 
 export function SupportConfidenceSection(): React.ReactElement {
   return (
-    <Section className="bg-muted/40 dark:bg-muted/15 text-foreground border-t border-border overflow-hidden">
-      <Container>
+    <Section
+      aria-labelledby="support-confidence-heading"
+      className="relative bg-white dark:bg-zinc-950 text-foreground border-t border-border overflow-hidden"
+    >
+      {/* Hierarchy / flight background: journey from left to right */}
+      <div className="absolute inset-0 pointer-events-none z-0" aria-hidden>
+        {/* Base gradient: flight starts left (lighter) → moves right (richer) */}
+        <div
+          className="absolute inset-0 opacity-[0.97] dark:opacity-100"
+          style={{
+            background:
+              "linear-gradient(to right, rgba(249,250,251,1) 0%, rgba(243,232,255,0.35) 35%, rgba(233,213,255,0.25) 60%, rgba(54,20,59,0.08) 100%)",
+          }}
+        />
+        <div
+          className="absolute inset-0 opacity-80 dark:opacity-60"
+          style={{
+            background:
+              "linear-gradient(to right, rgba(255,255,255,0.6) 0%, transparent 45%, transparent 55%, rgba(54,20,59,0.06) 100%)",
+          }}
+        />
+        {/* Origin glow (left): where the journey starts */}
+        <div
+          className="absolute -left-[20%] top-1/2 -translate-y-1/2 w-[70%] h-[120%] rounded-full blur-3xl opacity-40 dark:opacity-25"
+          style={{
+            background: "radial-gradient(ellipse 70% 50% at center, rgba(147,51,234,0.2) 0%, rgba(147,51,234,0.06) 40%, transparent 70%)",
+          }}
+        />
+        {/* Destination glow (right): journey lands */}
+        <div
+          className="absolute -right-[15%] top-1/2 -translate-y-1/2 w-[55%] h-[100%] rounded-full blur-3xl opacity-35 dark:opacity-20"
+          style={{
+            background: "radial-gradient(ellipse 60% 50% at center, rgba(54,20,59,0.18) 0%, rgba(54,20,59,0.05) 50%, transparent 75%)",
+          }}
+        />
+        {/* Flight path curve: subtle arc from left to right */}
+        <svg
+          className="absolute inset-0 w-full h-full opacity-[0.07] dark:opacity-[0.12]"
+          preserveAspectRatio="none"
+          aria-hidden
+        >
+          <defs>
+            <linearGradient id="support-flight-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stopColor="rgb(147,51,234)" stopOpacity="0" />
+              <stop offset="30%" stopColor="rgb(147,51,234)" stopOpacity="0.4" />
+              <stop offset="70%" stopColor="rgb(54,20,59)" stopOpacity="0.5" />
+              <stop offset="100%" stopColor="rgb(54,20,59)" stopOpacity="0.3" />
+            </linearGradient>
+          </defs>
+          <path
+            d="M -5% 55% Q 25% 45%, 50% 50% T 105% 48%"
+            fill="none"
+            stroke="url(#support-flight-gradient)"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+          />
+        </svg>
+        {/* Dark mode: soften and keep hierarchy */}
+        <div
+          className="absolute inset-0 hidden dark:block opacity-90"
+          style={{
+            background:
+              "linear-gradient(to right, rgba(9,9,11,0.4) 0%, transparent 40%, transparent 60%, rgba(54,20,59,0.15) 100%)",
+          }}
+        />
+      </div>
+
+      <Container className="relative z-10">
         <motion.header
           initial="hidden"
           whileInView="visible"
@@ -84,6 +150,7 @@ export function SupportConfidenceSection(): React.ReactElement {
           className="text-center max-w-3xl mx-auto mb-14 sm:mb-16 md:mb-20"
         >
           <motion.h2
+            id="support-confidence-heading"
             variants={ITEM_VARIANTS}
             custom={0}
             className="section-title text-foreground leading-tight mb-5"
@@ -95,7 +162,7 @@ export function SupportConfidenceSection(): React.ReactElement {
           <motion.p
             variants={ITEM_VARIANTS}
             custom={1}
-            className="text-muted-foreground text-base sm:text-lg md:text-xl leading-relaxed"
+            className="subtitle text-muted-foreground leading-relaxed"
           >
             Offering personalized care and services that inspire confidence and
             foster inclusion.
@@ -119,7 +186,7 @@ export function SupportConfidenceSection(): React.ReactElement {
             aria-hidden
           />
 
-          <ul className="relative space-y-0">
+          <ul className="relative space-y-0" role="list">
             {SUPPORT_POINTS.map((point, index) => {
               const Icon = ICONS[index];
               return (
@@ -144,10 +211,10 @@ export function SupportConfidenceSection(): React.ReactElement {
                     <Icon className="w-5 h-5 sm:w-6 sm:h-6" />
                   </motion.div>
                   <div className="flex-1 min-w-0 pt-0.5">
-                    <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-3 tracking-tight group-hover:text-secondary transition-colors">
+                    <h3 className="subsection-title text-foreground mb-3 tracking-tight group-hover:text-secondary transition-colors">
                       {point.title}
                     </h3>
-                    <p className="text-muted-foreground text-sm sm:text-lg leading-relaxed max-w-xl">
+                    <p className="text-muted-foreground body-sm leading-relaxed max-w-xl">
                       {point.description}
                     </p>
                   </div>

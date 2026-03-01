@@ -112,7 +112,7 @@ export function ServiceShowcase() {
                     <motion.span
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        className="section-label text-purple-brand dark:text-purple-brand uppercase tracking-[0.3em] block mb-4"
+                        className="section-label text-purple-brand dark:text-purple-brand uppercase tracking-[0.2em] block mb-4"
                     >
                         Explore Our Services
                     </motion.span>
@@ -160,51 +160,61 @@ export function ServiceShowcase() {
 
                                 {/* Content Overlay */}
                                 <div className="absolute inset-0 p-8 flex flex-col justify-end">
-                                    <div className={cn(
-                                        "transition-all duration-500",
-                                        isHovered ? "translate-y-0 opacity-100" : "translate-y-4"
-                                    )}>
-                                        <div className="flex items-center gap-4 mb-4">
-                                            <div className={cn(
-                                                "w-10 h-10 rounded-xl bg-white/10 backdrop-blur-md flex items-center justify-center border border-white/20 transition-transform duration-500",
-                                                isHovered && "rotate-90 scale-110"
-                                            )}>
+                                        {/* Collapsed state: only + icon, no text */}
+                                        <div
+                                            className={cn(
+                                                "absolute inset-x-8 bottom-8 flex items-end justify-center transition-opacity duration-300",
+                                                isHovered ? "opacity-0 pointer-events-none" : "opacity-100"
+                                            )}
+                                            aria-hidden={isHovered}
+                                        >
+                                            <div className="w-10 h-10 rounded-xl bg-white/10 backdrop-blur-md flex items-center justify-center border border-white/20">
                                                 <Plus className="w-5 h-5 text-white" />
                                             </div>
-                                            <h3 className={cn(
-                                                "text-xl font-bold text-white transition-all duration-500 drop-shadow-md",
-                                                !isHovered && "whitespace-nowrap origin-left -rotate-90 absolute -top-32 left-1/2 -translate-x-1/2 group-hover:rotate-0 group-hover:translate-y-4"
-                                            )}>
-                                                {service.title}
-                                            </h3>
                                         </div>
 
-                                        <AnimatePresence>
-                                            {isHovered && (
-                                                <motion.div
-                                                    initial={{ opacity: 0, height: 0 }}
-                                                    animate={{ opacity: 1, height: "auto" }}
-                                                    exit={{ opacity: 0, height: 0 }}
-                                                    transition={{ duration: 0.3 }}
-                                                >
-                                                    <p className="text-white dark:text-zinc-100 text-sm font-medium leading-relaxed mb-6 max-w-md drop-shadow-md">
-                                                        {service.description}
-                                                    </p>
-                                                    <Link
-                                                        href={`/services/${service.id}`}
-                                                        className="inline-flex items-center gap-2 text-white bg-purple-brand hover:opacity-90 px-4 py-2 rounded-full font-bold text-sm hover:gap-4 transition-all shadow-lg"
-                                                    >
-                                                        Learn More <ArrowRight className="w-4 h-4" />
-                                                    </Link>
-                                                </motion.div>
+                                        {/* Expanded state: horizontal title + description + button, no movement */}
+                                        <div
+                                            className={cn(
+                                                "transition-opacity duration-300",
+                                                isHovered ? "opacity-100" : "opacity-0 pointer-events-none"
                                             )}
-                                        </AnimatePresence>
-                                    </div>
+                                            aria-hidden={!isHovered}
+                                        >
+                                            <div className="flex items-center gap-4 mb-4">
+                                                <div className="w-10 h-10 rounded-xl bg-white/10 backdrop-blur-md flex items-center justify-center border border-white/20">
+                                                    <Plus className="w-5 h-5 text-white rotate-90" />
+                                                </div>
+                                                <h3 className="subsection-title text-white drop-shadow-md">
+                                                    {service.title}
+                                                </h3>
+                                            </div>
+                                            <AnimatePresence>
+                                                {isHovered && (
+                                                    <motion.div
+                                                        initial={{ opacity: 0 }}
+                                                        animate={{ opacity: 1 }}
+                                                        exit={{ opacity: 0 }}
+                                                        transition={{ duration: 0.25 }}
+                                                    >
+                                                        <p className="text-white dark:text-zinc-100 body-sm font-medium leading-relaxed mb-6 max-w-md drop-shadow-md">
+                                                            {service.description}
+                                                        </p>
+                                                        <Link
+                                                            href={`/services/${service.id}`}
+                                                            className="inline-flex items-center gap-2 text-white bg-purple-brand hover:opacity-90 px-4 py-2 rounded-full font-bold body-sm hover:gap-4 transition-all shadow-lg"
+                                                        >
+                                                            Learn More <ArrowRight className="w-4 h-4" />
+                                                        </Link>
+                                                    </motion.div>
+                                                )}
+                                            </AnimatePresence>
+                                        </div>
                                 </div>
 
                                 {/* Index Number */}
                                 <div className="absolute top-8 left-8">
-                                    <span className="text-[10px] font-bold text-white/40 dark:text-white/20 tracking-widest uppercase">
+                                    <span className="caption text-white/40 dark:text-white/20 tracking-widest uppercase">
                                         {(index + 1).toString().padStart(2, '0')}
                                     </span>
                                 </div>
@@ -236,10 +246,10 @@ export function ServiceShowcase() {
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/60 to-transparent" />
                                 <div className="absolute inset-x-0 bottom-0 p-3 sm:p-4 pt-12 flex flex-col justify-end min-h-[45%]">
-                                    <h3 className="text-[13px] sm:text-sm font-bold text-white leading-tight line-clamp-3 drop-shadow-sm flex-shrink-0">
+                                    <h3 className="card-title text-white leading-tight line-clamp-3 drop-shadow-sm flex-shrink-0">
                                         {service.title}
                                     </h3>
-                                    <span className="mt-2 sm:mt-2.5 flex-shrink-0 inline-flex items-center gap-1.5 text-white font-bold text-xs sm:text-sm uppercase tracking-wider">
+                                    <span className="mt-2 sm:mt-2.5 flex-shrink-0 inline-flex items-center gap-1.5 text-white font-bold body-sm uppercase tracking-wider">
                                         Learn more <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                                     </span>
                                 </div>

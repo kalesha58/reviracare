@@ -54,10 +54,10 @@ function BlogCard({
         </div>
         <div className="flex flex-col flex-1 p-5 sm:p-6">
           <div className="flex flex-wrap items-center gap-x-4 gap-y-1 mb-3">
-            <span className="px-2.5 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider border bg-purple-brand/10 dark:bg-purple-brand/40 text-purple-brand dark:text-purple-100 border-purple-brand/30 dark:border-purple-brand/50">
+            <span className="px-2.5 py-1 rounded-md caption uppercase tracking-wider border bg-purple-brand/10 dark:bg-purple-brand/40 text-purple-brand dark:text-purple-100 border-purple-brand/30 dark:border-purple-brand/50">
               {post.category}
             </span>
-            <span className="flex items-center gap-1.5 text-muted-foreground text-xs">
+            <span className="flex items-center gap-1.5 text-muted-foreground body-sm">
               <Clock className="w-3.5 h-3.5" aria-hidden />
               {post.readTimeMinutes} min read
               <span className="text-border">·</span>
@@ -67,11 +67,11 @@ function BlogCard({
           <h3 className="card-title text-foreground group-hover:text-purple-brand dark:group-hover:text-purple-100 transition-colors tracking-tight leading-snug line-clamp-2 mb-3">
             {post.title}
           </h3>
-          <p className="text-muted-foreground text-sm leading-relaxed line-clamp-2 mb-5">
+          <p className="text-muted-foreground body-sm leading-relaxed line-clamp-2 mb-5">
             {post.excerpt}
           </p>
           <div className="mt-auto">
-            <span className="inline-flex items-center gap-1.5 text-purple-brand dark:text-purple-100 font-bold text-sm group/btn">
+            <span className="inline-flex items-center gap-1.5 text-purple-brand dark:text-purple-100 font-bold body-sm group/btn">
               Read Article
               <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </span>
@@ -130,7 +130,7 @@ export function LatestNewsSection(): React.ReactElement {
         >
           <Link
             href="/blogs"
-            className="inline-flex items-center gap-2 text-foreground font-bold text-sm hover:text-purple-brand dark:hover:text-purple-100 transition-colors"
+            className="inline-flex items-center gap-2 text-foreground font-bold body-sm hover:text-purple-brand dark:hover:text-purple-100 transition-colors"
           >
             View All Articles
             <ArrowUpRight className="w-4 h-4" />

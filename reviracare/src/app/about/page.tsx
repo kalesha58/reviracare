@@ -94,13 +94,13 @@ function FAQItem({ question, answer }: { question: string, answer: string }) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="border-b border-zinc-200 dark:border-white/10 last:border-0 overflow-hidden">
+    <div className="border-b border-border last:border-0 overflow-hidden">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full py-4 sm:py-6 flex items-center justify-between text-left text-zinc-900 dark:text-white hover:text-primary transition-colors"
+        className="w-full py-4 sm:py-6 flex items-center justify-between text-left text-foreground hover:text-purple-brand dark:hover:text-purple-200 transition-colors"
       >
-        <span className="text-base sm:text-lg font-bold pr-6 sm:pr-8">{question}</span>
-        <ChevronDown className={`w-5 h-5 transition-transform duration-300 ${isOpen ? 'rotate-180 text-primary' : ''}`} />
+        <span className={`subsection-title pr-6 sm:pr-8 ${isOpen ? 'text-purple-brand dark:text-purple-200' : ''}`}>{question}</span>
+        <ChevronDown className={`w-5 h-5 shrink-0 transition-transform duration-300 ${isOpen ? 'rotate-180 text-purple-brand dark:text-purple-200' : ''}`} />
       </button>
       <AnimatePresence>
         {isOpen && (
@@ -110,7 +110,7 @@ function FAQItem({ question, answer }: { question: string, answer: string }) {
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3 }}
           >
-            <p className="pb-4 sm:pb-6 text-zinc-600 dark:text-zinc-400 leading-relaxed text-sm sm:text-base">
+            <p className="pb-4 sm:pb-6 body-sm text-muted-foreground leading-relaxed">
               {answer}
             </p>
           </motion.div>
@@ -122,7 +122,7 @@ function FAQItem({ question, answer }: { question: string, answer: string }) {
 
 export default function AboutPage(): React.ReactElement {
   return (
-    <main className="min-h-screen bg-zinc-50 dark:bg-zinc-950 text-zinc-900 dark:text-white overflow-x-hidden">
+    <main className="min-h-screen bg-background dark:bg-zinc-950 text-foreground overflow-x-hidden">
       {/* Hero Section */}
       <section className="relative min-h-[75vh] min-[480px]:min-h-[80vh] sm:min-h-[85vh] md:min-h-[90vh] flex items-center pt-20 sm:pt-24 md:pt-28 pb-28 sm:pb-32 md:pb-24 overflow-hidden">
         {/* Background Image */}
@@ -163,7 +163,7 @@ export default function AboutPage(): React.ReactElement {
                 transition={{ duration: 0.8, ease: "easeOut" }}
                 className="w-full min-w-0"
               >
-                <div className="inline-flex items-center gap-2 px-2.5 sm:px-3 py-1.5 rounded-full bg-white/10 border border-white/20 text-white text-xs font-bold uppercase tracking-[0.2em] mb-4 sm:mb-6 shadow-sm">
+                <div className="inline-flex items-center gap-2 px-2.5 sm:px-3 py-1.5 rounded-full bg-white/10 border border-white/20 text-white section-label uppercase tracking-[0.2em] mb-4 sm:mb-6 shadow-sm">
                   <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
                   Trusted NDIS Partner
                 </div>
@@ -173,7 +173,7 @@ export default function AboutPage(): React.ReactElement {
                     The Care Experience
                   </span>
                 </h1>
-                <p className="subtitle text-white dark:text-zinc-400 leading-relaxed mb-6 sm:mb-10 max-w-xl drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)] font-medium min-w-0 text-sm">
+                <p className="subtitle text-white dark:text-zinc-400 leading-relaxed mb-6 sm:mb-10 max-w-xl drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)] min-w-0">
                   Revira Care is more than a service provider. We are your partners in creating a life characterized by empowerment, independence, and joy.
                 </p>
               </motion.div>
@@ -230,7 +230,7 @@ export default function AboutPage(): React.ReactElement {
                     <div className="w-9 sm:w-10 md:w-12 flex shrink-0 items-center justify-center">
                       {badge.logo}
                     </div>
-                    <div className="text-[10px] sm:text-xs font-extrabold text-zinc-800 dark:text-zinc-200 uppercase leading-snug min-w-0">
+                    <div className="text-caption text-zinc-800 dark:text-zinc-200 uppercase leading-snug min-w-0">
                       {badge.label.split(' ').length > 2 ? (
                         <>
                           {badge.label.split(' ').slice(0, 1).join(' ')} <br />
@@ -260,7 +260,7 @@ export default function AboutPage(): React.ReactElement {
             className="flex flex-col items-center gap-2"
           >
             <div className="w-px h-8 bg-gradient-to-b from-white to-transparent" />
-            <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-white/90 dark:text-zinc-400">Scroll</span>
+            <span className="caption text-white/90 dark:text-zinc-400">Scroll</span>
           </motion.div>
 
           {/* Mobile/Tablet Horizontal Badges */}
@@ -314,7 +314,7 @@ export default function AboutPage(): React.ReactElement {
                   <div className="w-9 sm:w-10 md:w-12 flex shrink-0 items-center justify-center">
                     {badge.logo}
                   </div>
-                  <div className="text-[10px] sm:text-xs font-extrabold text-zinc-800 dark:text-zinc-200 uppercase leading-snug text-left min-w-0">
+                  <div className="text-caption text-zinc-800 dark:text-zinc-200 uppercase leading-snug text-left min-w-0">
                     {badge.label.split(' ').length > 2 ? (
                       <>
                         {badge.label.split(' ').slice(0, 1).join(' ')} <br />
@@ -336,7 +336,7 @@ export default function AboutPage(): React.ReactElement {
       </section>
 
       {/* Our Story & History */}
-      <Section id="story" className="overflow-hidden pt-8 sm:pt-12 pb-16 sm:pb-24 bg-white dark:bg-transparent">
+      <Section id="story" className="overflow-hidden pt-8 sm:pt-12 pb-16 sm:pb-24 bg-white dark:bg-zinc-950 text-foreground border-t border-border">
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-16 items-center">
             <motion.div
@@ -345,23 +345,23 @@ export default function AboutPage(): React.ReactElement {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <h2 className="text-secondary font-bold uppercase text-[10px] tracking-[0.3em] mb-4">Our Heritage</h2>
-              <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-5 leading-tight text-zinc-900 dark:text-white">Founded on Faith, <br className="hidden sm:block" /> Built for Impact</h3>
-              <p className="text-zinc-600 dark:text-zinc-500 text-base leading-relaxed mb-5">
+              <span className="section-label text-purple-brand dark:text-purple-200 uppercase tracking-[0.2em] block mb-4">Our Heritage</span>
+              <h2 className="section-title text-foreground mb-4 sm:mb-5 leading-tight">Founded on Faith, <br className="hidden sm:block" /> Built for Impact</h2>
+              <p className="body text-zinc-600 dark:text-zinc-400 leading-relaxed mb-5">
                 Revira Care began with a simple vision: to bridge the gap between clinical support and authentic human connection. We saw individuals being treated as "cases" rather than "people," and we knew we could do better.
               </p>
-              <p className="text-zinc-600 dark:text-zinc-500 text-base leading-relaxed mb-8">
+              <p className="body text-zinc-600 dark:text-zinc-400 leading-relaxed mb-8">
                 Today, we stand as a beacon of quality in the community care sector, driven by a diverse team that shares one common goal: seeing our participants thrive, grow, and achieve what they once thought was impossible.
               </p>
 
               <div className="flex flex-wrap gap-8 sm:gap-10">
                 <div>
-                  <div className="text-3xl font-bold text-zinc-900 dark:text-white mb-0.5">500+</div>
-                  <div className="text-zinc-500 dark:text-zinc-500 text-[10px] font-bold uppercase tracking-widest">Lives Touched</div>
+                  <div className="text-3xl font-bold text-foreground mb-0.5">500+</div>
+                  <div className="caption text-zinc-500 dark:text-zinc-400 uppercase tracking-wider">Lives Touched</div>
                 </div>
                 <div>
-                  <div className="text-3xl font-bold text-zinc-900 dark:text-white mb-0.5">15+</div>
-                  <div className="text-zinc-500 dark:text-zinc-500 text-[10px] font-bold uppercase tracking-widest">Specialized Services</div>
+                  <div className="text-3xl font-bold text-foreground mb-0.5">15+</div>
+                  <div className="caption text-zinc-500 dark:text-zinc-400 uppercase tracking-wider">Specialized Services</div>
                 </div>
               </div>
             </motion.div>
@@ -374,7 +374,7 @@ export default function AboutPage(): React.ReactElement {
               className="relative"
             >
               <div className="absolute -inset-4 bg-gradient-to-tr from-primary/10 to-secondary/10 blur-2xl rounded-[3rem]" />
-              <div className="relative aspect-[16/10] lg:aspect-[4/3] rounded-3xl overflow-hidden border border-zinc-200 dark:border-white/5 shadow-2xl">
+              <div className="relative aspect-[16/10] lg:aspect-[4/3] rounded-3xl overflow-hidden border border-border shadow-2xl">
                 <Image
                   src="/images/hero/disability-support.png"
                   alt="Our Heritage"
@@ -388,22 +388,22 @@ export default function AboutPage(): React.ReactElement {
       </Section>
 
       {/* Mission & Vision */}
-      <Section className="bg-zinc-100 dark:bg-zinc-900/50 py-16 sm:py-20 md:py-24">
+      <Section className="bg-muted/40 dark:bg-zinc-900/50 py-16 sm:py-20 md:py-24 border-t border-border">
         <Container>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="p-6 sm:p-8 rounded-2xl bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-white/5 hover:border-purple-brand/30 transition-colors group"
+              className="p-6 sm:p-8 rounded-2xl bg-background dark:bg-zinc-900 border border-border hover:border-purple-brand/30 transition-colors group"
             >
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-12 h-12 rounded-xl bg-purple-brand/10 flex items-center justify-center group-hover:scale-110 transition-transform shrink-0">
                   <Target className="w-6 h-6 text-purple-brand" />
                 </div>
-                <h3 className="text-xl font-bold text-zinc-900 dark:text-white">Our Mission</h3>
+                <h3 className="subsection-title text-foreground">Our Mission</h3>
               </div>
-              <p className="text-zinc-600 dark:text-zinc-400 text-sm leading-relaxed">
+              <p className="body text-muted-foreground leading-relaxed font-medium">
                 To provide high-quality, inclusive support services that empower individuals to achieve their goals, enhance their independence, and live their best possible lives within their community.
               </p>
             </motion.div>
@@ -413,15 +413,15 @@ export default function AboutPage(): React.ReactElement {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="p-6 sm:p-8 rounded-2xl bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-white/5 hover:border-purple-brand/30 transition-colors group"
+              className="p-6 sm:p-8 rounded-2xl bg-background dark:bg-zinc-900 border border-border hover:border-purple-brand/30 transition-colors group"
             >
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-12 h-12 rounded-xl bg-purple-brand/10 flex items-center justify-center group-hover:scale-110 transition-transform shrink-0">
                   <Lightbulb className="w-6 h-6 text-purple-brand" />
                 </div>
-                <h3 className="text-xl font-bold text-zinc-900 dark:text-white">Our Vision</h3>
+                <h3 className="subsection-title text-foreground">Our Vision</h3>
               </div>
-              <p className="text-zinc-600 dark:text-zinc-400 text-sm leading-relaxed">
+              <p className="body text-muted-foreground leading-relaxed font-medium">
                 To be the leading innovator in disability support, fostering a world where accessibility and inclusion are the standard, and every individual is empowered to reach their full potential.
               </p>
             </motion.div>
@@ -430,11 +430,11 @@ export default function AboutPage(): React.ReactElement {
       </Section>
 
       {/* Core Values */}
-      <Section className="py-16 sm:py-20 md:py-24 bg-white dark:bg-transparent">
+      <Section className="py-16 sm:py-20 md:py-24 bg-background dark:bg-zinc-950 text-foreground border-t border-border">
         <Container>
           <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-12 md:mb-16">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 text-zinc-900 dark:text-white">Our Core Values</h2>
-            <p className="text-zinc-600 dark:text-zinc-400 text-base leading-relaxed">
+            <h2 className="section-title text-foreground mb-3 sm:mb-4">Our Core Values</h2>
+            <p className="body text-muted-foreground leading-relaxed font-medium">
               These principles guide everything we do, from the way we interact with our participants to how we develop our support programs.
             </p>
           </div>
@@ -447,13 +447,13 @@ export default function AboutPage(): React.ReactElement {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="p-5 sm:p-7 rounded-2xl bg-zinc-100 dark:bg-white/5 border border-zinc-200 dark:border-white/10 hover:bg-zinc-200/80 dark:hover:bg-white/[0.08] transition-all hover:-translate-y-1"
+                className="p-5 sm:p-7 rounded-2xl bg-muted/60 dark:bg-white/5 border border-border hover:bg-muted dark:hover:bg-white/[0.08] transition-all hover:-translate-y-1"
               >
                 <div className="flex items-center gap-4 mb-4">
                   <div className="shrink-0">{value.icon}</div>
-                  <h4 className="text-lg font-bold text-zinc-900 dark:text-white">{value.title}</h4>
+                  <h4 className="subsection-title text-foreground">{value.title}</h4>
                 </div>
-                <p className="text-zinc-600 dark:text-zinc-400 text-[13px] leading-relaxed">{value.description}</p>
+                <p className="body text-muted-foreground leading-relaxed font-medium">{value.description}</p>
               </motion.div>
             ))}
           </div>
@@ -461,19 +461,19 @@ export default function AboutPage(): React.ReactElement {
       </Section>
 
       {/* Our Methodology (Step-by-Step) */}
-      <Section className="bg-zinc-100 dark:bg-zinc-900/40 border-y border-zinc-200 dark:border-white/5 py-16 sm:py-20 md:py-24">
+      <Section className="bg-muted/40 dark:bg-zinc-900/40 border-y border-border py-16 sm:py-20 md:py-24">
         <Container>
           <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-12 md:mb-16">
-            <h2 className="text-purple-brand font-bold uppercase text-[10px] tracking-[0.3em] mb-4">How We Work</h2>
-            <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 text-zinc-900 dark:text-white">Your Journey With Us</h3>
-            <p className="text-zinc-600 dark:text-zinc-500 text-base">
+            <span className="section-label text-purple-brand dark:text-purple-200 uppercase tracking-[0.2em] block mb-4">How We Work</span>
+            <h2 className="section-title text-foreground mb-3 sm:mb-4">Your Journey With Us</h2>
+            <p className="subtitle text-muted-foreground">
               We follow a rigorous, person-centered methodology to ensure your support is as unique as you are.
             </p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 sm:gap-8 relative">
             {/* Connecting Line (Desktop) */}
-            <div className="hidden lg:block absolute top-1/2 left-0 w-full h-px bg-gradient-to-r from-transparent via-zinc-300 dark:via-white/10 to-transparent z-0" />
+            <div className="hidden lg:block absolute top-1/2 left-0 w-full h-px bg-gradient-to-r from-transparent via-border to-transparent z-0" />
 
             {METHODOLOGY.map((step, i) => (
               <motion.div
@@ -484,12 +484,12 @@ export default function AboutPage(): React.ReactElement {
                 transition={{ delay: i * 0.1 }}
                 className="relative z-10 flex flex-col items-center text-center group"
               >
-                <div className="w-14 h-14 rounded-xl bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-white/10 flex items-center justify-center mb-5 group-hover:scale-110 group-hover:border-purple-brand/50 transition-all duration-500 shadow-sm">
+                <div className="w-14 h-14 rounded-xl bg-background dark:bg-zinc-950 border border-border flex items-center justify-center mb-5 group-hover:scale-110 group-hover:border-purple-brand/50 transition-all duration-500 shadow-sm">
                   {step.icon}
                 </div>
-                <div className="text-[10px] font-bold text-zinc-500 dark:text-zinc-600 mb-1.5 uppercase tracking-tighter">{step.step}</div>
-                <h4 className="text-lg font-bold mb-2.5 text-zinc-900 dark:text-white">{step.title}</h4>
-                <p className="text-zinc-600 dark:text-zinc-500 text-[13px] leading-relaxed px-2">{step.description}</p>
+                <div className="caption text-muted-foreground mb-1.5 uppercase tracking-tighter">{step.step}</div>
+                <h4 className="subsection-title text-foreground mb-2.5">{step.title}</h4>
+                <p className="body-sm text-muted-foreground leading-relaxed px-2">{step.description}</p>
               </motion.div>
             ))}
           </div>
@@ -497,7 +497,7 @@ export default function AboutPage(): React.ReactElement {
       </Section>
 
       {/* Holistic Care Section (Image Right) */}
-      <Section className="py-16 sm:py-20 md:py-24 bg-white dark:bg-transparent">
+      <Section className="py-16 sm:py-20 md:py-24 bg-background dark:bg-zinc-950 text-foreground border-t border-border">
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-16 items-center">
             <motion.div
@@ -506,7 +506,7 @@ export default function AboutPage(): React.ReactElement {
               viewport={{ once: true }}
               className="order-2 lg:order-1"
             >
-              <div className="relative aspect-video rounded-3xl overflow-hidden border border-zinc-200 dark:border-white/5 shadow-2xl">
+              <div className="relative aspect-video rounded-3xl overflow-hidden border border-border shadow-2xl">
                 <Image
                   src="/images/hero/elderly-care.png"
                   alt="Holistic Care"
@@ -523,21 +523,20 @@ export default function AboutPage(): React.ReactElement {
               viewport={{ once: true }}
               className="order-1 lg:order-2"
             >
-              <h2 className="text-secondary font-bold uppercase text-[10px] tracking-[0.3em] mb-4">Broad Support</h2>
-              <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-5 text-zinc-900 dark:text-white">A Holistic Approach to Well-being</h3>
-              <p className="text-zinc-600 dark:text-zinc-500 text-base leading-relaxed mb-6">
+              <span className="section-label text-purple-brand dark:text-purple-200 uppercase tracking-[0.2em] block mb-4">Broad Support</span>
+              <h2 className="section-title text-foreground mb-4 sm:mb-5">A Holistic Approach to Well-being</h2>
+              <p className="body text-muted-foreground leading-relaxed mb-6">
                 Our services extend beyond basic care. We look at the "whole person"—their social life, their health, their skills, and their happiness.
               </p>
-              <ul className="space-y-3.5">
-                {/* Update list items if needed to use secondary/primary */}
+              <ul className="space-y-3.5" role="list">
                 {[
                   "Personalized Allied Health Coordination",
                   "Social & Community Participation",
                   "Daily Living Skills Development",
                   "Complex Nursing Care Support"
                 ].map((item) => (
-                  <li key={item} className="flex items-center gap-3 text-zinc-600 dark:text-zinc-400 text-[15px] font-medium">
-                    <div className="w-1.5 h-1.5 rounded-full bg-secondary/80" />
+                  <li key={item} className="flex items-center gap-3 body-sm text-muted-foreground font-medium">
+                    <div className="w-1.5 h-1.5 rounded-full bg-secondary/80 shrink-0" />
                     {item}
                   </li>
                 ))}
@@ -548,11 +547,11 @@ export default function AboutPage(): React.ReactElement {
       </Section>
 
       {/* Quality & Safety grid */}
-      <Section className="bg-zinc-100 dark:bg-zinc-900/50 py-16 sm:py-20 md:py-24">
+      <Section className="bg-muted/40 dark:bg-zinc-900/50 py-16 sm:py-20 md:py-24 border-t border-border">
         <Container>
           <div className="text-center mb-10 sm:mb-12 md:mb-16">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 sm:mb-3 text-zinc-900 dark:text-white">Committed to Quality & Safety</h2>
-            <p className="text-zinc-600 dark:text-zinc-500 text-sm">How we maintain the highest standards of care.</p>
+            <h2 className="section-title text-foreground mb-2 sm:mb-3">Committed to Quality & Safety</h2>
+            <p className="subtitle text-muted-foreground">How we maintain the highest standards of care.</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
@@ -567,13 +566,13 @@ export default function AboutPage(): React.ReactElement {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="p-6 sm:p-8 rounded-2xl bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-white/5 hover:border-zinc-300 dark:hover:border-white/10 transition-all shadow-sm"
+                className="p-6 sm:p-8 rounded-2xl bg-background dark:bg-zinc-950 border border-border hover:border-zinc-300 dark:hover:border-white/10 transition-all shadow-sm"
               >
                 <div className="flex items-center gap-4 mb-5">
                   <div className="shrink-0">{item.icon}</div>
-                  <h4 className="text-lg font-bold text-zinc-900 dark:text-white">{item.title}</h4>
+                  <h4 className="subsection-title text-foreground">{item.title}</h4>
                 </div>
-                <p className="text-zinc-600 dark:text-zinc-500 text-[13px] leading-relaxed">{item.desc}</p>
+                <p className="body-sm text-muted-foreground leading-relaxed">{item.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -581,7 +580,7 @@ export default function AboutPage(): React.ReactElement {
       </Section>
 
       {/* Our Impact (Image Left) */}
-      <Section className="py-16 sm:py-20 md:py-24 bg-white dark:bg-transparent">
+      <Section className="py-16 sm:py-20 md:py-24 bg-background dark:bg-zinc-950 text-foreground border-t border-border">
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-16 items-center">
             <motion.div
@@ -589,26 +588,26 @@ export default function AboutPage(): React.ReactElement {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-secondary font-bold uppercase text-[10px] tracking-[0.3em] mb-3 sm:mb-4">Our Impact</h2>
-              <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-5 leading-tight text-zinc-900 dark:text-white">Real Progress, <br className="hidden sm:block" /> Real Lives</h3>
-              <p className="text-zinc-600 dark:text-zinc-500 text-base leading-relaxed mb-8">
+              <span className="section-label text-purple-brand dark:text-purple-200 uppercase tracking-[0.2em] block mb-3 sm:mb-4">Our Impact</span>
+              <h2 className="section-title text-foreground mb-4 sm:mb-5 leading-tight">Real Progress, <br className="hidden sm:block" /> Real Lives</h2>
+              <p className="body text-muted-foreground leading-relaxed mb-8">
                 Success is measured by the smiles on our participants' faces and the goals checked off their lists. Whether it's learning a new skill or becoming more active in the community, every victory is celebrated.
               </p>
 
-              <div className="bg-zinc-100 dark:bg-white/5 border border-zinc-200 dark:border-white/10 p-7 rounded-2xl relative overflow-hidden group">
+              <div className="bg-muted/60 dark:bg-white/5 border border-border p-7 rounded-2xl relative overflow-hidden group">
                 <div className="absolute top-0 right-0 p-4 opacity-5">
-                  <Quote className="w-12 h-12 text-zinc-900 dark:text-white" />
+                  <Quote className="w-12 h-12 text-foreground" />
                 </div>
-                <p className="text-zinc-600 dark:text-zinc-300 italic text-[15px] mb-6 leading-relaxed relative z-10">
+                <p className="body text-muted-foreground italic mb-6 leading-relaxed relative z-10">
                   "Revira Care has completely transformed how I approach my daily goals. I feel empowered and truly supported for the first time."
                 </p>
                 <div className="flex items-center gap-3.5 relative z-10">
                   <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary/80 to-secondary/80 p-px">
-                    <div className="w-full h-full rounded-full bg-zinc-100 dark:bg-zinc-900 flex items-center justify-center text-[10px] font-bold text-zinc-900 dark:text-white">SJ</div>
+                    <div className="w-full h-full rounded-full bg-muted dark:bg-zinc-900 flex items-center justify-center caption text-foreground">SJ</div>
                   </div>
                   <div>
-                    <div className="text-sm font-bold text-zinc-900 dark:text-white">Sarah J.</div>
-                    <div className="text-[10px] text-zinc-500 dark:text-zinc-500 uppercase font-bold tracking-widest">Participant</div>
+                    <div className="body-sm font-bold text-foreground">Sarah J.</div>
+                    <div className="caption text-muted-foreground uppercase tracking-wider">Participant</div>
                   </div>
                 </div>
               </div>
@@ -619,7 +618,7 @@ export default function AboutPage(): React.ReactElement {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <div className="relative aspect-video rounded-3xl overflow-hidden border border-zinc-200 dark:border-white/5 shadow-2xl">
+              <div className="relative aspect-video rounded-3xl overflow-hidden border border-border shadow-2xl">
                 <Image
                   src="/images/hero/therapy.png"
                   alt="Our Impact"
@@ -633,15 +632,15 @@ export default function AboutPage(): React.ReactElement {
       </Section>
 
       {/* FAQ Section */}
-      <Section className="bg-zinc-100 dark:bg-zinc-900/30 py-16 sm:py-20 md:py-24">
+      <Section className="bg-muted/40 dark:bg-zinc-900/30 py-16 sm:py-20 md:py-24 border-t border-border">
         <Container>
           <div className="max-w-3xl mx-auto">
             <div className="text-center mb-10 sm:mb-12 md:mb-16">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 sm:mb-3 text-zinc-900 dark:text-white">Common Questions</h2>
-              <p className="text-zinc-600 dark:text-zinc-500 text-sm">Everything you need to know about getting started.</p>
+              <h2 className="section-title text-foreground mb-2 sm:mb-3">Common Questions</h2>
+              <p className="subtitle text-muted-foreground">Everything you need to know about getting started.</p>
             </div>
 
-            <div className="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-white/5 rounded-2xl p-4 sm:p-6 md:p-8 shadow-sm">
+            <div className="bg-background dark:bg-zinc-900 border border-border rounded-2xl p-4 sm:p-6 md:p-8 shadow-sm">
               {FAQS.map((faq) => (
                 <FAQItem key={faq.question} question={faq.question} answer={faq.answer} />
               ))}
@@ -651,7 +650,7 @@ export default function AboutPage(): React.ReactElement {
       </Section>
 
       {/* Community Section */}
-      <Section className="py-16 sm:py-20 md:py-24 pb-32 bg-white dark:bg-transparent">
+      <Section className="py-16 sm:py-20 md:py-24 pb-32 bg-background dark:bg-zinc-950 text-foreground border-t border-border">
         <Container>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10 md:gap-12 text-center">
             {[
@@ -668,12 +667,12 @@ export default function AboutPage(): React.ReactElement {
                 className="flex flex-col items-center"
               >
                 <div className="flex items-center gap-4 mb-5">
-                  <div className="p-3 rounded-2xl bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-white/5 shrink-0">
+                  <div className="p-3 rounded-2xl bg-muted dark:bg-zinc-900 border border-border shrink-0">
                     {feature.icon}
                   </div>
-                  <h4 className="text-lg font-bold text-zinc-900 dark:text-white">{feature.title}</h4>
+                  <h4 className="subsection-title text-foreground">{feature.title}</h4>
                 </div>
-                <p className="text-zinc-600 dark:text-zinc-500 text-[13px] leading-relaxed max-w-[240px]">{feature.desc}</p>
+                <p className="body-sm text-muted-foreground leading-relaxed max-w-[240px]">{feature.desc}</p>
               </motion.div>
             ))}
           </div>

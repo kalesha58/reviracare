@@ -63,7 +63,7 @@ export function NDISProviderSection(): React.ReactElement {
             <h2 className="section-title text-foreground mb-6">
               NDIS Provider Australia
             </h2>
-            <p className="text-muted-foreground text-sm sm:text-base md:text-lg leading-relaxed mb-6 sm:mb-8 bg-secondary/5 dark:bg-secondary/10 border border-secondary/10 rounded-2xl p-4 sm:p-6">
+            <p className="subtitle text-muted-foreground leading-relaxed mb-6 sm:mb-8 bg-secondary/5 dark:bg-secondary/10 border border-secondary/10 rounded-2xl p-4 sm:p-6">
               We are committed to supporting NDIS participants in living a healthy
               lifestyle on their own terms as a reputable NDIS provider in Australia.
               By giving you the most individualized support and assisting you in
@@ -72,14 +72,14 @@ export function NDISProviderSection(): React.ReactElement {
               created to improve participants' well-being and help them achieve
               their health objectives more quickly.
             </p>
-            <h3 className="text-lg font-bold text-foreground mb-4">
+            <h3 className="subsection-title text-foreground mb-4">
               Our NDIS Registered Providers Expertise in:
             </h3>
             <ul className="space-y-3 mb-10">
               {NDIS_EXPERTISE.map((item) => (
                 <li
                   key={item}
-                  className="flex items-center gap-3 text-muted-foreground"
+                  className="flex items-center gap-3 text-muted-foreground body"
                 >
                   <span className="w-2 h-2 rounded-full bg-secondary shrink-0" />
                   <span>{item}</span>
@@ -88,7 +88,7 @@ export function NDISProviderSection(): React.ReactElement {
             </ul>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 px-6 py-3.5 bg-purple-brand text-primary-foreground font-bold rounded-2xl hover:opacity-90 transition-opacity"
+              className="inline-flex items-center gap-2 px-6 py-3.5 bg-purple-brand text-primary-foreground font-bold body rounded-2xl hover:opacity-90 transition-opacity"
             >
               Connect With Revira Care
               <ArrowRight className="w-5 h-5" />

@@ -48,22 +48,26 @@
   --section-py: 3rem;
   --section-px: 1rem;
 
+  /* Hero headline - alternating solid fill (white + purple like footer) */
+  --hero-word-solid: #ffffff;
+
   /* Section typography - use across home, about, careers, blogs */
-  --text-section-label-size: 0.75rem;
+  --text-section-label-size: 0.8125rem;
   --text-section-label-tracking: 0.2em;
   --text-section-title-size: clamp(1.875rem, 4vw, 2.25rem);
   --text-section-title-size-md: clamp(2.25rem, 5vw, 3rem);
   --text-hero-title-size: clamp(1.75rem, 4.5vw, 3.75rem);
   --text-hero-title-size-lg: clamp(2.5rem, 5.5vw, 4.5rem);
-  --text-card-title-size: 1rem;
-  --text-card-title-size-sm: 1.125rem;
+  --text-card-title-size: 1.0625rem;
+  --text-card-title-size-sm: 1.25rem;
   --text-subsection-title-size: 1.125rem;
-  --text-subtitle-size: 1rem;
+  --text-subsection-title-size-md: 1.25rem;
+  --text-subtitle-size: 1.0625rem;
   --text-subtitle-size-md: 1.125rem;
   --text-body-size: 1rem;
-  --text-body-sm-size: 0.875rem;
-  --text-caption-size: 0.75rem;
-  --text-nav-size: 0.875rem;
+  --text-body-sm-size: 0.9375rem;
+  --text-caption-size: 0.8125rem;
+  --text-nav-size: 1rem;
   --text-nav-mobile-size: 1.25rem;
   --text-nav-dropdown-size: 1.125rem;
   --text-footer-heading-size: 0.875rem;
@@ -75,14 +79,14 @@
   --text-footer-legal-size-md: 0.9375rem;
 
   /* Font weights - consistent across header, sections, titles, subtitles */
-  --font-weight-nav: 600;
+  --font-weight-nav: 700;
   --font-weight-label: 700;
   --font-weight-title: 700;
   --font-weight-hero: 800;
   --font-weight-subtitle: 500;
   --font-weight-body: 400;
   --font-weight-body-medium: 500;
-  --font-weight-caption: 700;
+  --font-weight-caption: 600;
 }
 
 .dark {
@@ -176,6 +180,14 @@ body {
 .hero-title {
   font-size: var(--text-hero-title-size);
   font-weight: var(--font-weight-hero);
+}
+
+.hero-word-solid {
+  color: var(--hero-word-solid);
+}
+
+.hero-word-accent {
+  color: var(--purple-200);
 }
 
 @media (min-width: 768px) {
@@ -288,4 +300,10 @@ body {
 .subsection-title {
   font-size: var(--text-subsection-title-size);
   font-weight: var(--font-weight-title);
+}
+
+@media (min-width: 768px) {
+  .subsection-title {
+    font-size: var(--text-subsection-title-size-md);
+  }
 }
