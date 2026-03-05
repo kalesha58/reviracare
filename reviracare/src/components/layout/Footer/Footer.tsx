@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Container } from "@/components/ui/Container";
 import {
@@ -54,12 +55,22 @@ export function Footer(): React.ReactElement {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 lg:gap-14 pt-16 pb-14 lg:pt-20 lg:pb-16">
           {/* Column 1: Logo & About */}
           <div className="space-y-6">
-            <Link href="/" className="inline-block">
-              <BrandLogo
-                width={220}
-                height={56}
-                imageClassName="brightness-0 invert"
-              />
+            <Link href="/" className="inline-block group">
+              <div className="flex items-center gap-2">
+                <BrandLogo
+                  width={220}
+                  height={56}
+                  imageClassName="brightness-0 invert"
+                />
+                <div className="relative w-20 h-10">
+                  <Image
+                    src="/images/NDIS_LOGO.png"
+                    alt="NDIS Logo"
+                    fill
+                    className="object-contain brightness-0 invert"
+                  />
+                </div>
+              </div>
             </Link>
             <p className="footer-body text-white/85 leading-relaxed max-w-sm">
               As a reputed{" "}

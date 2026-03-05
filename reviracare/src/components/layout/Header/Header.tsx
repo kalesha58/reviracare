@@ -59,21 +59,32 @@ export function Header(): React.ReactElement {
           className="flex items-center group"
           onClick={() => setMobileOpen(false)}
         >
-          <div className="transition-transform group-hover:scale-105 shrink-0">
-            <div className="md:hidden">
-              <BrandLogo
-                width={180}
-                height={60}
-                priority
-                imageClassName="dark:brightness-0 dark:invert"
-              />
+          <div className="flex items-center gap-2 transition-transform group-hover:scale-105 shrink-0">
+            <div className="flex items-center">
+              <div className="md:hidden">
+                <BrandLogo
+                  width={180}
+                  height={60}
+                  priority
+                  imageClassName="dark:brightness-0 dark:invert"
+                />
+              </div>
+              <div className="hidden md:block">
+                <BrandLogo
+                  width={240}
+                  height={80}
+                  priority
+                  imageClassName="dark:brightness-0 dark:invert"
+                />
+              </div>
             </div>
-            <div className="hidden md:block">
-              <BrandLogo
-                width={240}
-                height={80}
+            <div className="relative w-14 h-10 sm:w-20 sm:h-12 md:w-24 md:h-16">
+              <Image
+                src="/images/NDIS_LOGO.png"
+                alt="NDIS Logo"
+                fill
+                className="object-contain"
                 priority
-                imageClassName="dark:brightness-0 dark:invert"
               />
             </div>
           </div>
@@ -124,13 +135,6 @@ export function Header(): React.ReactElement {
               Support Services
             </div>
           </div>
-          <Link
-            href="/contact"
-            className="px-5 py-2 bg-purple-brand text-white rounded-full hover:opacity-90 transition-all flex items-center gap-2 shadow-md shadow-purple-brand/10 font-bold text-sm hover:scale-[1.02] active:scale-95"
-          >
-            Get Started
-            <ArrowRight className="w-3.5 h-3.5" />
-          </Link>
         </div>
 
         {/* Mobile Toggle */}
@@ -194,14 +198,6 @@ export function Header(): React.ReactElement {
                       <div className="text-sm text-purple-brand dark:text-purple-200 font-bold leading-tight">Available Always</div>
                     </div>
                   </div>
-                  <Link
-                    href="/contact"
-                    onClick={() => setMobileOpen(false)}
-                    className="w-full h-12 bg-purple-brand text-white rounded-xl font-bold flex items-center justify-center gap-2 shadow-lg shadow-purple-brand/20 active:scale-[0.98] transition-all text-sm"
-                  >
-                    Get Started
-                    <ArrowRight className="w-4 h-4" />
-                  </Link>
                 </div>
               </motion.div>
             )}
