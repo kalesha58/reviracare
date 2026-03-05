@@ -77,8 +77,8 @@ export function Footer(): React.ReactElement {
               <div className="text-[11px] text-white/70 font-medium">
                 ABN <span className="text-white">38 681 225 785</span>
               </div>
-              <div className="inline-flex items-center gap-2 text-[10px] font-bold text-emerald-400 uppercase tracking-[0.2em] mt-1 bg-emerald-400/5 px-2.5 py-1 rounded-md border border-emerald-400/20">
-                <span className="w-1 h-1 rounded-full bg-emerald-400 animate-pulse" />
+              <div className="inline-flex items-center gap-2 text-[10px] font-bold text-white uppercase tracking-[0.2em] mt-1">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
                 NDIS Registered Provider
               </div>
             </div>
