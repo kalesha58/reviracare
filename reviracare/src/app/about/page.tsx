@@ -154,9 +154,9 @@ export default function AboutPage(): React.ReactElement {
         </div>
 
         <Container className="relative z-20">
-          <div className="grid grid-cols-1 xl:grid-cols-12 gap-8 sm:gap-10 xl:gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-12 items-center">
             {/* Left Content */}
-            <div className="xl:col-span-8 flex flex-col items-start text-left min-w-0 max-w-full">
+            <div className="lg:col-span-8 flex flex-col items-start text-left min-w-0 max-w-full">
               <motion.div
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -196,8 +196,8 @@ export default function AboutPage(): React.ReactElement {
               </motion.div>
             </div>
 
-            {/* Right Badges (Desktop only - xl to avoid overlap on tablet) */}
-            <div className="hidden xl:flex xl:col-span-4 flex-col items-end gap-3 sm:gap-4 flex-shrink-0">
+            {/* Right Badge (Desktop only) */}
+            <div className="hidden lg:flex lg:col-span-4 flex-col items-end gap-3 sm:gap-4 flex-shrink-0">
               <motion.div
                 initial={{ opacity: 0, x: 50 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -233,30 +233,33 @@ export default function AboutPage(): React.ReactElement {
           </div>
         </Container>
 
-        {/* Scroll Indicator & Mobile Badges */}
-        <div className="absolute bottom-4 left-0 right-0 flex flex-col items-center gap-6 z-20">
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1.2, duration: 1 }}
-            className="flex flex-col items-center gap-2"
-          >
-            <div className="w-px h-8 bg-gradient-to-b from-white to-transparent" />
-            <span className="caption text-white/90 dark:text-zinc-400">Scroll</span>
-          </motion.div>
+        {/* Floating Controls Overlay */}
+        <div className="absolute inset-x-0 bottom-0 z-30 pointer-events-none">
+          {/* Scroll Indicator */}
+          <div className="flex flex-col items-center pb-8 sm:pb-12">
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 1.2, duration: 1 }}
+              className="flex flex-col items-center gap-2"
+            >
+              <div className="w-px h-8 bg-gradient-to-b from-white to-transparent" />
+              <span className="caption text-white/90">Scroll</span>
+            </motion.div>
+          </div>
 
           {/* Mobile/Tablet Single Centered Badge */}
-          <div className="xl:hidden flex justify-center px-4 sm:px-6 w-full pb-4 sm:pb-6">
+          <div className="lg:hidden flex justify-center px-4 sm:px-6 w-full pb-6 sm:pb-8 pointer-events-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 1.4 }}
-              className="w-full max-w-[300px] sm:max-w-[340px]"
+              className="w-full max-w-[280px] sm:max-w-[320px]"
             >
-              <div className="flex items-center justify-start gap-4 sm:gap-5 bg-white border-2 border-purple-brand/20 shadow-xl rounded-2xl p-4 sm:p-5 w-full min-h-[90px] box-border relative overflow-hidden group">
+              <div className="flex items-center justify-start gap-3 sm:gap-4 bg-white border-2 border-purple-brand/20 shadow-xl rounded-2xl p-3 sm:p-4 w-full min-h-[80px] sm:min-h-[90px] box-border relative overflow-hidden group">
                 <div className="absolute top-0 right-0 w-24 h-24 bg-purple-brand/[0.02] rounded-full -mr-12 -mt-12" />
 
-                <div className="w-16 h-14 sm:w-20 sm:h-16 flex shrink-0 items-center justify-center p-2 bg-white rounded-xl shadow-md border border-purple-brand/10 z-10">
+                <div className="w-14 h-11 sm:w-20 sm:h-16 flex shrink-0 items-center justify-center p-1.5 bg-white rounded-xl shadow-md border border-purple-brand/10 z-10 transition-transform">
                   <Image
                     src="/images/hero/National_Disability_Insurance_Scheme_logo.svg.png"
                     alt="NDIS Registered Provider"
@@ -267,11 +270,11 @@ export default function AboutPage(): React.ReactElement {
                 </div>
 
                 <div className="flex flex-col justify-center min-w-0 z-10 flex-1">
-                  <div className="text-[14px] sm:text-[16px] font-black text-zinc-900 uppercase leading-tight mb-1 tracking-tight">
+                  <div className="text-[12px] sm:text-[14px] font-black text-zinc-900 uppercase leading-tight mb-1 tracking-tight">
                     Registered <br className="sm:hidden" /> NDIS Provider
                   </div>
                   <div className="flex items-center gap-2">
-                    <div className="text-[11px] sm:text-[12px] font-black text-purple-brand tracking-[0.12em] bg-purple-brand/10 px-2.5 py-1 rounded-full border border-purple-brand/10 w-fit">
+                    <div className="text-[9px] sm:text-[11px] font-black text-purple-brand tracking-[0.12em] bg-purple-brand/10 px-2 py-0.5 rounded-full border border-purple-brand/10 w-fit">
                       NO: 4053379341
                     </div>
                   </div>

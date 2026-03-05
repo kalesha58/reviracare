@@ -20,6 +20,8 @@ import {
     Check,
 } from "lucide-react";
 import { useAccessibility } from "./AccessibilityContext";
+import { ThemeToggle } from "@/components/theme/ThemeToggle";
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 
 export const AccessibilityWidget: React.FC = () => {
@@ -65,10 +67,17 @@ export const AccessibilityWidget: React.FC = () => {
                     initial={{ scale: 0, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1 }}
                     onClick={() => setIsOpen(true)}
-                    className="fixed top-24 right-6 z-[9999] p-3 bg-[#4CAF50] text-white rounded-full shadow-2xl hover:scale-110 transition-transform flex items-center justify-center border-2 border-white"
+                    className="fixed top-24 right-6 z-[9999] w-14 h-14 bg-white dark:bg-zinc-900 border-2 border-purple-brand/20 text-purple-brand rounded-full shadow-2xl hover:scale-110 transition-transform flex items-center justify-center p-2"
                     aria-label="Open accessibility menu"
                 >
-                    <Accessibility className="w-7 h-7 acc-icon" />
+                    <div className="w-full h-full relative">
+                        <Image
+                            src="/images/logo.png"
+                            alt="Brand Logo"
+                            fill
+                            className="object-contain"
+                        />
+                    </div>
                 </motion.button>
             )}
 
@@ -86,8 +95,13 @@ export const AccessibilityWidget: React.FC = () => {
                         <div className="relative overflow-hidden shrink-0">
                             <div className="bg-[#4CAF50] p-6 pt-10 pb-12 flex items-center justify-between text-white">
                                 <div className="flex items-center gap-3">
-                                    <div className="bg-white/20 p-2 rounded-full">
-                                        <Accessibility className="w-6 h-6 acc-icon" />
+                                    <div className="bg-white p-1.5 rounded-xl shadow-sm w-12 h-10 relative">
+                                        <Image
+                                            src="/images/logo.png"
+                                            alt="Logo"
+                                            fill
+                                            className="object-contain p-1"
+                                        />
                                     </div>
                                     <h2 className="text-2xl font-bold tracking-tight">Accessibility</h2>
                                 </div>

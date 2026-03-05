@@ -39,11 +39,11 @@ const BADGES = [
   {
     id: "ndis-official",
     content: (
-      <div className="flex items-center justify-start gap-4 sm:gap-5 bg-white border-2 border-purple-brand/20 shadow-2xl rounded-2xl md:rounded-[2rem] p-4 sm:p-5 md:p-6 w-full min-w-0 min-h-[85px] sm:min-h-[100px] md:h-[120px] box-border relative overflow-hidden group">
+      <div className="flex items-center justify-start gap-3 sm:gap-4 md:gap-5 bg-white border-2 border-purple-brand/20 shadow-2xl rounded-2xl md:rounded-[2rem] p-3 sm:p-4 md:p-6 w-full min-w-0 min-h-[80px] sm:min-h-[100px] md:h-[120px] box-border relative overflow-hidden group">
         {/* Decorative accent */}
         <div className="absolute top-0 right-0 w-32 h-32 bg-purple-brand/[0.03] rounded-full -mr-16 -mt-16" />
 
-        <div className="w-16 sm:w-20 md:w-24 h-12 sm:h-16 md:h-20 flex shrink-0 items-center justify-center p-2.5 bg-white rounded-xl shadow-lg border border-purple-brand/10 z-10 transition-transform group-hover:scale-105">
+        <div className="w-14 h-11 sm:w-20 sm:h-16 md:w-24 md:h-20 flex shrink-0 items-center justify-center p-1.5 sm:p-2.5 bg-white rounded-xl shadow-lg border border-purple-brand/10 z-10 transition-transform group-hover:scale-105">
           <Image
             src="/images/hero/National_Disability_Insurance_Scheme_logo.svg.png"
             alt="NDIS Registered Provider"
@@ -54,11 +54,11 @@ const BADGES = [
         </div>
 
         <div className="flex flex-col justify-center min-w-0 z-10 flex-1">
-          <div className="text-[13px] sm:text-[15px] md:text-[18px] font-black text-zinc-900 uppercase leading-tight mb-1.5 tracking-tight">
+          <div className="text-[12px] sm:text-[15px] md:text-[18px] font-black text-zinc-900 uppercase leading-tight mb-1 sm:mb-1.5 tracking-tight">
             Registered <br className="sm:hidden" /> NDIS Provider
           </div>
           <div className="flex items-center gap-2">
-            <div className="text-[10px] sm:text-[11px] md:text-[13px] font-black text-purple-brand tracking-[0.15em] bg-purple-brand/10 px-3 py-1 rounded-full border border-purple-brand/10">
+            <div className="text-[9px] sm:text-[11px] md:text-[13px] font-black text-purple-brand tracking-[0.15em] bg-purple-brand/10 px-2 sm:px-3 py-0.5 sm:py-1 rounded-full border border-purple-brand/10">
               NO: 4053379341
             </div>
           </div>
@@ -106,9 +106,9 @@ export default function HomePage(): React.ReactElement {
           </AnimatePresence>
         </div>
         <Container className="relative z-20">
-          <div className="grid grid-cols-1 xl:grid-cols-12 gap-8 sm:gap-10 xl:gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-12 items-center">
             {/* Left Content */}
-            <div className="xl:col-span-8 flex flex-col items-start text-left min-w-0 max-w-full overflow-visible">
+            <div className="lg:col-span-8 xl:col-span-8 flex flex-col items-start text-left min-w-0 max-w-full overflow-visible">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={currentImage}
@@ -155,8 +155,8 @@ export default function HomePage(): React.ReactElement {
 
             </div>
 
-            {/* Right Badges (Desktop/Tablet) - only on xl to avoid overlap */}
-            <div className="hidden xl:flex xl:col-span-4 flex-col items-end gap-3 sm:gap-3.5 flex-shrink-0">
+            {/* Right Badges (Desktop/Tablet) - only on lg to avoid overlap */}
+            <div className="hidden lg:flex lg:col-span-4 flex-col items-end gap-3 sm:gap-3.5 flex-shrink-0">
               {BADGES.map((badge, index) => (
                 <motion.div
                   key={badge.id}
@@ -172,25 +172,28 @@ export default function HomePage(): React.ReactElement {
           </div>
         </Container>
 
-        {/* Scroll Indicator & Mobile Badges */}
-        <div className="absolute bottom-4 left-0 right-0 flex flex-col items-center gap-6">
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1.2, duration: 1 }}
-            className="flex flex-col items-center gap-2"
-          >
-            <div className="w-px h-8 bg-gradient-to-b from-white to-transparent" />
-            <span className="caption text-white/90 dark:text-zinc-400">Scroll</span>
-          </motion.div>
+        {/* Floating Controls Overlay */}
+        <div className="absolute inset-x-0 bottom-0 z-30 pointer-events-none">
+          {/* Scroll Indicator */}
+          <div className="flex flex-col items-center pb-8 sm:pb-12">
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 1.2, duration: 1 }}
+              className="flex flex-col items-center gap-2"
+            >
+              <div className="w-px h-8 bg-gradient-to-b from-white to-transparent" />
+              <span className="caption text-white/90">Scroll</span>
+            </motion.div>
+          </div>
 
-          {/* Mobile/Tablet Single Centered Badge */}
-          <div className="xl:hidden flex justify-center px-4 sm:px-6 w-full pb-4 sm:pb-6">
+          {/* Mobile/Tablet Single Centered Badge - Only visible on sm/md */}
+          <div className="lg:hidden flex justify-center px-4 sm:px-6 w-full pb-6 sm:pb-8 pointer-events-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 1.4 }}
-              className="w-full max-w-[300px] sm:max-w-[340px]"
+              className="w-full max-w-[280px] sm:max-w-[320px]"
             >
               {BADGES[0].content}
             </motion.div>

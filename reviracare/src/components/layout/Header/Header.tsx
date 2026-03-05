@@ -56,7 +56,7 @@ export function Header(): React.ReactElement {
       <Container className="flex items-center justify-between">
         <Link
           href="/"
-          className="flex items-center gap-3 group"
+          className="flex items-center group"
           onClick={() => setMobileOpen(false)}
         >
           <div className="transition-transform group-hover:scale-105 shrink-0">
@@ -67,9 +67,6 @@ export function Header(): React.ReactElement {
               imageClassName="dark:brightness-0 dark:invert"
             />
           </div>
-          <span className="font-display text-lg sm:text-xl font-bold text-slate-900 dark:text-zinc-100 tracking-tight group-hover:text-purple-brand dark:group-hover:text-purple-200 transition-colors">
-            {SITE_NAME}
-          </span>
         </Link>
 
         {/* Desktop Nav */}
