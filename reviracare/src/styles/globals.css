@@ -335,9 +335,18 @@ html {
   font-size: calc(var(--acc-scale) * 100%) !important;
 }
 
-/* Isolate Widget from root scaling */
+/* Isolate Widget from root scaling using transforms to counteract REM scaling */
 .acc-widget-panel {
-  font-size: calc(1rem / var(--acc-scale)) !important;
+  transform: scale(calc(1 / var(--acc-scale))) !important;
+  transform-origin: top right !important;
+  width: calc(100% * var(--acc-scale)) !important;
+  height: calc(100% * var(--acc-scale)) !important;
+  max-width: calc(480px * var(--acc-scale)) !important;
+}
+
+/* Ensure fixed position buttons also stay consistent */
+.acc-widget-toggle {
+  transform: scale(calc(1 / var(--acc-scale))) !important;
 }
 
 .acc-line-l1 #acc-content {

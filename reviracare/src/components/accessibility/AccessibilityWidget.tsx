@@ -47,11 +47,14 @@ export const AccessibilityWidget: React.FC = () => {
         reset,
     } = useAccessibility();
 
+    const fontSizeScales = [1, 1.05, 1.15, 1.25, 1.35];
+    const currentScale = fontSizeScales[fontSizeLevel] || 1;
+
     if (!isVisible && !isOpen) {
         return (
             <button
                 onClick={() => setIsVisible(true)}
-                className="fixed bottom-6 right-6 z-[9999] p-3 bg-secondary text-white rounded-full shadow-2xl hover:scale-110 transition-transform"
+                className="fixed bottom-6 right-6 z-[9999] p-3 bg-secondary text-white rounded-full shadow-2xl hover:scale-110 transition-transform acc-widget-toggle"
                 aria-label="Show accessibility options"
             >
                 <Accessibility className="w-6 h-6 acc-icon" />
@@ -66,8 +69,9 @@ export const AccessibilityWidget: React.FC = () => {
                 <motion.button
                     initial={{ scale: 0, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1 }}
+                    style={{ scale: 1 / currentScale }}
                     onClick={() => setIsOpen(true)}
-                    className="fixed top-24 right-6 z-[9999] p-3 bg-[#4CAF50] text-white rounded-full shadow-2xl hover:scale-110 transition-transform flex items-center justify-center border-2 border-white"
+                    className="fixed top-24 right-6 z-[9999] p-3 bg-[#4CAF50] text-white rounded-full shadow-2xl hover:scale-110 transition-transform flex items-center justify-center border-2 border-white acc-widget-toggle"
                     aria-label="Open accessibility menu"
                 >
                     <Accessibility className="w-7 h-7 acc-icon" />
@@ -82,7 +86,15 @@ export const AccessibilityWidget: React.FC = () => {
                         animate={{ x: 0, opacity: 1 }}
                         exit={{ x: "100%", opacity: 0 }}
                         transition={{ type: "spring", damping: 25, stiffness: 200 }}
-                        className="fixed top-0 right-0 h-full w-full max-w-[480px] bg-white dark:bg-zinc-900 shadow-2xl z-[99999] flex flex-col overflow-hidden pointer-events-auto acc-widget-panel"
+                        style={{
+                            scale: 1 / currentScale,
+                            originX: 1,
+                            originY: 0,
+                            width: `${100 * currentScale}%`,
+                            height: `${100 * currentScale}%`,
+                            maxWidth: `${480 * currentScale}px`
+                        }}
+                        className="fixed top-0 right-0 z-[99999] bg-white dark:bg-zinc-900 shadow-2xl flex flex-col overflow-hidden pointer-events-auto acc-widget-panel"
                     >
                         {/* Header */}
                         <div className="relative overflow-hidden shrink-0">
