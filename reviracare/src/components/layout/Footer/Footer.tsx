@@ -21,7 +21,6 @@ const IMPORTANT_LINKS = [
   { label: "Services", href: "/services" },
   { label: "NDIS", href: "/ndis" },
   { label: "Contact Us", href: "/contact" },
-  { label: "Blogs", href: "/blogs" },
   { label: "Careers", href: "/careers" },
 ] as const;
 

@@ -9,3 +9,11 @@ export interface ILatestNewsPost {
   readTimeMinutes: number;
   date: string;
 }
+
+export interface ILatestNewsSectionProps {
+  id?: string;
+  title?: string;
+  label?: string;
+  showViewAll?: boolean;
+  limit?: number;
+}

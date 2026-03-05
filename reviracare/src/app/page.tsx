@@ -10,7 +10,7 @@ import Image from "next/image";
 import { ServiceShowcase } from "@/components/sections/ServiceShowcase";
 import { NDISProviderSection } from "@/components/sections/NDISProviderSection";
 import { WhyChooseSection } from "@/components/sections/WhyChooseSection";
-import { LatestNewsSection } from "@/components/sections/LatestNewsSection";
+// import { LatestNewsSection } from "@/components/sections/LatestNewsSection";
 import { SupportConfidenceSection } from "@/components/sections/SupportConfidenceSection";
 import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
 
@@ -39,60 +39,30 @@ const BADGES = [
   {
     id: "ndis-official",
     content: (
-      <div className="flex items-center justify-start gap-2 sm:gap-3 md:gap-4 bg-white/95 dark:bg-zinc-900/90 backdrop-blur-xl px-3 py-2.5 sm:px-4 sm:py-3 md:px-5 md:py-2 rounded-xl sm:rounded-2xl border-2 border-zinc-200 dark:border-white/10 shadow-xl w-full min-w-0 min-h-[56px] sm:min-h-[64px] md:h-[72px] box-border">
-        <div className="w-9 sm:w-10 md:w-12 flex shrink-0 items-center justify-center">
+      <div className="flex items-center justify-start gap-4 sm:gap-5 bg-white border-2 border-purple-brand/20 shadow-2xl rounded-2xl md:rounded-[2rem] p-4 sm:p-5 md:p-6 w-full min-w-0 min-h-[85px] sm:min-h-[100px] md:h-[120px] box-border relative overflow-hidden group">
+        {/* Decorative accent */}
+        <div className="absolute top-0 right-0 w-32 h-32 bg-purple-brand/[0.03] rounded-full -mr-16 -mt-16" />
+
+        <div className="w-16 sm:w-20 md:w-24 h-12 sm:h-16 md:h-20 flex shrink-0 items-center justify-center p-2.5 bg-white rounded-xl shadow-lg border border-purple-brand/10 z-10 transition-transform group-hover:scale-105">
           <Image
             src="/images/hero/National_Disability_Insurance_Scheme_logo.svg.png"
             alt="NDIS Registered Provider"
-            width={48}
-            height={28}
-            className="object-contain h-5 sm:h-6 md:h-8 w-auto"
+            width={96}
+            height={60}
+            className="object-contain h-full w-auto"
           />
         </div>
-        <div className="text-caption text-zinc-800 dark:text-zinc-200 uppercase leading-snug truncate min-w-0">
-          Registered <br className="hidden sm:block" /> NDIS Provider
+
+        <div className="flex flex-col justify-center min-w-0 z-10 flex-1">
+          <div className="text-[13px] sm:text-[15px] md:text-[18px] font-black text-zinc-900 uppercase leading-tight mb-1.5 tracking-tight">
+            Registered <br className="sm:hidden" /> NDIS Provider
+          </div>
+          <div className="flex items-center gap-2">
+            <div className="text-[10px] sm:text-[11px] md:text-[13px] font-black text-purple-brand tracking-[0.15em] bg-purple-brand/10 px-3 py-1 rounded-full border border-purple-brand/10">
+              NO: 4053379341
+            </div>
+          </div>
         </div>
-      </div>
-    ),
-  },
-  {
-    id: "ndis-support",
-    content: (
-      <div className="flex items-center justify-start gap-2 sm:gap-3 md:gap-4 bg-white/95 dark:bg-zinc-900/90 backdrop-blur-xl px-3 py-2.5 sm:px-4 sm:py-3 md:px-5 md:py-2 rounded-xl sm:rounded-2xl border-2 border-zinc-200 dark:border-white/10 shadow-xl w-full min-w-0 min-h-[56px] sm:min-h-[64px] md:h-[72px] box-border">
-        <div className="w-9 sm:w-10 md:w-12 flex shrink-0 items-center justify-center">
-          <Image
-            src="/images/hero/We-Support-NDIS-150-x-150-px-5.png"
-            alt="We Support NDIS"
-            width={40}
-            height={40}
-            className="object-contain h-6 sm:h-8 md:h-10 w-auto"
-          />
-        </div>
-        <div className="text-caption text-zinc-800 dark:text-zinc-200 uppercase leading-snug truncate min-w-0">
-          Official <br className="hidden sm:block" /> Registered
-        </div>
-      </div>
-    ),
-  },
-  {
-    id: "phone",
-    content: (
-      <div className="flex items-center justify-start gap-2 sm:gap-3 md:gap-4 bg-white/95 dark:bg-zinc-900/90 backdrop-blur-xl px-3 py-2.5 sm:px-4 sm:py-3 md:px-5 md:py-2 rounded-xl sm:rounded-2xl border-2 border-zinc-200 dark:border-white/10 shadow-xl w-full min-w-0 min-h-[56px] sm:min-h-[64px] md:h-[72px] box-border">
-        <div className="w-9 sm:w-10 md:w-12 flex shrink-0 items-center justify-center">
-          <span className="text-lg sm:text-xl md:text-2xl" aria-hidden>📱</span>
-        </div>
-        <span className="text-caption text-zinc-800 dark:text-zinc-200 uppercase tracking-wider truncate min-w-0">1800 REVIRA</span>
-      </div>
-    ),
-  },
-  {
-    id: "support",
-    content: (
-      <div className="flex items-center justify-start gap-2 sm:gap-3 md:gap-4 bg-white/95 dark:bg-zinc-900/90 backdrop-blur-xl px-3 py-2.5 sm:px-4 sm:py-3 md:px-5 md:py-2 rounded-xl sm:rounded-2xl border-2 border-zinc-200 dark:border-white/10 shadow-xl w-full min-w-0 min-h-[56px] sm:min-h-[64px] md:h-[72px] box-border">
-        <div className="w-9 sm:w-10 md:w-12 flex shrink-0 items-center justify-center">
-          <div className="text-base sm:text-lg md:text-xl font-black text-purple-brand dark:text-purple-200 leading-none">24/7</div>
-        </div>
-        <div className="text-caption text-zinc-800 dark:text-zinc-200 uppercase leading-snug truncate min-w-0">Support <br className="hidden sm:block" /> Services</div>
       </div>
     ),
   },
@@ -193,7 +163,7 @@ export default function HomePage(): React.ReactElement {
                   initial={{ opacity: 0, x: 50 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.8, delay: 0.4 + (index * 0.1) }}
-                  className="w-full max-w-[16rem] xl:w-64"
+                  className="w-full max-w-[20rem] xl:w-80"
                 >
                   {badge.content}
                 </motion.div>
@@ -214,20 +184,16 @@ export default function HomePage(): React.ReactElement {
             <span className="caption text-white/90 dark:text-zinc-400">Scroll</span>
           </motion.div>
 
-          {/* Mobile/Tablet Horizontal Badges - scroll left to right */}
-          <div className="xl:hidden flex flex-nowrap justify-start items-stretch gap-2 sm:gap-3 pl-4 pr-4 sm:pl-6 sm:pr-6 w-full overflow-x-auto overflow-y-hidden scroll-smooth pb-4 sm:pb-6 [scrollbar-width:thin] [scrollbar-color:rgba(255,255,255,0.3)_transparent] [&::-webkit-scrollbar]:h-1 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-white/20" style={{ WebkitOverflowScrolling: 'touch' }}>
-            {BADGES.map((badge, index) => (
-              <motion.div
-                key={`mobile-${badge.id}`}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 1.4 + (index * 0.1) }}
-                className="flex-shrink-0 w-[150px] min-w-[150px] sm:w-52 sm:min-w-[13rem] md:w-56 md:min-w-[14rem]"
-              >
-                {badge.content}
-              </motion.div>
-            ))}
-            <div className="flex-shrink-0 w-2" aria-hidden />
+          {/* Mobile/Tablet Single Centered Badge */}
+          <div className="xl:hidden flex justify-center px-4 sm:px-6 w-full pb-4 sm:pb-6">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 1.4 }}
+              className="w-full max-w-[300px] sm:max-w-[340px]"
+            >
+              {BADGES[0].content}
+            </motion.div>
           </div>
         </div>
       </section>
@@ -241,17 +207,17 @@ export default function HomePage(): React.ReactElement {
       {/* Why Choose Revira Care */}
       <WhyChooseSection />
 
-      {/* Latest News / Blogs */}
-      <LatestNewsSection />
+      {/* Latest News / Blogs - Commented out as requested
+      <LatestNewsSection limit={3} showViewAll={true} />
+      */}
 
       {/* Support at every step, Confidence in every moment */}
       <SupportConfidenceSection />
 
-      {/* Welcome Section */}
+      {/* Welcome Section - Commented out as requested
       <Section className="bg-white dark:bg-zinc-950 text-foreground border-t border-purple-brand/20 dark:border-purple-brand/30 overflow-hidden">
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-16 items-start">
-            {/* Left: Intro + highlights */}
             <div className="lg:col-span-7">
               <span className="section-label inline-flex items-center gap-2 text-purple-brand dark:text-purple-200 uppercase tracking-[0.2em] mb-4">
                 <span className="w-1.5 h-1.5 rounded-full bg-purple-brand dark:bg-purple-200 animate-pulse" />
@@ -287,7 +253,6 @@ export default function HomePage(): React.ReactElement {
               </div>
             </div>
 
-            {/* Right: Stats cards */}
             <div className="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4 sm:gap-6 auto-rows-fr">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -324,9 +289,11 @@ export default function HomePage(): React.ReactElement {
           </div>
         </Container>
       </Section>
+      */}
 
-      {/* Google reviews testimonials — above footer */}
+      {/* Google reviews testimonials — above footer - Commented out as requested
       <TestimonialsSection />
+      */}
     </main>
   );
 }

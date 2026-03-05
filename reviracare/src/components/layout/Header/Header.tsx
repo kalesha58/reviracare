@@ -107,14 +107,22 @@ export function Header(): React.ReactElement {
         </nav>
 
         {/* CTA */}
-        <div className="hidden md:flex items-center gap-4">
+        <div className="hidden md:flex items-center gap-3">
           <ThemeToggle />
+          <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-purple-brand/5 dark:bg-purple-brand/10 border border-purple-brand/20">
+            <div className="w-7 h-7 rounded-full bg-purple-brand flex items-center justify-center text-white text-[9px] font-black shrink-0 shadow-sm">
+              24/7
+            </div>
+            <div className="text-[10px] font-bold text-slate-700 dark:text-zinc-200 uppercase tracking-wider whitespace-nowrap">
+              Support Services
+            </div>
+          </div>
           <Link
             href="/contact"
-            className="nav-link px-6 py-2.5 bg-purple-brand text-white rounded-full hover:opacity-90 transition-opacity flex items-center gap-2 group shadow-lg shadow-purple-brand/20 font-bold"
+            className="px-5 py-2 bg-purple-brand text-white rounded-full hover:opacity-90 transition-all flex items-center gap-2 shadow-md shadow-purple-brand/10 font-bold text-sm hover:scale-[1.02] active:scale-95"
           >
             Get Started
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            <ArrowRight className="w-3.5 h-3.5" />
           </Link>
         </div>
 
@@ -169,21 +177,25 @@ export function Header(): React.ReactElement {
                 </div>
 
                 {/* Mobile Menu Footer */}
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.5 }}
-                  className="mt-auto border-t border-purple-brand/20 dark:border-white/10 pt-8 pb-10 space-y-6"
-                >
+                <div className="mt-auto border-t border-purple-brand/20 dark:border-white/10 pt-6 pb-8 space-y-3">
+                  <div className="w-full py-3 px-4 bg-purple-brand/5 dark:bg-zinc-900/50 text-slate-900 dark:text-white rounded-xl font-bold flex items-center gap-3 border border-purple-brand/20">
+                    <div className="w-10 h-10 rounded-lg bg-purple-brand flex items-center justify-center text-white font-black text-sm shrink-0">
+                      24/7
+                    </div>
+                    <div className="text-left">
+                      <div className="text-[9px] uppercase tracking-[0.2em] text-zinc-500 dark:text-zinc-400 font-black">Support Services</div>
+                      <div className="text-sm text-purple-brand dark:text-purple-200 font-bold leading-tight">Available Always</div>
+                    </div>
+                  </div>
                   <Link
                     href="/contact"
                     onClick={() => setMobileOpen(false)}
-                    className="w-full py-4 bg-purple-brand text-white rounded-2xl font-bold flex items-center justify-center gap-2 shadow-xl shadow-purple-brand/20 active:scale-[0.98] transition-all"
+                    className="w-full h-12 bg-purple-brand text-white rounded-xl font-bold flex items-center justify-center gap-2 shadow-lg shadow-purple-brand/20 active:scale-[0.98] transition-all text-sm"
                   >
                     Get Started
-                    <ArrowRight className="w-5 h-5" />
+                    <ArrowRight className="w-4 h-4" />
                   </Link>
-                </motion.div>
+                </div>
               </motion.div>
             )}
           </AnimatePresence>,

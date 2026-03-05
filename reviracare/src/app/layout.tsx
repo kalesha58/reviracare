@@ -61,6 +61,8 @@ export const viewport: Viewport = {
 
 import { ThemeProvider } from "@/components/theme/ThemeProvider";
 import { ChatSupport } from "@/components/chat";
+import { AccessibilityProvider } from "@/components/accessibility/AccessibilityContext";
+import { AccessibilityWidget } from "@/components/accessibility/AccessibilityWidget";
 
 export default function RootLayout({
   children,
@@ -71,19 +73,26 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body
         className={`${inter.variable} ${plusJakarta.variable} font-sans min-h-screen antialiased flex flex-col`}
+        suppressHydrationWarning
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <Header />
-          <main className="flex-1 pt-20">{children}</main>
-          <Footer />
-          <ChatSupport welcomeMessage="Hi! How can we help you today? Ask your question and we'll get back to you soon." />
-        </ThemeProvider>
+        <AccessibilityProvider>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <div id="acc-content" className="flex flex-col min-h-screen">
+              <Header />
+              <main className="flex-1 pt-20">{children}</main>
+              <Footer />
+              <ChatSupport welcomeMessage="Hi! How can we help you today? Ask your question and we'll get back to you soon." />
+            </div>
+            <AccessibilityWidget />
+          </ThemeProvider>
+        </AccessibilityProvider>
       </body>
     </html>
   );
 }
+

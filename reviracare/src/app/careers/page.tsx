@@ -4,11 +4,10 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
 import {
-  Heart, ShieldCheck, Zap, Award, CheckCircle2,
-  ArrowRight, FileText, GraduationCap, Scale,
-  Lock, Rocket, HelpCircle, Download, Upload,
-  X, Check, AlertCircle, Mail, Phone,
-  User, Home, MessageSquare
+  Heart, ShieldCheck, Award,
+  ArrowRight, FileText, Lock, Rocket,
+  Download, Upload, X, Check, Mail, Phone,
+  User, Home, MessageSquare, ArrowUpRight
 } from "lucide-react";
 import Image from "next/image";
 import { BrandLogo } from "@/components/ui/BrandLogo";
@@ -17,32 +16,45 @@ import { useState, useRef } from "react";
 const CLEARANCES = [
   {
     title: "NDIS Worker Check",
-    icon: <ShieldCheck className="w-8 h-8 text-purple-brand dark:text-purple-200" />,
+    image: "/images/careers/NDISworkercheck.jpeg",
     cost: "$105",
     location: "Service NSW",
-    description: "Essential clearance for all NDIS support workers."
+    description: "Essential clearance for all NDIS support workers.",
+    href: "https://www.service.nsw.gov.au/transaction/ndiswc-apply"
   },
   {
     title: "Working with Children",
-    icon: <UsersIcon className="w-8 h-8 text-secondary" />,
+    image: "/images/careers/Working with Children Check.png",
     cost: "$105",
     location: "Service NSW",
-    description: "Required for supporting participants under 18."
+    description: "Required for supporting participants under 18.",
+    href: "https://www.service.nsw.gov.au/transaction/apply-for-a-working-with-children-check"
   },
-  {
-    title: "First Aid & CPR",
-    icon: <Zap className="w-8 h-8 text-rose-500" />,
-    cost: "Variable",
-    location: "Your choice",
-    description: "Must include the CPR module for compliance."
-  }
 ];
 
+
 const ONLINE_COURSES = [
-  { title: "COVID-19 Infection Control", provider: "NDIS", status: "Free" },
-  { title: "NDIS Worker Orientation", provider: "NDIS", status: "Free" },
-  { title: "NDIS New Worker Induction", provider: "NDIS", status: "Free" },
-  { title: "NDIS Quality and Safeguards", provider: "NDIS", status: "Free" }
+  {
+    title: "COVID-19 Infection Control",
+    provider: "Sentrient",
+    status: "Free",
+    image: "/images/careers/COVID-19 Infection Control and Prevention.png",
+    href: "https://www.sentrient.com.au/covid-19-coronavirus-courses"
+  },
+  {
+    title: "NDIS Worker Orientation",
+    provider: "NDIS",
+    status: "Free",
+    image: "/images/careers/NDIS Worker Orientation Module.png",
+    href: "https://training.ndiscommission.gov.au/"
+  },
+  {
+    title: "NDIS New Worker Induction",
+    provider: "NDIS",
+    status: "Free",
+    image: "/images/careers/NDIS New Worker Induction Module.gif",
+    href: "https://training.ndiscommission.gov.au/"
+  }
 ];
 
 const REQUIRED_DOCS = [
@@ -51,7 +63,6 @@ const REQUIRED_DOCS = [
   "COVID-19 Infection Control Certificate",
   "NDIS Worker Orientation Module",
   "NDIS New Worker Induction Module",
-  "First Aid and CPR Certificate",
   "ID x3 (License, Passport, Medicare, etc.)",
   "COVID-19 Vaccination (Optional)"
 ];
@@ -97,7 +108,7 @@ export default function CareersPage() {
   return (
     <main className="min-h-screen bg-zinc-50 dark:bg-zinc-950 text-zinc-900 dark:text-white pb-16">
       {/* Hero Section */}
-      <section className="relative h-[55vh] min-h-[420px] flex items-center overflow-hidden">
+      <section className="relative h-[80vh] min-h-[600px] flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
             src="/images/careers/hero.png"
@@ -106,22 +117,22 @@ export default function CareersPage() {
             className="object-cover dark:opacity-60"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent dark:from-black/90 dark:via-black/50 dark:to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-zinc-50/10 dark:from-black/80 dark:via-black/40 dark:to-zinc-950/20" />
         </div>
 
         <Container className="relative z-10">
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="max-w-3xl"
+            className="max-w-4xl"
           >
             <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/20 text-white text-xs font-bold uppercase tracking-[0.2em] mb-6 backdrop-blur-md">
               <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
               Join Our Care Team
             </div>
             <div className="overflow-visible py-1">
-              <h1 className="hero-title font-extrabold tracking-tight leading-[1.2] mb-6 drop-shadow-[0_1px_2px_rgba(0,0,0,0.3)] break-words">
+              <h1 className="hero-title font-extrabold tracking-tight leading-[1.1] mb-8 drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)] break-words text-white">
                 {(() => {
                   const title = "Make a Meaningful Difference";
                   const words = title.split(" ");
@@ -133,9 +144,7 @@ export default function CareersPage() {
                           className={i % 2 === 1 ? "hero-word-accent" : "hero-word-solid"}
                         >
                           {word}
-                          {i === 1 ? <br className="hidden sm:block" /> : null}
-                          {i < words.length - 1 && i !== 1 ? " " : ""}
-                          {i === 1 ? " " : ""}
+                          {i < words.length - 1 ? " " : ""}
                         </span>
                       ))}
                     </>
@@ -143,23 +152,9 @@ export default function CareersPage() {
                 })()}
               </h1>
             </div>
-            <p className="subtitle text-white leading-relaxed max-w-xl mb-10 drop-shadow-[0_1px_2px_rgba(0,0,0,0.3)] min-w-0">
+            <p className="subtitle text-white/95 leading-relaxed max-w-2xl mb-10 drop-shadow-[0_1px_2px_rgba(0,0,0,0.2)] text-lg">
               Joining Revira Care Australia offers an exciting opportunity to empower individuals with disabilities and foster a more inclusive community.
             </p>
-            <div className="flex flex-wrap gap-4">
-              <a href="#how-to-apply" className="px-8 py-4 bg-white/10 border border-white/20 text-white rounded-2xl font-bold text-sm hover:bg-white/20 transition-all hover:scale-105 inline-flex items-center gap-2 group">
-                Begin Your Journey
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </a>
-              <div className="px-6 py-4 bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl flex items-center gap-3">
-                <div className="flex -space-x-2">
-                  {[1, 2, 3].map(i => (
-                    <div key={i} className="w-7 h-7 rounded-full border-2 border-zinc-900 bg-zinc-800" />
-                  ))}
-                </div>
-                <span className="text-xs font-bold text-white/90">50+ Support Workers</span>
-              </div>
-            </div>
           </motion.div>
         </Container>
       </section>
@@ -237,26 +232,39 @@ export default function CareersPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12 max-w-4xl mx-auto">
             {CLEARANCES.map((clearance, i) => (
-              <motion.div
+              <motion.a
                 key={i}
+                href={clearance.href}
+                target="_blank"
+                rel="noopener noreferrer"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="bg-white dark:bg-zinc-900 p-8 rounded-3xl border border-zinc-200 dark:border-white/5 relative overflow-hidden group shadow-sm hover:shadow-xl transition-all"
+                className="bg-white dark:bg-zinc-900 p-8 rounded-3xl border border-zinc-200 dark:border-white/5 relative overflow-hidden group shadow-sm hover:shadow-xl transition-all block hover:-translate-y-1"
               >
+                <div className="absolute top-6 right-6 p-2 rounded-full bg-zinc-50 dark:bg-zinc-800 opacity-0 group-hover:opacity-100 transition-all group-hover:translate-x-1 group-hover:-translate-y-1">
+                  <ArrowUpRight className="w-4 h-4 text-purple-brand dark:text-purple-200" />
+                </div>
                 <div className="flex items-center gap-4 mb-6">
-                  <div className="shrink-0 group-hover:scale-110 transition-transform">{clearance.icon}</div>
-                  <h4 className="text-xl font-bold">{clearance.title}</h4>
+                  <div className="shrink-0 w-20 h-20 sm:w-24 sm:h-24 relative rounded-2xl overflow-hidden group-hover:scale-105 transition-transform bg-white border border-zinc-100 dark:border-white/5 p-3 flex items-center justify-center shadow-md">
+                    <Image
+                      src={clearance.image}
+                      alt={clearance.title}
+                      fill
+                      className="object-contain p-2"
+                    />
+                  </div>
+                  <h4 className="text-xl font-bold text-zinc-900 dark:text-white">{clearance.title}</h4>
                 </div>
                 <p className="text-zinc-500 dark:text-zinc-400 text-sm mb-6 leading-relaxed">{clearance.description}</p>
                 <div className="pt-6 border-t border-zinc-100 dark:border-white/5 flex items-center justify-between">
                   <div className="text-xs font-bold text-zinc-400 uppercase tracking-widest">{clearance.location}</div>
                   <div className="text-sm font-black text-purple-brand dark:text-purple-200">{clearance.cost}</div>
                 </div>
-              </motion.div>
+              </motion.a>
             ))}
           </div>
 
@@ -266,28 +274,33 @@ export default function CareersPage() {
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-500 text-[10px] font-bold uppercase tracking-widest mb-6">
                   Online Training
                 </div>
-                <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-5 mb-6">
-                  <div className="shrink-0 p-2.5 rounded-2xl bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-white/5">
-                    <BrandLogo
-                      width={100}
-                      height={36}
-                      imageClassName="dark:brightness-0 dark:invert"
-                    />
-                  </div>
+                <div className="mb-6">
                   <h4 className="text-xl sm:text-2xl font-bold text-zinc-900 dark:text-white">Required NDIS Courses</h4>
                 </div>
                 <div className="space-y-4 mb-8">
                   {ONLINE_COURSES.map((course, i) => (
-                    <div key={i} className="flex items-center gap-4 p-4 rounded-2xl bg-zinc-50 dark:bg-zinc-900 border border-border group hover:border-purple-brand/30 transition-all">
-                      <div className="w-8 h-8 rounded-full bg-purple-brand/10 flex items-center justify-center text-purple-brand dark:text-purple-200">
-                        <CheckCircle2 className="w-5 h-5" />
+                    <a
+                      key={i}
+                      href={course.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-4 p-4 rounded-2xl bg-zinc-50 dark:bg-zinc-900 border border-border group hover:border-purple-brand/30 transition-all cursor-pointer hover:bg-white dark:hover:bg-zinc-800"
+                    >
+                      <div className="w-16 h-16 sm:w-20 sm:h-20 relative rounded-xl overflow-hidden flex-shrink-0 bg-white shadow-md border border-zinc-100 p-2">
+                        <Image
+                          src={course.image}
+                          alt={course.title}
+                          fill
+                          className="object-contain p-1"
+                        />
                       </div>
                       <div className="flex-1">
-                        <div className="text-sm font-bold">{course.title}</div>
+                        <div className="text-sm font-bold text-zinc-900 dark:text-white">{course.title}</div>
                         <div className="text-[10px] text-zinc-500 uppercase font-bold tracking-tighter">{course.provider} Provided</div>
                       </div>
-                      <div className="text-[10px] font-black uppercase text-purple-brand dark:text-purple-200">{course.status}</div>
-                    </div>
+                      <ArrowUpRight className="w-4 h-4 text-zinc-300 group-hover:text-purple-brand transition-colors" />
+                      <div className="text-[10px] font-black uppercase text-purple-brand dark:text-purple-200 ml-2">{course.status}</div>
+                    </a>
                   ))}
                 </div>
               </div>
@@ -326,9 +339,14 @@ export default function CareersPage() {
                         <div>
                           <div className="font-bold mb-1">Employee Info Form</div>
                           <p className="text-sm text-white/60 mb-3">Download, fill, and save as PDF.</p>
-                          <button className="text-xs font-bold uppercase tracking-widest px-4 py-2 bg-white text-zinc-900 rounded-lg hover:bg-zinc-100 transition-colors">
+                          <a
+                            href="https://revoltcare.com.au/wp-content/uploads/2025/04/Revolt-Care-Australia-employee-Information-Form-1.pdf"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-xs font-bold uppercase tracking-widest px-4 py-2 bg-white text-zinc-900 rounded-lg hover:bg-zinc-100 transition-colors inline-block"
+                          >
                             Download Form
-                          </button>
+                          </a>
                         </div>
                       </div>
 
@@ -344,7 +362,7 @@ export default function CareersPage() {
                                 <Check className="w-3 h-3 text-purple-brand dark:text-purple-200" /> {doc}
                               </li>
                             ))}
-                            <li className="text-[10px] text-white/40 mt-2">+ 3 Identifications & First Aid</li>
+                            <li className="text-[10px] text-white/40 mt-2">+ 3 Identifications</li>
                           </ul>
                         </div>
                       </div>
@@ -443,7 +461,7 @@ export default function CareersPage() {
                           <Upload className="w-6 h-6 text-purple-brand dark:text-purple-200" />
                         </div>
                         <p className="text-sm font-bold mb-1">Click to upload or drag & drop</p>
-                        <p className="text-[10px] text-zinc-500 font-medium">NDIS Checks, WWCC, First Aid, CPR, ID (Max 10MB per file)</p>
+                        <p className="text-[10px] text-zinc-500 font-medium">NDIS Checks, WWCC, ID (Max 10MB per file)</p>
                       </div>
 
                       {/* File List */}

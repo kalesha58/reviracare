@@ -60,10 +60,25 @@ export function NDISProviderSection(): React.ReactElement {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="lg:col-span-7 order-2 lg:order-2"
           >
-            <h2 className="section-title text-foreground mb-6">
-              NDIS Provider Australia
-            </h2>
-            <p className="subtitle text-muted-foreground leading-relaxed mb-6 sm:mb-8 bg-secondary/5 dark:bg-secondary/10 border border-secondary/10 rounded-2xl p-4 sm:p-6">
+            <div className="flex flex-col sm:flex-row sm:items-center gap-6 mb-8">
+              <div className="relative w-[160px] h-[65px] sm:w-[200px] sm:h-[80px] bg-white p-3 rounded-2xl shadow-xl border border-purple-brand/10 shrink-0">
+                <Image
+                  src="/images/hero/National_Disability_Insurance_Scheme_logo.svg.png"
+                  alt="NDIS Registered Provider"
+                  fill
+                  className="object-contain p-2"
+                />
+              </div>
+              <div className="flex flex-col">
+                <h2 className="section-title text-foreground mb-1 leading-tight">
+                  NDIS Provider Australia
+                </h2>
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-brand/10 border border-purple-brand/20 w-fit">
+                  <span className="text-[10px] sm:text-xs font-black text-purple-brand uppercase tracking-[0.2em]">NO: 4053379341</span>
+                </div>
+              </div>
+            </div>
+            <p className="subtitle text-muted-foreground leading-relaxed mb-6 sm:mb-8 bg-secondary/5 dark:bg-secondary/10 border border-secondary/10 rounded-2xl p-4 sm:p-6 shadow-sm">
               We are committed to supporting NDIS participants in living a healthy
               lifestyle on their own terms as a reputable NDIS provider in Australia.
               By giving you the most individualized support and assisting you in

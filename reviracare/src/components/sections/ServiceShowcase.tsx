@@ -126,102 +126,73 @@ export function ServiceShowcase() {
                     </motion.h2>
                 </div>
 
-                {/* Desktop Showcase: Horizontal Expanding Slices */}
-                <div className="hidden lg:flex h-[420px] xl:h-[500px] gap-2 items-stretch">
-                    {SERVICES.map((service, index) => {
-                        const isHovered = hoveredIndex === index;
-                        return (
-                            <motion.div
-                                key={service.id}
-                                onMouseEnter={() => setHoveredIndex(index)}
-                                className={cn(
-                                    "relative overflow-hidden cursor-pointer transition-all duration-700 ease-in-out group rounded-3xl",
-                                    isHovered ? "flex-[4]" : "flex-1"
-                                )}
-                            >
-                                {/* Background Image */}
-                                <div className="absolute inset-0">
+                {/* Desktop Showcase: Modern Grid Layout for Accessibility and Rich Look */}
+                <div className="hidden lg:grid grid-cols-2 xl:grid-cols-3 gap-6 auto-rows-[300px]">
+                    {SERVICES.map((service, index) => (
+                        <motion.div
+                            key={service.id}
+                            initial={{ opacity: 0, scale: 0.95 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.4, delay: index * 0.05 }}
+                            className="group relative rounded-3xl overflow-hidden border border-zinc-200 dark:border-white/10 bg-zinc-100 dark:bg-zinc-900 shadow-lg hover:shadow-2xl focus-within:shadow-2xl transition-all duration-500"
+                        >
+                            <Link href={`/services/${service.id}`} className="relative block h-full outline-none focus-visible:ring-4 focus-visible:ring-purple-brand/50">
+                                {/* Background Image with Parallax-like effect */}
+                                <div className="absolute inset-0 z-0">
                                     <Image
                                         src={service.image}
                                         alt={service.title}
                                         fill
-                                        className={cn(
-                                            "object-cover object-center transition-transform duration-700 group-hover:scale-105",
-                                            isHovered ? "opacity-100" : "opacity-80 dark:opacity-60 group-hover:opacity-100"
-                                        )}
+                                        className="object-cover transition-transform duration-700 group-hover:scale-110 group-focus-within:scale-110"
                                     />
-                                    {/* Neutral dark gradient for text contrast */}
+                                    {/* Gradient Overlays for Readability */}
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent transition-opacity duration-500 group-hover:opacity-95 group-focus-within:opacity-95" />
                                     <div className={cn(
-                                        "absolute inset-0 bg-gradient-to-t",
-                                        "from-black/95 via-black/70 to-transparent",
-                                        "dark:from-black dark:via-black/85 dark:to-transparent"
+                                        "absolute inset-0 opacity-0 group-hover:opacity-20 group-focus-within:opacity-20 transition-opacity duration-700 bg-gradient-to-br",
+                                        service.color || "from-purple-500/40 to-transparent"
                                     )} />
                                 </div>
 
-                                {/* Content Overlay */}
-                                <div className="absolute inset-0 p-8 flex flex-col justify-end">
-                                        {/* Collapsed state: only + icon, no text */}
-                                        <div
-                                            className={cn(
-                                                "absolute inset-x-8 bottom-8 flex items-end justify-center transition-opacity duration-300",
-                                                isHovered ? "opacity-0 pointer-events-none" : "opacity-100"
-                                            )}
-                                            aria-hidden={isHovered}
-                                        >
-                                            <div className="w-10 h-10 rounded-xl bg-white/10 backdrop-blur-md flex items-center justify-center border border-white/20">
-                                                <Plus className="w-5 h-5 text-white" />
+                                {/* Content Container */}
+                                <div className="absolute inset-0 z-10 p-8 flex flex-col justify-end">
+                                    {/* Service Number & Label */}
+                                    <div className="absolute top-8 left-8 flex items-center gap-3">
+                                        <span className="text-white/40 text-xs font-bold tracking-[0.2em] uppercase">
+                                            {(index + 1).toString().padStart(2, '0')}
+                                        </span>
+                                        <div className="h-[1px] w-8 bg-white/20 group-hover:w-12 group-focus-within:w-12 transition-all duration-500" />
+                                    </div>
+
+                                    {/* Main Content with Glassmorphism */}
+                                    <div className="relative group-hover:translate-y-[-10px] group-focus-within:translate-y-[-10px] transition-transform duration-500">
+                                        <h3 className="text-2xl font-bold text-white mb-3 leading-tight drop-shadow-md">
+                                            {service.title}
+                                        </h3>
+
+                                        <div className="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] group-focus-within:grid-rows-[1fr] transition-all duration-500 opacity-0 group-hover:opacity-100 group-focus-within:opacity-100">
+                                            <div className="overflow-hidden">
+                                                <p className="text-zinc-200 text-sm leading-relaxed mb-6 line-clamp-2">
+                                                    {service.description}
+                                                </p>
                                             </div>
                                         </div>
 
-                                        {/* Expanded state: horizontal title + description + button, no movement */}
-                                        <div
-                                            className={cn(
-                                                "transition-opacity duration-300",
-                                                isHovered ? "opacity-100" : "opacity-0 pointer-events-none"
-                                            )}
-                                            aria-hidden={!isHovered}
-                                        >
-                                            <div className="flex items-center gap-4 mb-4">
-                                                <div className="w-10 h-10 rounded-xl bg-white/10 backdrop-blur-md flex items-center justify-center border border-white/20">
-                                                    <Plus className="w-5 h-5 text-white rotate-90" />
-                                                </div>
-                                                <h3 className="subsection-title text-white drop-shadow-md">
-                                                    {service.title}
-                                                </h3>
-                                            </div>
-                                            <AnimatePresence>
-                                                {isHovered && (
-                                                    <motion.div
-                                                        initial={{ opacity: 0 }}
-                                                        animate={{ opacity: 1 }}
-                                                        exit={{ opacity: 0 }}
-                                                        transition={{ duration: 0.25 }}
-                                                    >
-                                                        <p className="text-white dark:text-zinc-100 body-sm font-medium leading-relaxed mb-6 max-w-md drop-shadow-md">
-                                                            {service.description}
-                                                        </p>
-                                                        <Link
-                                                            href={`/services/${service.id}`}
-                                                            className="inline-flex items-center gap-2 text-white bg-purple-brand hover:opacity-90 px-4 py-2 rounded-full font-bold body-sm hover:gap-4 transition-all shadow-lg"
-                                                        >
-                                                            Learn More <ArrowRight className="w-4 h-4" />
-                                                        </Link>
-                                                    </motion.div>
-                                                )}
-                                            </AnimatePresence>
+                                        <div className="flex items-center gap-2 text-white font-bold text-sm tracking-wide">
+                                            <span className="bg-purple-brand px-5 py-2.5 rounded-full flex items-center gap-2 backdrop-blur-md shadow-lg group-hover:gap-4 group-focus-within:gap-4 transition-all duration-300">
+                                                Learn More <ArrowRight className="w-4 h-4" />
+                                            </span>
                                         </div>
+                                    </div>
                                 </div>
 
-                                {/* Index Number */}
-                                <div className="absolute top-8 left-8">
-                                    <span className="caption text-white/40 dark:text-white/20 tracking-widest uppercase">
-                                        {(index + 1).toString().padStart(2, '0')}
-                                    </span>
-                                </div>
-                            </motion.div>
-                        );
-                    })}
+                                {/* Interactive Glow Effect */}
+                                <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 blur-3xl opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity duration-700 rounded-full" />
+                            </Link>
+                        </motion.div>
+                    ))}
                 </div>
+
 
                 {/* Mobile Showcase: 2-column grid */}
                 <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:hidden">

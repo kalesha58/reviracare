@@ -21,13 +21,18 @@ export function NDISBrandingBar({ title, className }: NDISBrandingBarProps) {
                 <h2 className="text-2xl sm:text-3xl font-bold text-white dark:text-zinc-100 tracking-tight text-center sm:text-left leading-tight">
                     {title}
                 </h2>
-                <div className="relative w-[110px] h-[50px] sm:w-[130px] sm:h-[60px] shrink-0 bg-white/10 backdrop-blur-sm p-2 rounded-xl border border-white/10">
-                    <Image
-                        src="/images/hero/National_Disability_Insurance_Scheme_logo.svg.png"
-                        alt="NDIS Logo"
-                        fill
-                        className="object-contain p-1"
-                    />
+                <div className="flex flex-col items-center sm:items-end gap-2 shrink-0">
+                    <div className="relative w-[140px] h-[55px] sm:w-[180px] sm:h-[70px] bg-white p-2 sm:p-3 rounded-xl shadow-lg border border-purple-brand/10">
+                        <Image
+                            src="/images/hero/National_Disability_Insurance_Scheme_logo.svg.png"
+                            alt="NDIS Logo"
+                            fill
+                            className="object-contain p-1"
+                        />
+                    </div>
+                    <span className="text-[10px] sm:text-xs font-black text-white uppercase tracking-[0.2em] bg-white/10 px-3 py-1 rounded-full border border-white/20 backdrop-blur-sm">
+                        NO: 4053379341
+                    </span>
                 </div>
             </div>
         </motion.div>

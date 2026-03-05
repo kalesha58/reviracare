@@ -90,7 +90,8 @@ export default function UnderstandingNdisPage(): React.ReactElement {
     <main className="min-h-screen bg-zinc-50 dark:bg-zinc-950 text-zinc-900 dark:text-white pt-24 md:pt-28">
       <NDISBrandingBar title="Understanding the NDIS" />
 
-      <Section className="bg-white dark:bg-zinc-950 border-t border-zinc-200 dark:border-zinc-800 overflow-hidden">
+      {/* Main Content Sections */}
+      <div className="bg-white dark:bg-zinc-950 border-t border-zinc-200 dark:border-zinc-800 overflow-hidden">
         {/* Intro - full width */}
         <div className="w-full py-12 sm:py-16 md:py-20 bg-gradient-to-b from-zinc-50 to-white dark:from-zinc-900/50 dark:to-zinc-950">
           <Container className="max-w-4xl">
@@ -232,46 +233,46 @@ export default function UnderstandingNdisPage(): React.ReactElement {
             </motion.div>
           </Container>
         </div>
+      </div>
 
-        {/* CTAs - full width */}
-        <div className="w-full py-12 sm:py-16 bg-white dark:bg-zinc-950">
-          <Container className="max-w-5xl">
-            <motion.p
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              className="text-zinc-600 dark:text-zinc-400 mb-6"
+      {/* CTAs - full width Section */}
+      <Section className="py-12 sm:py-16 bg-white dark:bg-zinc-950 border-t border-zinc-200 dark:border-zinc-800">
+        <Container className="max-w-5xl">
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="text-zinc-600 dark:text-zinc-400 mb-6"
+          >
+            For more information, feel free to contact us or call us anytime. Our representatives are more than happy to address your queries.
+          </motion.p>
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="flex flex-wrap gap-4 sm:gap-5 items-center"
+          >
+            <a
+              href="tel:0433435959"
+              className="inline-flex items-center gap-2 px-6 py-3.5 sm:px-8 sm:py-4 rounded-xl bg-purple-brand text-white font-semibold hover:opacity-90 transition-opacity shadow-lg shadow-purple-brand/20 text-sm sm:text-base"
             >
-              For more information, feel free to contact us or call us anytime. Our representatives are more than happy to address your queries.
-            </motion.p>
-            <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              className="flex flex-wrap gap-4 sm:gap-5 items-center"
+              <Phone className="w-5 h-5" />
+              0433 43 5959
+            </a>
+            <Link
+              href="/ndis/new"
+              className="inline-flex items-center gap-2 px-6 py-3.5 sm:px-8 sm:py-4 rounded-xl bg-[var(--primary)] text-[var(--primary-foreground)] font-semibold hover:opacity-90 transition-opacity shadow-lg shadow-[var(--primary)]/20 text-sm sm:text-base"
             >
-              <a
-                href="tel:0433435959"
-                className="inline-flex items-center gap-2 px-6 py-3.5 sm:px-8 sm:py-4 rounded-xl bg-purple-brand text-white font-semibold hover:opacity-90 transition-opacity shadow-lg shadow-purple-brand/20 text-sm sm:text-base"
-              >
-                <Phone className="w-5 h-5" />
-                0433 43 5959
-              </a>
-              <Link
-                href="/ndis/new"
-                className="inline-flex items-center gap-2 px-6 py-3.5 sm:px-8 sm:py-4 rounded-xl bg-[var(--primary)] text-[var(--primary-foreground)] font-semibold hover:opacity-90 transition-opacity shadow-lg shadow-[var(--primary)]/20 text-sm sm:text-base"
-              >
-                New to the NDIS? <ArrowRight className="w-4 h-4" />
-              </Link>
-              <Link
-                href="/contact"
-                className="inline-flex items-center gap-2 px-6 py-3.5 sm:px-8 sm:py-4 rounded-xl border-2 border-[var(--border)] dark:border-zinc-600 text-[var(--foreground)] font-semibold hover:bg-[var(--muted)] dark:hover:bg-zinc-800 transition-colors text-sm sm:text-base"
-              >
-                Contact Us
-              </Link>
-            </motion.div>
-          </Container>
-        </div>
+              New to the NDIS? <ArrowRight className="w-4 h-4" />
+            </Link>
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-2 px-6 py-3.5 sm:px-8 sm:py-4 rounded-xl border-2 border-[var(--border)] dark:border-zinc-600 text-[var(--foreground)] font-semibold hover:bg-[var(--muted)] dark:hover:bg-zinc-800 transition-colors text-sm sm:text-base"
+            >
+              Contact Us
+            </Link>
+          </motion.div>
+        </Container>
       </Section>
     </main>
   );

@@ -174,19 +174,29 @@ export function SupportConfidenceSection(): React.ReactElement {
           whileInView="visible"
           viewport={{ once: true, margin: "-60px" }}
           variants={CONTAINER_VARIANTS}
-          className="relative max-w-2xl mx-auto"
+          className="relative max-w-7xl mx-auto"
         >
-          {/* Vertical line - desktop */}
+          {/* Horizontal line - desktop only */}
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
             variants={LINE_VARIANTS}
-            className="absolute left-[19px] sm:left-6 top-8 bottom-8 w-px bg-gradient-to-b from-secondary via-purple-brand to-secondary origin-top hidden sm:block"
+            className="absolute left-[24px] right-[24px] top-6 h-px bg-gradient-to-r from-secondary/10 via-purple-brand/30 to-secondary/10 origin-left hidden lg:block"
             aria-hidden
           />
 
-          <ul className="relative space-y-0" role="list">
+          {/* Vertical line - mobile only */}
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={LINE_VARIANTS}
+            className="absolute left-[19px] sm:left-6 top-8 bottom-8 w-px bg-gradient-to-b from-secondary/20 via-purple-brand/40 to-secondary/20 origin-top block lg:hidden"
+            aria-hidden
+          />
+
+          <ul className="relative grid grid-cols-1 lg:grid-cols-4 gap-8 lg:gap-10 pt-4" role="list">
             {SUPPORT_POINTS.map((point, index) => {
               const Icon = ICONS[index];
               return (
@@ -194,7 +204,7 @@ export function SupportConfidenceSection(): React.ReactElement {
                   key={point.id}
                   variants={ITEM_VARIANTS}
                   custom={index}
-                  className="relative flex gap-6 sm:gap-8 pb-12 last:pb-0 group"
+                  className="relative flex flex-row lg:flex-col items-start lg:items-center gap-6 sm:gap-8 lg:gap-6 group text-left lg:text-center"
                 >
                   <motion.div
                     whileInView={{ scale: [1, 1.1, 1] }}
@@ -210,11 +220,11 @@ export function SupportConfidenceSection(): React.ReactElement {
                   >
                     <Icon className="w-5 h-5 sm:w-6 sm:h-6" />
                   </motion.div>
-                  <div className="flex-1 min-w-0 pt-0.5">
+                  <div className="flex-1 min-w-0 pt-0.5 lg:pt-0">
                     <h3 className="subsection-title text-foreground mb-3 tracking-tight group-hover:text-secondary transition-colors">
                       {point.title}
                     </h3>
-                    <p className="text-muted-foreground body-sm leading-relaxed max-w-xl">
+                    <p className="text-muted-foreground body-sm leading-relaxed mx-auto max-w-sm">
                       {point.description}
                     </p>
                   </div>

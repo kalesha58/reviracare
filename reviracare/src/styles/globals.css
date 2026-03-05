@@ -308,3 +308,94 @@ body {
     font-size: var(--text-subsection-title-size-md);
   }
 }
+
+/* Accessibility Overrides */
+:root {
+  --acc-scale: 1;
+}
+
+/* Bigger Text - Applied to root for REM support */
+.acc-font-l1 {
+  --acc-scale: 1.05;
+}
+
+.acc-font-l2 {
+  --acc-scale: 1.15;
+}
+
+.acc-font-l3 {
+  --acc-scale: 1.25;
+}
+
+.acc-font-l4 {
+  --acc-scale: 1.35;
+}
+
+html {
+  font-size: calc(var(--acc-scale) * 100%) !important;
+}
+
+/* Isolate Widget from root scaling */
+.acc-widget-panel {
+  font-size: calc(1rem / var(--acc-scale)) !important;
+}
+
+.acc-line-l1 #acc-content {
+  line-height: 1.7 !important;
+}
+
+.acc-line-l2 #acc-content {
+  line-height: 1.9 !important;
+}
+
+.acc-line-l3 #acc-content {
+  line-height: 2.1 !important;
+}
+
+.acc-align-center #acc-content,
+.acc-align-center #acc-content * {
+  text-align: center !important;
+}
+
+.acc-align-right #acc-content,
+.acc-align-right #acc-content * {
+  text-align: right !important;
+}
+
+.acc-readable-font #acc-content,
+.acc-readable-font #acc-content * {
+  font-family: Arial, Helvetica, sans-serif !important;
+}
+
+.acc-contrast-l1 #acc-content {
+  filter: contrast(1.15) brightness(0.95) !important;
+}
+
+.acc-contrast-l2 #acc-content {
+  filter: contrast(1.4) brightness(0.9) !important;
+  background-color: #000 !important;
+  color: #fff !important;
+}
+
+.acc-contrast-l3 #acc-content {
+  filter: contrast(1.8) brightness(0.8) invert(0.05) !important;
+  background-color: #000 !important;
+  color: #fff !important;
+}
+
+.acc-grayscale #acc-content {
+  filter: grayscale(100%) !important;
+}
+
+.acc-hide-images #acc-content img,
+.acc-hide-images #acc-content svg:not(.acc-icon) {
+  visibility: hidden !important;
+}
+
+.acc-highlight-links #acc-content a {
+  background-color: #ff0 !important;
+  color: #000 !important;
+  text-decoration: underline !important;
+  outline: 2px solid #000 !important;
+  padding: 0 2px !important;
+}

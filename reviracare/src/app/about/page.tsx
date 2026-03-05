@@ -197,73 +197,38 @@ export default function AboutPage(): React.ReactElement {
             </div>
 
             {/* Right Badges (Desktop only - xl to avoid overlap on tablet) */}
-            <div className="hidden xl:flex xl:col-span-4 flex-col items-end gap-3 sm:gap-3.5 flex-shrink-0">
-              {[
-                {
-                  id: "ndis-official",
-                  logo: (
+            <div className="hidden xl:flex xl:col-span-4 flex-col items-end gap-3 sm:gap-4 flex-shrink-0">
+              <motion.div
+                initial={{ opacity: 0, x: 50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+                className="w-full max-w-[20rem] xl:w-80"
+              >
+                <div className="flex items-center justify-start gap-4 sm:gap-5 bg-white border-2 border-purple-brand/20 shadow-2xl rounded-2xl md:rounded-[2rem] p-4 sm:p-5 md:p-6 w-full min-w-0 min-h-[85px] sm:min-h-[100px] md:h-[120px] box-border relative overflow-hidden group">
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-purple-brand/[0.03] rounded-full -mr-16 -mt-16" />
+
+                  <div className="w-16 sm:w-20 md:w-24 h-12 sm:h-16 md:h-20 flex shrink-0 items-center justify-center p-2.5 bg-white rounded-xl shadow-lg border border-purple-brand/10 z-10 transition-transform group-hover:scale-105">
                     <Image
                       src="/images/hero/National_Disability_Insurance_Scheme_logo.svg.png"
                       alt="NDIS Registered Provider"
-                      width={48}
-                      height={28}
-                      className="object-contain h-6 sm:h-8 w-auto"
+                      width={96}
+                      height={60}
+                      className="object-contain h-full w-auto"
                     />
-                  ),
-                  label: "Registered NDIS Provider"
-                },
-                {
-                  id: "ndis-support",
-                  logo: (
-                    <Image
-                      src="/images/hero/We-Support-NDIS-150-x-150-px-5.png"
-                      alt="We Support NDIS"
-                      width={40}
-                      height={40}
-                      className="object-contain h-8 sm:h-10 w-auto"
-                    />
-                  ),
-                  label: "Official Registered"
-                },
-                {
-                  id: "phone",
-                  logo: <span className="text-xl sm:text-2xl" aria-hidden>📱</span>,
-                  label: "1800 REVIRA"
-                },
-                {
-                  id: "support",
-                  logo: <div className="text-xl font-black text-primary leading-none">24/7</div>,
-                  label: "Support Services"
-                }
-              ].map((badge, index) => (
-                <motion.div
-                  key={badge.id}
-                  initial={{ opacity: 0, x: 50 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.8, delay: 0.4 + (index * 0.1) }}
-                  className="w-full max-w-[16rem] xl:w-64"
-                >
-                  <div className="flex items-center justify-start gap-2 sm:gap-3 md:gap-4 bg-white/95 dark:bg-zinc-900/90 backdrop-blur-xl px-3 py-2.5 sm:px-4 sm:py-3 md:px-5 md:py-2 rounded-xl sm:rounded-2xl border-2 border-zinc-200 dark:border-white/10 shadow-xl w-full min-w-0 min-h-[56px] sm:min-h-[64px] md:h-[72px] box-border">
-                    <div className="w-9 sm:w-10 md:w-12 flex shrink-0 items-center justify-center">
-                      {badge.logo}
+                  </div>
+
+                  <div className="flex flex-col justify-center min-w-0 z-10 flex-1">
+                    <div className="text-[13px] sm:text-[15px] md:text-[18px] font-black text-zinc-900 uppercase leading-tight mb-1.5 tracking-tight">
+                      Registered <br className="sm:hidden" /> NDIS Provider
                     </div>
-                    <div className="text-caption text-zinc-800 dark:text-zinc-200 uppercase leading-snug min-w-0">
-                      {badge.label.split(' ').length > 2 ? (
-                        <>
-                          {badge.label.split(' ').slice(0, 1).join(' ')} <br />
-                          {badge.label.split(' ').slice(1).join(' ')}
-                        </>
-                      ) : (
-                        badge.label.split(' ').map((word, i) => (
-                          <React.Fragment key={i}>
-                            {word} {i === 0 && <br />}
-                          </React.Fragment>
-                        ))
-                      )}
+                    <div className="flex items-center gap-2">
+                      <div className="text-[10px] sm:text-[11px] md:text-[13px] font-black text-purple-brand tracking-[0.15em] bg-purple-brand/10 px-3 py-1 rounded-full border border-purple-brand/10 w-fit">
+                        NO: 4053379341
+                      </div>
                     </div>
                   </div>
-                </motion.div>
-              ))}
+                </div>
+              </motion.div>
             </div>
           </div>
         </Container>
@@ -280,74 +245,39 @@ export default function AboutPage(): React.ReactElement {
             <span className="caption text-white/90 dark:text-zinc-400">Scroll</span>
           </motion.div>
 
-          {/* Mobile/Tablet Horizontal Badges */}
-          <div className="xl:hidden flex flex-nowrap justify-start sm:justify-center items-stretch gap-2 sm:gap-3 px-4 sm:px-6 w-full overflow-x-auto overflow-y-hidden scroll-smooth pb-4 sm:pb-6 [scrollbar-width:thin] [scrollbar-color:rgba(255,255,255,0.3)_transparent]">
-            {[
-              {
-                id: "ndis-official-mobile",
-                logo: (
+          {/* Mobile/Tablet Single Centered Badge */}
+          <div className="xl:hidden flex justify-center px-4 sm:px-6 w-full pb-4 sm:pb-6">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 1.4 }}
+              className="w-full max-w-[300px] sm:max-w-[340px]"
+            >
+              <div className="flex items-center justify-start gap-4 sm:gap-5 bg-white border-2 border-purple-brand/20 shadow-xl rounded-2xl p-4 sm:p-5 w-full min-h-[90px] box-border relative overflow-hidden group">
+                <div className="absolute top-0 right-0 w-24 h-24 bg-purple-brand/[0.02] rounded-full -mr-12 -mt-12" />
+
+                <div className="w-16 h-14 sm:w-20 sm:h-16 flex shrink-0 items-center justify-center p-2 bg-white rounded-xl shadow-md border border-purple-brand/10 z-10">
                   <Image
                     src="/images/hero/National_Disability_Insurance_Scheme_logo.svg.png"
                     alt="NDIS Registered Provider"
-                    width={48}
-                    height={28}
-                    className="object-contain h-6 sm:h-8 w-auto"
+                    width={84}
+                    height={52}
+                    className="object-contain h-full w-auto"
                   />
-                ),
-                label: "Registered NDIS Provider"
-              },
-              {
-                id: "ndis-support-mobile",
-                logo: (
-                  <Image
-                    src="/images/hero/We-Support-NDIS-150-x-150-px-5.png"
-                    alt="We Support NDIS"
-                    width={40}
-                    height={40}
-                    className="object-contain h-8 sm:h-10 w-auto"
-                  />
-                ),
-                label: "Official Registered"
-              },
-              {
-                id: "phone-mobile",
-                logo: <span className="text-xl sm:text-2xl" aria-hidden>📱</span>,
-                label: "1800 REVIRA"
-              },
-              {
-                id: "support-mobile",
-                logo: <div className="text-xl font-black text-primary leading-none">24/7</div>,
-                label: "Support Services"
-              }
-            ].map((badge, index) => (
-              <motion.div
-                key={badge.id}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 1.4 + (index * 0.1) }}
-                className="flex-shrink-0 w-[150px] min-w-[150px] sm:w-52 sm:min-w-[13rem] md:w-56 md:min-w-[14rem]"
-              >
-                <div className="flex items-center justify-start gap-2 sm:gap-3 md:gap-4 bg-white/95 dark:bg-zinc-900/90 backdrop-blur-xl px-3 py-2.5 sm:px-4 sm:py-3 md:px-5 md:py-2 rounded-xl sm:rounded-2xl border-2 border-zinc-200 dark:border-white/10 shadow-xl w-full min-w-0 min-h-[56px] sm:min-h-[64px] md:h-[72px] box-border h-full">
-                  <div className="w-9 sm:w-10 md:w-12 flex shrink-0 items-center justify-center">
-                    {badge.logo}
+                </div>
+
+                <div className="flex flex-col justify-center min-w-0 z-10 flex-1">
+                  <div className="text-[14px] sm:text-[16px] font-black text-zinc-900 uppercase leading-tight mb-1 tracking-tight">
+                    Registered <br className="sm:hidden" /> NDIS Provider
                   </div>
-                  <div className="text-caption text-zinc-800 dark:text-zinc-200 uppercase leading-snug text-left min-w-0">
-                    {badge.label.split(' ').length > 2 ? (
-                      <>
-                        {badge.label.split(' ').slice(0, 1).join(' ')} <br />
-                        {badge.label.split(' ').slice(1).join(' ')}
-                      </>
-                    ) : (
-                      badge.label.split(' ').map((word, i) => (
-                        <React.Fragment key={i}>
-                          {word} {i === 0 && <br />}
-                        </React.Fragment>
-                      ))
-                    )}
+                  <div className="flex items-center gap-2">
+                    <div className="text-[11px] sm:text-[12px] font-black text-purple-brand tracking-[0.12em] bg-purple-brand/10 px-2.5 py-1 rounded-full border border-purple-brand/10 w-fit">
+                      NO: 4053379341
+                    </div>
                   </div>
                 </div>
-              </motion.div>
-            ))}
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>

@@ -9,8 +9,7 @@ import { Clock, ArrowUpRight } from "lucide-react";
 import type { Variants } from "framer-motion";
 import { ALL_BLOG_POSTS, type IBlogPost } from "@/data/blogs.data";
 import { cn } from "@/lib/utils";
-
-const LATEST_POSTS = ALL_BLOG_POSTS.slice(0, 4);
+import type { ILatestNewsSectionProps } from "./LatestNewsSection.interfaces";
 
 const CONTAINER_VARIANTS: Variants = {
   hidden: { opacity: 0 },
@@ -82,9 +81,17 @@ function BlogCard({
   );
 }
 
-export function LatestNewsSection(): React.ReactElement {
+export function LatestNewsSection({
+  id,
+  title = "Read Our Blogs And News",
+  label = "Latest News",
+  showViewAll = true,
+  limit,
+}: ILatestNewsSectionProps): React.ReactElement {
+  const posts = limit ? ALL_BLOG_POSTS.slice(0, limit) : ALL_BLOG_POSTS;
+
   return (
-    <Section className="bg-background text-foreground border-t border-border overflow-hidden">
+    <Section id={id} className="bg-background text-foreground border-t border-border overflow-hidden">
       <Container>
         <motion.div
           initial="hidden"
@@ -98,14 +105,14 @@ export function LatestNewsSection(): React.ReactElement {
             custom={0}
             className="section-label text-purple-brand dark:text-purple-100 uppercase block mb-3"
           >
-            Latest News
+            {label}
           </motion.span>
           <motion.h2
             variants={ITEM_VARIANTS}
             custom={1}
             className="section-title text-foreground leading-tight"
           >
-            Read Our Blogs And News
+            {title}
           </motion.h2>
         </motion.div>
 
@@ -114,28 +121,30 @@ export function LatestNewsSection(): React.ReactElement {
           whileInView="visible"
           viewport={{ once: true, margin: "-40px" }}
           variants={CONTAINER_VARIANTS}
-          className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
         >
-          {LATEST_POSTS.map((post, i) => (
+          {posts.map((post, i) => (
             <BlogCard key={post.id} post={post} index={i} />
           ))}
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 8 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.3, delay: 0.4 }}
-          className="mt-12 text-center"
-        >
-          <Link
-            href="/blogs"
-            className="inline-flex items-center gap-2 text-foreground font-bold body-sm hover:text-purple-brand dark:hover:text-purple-100 transition-colors"
+        {showViewAll && (
+          <motion.div
+            initial={{ opacity: 0, y: 8 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.3, delay: 0.4 }}
+            className="mt-12 text-center"
           >
-            View All Articles
-            <ArrowUpRight className="w-4 h-4" />
-          </Link>
-        </motion.div>
+            <Link
+              href="/blogs"
+              className="inline-flex items-center gap-2 text-foreground font-bold body-sm hover:text-purple-brand dark:hover:text-purple-100 transition-colors"
+            >
+              View All Articles
+              <ArrowUpRight className="w-4 h-4" />
+            </Link>
+          </motion.div>
+        )}
       </Container>
     </Section>
   );
