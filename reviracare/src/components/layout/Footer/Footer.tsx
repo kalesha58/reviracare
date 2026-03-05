@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Container } from "@/components/ui/Container";
 import {
   Facebook,
@@ -43,6 +44,8 @@ const SOCIAL_LINKS = [
 
 export function Footer(): React.ReactElement {
   const currentYear = new Date().getFullYear();
+  const pathname = usePathname();
+  const isContactPage = pathname === "/contact";
 
   return (
     <footer className="bg-secondary text-secondary-foreground border-t border-white/10 dark:border-border">
@@ -67,20 +70,22 @@ export function Footer(): React.ReactElement {
               the most personalised support and helping you become more
               independent.
             </p>
-            <div className="space-y-1.5 pt-6 border-t border-white/10">
-              <div className="text-xs font-bold text-white uppercase tracking-widest">
-                REVIRA CARE AUSTRALIA
+            {isContactPage && (
+              <div className="space-y-1.5 pt-6 border-t border-white/10">
+                <div className="text-xs font-bold text-white uppercase tracking-widest">
+                  REVIRA CARE AUSTRALIA
+                </div>
+                <div className="text-[11px] text-white/70 font-medium">
+                  Operated by <a href="https://revoltcare.com.au" target="_blank" rel="noopener noreferrer" className="text-white hover:text-emerald-400 transition-colors underline decoration-white/30 underline-offset-4">REVOLT CARE AUSTRALIA PTY LTD</a>
+                </div>
+                <div className="text-[11px] text-white/70 font-medium">
+                  ABN <span className="text-white">38 681 225 785</span>
+                </div>
+                <div className="text-[10px] font-bold text-white uppercase tracking-[0.2em] mt-1.5">
+                  NDIS Registered Provider
+                </div>
               </div>
-              <div className="text-[11px] text-white/70 font-medium">
-                Operated by <a href="https://revoltcare.com.au" target="_blank" rel="noopener noreferrer" className="text-white hover:text-emerald-400 transition-colors underline decoration-white/30 underline-offset-4">REVOLT CARE AUSTRALIA PTY LTD</a>
-              </div>
-              <div className="text-[11px] text-white/70 font-medium">
-                ABN <span className="text-white">38 681 225 785</span>
-              </div>
-              <div className="text-[10px] font-bold text-white uppercase tracking-[0.2em] mt-1.5">
-                NDIS Registered Provider
-              </div>
-            </div>
+            )}
           </div>
 
           {/* Column 2: Important Links */}
