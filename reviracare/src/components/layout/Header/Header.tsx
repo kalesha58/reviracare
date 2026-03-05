@@ -61,8 +61,8 @@ export function Header(): React.ReactElement {
         >
           <div className="transition-transform group-hover:scale-105 shrink-0">
             <BrandLogo
-              width={140}
-              height={48}
+              width={180}
+              height={60}
               priority
               imageClassName="dark:brightness-0 dark:invert"
             />
