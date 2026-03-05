@@ -67,6 +67,21 @@ export function Footer(): React.ReactElement {
               the most personalised support and helping you become more
               independent.
             </p>
+            <div className="space-y-1.5 pt-6 border-t border-white/10">
+              <div className="text-xs font-bold text-white uppercase tracking-widest">
+                REVIRA CARE AUSTRALIA
+              </div>
+              <div className="text-[11px] text-white/70 font-medium">
+                Operated by <a href="https://revoltcare.com.au" target="_blank" rel="noopener noreferrer" className="text-white hover:text-emerald-400 transition-colors underline decoration-white/30 underline-offset-4">REVOLT CARE AUSTRALIA PTY LTD</a>
+              </div>
+              <div className="text-[11px] text-white/70 font-medium">
+                ABN <span className="text-white">38 681 225 785</span>
+              </div>
+              <div className="inline-flex items-center gap-2 text-[10px] font-bold text-emerald-400 uppercase tracking-[0.2em] mt-1 bg-emerald-400/5 px-2.5 py-1 rounded-md border border-emerald-400/20">
+                <span className="w-1 h-1 rounded-full bg-emerald-400 animate-pulse" />
+                NDIS Registered Provider
+              </div>
+            </div>
           </div>
 
           {/* Column 2: Important Links */}

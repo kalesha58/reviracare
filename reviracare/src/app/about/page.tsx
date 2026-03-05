@@ -222,7 +222,7 @@ export default function AboutPage(): React.ReactElement {
                       Registered <br className="sm:hidden" /> NDIS Provider
                     </div>
                     <div className="flex items-center gap-2">
-                      <div className="text-[10px] sm:text-[11px] md:text-[13px] font-black text-purple-brand tracking-[0.15em] bg-purple-brand/10 px-3 py-1 rounded-full border border-purple-brand/10 w-fit">
+                      <div className="text-[10px] sm:text-[11px] md:text-[13px] font-black text-purple-brand tracking-[0.15em] bg-purple-brand/10 px-3 py-1 rounded-full border border-purple-brand/10 w-fit whitespace-nowrap">
                         NO: 4053379341
                       </div>
                     </div>
@@ -274,7 +274,7 @@ export default function AboutPage(): React.ReactElement {
                     Registered <br className="sm:hidden" /> NDIS Provider
                   </div>
                   <div className="flex items-center gap-2">
-                    <div className="text-[9px] sm:text-[11px] font-black text-purple-brand tracking-[0.12em] bg-purple-brand/10 px-2 py-0.5 rounded-full border border-purple-brand/10 w-fit">
+                    <div className="text-[9px] sm:text-[11px] font-black text-purple-brand tracking-[0.12em] bg-purple-brand/10 px-2 py-0.5 rounded-full border border-purple-brand/10 w-fit whitespace-nowrap">
                       NO: 4053379341
                     </div>
                   </div>

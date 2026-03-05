@@ -60,12 +60,22 @@ export function Header(): React.ReactElement {
           onClick={() => setMobileOpen(false)}
         >
           <div className="transition-transform group-hover:scale-105 shrink-0">
-            <BrandLogo
-              width={180}
-              height={60}
-              priority
-              imageClassName="dark:brightness-0 dark:invert"
-            />
+            <div className="md:hidden">
+              <BrandLogo
+                width={180}
+                height={60}
+                priority
+                imageClassName="dark:brightness-0 dark:invert"
+              />
+            </div>
+            <div className="hidden md:block">
+              <BrandLogo
+                width={240}
+                height={80}
+                priority
+                imageClassName="dark:brightness-0 dark:invert"
+              />
+            </div>
           </div>
         </Link>
 

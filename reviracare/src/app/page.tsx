@@ -58,7 +58,7 @@ const BADGES = [
             Registered <br className="sm:hidden" /> NDIS Provider
           </div>
           <div className="flex items-center gap-2">
-            <div className="text-[9px] sm:text-[11px] md:text-[13px] font-black text-purple-brand tracking-[0.15em] bg-purple-brand/10 px-2 sm:px-3 py-0.5 sm:py-1 rounded-full border border-purple-brand/10">
+            <div className="text-[9px] sm:text-[11px] md:text-[13px] font-black text-purple-brand tracking-[0.15em] bg-purple-brand/10 px-2 sm:px-3 py-0.5 sm:py-1 rounded-full border border-purple-brand/10 whitespace-nowrap">
               NO: 4053379341
             </div>
           </div>
