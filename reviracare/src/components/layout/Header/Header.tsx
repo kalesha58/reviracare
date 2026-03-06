@@ -54,41 +54,43 @@ export function Header(): React.ReactElement {
       )}
     >
       <Container className="flex items-center justify-between">
-        <Link
-          href="/"
-          className="flex items-center group"
-          onClick={() => setMobileOpen(false)}
-        >
-          <div className="flex items-center gap-2 transition-transform group-hover:scale-105 shrink-0">
-            <div className="flex items-center">
-              <div className="md:hidden">
-                <BrandLogo
-                  width={180}
-                  height={60}
-                  priority
-                  imageClassName="dark:brightness-0 dark:invert"
-                />
-              </div>
-              <div className="hidden md:block">
-                <BrandLogo
-                  width={240}
-                  height={80}
-                  priority
-                  imageClassName="dark:brightness-0 dark:invert"
-                />
-              </div>
-            </div>
-            <div className="relative w-14 h-10 sm:w-20 sm:h-12 md:w-24 md:h-16">
-              <Image
-                src="/images/NDIS_LOGO.png"
-                alt="NDIS Logo"
-                fill
-                className="object-contain"
+        <div className="flex items-center gap-6">
+          <Link
+            href="/"
+            className="flex items-center group transition-transform hover:scale-105 shrink-0"
+            onClick={() => setMobileOpen(false)}
+          >
+            <div className="md:hidden">
+              <BrandLogo
+                width={160}
+                height={50}
                 priority
+                imageClassName="dark:brightness-0 dark:invert"
               />
             </div>
-          </div>
-        </Link>
+            <div className="hidden md:block">
+              <BrandLogo
+                width={200}
+                height={65}
+                priority
+                imageClassName="dark:brightness-0 dark:invert"
+              />
+            </div>
+          </Link>
+
+          <Link
+            href="/ndis"
+            className="flex relative h-10 w-20 sm:h-12 sm:w-24 md:h-14 md:w-28 bg-white p-1.5 rounded-xl shadow-lg border border-purple-brand/10 hover:scale-105 transition-transform duration-300 shrink-0 items-center justify-center translate-y-[-2px]"
+          >
+            <Image
+              src="/images/NDIS_LOGO.png"
+              alt="NDIS Logo"
+              fill
+              className="object-contain p-1"
+              priority
+            />
+          </Link>
+        </div>
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-1">
@@ -126,7 +128,7 @@ export function Header(): React.ReactElement {
 
         {/* CTA */}
         <div className="hidden md:flex items-center gap-4">
-          <div className="relative w-14 h-14 shrink-0">
+          <div className="relative w-20 h-20 shrink-0">
             <Image
               src="/images/COVID_LOGO.png"
               alt="COVID Safe"

@@ -204,12 +204,12 @@ export default function AboutPage(): React.ReactElement {
                 transition={{ duration: 0.8, delay: 0.4 }}
                 className="w-full group"
               >
-                <div className="relative w-full aspect-[4/3] max-w-[240px] drop-shadow-2xl transition-transform duration-300 group-hover:scale-110">
+                <div className="relative w-[280px] h-[140px] bg-white p-4 rounded-3xl shadow-2xl transition-transform duration-300 group-hover:scale-105">
                   <Image
                     src="/images/NDIS_LOGO.png"
                     alt="NDIS Registered Provider"
                     fill
-                    className="object-contain"
+                    className="object-contain p-2"
                   />
                 </div>
               </motion.div>
@@ -240,12 +240,12 @@ export default function AboutPage(): React.ReactElement {
               transition={{ duration: 0.6, delay: 1.4 }}
               className="w-full group px-6"
             >
-              <div className="relative w-full aspect-[2/1] max-w-[240px] mx-auto drop-shadow-2xl">
+              <div className="relative w-[240px] h-[120px] mx-auto bg-white p-4 rounded-3xl shadow-2xl transition-transform duration-300 group-hover:scale-105">
                 <Image
                   src="/images/NDIS_LOGO.png"
                   alt="NDIS Registered Provider"
                   fill
-                  className="object-contain"
+                  className="object-contain p-2"
                 />
               </div>
             </motion.div>

@@ -39,13 +39,13 @@ const BADGES = [
   {
     id: "ndis-official",
     content: (
-      <div className="flex items-center justify-center w-full group">
-        <div className="relative w-full aspect-[4/3] max-w-[280px] drop-shadow-2xl transition-transform duration-300 group-hover:scale-105">
+      <div className="flex items-center justify-center lg:justify-end w-full group">
+        <div className="relative w-[200px] h-[100px] sm:w-[280px] sm:h-[140px] bg-white p-4 rounded-3xl shadow-2xl transition-transform duration-300 group-hover:scale-105">
           <Image
             src="/images/NDIS_LOGO.png"
             alt="NDIS Registered Provider"
             fill
-            className="object-contain rounded-2xl"
+            className="object-contain p-2"
             priority
           />
         </div>
