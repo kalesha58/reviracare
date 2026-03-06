@@ -63,7 +63,7 @@ export function NDISProviderSection(): React.ReactElement {
             <div className="flex flex-col sm:flex-row sm:items-center gap-6 mb-8">
               <div className="relative w-full aspect-[4/3] max-w-[160px] drop-shadow-xl hover:scale-105 transition-transform duration-300">
                 <Image
-                  src="/images/NDIS_LOGO.png"
+                  src="/images/NDIS_LOGO.jpeg"
                   alt="NDIS Registered Provider"
                   fill
                   className="object-contain"

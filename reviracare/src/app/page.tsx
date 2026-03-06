@@ -42,7 +42,7 @@ const BADGES = [
       <div className="flex items-center justify-center lg:justify-end w-full group">
         <div className="relative w-[200px] h-[100px] sm:w-[280px] sm:h-[140px] bg-white p-4 rounded-3xl shadow-2xl transition-transform duration-300 group-hover:scale-105">
           <Image
-            src="/images/NDIS_LOGO.png"
+            src="/images/NDIS_LOGO.jpeg"
             alt="NDIS Registered Provider"
             fill
             className="object-contain p-2"

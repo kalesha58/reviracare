@@ -83,7 +83,7 @@ export function Header(): React.ReactElement {
             className="flex relative h-10 w-20 sm:h-12 sm:w-24 md:h-14 md:w-28 bg-white p-1.5 rounded-xl shadow-lg border border-purple-brand/10 hover:scale-105 transition-transform duration-300 shrink-0 items-center justify-center translate-y-[-2px]"
           >
             <Image
-              src="/images/NDIS_LOGO.png"
+              src="/images/NDIS_LOGO.jpeg"
               alt="NDIS Logo"
               fill
               className="object-contain p-1"
@@ -130,7 +130,7 @@ export function Header(): React.ReactElement {
         <div className="hidden md:flex items-center gap-4">
           <div className="relative w-20 h-20 shrink-0">
             <Image
-              src="/images/COVID_LOGO.png"
+              src="/images/COVID_LOGO.jpeg"
               alt="COVID Safe"
               fill
               className="object-contain"
@@ -202,7 +202,7 @@ export function Header(): React.ReactElement {
                   <div className="flex items-center justify-center">
                     <div className="relative w-20 h-20 shrink-0">
                       <Image
-                        src="/images/COVID_LOGO.png"
+                        src="/images/COVID_LOGO.jpeg"
                         alt="COVID Safe"
                         fill
                         className="object-contain"

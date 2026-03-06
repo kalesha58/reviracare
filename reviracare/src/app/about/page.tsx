@@ -206,7 +206,7 @@ export default function AboutPage(): React.ReactElement {
               >
                 <div className="relative w-[280px] h-[140px] bg-white p-4 rounded-3xl shadow-2xl transition-transform duration-300 group-hover:scale-105">
                   <Image
-                    src="/images/NDIS_LOGO.png"
+                    src="/images/NDIS_LOGO.jpeg"
                     alt="NDIS Registered Provider"
                     fill
                     className="object-contain p-2"
@@ -242,7 +242,7 @@ export default function AboutPage(): React.ReactElement {
             >
               <div className="relative w-[240px] h-[120px] mx-auto bg-white p-4 rounded-3xl shadow-2xl transition-transform duration-300 group-hover:scale-105">
                 <Image
-                  src="/images/NDIS_LOGO.png"
+                  src="/images/NDIS_LOGO.jpeg"
                   alt="NDIS Registered Provider"
                   fill
                   className="object-contain p-2"

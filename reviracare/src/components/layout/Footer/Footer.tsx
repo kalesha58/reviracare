@@ -65,7 +65,7 @@ export function Footer(): React.ReactElement {
               <div className="flex flex-wrap items-center gap-4">
                 <div className="relative w-20 h-10 bg-white p-2 rounded-lg shadow-lg hover:scale-105 transition-transform duration-300 shrink-0">
                   <Image
-                    src="/images/NDIS_LOGO.png"
+                    src="/images/NDIS_LOGO.jpeg"
                     alt="NDIS Logo"
                     fill
                     className="object-contain p-1"
@@ -73,7 +73,7 @@ export function Footer(): React.ReactElement {
                 </div>
                 <div className="relative w-14 h-14 shrink-0">
                   <Image
-                    src="/images/COVID_LOGO.png"
+                    src="/images/COVID_LOGO.jpeg"
                     alt="COVID Safe"
                     fill
                     className="object-contain"

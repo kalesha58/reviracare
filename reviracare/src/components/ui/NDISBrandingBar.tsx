@@ -24,7 +24,7 @@ export function NDISBrandingBar({ title, className }: NDISBrandingBarProps) {
                 <div className="flex flex-col items-center sm:items-end gap-2 shrink-0">
                     <div className="relative w-[140px] h-[70px] sm:w-[180px] sm:h-[90px] bg-white p-3 rounded-2xl shadow-xl hover:scale-105 transition-transform duration-300">
                         <Image
-                            src="/images/NDIS_LOGO.png"
+                            src="/images/NDIS_LOGO.jpeg"
                             alt="NDIS Logo"
                             fill
                             className="object-contain p-1"
