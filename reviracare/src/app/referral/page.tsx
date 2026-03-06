@@ -276,10 +276,13 @@ export default function ReferralPage(): React.ReactElement {
             animate={{ opacity: 1, scale: 1 }}
             className="bg-white dark:bg-zinc-900 rounded-[2.5rem] border border-zinc-200 dark:border-zinc-800 shadow-2xl p-6 sm:p-10 md:p-14 lg:p-20"
           >
-            <div className="mb-12 text-center max-w-2xl mx-auto">
-              <span className="text-sm sm:text-base text-purple-brand dark:text-purple-300 uppercase tracking-[0.2em] mb-4 inline-block font-bold">Referral Form</span>
-              <h1 className="text-4xl sm:text-5xl md:text-6xl font-black text-zinc-900 dark:text-white mb-6 tracking-tight leading-tight">Let's Get Started</h1>
-              <p className="text-zinc-500 dark:text-zinc-400 text-lg md:text-xl max-w-xl mx-auto leading-relaxed">Please fill out the details below. Our team is here to support you every step of the way.</p>
+            <div className="mb-14 text-center max-w-3xl mx-auto">
+              <span className="text-xs sm:text-sm text-purple-brand dark:text-purple-300 uppercase tracking-[0.3em] mb-6 inline-flex flex-col items-center font-black">
+                Referral Form
+                <div className="w-12 h-1 bg-secondary mt-2 rounded-full" />
+              </span>
+              <h1 className="text-4xl sm:text-5xl md:text-7xl font-medium text-zinc-900 dark:text-white mb-8 tracking-tight leading-[1.1]">Let's Get Started</h1>
+              <p className="text-zinc-500 dark:text-zinc-400 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed font-medium">Please fill out the details below as accurately as possible. Our team is here to support you every step of the way.</p>
             </div>
 
             <form onSubmit={handleSubmit} className="space-y-16">

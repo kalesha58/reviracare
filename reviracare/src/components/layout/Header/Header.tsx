@@ -49,7 +49,7 @@ export function Header(): React.ReactElement {
         "fixed top-0 left-0 right-0 transition-all duration-300 border-b",
         mobileOpen ? "z-[1000]" : "z-[100]",
         scrolled
-          ? "bg-white/90 dark:bg-zinc-900 backdrop-blur-md border-purple-brand/20 dark:border-zinc-800 py-3"
+          ? "bg-white dark:bg-zinc-950 border-purple-brand/10 dark:border-zinc-800 py-3 shadow-sm"
           : "bg-transparent border-transparent py-5"
       )}
     >
@@ -80,7 +80,7 @@ export function Header(): React.ReactElement {
 
           <Link
             href="/ndis"
-            className="flex relative h-10 w-20 sm:h-12 sm:w-24 md:h-14 md:w-28 bg-white p-1.5 rounded-xl shadow-lg border border-purple-brand/10 hover:scale-105 transition-transform duration-300 shrink-0 items-center justify-center translate-y-[-2px]"
+            className="flex relative h-10 w-20 sm:h-12 sm:w-24 md:h-14 md:w-28 hover:scale-105 transition-transform duration-300 shrink-0 items-center justify-center translate-y-[-2px]"
           >
             <Image
               src="/images/NDIS_LOGO.jpeg"
