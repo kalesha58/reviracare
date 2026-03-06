@@ -98,19 +98,29 @@ const LIVING_OPTIONS: { value: LivingArrangement; label: string }[] = [
 ];
 
 const SERVICE_OPTIONS = [
-  { value: "in-home", label: "In-Home And Community Support" },
-  { value: "social", label: "Social And Community Participation" },
-  { value: "group", label: "Group Activities And Community Programs" },
-  { value: "sil", label: "Supported Independent Living (SIL)" },
-  { value: "skills", label: "Development Of Daily Living And Life Skills" },
-  { value: "sda", label: "Specialised Disability Accommodation (SDA)" },
+  { value: "0136-group-activities", label: "0136 Group/Centre Activities" },
+  { value: "0131-sda", label: "0131 Specialised Disability Accommodation" },
+  { value: "0125-participate-community", label: "0125 Participate Community" },
+  { value: "0120-household-tasks", label: "0120 Household Tasks" },
+  { value: "0117-dev-life-skills", label: "0117 Development-Life Skills" },
+  { value: "0116-innov-community", label: "0116 Innov Community Participation" },
+  { value: "0115-daily-tasks", label: "0115 Daily Tasks/Shared Living" },
+  { value: "0114-nursing-care", label: "0114 Community Nursing Care" },
+  { value: "0111-home-mod", label: "0111 Home Modification" },
+  { value: "0108-assist-travel", label: "0108 Assist-Travel/Transport" },
+  { value: "0107-personal-activities", label: "0107 Assist-Personal Activities" },
+  { value: "0106-coordination-supports", label: "0106 Level2-Coordination Of Supports" },
+  { value: "0104-personal-activities-high", label: "0104 Assist Personal Activities High" },
+  { value: "0102-assist-access-employ", label: "0102 Assist Access/Maintain Employ" },
+  { value: "0101-accommodation-tenancy", label: "0101 Accommodation/Tenancy -" },
+  { value: "voohc-ssrc-nsw", label: "VOOHC/SSRC Registered in NSW" },
+  { value: "0132-specialist-coordination", label: "0132 Level3-Specailist Support Coordination" },
 ];
 
 const DELIVERY_OPTIONS: { value: DeliveryPreference; label: string }[] = [
   { value: "at-home", label: "At Home" },
   { value: "sil", label: "In SIL Accommodation / Group Home" },
   { value: "community", label: "In The Community" },
-  { value: "clinic", label: "In Clinic - Not Available In All Locations" },
 ];
 
 const FUNDING_OPTIONS: { value: FundingManaged; label: string }[] = [
@@ -266,53 +276,104 @@ export default function ReferralPage(): React.ReactElement {
             animate={{ opacity: 1, scale: 1 }}
             className="bg-white dark:bg-zinc-900 rounded-[2.5rem] border border-zinc-200 dark:border-zinc-800 shadow-2xl p-6 sm:p-10 md:p-14 lg:p-20"
           >
-            <div className="mb-16 text-center max-w-2xl mx-auto">
-              <span className="section-label text-purple-brand dark:text-purple-300 uppercase tracking-widest mb-4 inline-block font-black">Referral Form</span>
-              <h1 className="text-4xl md:text-5xl font-black text-zinc-900 dark:text-white mb-6">Let's Get Started</h1>
-              <p className="text-zinc-500 dark:text-zinc-400 text-lg">Please fill out the details below. Our team is here to support you every step of the way.</p>
+            <div className="mb-12 text-center max-w-2xl mx-auto">
+              <span className="text-sm sm:text-base text-purple-brand dark:text-purple-300 uppercase tracking-[0.2em] mb-4 inline-block font-bold">Referral Form</span>
+              <h1 className="text-4xl sm:text-5xl md:text-6xl font-black text-zinc-900 dark:text-white mb-6 tracking-tight leading-tight">Let's Get Started</h1>
+              <p className="text-zinc-500 dark:text-zinc-400 text-lg md:text-xl max-w-xl mx-auto leading-relaxed">Please fill out the details below. Our team is here to support you every step of the way.</p>
             </div>
 
-            <form onSubmit={handleSubmit} className="space-y-24">
+            <form onSubmit={handleSubmit} className="space-y-16">
+              {/* Row 1: Referrer & Participant Basic Details */}
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
-                {/* Left Column: Administrative Details */}
-                <div className="space-y-20">
-                  <FormSection title="About You" icon={<User className="w-5 h-5" />}>
-                    <div>
-                      <label className={labelBase}>
-                        What describes you best? <span className="text-red-500">*</span>
-                      </label>
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                        {REFERRER_OPTIONS.map((opt) => (
-                          <label
-                            key={opt.value}
-                            className={cn(
-                              "flex items-center gap-3 rounded-xl border px-4 py-3 cursor-pointer transition-all duration-300",
-                              form.referrerRole === opt.value
-                                ? "border-purple-brand bg-purple-brand/5 dark:bg-purple-brand/10 shadow-sm"
-                                : "border-zinc-200 dark:border-zinc-800 hover:border-purple-brand/50 dark:bg-zinc-800/50"
-                            )}
-                          >
-                            <input
-                              type="radio"
-                              name="referrerRole"
-                              value={opt.value}
-                              checked={form.referrerRole === opt.value}
-                              onChange={() => update("referrerRole", opt.value)}
-                              className="w-4 h-4 accent-purple-brand"
-                            />
-                            <span className="text-sm font-bold">{opt.label}</span>
-                          </label>
-                        ))}
-                      </div>
+                <FormSection title="About You" icon={<User className="w-5 h-5" />}>
+                  <div>
+                    <label className={labelBase}>
+                      What describes you best? <span className="text-red-500">*</span>
+                    </label>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                      {REFERRER_OPTIONS.map((opt) => (
+                        <label
+                          key={opt.value}
+                          className={cn(
+                            "flex items-center gap-3 rounded-xl border px-4 py-3 cursor-pointer transition-all duration-300",
+                            form.referrerRole === opt.value
+                              ? "border-purple-brand bg-purple-brand/5 dark:bg-purple-brand/10 shadow-sm"
+                              : "border-zinc-200 dark:border-zinc-800 hover:border-purple-brand/50 dark:bg-zinc-800/50"
+                          )}
+                        >
+                          <input
+                            type="radio"
+                            name="referrerRole"
+                            value={opt.value}
+                            checked={form.referrerRole === opt.value}
+                            onChange={() => update("referrerRole", opt.value)}
+                            className="w-4 h-4 accent-purple-brand"
+                          />
+                          <span className="text-sm font-bold">{opt.label}</span>
+                        </label>
+                      ))}
                     </div>
+                  </div>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                    <div className="space-y-1.5">
+                      <label className={labelBase}>First Name <span className="text-red-500">*</span></label>
+                      <input
+                        type="text"
+                        placeholder="e.g. John"
+                        value={form.firstName}
+                        onChange={(e) => update("firstName", e.target.value)}
+                        className={inputBase}
+                        required
+                      />
+                    </div>
+                    <div className="space-y-1.5">
+                      <label className={labelBase}>Last Name <span className="text-red-500">*</span></label>
+                      <input
+                        type="text"
+                        placeholder="e.g. Smith"
+                        value={form.lastName}
+                        onChange={(e) => update("lastName", e.target.value)}
+                        className={inputBase}
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                    <div className="space-y-1.5">
+                      <label className={labelBase}>Email <span className="text-red-500">*</span></label>
+                      <input
+                        type="email"
+                        placeholder="john@example.com"
+                        value={form.email}
+                        onChange={(e) => update("email", e.target.value)}
+                        className={inputBase}
+                        required
+                      />
+                    </div>
+                    <div className="space-y-1.5">
+                      <label className={labelBase}>Phone <span className="text-red-500">*</span></label>
+                      <input
+                        type="tel"
+                        placeholder="0400 000 000"
+                        value={form.phone}
+                        onChange={(e) => update("phone", e.target.value)}
+                        className={inputBase}
+                        required
+                      />
+                    </div>
+                  </div>
+                </FormSection>
+                {/* No extra div here, it should close at line 509 */}
+                <FormSection title="Participant Details" icon={<User className="w-5 h-5" />}>
+                  <div className="space-y-6">
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                       <div className="space-y-1.5">
                         <label className={labelBase}>First Name <span className="text-red-500">*</span></label>
                         <input
                           type="text"
-                          placeholder="e.g. John"
-                          value={form.firstName}
-                          onChange={(e) => update("firstName", e.target.value)}
+                          placeholder="Participant First Name"
+                          value={form.participantFirstName}
+                          onChange={(e) => update("participantFirstName", e.target.value)}
                           className={inputBase}
                           required
                         />
@@ -321,9 +382,33 @@ export default function ReferralPage(): React.ReactElement {
                         <label className={labelBase}>Last Name <span className="text-red-500">*</span></label>
                         <input
                           type="text"
-                          placeholder="e.g. Smith"
-                          value={form.lastName}
-                          onChange={(e) => update("lastName", e.target.value)}
+                          placeholder="Participant Last Name"
+                          value={form.participantLastName}
+                          onChange={(e) => update("participantLastName", e.target.value)}
+                          className={inputBase}
+                          required
+                        />
+                      </div>
+                    </div>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                      <div className="space-y-1.5">
+                        <label className={labelBase}>Age <span className="text-red-500">*</span></label>
+                        <input
+                          type="text"
+                          placeholder="e.g. 25"
+                          value={form.participantAge}
+                          onChange={(e) => update("participantAge", e.target.value)}
+                          className={inputBase}
+                          required
+                        />
+                      </div>
+                      <div className="space-y-1.5">
+                        <label className={labelBase}>Date of Birth <span className="text-red-500">*</span></label>
+                        <input
+                          type="text"
+                          placeholder="DD/MM/YYYY"
+                          value={form.participantDob}
+                          onChange={(e) => update("participantDob", handleDateInput(e.target.value))}
                           className={inputBase}
                           required
                         />
@@ -334,243 +419,136 @@ export default function ReferralPage(): React.ReactElement {
                         <label className={labelBase}>Email <span className="text-red-500">*</span></label>
                         <input
                           type="email"
-                          placeholder="john@example.com"
-                          value={form.email}
-                          onChange={(e) => update("email", e.target.value)}
+                          placeholder="participant@email.com"
+                          value={form.participantEmail}
+                          onChange={(e) => update("participantEmail", e.target.value)}
                           className={inputBase}
                           required
                         />
                       </div>
                       <div className="space-y-1.5">
-                        <label className={labelBase}>Phone <span className="text-red-500">*</span></label>
+                        <label className={labelBase}>Phone Number <span className="text-red-500">*</span></label>
                         <input
                           type="tel"
                           placeholder="0400 000 000"
-                          value={form.phone}
-                          onChange={(e) => update("phone", e.target.value)}
+                          value={form.participantPhone}
+                          onChange={(e) => update("participantPhone", e.target.value)}
                           className={inputBase}
                           required
                         />
                       </div>
                     </div>
-                  </FormSection>
-
-                  <FormSection title="Primary Contact" icon={<User className="w-5 h-5" />}>
-                    <p className="text-sm text-zinc-500 dark:text-zinc-400 mb-6">
-                      Is the primary contact for the first appointment the same as the referrer?
-                    </p>
-                    <div className="flex gap-8 mb-8">
-                      {["yes", "no"].map((val) => (
-                        <label key={val} className="flex items-center gap-3 cursor-pointer group">
-                          <input
-                            type="radio"
-                            name="primaryContactSameAsReferrer"
-                            value={val}
-                            checked={form.primaryContactSameAsReferrer === val}
-                            onChange={() => update("primaryContactSameAsReferrer", val as any)}
-                            className="w-5 h-5 accent-purple-brand"
-                          />
-                          <span className={cn(
-                            "text-sm font-bold uppercase tracking-wider",
-                            form.primaryContactSameAsReferrer === val ? "text-purple-brand dark:text-purple-400" : "text-zinc-400"
-                          )}>
-                            {val}
-                          </span>
-                        </label>
-                      ))}
-                    </div>
-
-                    {form.primaryContactSameAsReferrer === "no" && (
-                      <motion.div
-                        initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: "auto" }}
-                        className="space-y-5 pt-5 border-t border-zinc-100 dark:border-zinc-800"
-                      >
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                          <div className="space-y-1.5">
-                            <label className={labelBase}>First Name <span className="text-red-500">*</span></label>
-                            <input
-                              type="text"
-                              placeholder="Contact First Name"
-                              value={form.primaryContactFirstName}
-                              onChange={(e) => update("primaryContactFirstName", e.target.value)}
-                              className={inputBase}
-                              required
-                            />
-                          </div>
-                          <div className="space-y-1.5">
-                            <label className={labelBase}>Last Name <span className="text-red-500">*</span></label>
-                            <input
-                              type="text"
-                              placeholder="Contact Last Name"
-                              value={form.primaryContactLastName}
-                              onChange={(e) => update("primaryContactLastName", e.target.value)}
-                              className={inputBase}
-                              required
-                            />
-                          </div>
-                        </div>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                          <div className="space-y-1.5">
-                            <label className={labelBase}>Email <span className="text-red-500">*</span></label>
-                            <input
-                              type="email"
-                              placeholder="contact@email.com"
-                              value={form.primaryContactEmail}
-                              onChange={(e) => update("primaryContactEmail", e.target.value)}
-                              className={inputBase}
-                              required
-                            />
-                          </div>
-                          <div className="space-y-1.5">
-                            <label className={labelBase}>Phone <span className="text-red-500">*</span></label>
-                            <input
-                              type="tel"
-                              placeholder="0400 000 000"
-                              value={form.primaryContactPhone}
-                              onChange={(e) => update("primaryContactPhone", e.target.value)}
-                              className={inputBase}
-                              required
-                            />
-                          </div>
-                        </div>
-                      </motion.div>
-                    )}
-                  </FormSection>
-
-                  <FormSection title="NDIS Details" icon={<FileText className="w-5 h-5" />}>
-                    <div className="space-y-6">
-                      <div className="space-y-1.5">
-                        <label className={labelBase}>NDIS Plan Number <span className="text-red-500">*</span></label>
+                    <div className="space-y-4">
+                      <label className={labelBase}>Home Address <span className="text-red-500">*</span></label>
+                      <input
+                        type="text"
+                        placeholder="Street Address"
+                        value={form.addressStreet}
+                        onChange={(e) => update("addressStreet", e.target.value)}
+                        className={inputBase}
+                        required
+                      />
+                      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                         <input
                           type="text"
-                          placeholder="e.g. 430 000 000"
-                          value={form.ndisPlanNumber}
-                          onChange={(e) => update("ndisPlanNumber", e.target.value)}
+                          placeholder="Suburb"
+                          value={form.addressSuburb}
+                          onChange={(e) => update("addressSuburb", e.target.value)}
                           className={inputBase}
                           required
                         />
-                      </div>
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                        <div className="space-y-1.5">
-                          <label className={labelBase}>Plan Start Date (DD/MM/YYYY) <span className="text-red-500">*</span></label>
-                          <input
-                            type="text"
-                            placeholder="DD/MM/YYYY"
-                            value={form.planStartDate}
-                            onChange={(e) => update("planStartDate", handleDateInput(e.target.value))}
-                            className={inputBase}
-                            required
-                          />
-                        </div>
-                        <div className="space-y-1.5">
-                          <label className={labelBase}>Plan End Date (DD/MM/YYYY) <span className="text-red-500">*</span></label>
-                          <input
-                            type="text"
-                            placeholder="DD/MM/YYYY"
-                            value={form.planEndDate}
-                            onChange={(e) => update("planEndDate", handleDateInput(e.target.value))}
-                            className={inputBase}
-                            required
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  </FormSection>
-
-                  <FormSection title="Billing & Funding" icon={<CreditCard className="w-5 h-5" />}>
-                    <div className="space-y-8">
-                      <div>
-                        <label className={labelBase}>Managed By <span className="text-red-500">*</span></label>
-                        <div className="grid grid-cols-1 gap-3">
-                          {FUNDING_OPTIONS.map((opt) => (
-                            <label
-                              key={opt.value}
-                              className={cn(
-                                "flex items-center gap-3 rounded-xl border px-5 py-4 cursor-pointer transition-all duration-300",
-                                form.fundingManaged === opt.value
-                                  ? "border-purple-brand bg-purple-brand/5 dark:bg-purple-brand/10 shadow-sm"
-                                  : "border-zinc-200 dark:border-zinc-800 dark:bg-zinc-800/50"
-                              )}
-                            >
-                              <input
-                                type="radio"
-                                name="fundingManaged"
-                                value={opt.value}
-                                checked={form.fundingManaged === opt.value}
-                                onChange={() => update("fundingManaged", opt.value)}
-                                className="w-4 h-4 accent-purple-brand"
-                              />
-                              <span className="text-sm font-bold">{opt.label}</span>
-                            </label>
+                        <input
+                          type="text"
+                          placeholder="Post Code"
+                          value={form.addressPostCode}
+                          onChange={(e) => update("addressPostCode", e.target.value)}
+                          className={inputBase}
+                          required
+                        />
+                        <select
+                          value={form.addressState}
+                          onChange={(e) => update("addressState", e.target.value)}
+                          className={inputBase}
+                          required
+                        >
+                          <option value="">State</option>
+                          {STATE_OPTIONS.map((s) => (
+                            <option key={s} value={s}>{s}</option>
                           ))}
-                        </div>
+                        </select>
                       </div>
-
-                      {form.fundingManaged === "plan-managed" && (
-                        <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="space-y-5 p-6 rounded-2xl bg-zinc-50 dark:bg-zinc-800/40 border border-zinc-100 dark:border-zinc-800">
-                          <h4 className="text-xs font-black uppercase tracking-widest text-purple-brand dark:text-purple-400 mb-2">Plan Manager Details</h4>
-                          <div className="space-y-4">
-                            <input
-                              type="text"
-                              placeholder="Plan Management Company Name"
-                              value={form.planManagerName}
-                              onChange={(e) => update("planManagerName", e.target.value)}
-                              className={inputBase}
-                              required
-                            />
-                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                              <input
-                                type="email"
-                                placeholder="Invoices Email"
-                                value={form.planManagerEmail}
-                                onChange={(e) => update("planManagerEmail", e.target.value)}
-                                className={inputBase}
-                                required
-                              />
-                              <input
-                                type="tel"
-                                placeholder="Phone"
-                                value={form.planManagerPhone}
-                                onChange={(e) => update("planManagerPhone", e.target.value)}
-                                className={inputBase}
-                              />
-                            </div>
-                          </div>
-                        </motion.div>
-                      )}
-
-                      {form.fundingManaged === "self" && (
-                        <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="space-y-4">
-                          <div className="space-y-1.5">
-                            <label className={labelBase}>Invoices Email Address <span className="text-red-500">*</span></label>
-                            <input
-                              type="email"
-                              placeholder="billing@example.com"
-                              value={form.billingEmail}
-                              onChange={(e) => update("billingEmail", e.target.value)}
-                              className={inputBase}
-                              required
-                            />
-                          </div>
-                        </motion.div>
-                      )}
                     </div>
-                  </FormSection>
-                </div>
+                    <div>
+                      <label className={labelBase}>Gender <span className="text-red-500">*</span></label>
+                      <div className="flex flex-wrap gap-2">
+                        {GENDER_OPTIONS.map((opt) => (
+                          <label
+                            key={opt.value}
+                            className={cn(
+                              "flex items-center gap-2 rounded-xl border px-3 py-2 cursor-pointer text-xs font-bold transition-all duration-300",
+                              form.gender === opt.value
+                                ? "border-purple-brand bg-purple-brand/10 text-purple-brand"
+                                : "border-zinc-200 dark:border-zinc-800 text-zinc-500 dark:bg-zinc-800/50"
+                            )}
+                          >
+                            <input
+                              type="radio"
+                              name="gender"
+                              value={opt.value}
+                              checked={form.gender === opt.value}
+                              onChange={() => update("gender", opt.value)}
+                              className="w-4 h-4 accent-purple-brand"
+                            />
+                            {opt.label}
+                          </label>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </FormSection>
+              </div>
 
-                {/* Right Column: Participant Details & Service Plans */}
-                <div className="space-y-20">
-                  <FormSection title="Participant Details" icon={<User className="w-5 h-5" />}>
-                    <div className="space-y-6">
+              {/* Row 2: Contact & Disability */}
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start pt-12 border-t border-zinc-100 dark:border-zinc-800">
+                <FormSection title="Primary Contact" icon={<User className="w-5 h-5" />}>
+                  <p className="text-sm text-zinc-500 dark:text-zinc-400 mb-6">
+                    Is the primary contact for the first appointment the same as the referrer?
+                  </p>
+                  <div className="flex gap-8 mb-8">
+                    {["yes", "no"].map((val) => (
+                      <label key={val} className="flex items-center gap-3 cursor-pointer group">
+                        <input
+                          type="radio"
+                          name="primaryContactSameAsReferrer"
+                          value={val}
+                          checked={form.primaryContactSameAsReferrer === val}
+                          onChange={() => update("primaryContactSameAsReferrer", val as any)}
+                          className="w-5 h-5 accent-purple-brand"
+                        />
+                        <span className={cn(
+                          "text-sm font-bold uppercase tracking-wider",
+                          form.primaryContactSameAsReferrer === val ? "text-purple-brand dark:text-purple-400" : "text-zinc-400"
+                        )}>
+                          {val}
+                        </span>
+                      </label>
+                    ))}
+                  </div>
+
+                  {form.primaryContactSameAsReferrer === "no" && (
+                    <motion.div
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: "auto" }}
+                      className="space-y-5 pt-5 border-t border-zinc-100 dark:border-zinc-800"
+                    >
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                         <div className="space-y-1.5">
                           <label className={labelBase}>First Name <span className="text-red-500">*</span></label>
                           <input
                             type="text"
-                            placeholder="Participant First Name"
-                            value={form.participantFirstName}
-                            onChange={(e) => update("participantFirstName", e.target.value)}
+                            placeholder="Contact First Name"
+                            value={form.primaryContactFirstName}
+                            onChange={(e) => update("primaryContactFirstName", e.target.value)}
                             className={inputBase}
                             required
                           />
@@ -579,33 +557,9 @@ export default function ReferralPage(): React.ReactElement {
                           <label className={labelBase}>Last Name <span className="text-red-500">*</span></label>
                           <input
                             type="text"
-                            placeholder="Participant Last Name"
-                            value={form.participantLastName}
-                            onChange={(e) => update("participantLastName", e.target.value)}
-                            className={inputBase}
-                            required
-                          />
-                        </div>
-                      </div>
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                        <div className="space-y-1.5">
-                          <label className={labelBase}>Age <span className="text-red-500">*</span></label>
-                          <input
-                            type="text"
-                            placeholder="e.g. 25"
-                            value={form.participantAge}
-                            onChange={(e) => update("participantAge", e.target.value)}
-                            className={inputBase}
-                            required
-                          />
-                        </div>
-                        <div className="space-y-1.5">
-                          <label className={labelBase}>Date of Birth (DD/MM/YYYY) <span className="text-red-500">*</span></label>
-                          <input
-                            type="text"
-                            placeholder="DD/MM/YYYY"
-                            value={form.participantDob}
-                            onChange={(e) => update("participantDob", handleDateInput(e.target.value))}
+                            placeholder="Contact Last Name"
+                            value={form.primaryContactLastName}
+                            onChange={(e) => update("primaryContactLastName", e.target.value)}
                             className={inputBase}
                             required
                           />
@@ -616,235 +570,302 @@ export default function ReferralPage(): React.ReactElement {
                           <label className={labelBase}>Email <span className="text-red-500">*</span></label>
                           <input
                             type="email"
-                            placeholder="participant@email.com"
-                            value={form.participantEmail}
-                            onChange={(e) => update("participantEmail", e.target.value)}
+                            placeholder="contact@email.com"
+                            value={form.primaryContactEmail}
+                            onChange={(e) => update("primaryContactEmail", e.target.value)}
                             className={inputBase}
                             required
                           />
                         </div>
                         <div className="space-y-1.5">
-                          <label className={labelBase}>Phone Number <span className="text-red-500">*</span></label>
+                          <label className={labelBase}>Phone <span className="text-red-500">*</span></label>
                           <input
                             type="tel"
                             placeholder="0400 000 000"
-                            value={form.participantPhone}
-                            onChange={(e) => update("participantPhone", e.target.value)}
+                            value={form.primaryContactPhone}
+                            onChange={(e) => update("primaryContactPhone", e.target.value)}
                             className={inputBase}
                             required
                           />
                         </div>
                       </div>
-                      <div className="space-y-4">
-                        <label className={labelBase}>Home Address <span className="text-red-500">*</span></label>
+                    </motion.div>
+                  )}
+                </FormSection>
+
+                <FormSection title="NDIS Details" icon={<FileText className="w-5 h-5" />}>
+                  <div className="space-y-6">
+                    <div className="space-y-1.5">
+                      <label className={labelBase}>NDIS Plan Number <span className="text-red-500">*</span></label>
+                      <input
+                        type="text"
+                        placeholder="e.g. 430 000 000"
+                        value={form.ndisPlanNumber}
+                        onChange={(e) => update("ndisPlanNumber", e.target.value)}
+                        className={inputBase}
+                        required
+                      />
+                    </div>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                      <div className="space-y-1.5">
+                        <label className={labelBase}>Plan Start Date <span className="text-red-500">*</span></label>
                         <input
                           type="text"
-                          placeholder="Street Address"
-                          value={form.addressStreet}
-                          onChange={(e) => update("addressStreet", e.target.value)}
+                          placeholder="DD/MM/YYYY"
+                          value={form.planStartDate}
+                          onChange={(e) => update("planStartDate", handleDateInput(e.target.value))}
                           className={inputBase}
                           required
                         />
-                        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                          <input
-                            type="text"
-                            placeholder="Suburb"
-                            value={form.addressSuburb}
-                            onChange={(e) => update("addressSuburb", e.target.value)}
-                            className={inputBase}
-                            required
-                          />
-                          <input
-                            type="text"
-                            placeholder="Post Code"
-                            value={form.addressPostCode}
-                            onChange={(e) => update("addressPostCode", e.target.value)}
-                            className={inputBase}
-                            required
-                          />
-                          <select
-                            value={form.addressState}
-                            onChange={(e) => update("addressState", e.target.value)}
-                            className={inputBase}
-                            required
-                          >
-                            <option value="">State</option>
-                            {STATE_OPTIONS.map((s) => (
-                              <option key={s} value={s}>{s}</option>
-                            ))}
-                          </select>
-                        </div>
                       </div>
-                      <div>
-                        <label className={labelBase}>Gender <span className="text-red-500">*</span></label>
-                        <div className="flex flex-wrap gap-2">
-                          {GENDER_OPTIONS.map((opt) => (
-                            <label
-                              key={opt.value}
-                              className={cn(
-                                "flex items-center gap-2 rounded-xl border px-3 py-2 cursor-pointer text-xs font-bold transition-all duration-300",
-                                form.gender === opt.value
-                                  ? "border-purple-brand bg-purple-brand/10 text-purple-brand"
-                                  : "border-zinc-200 dark:border-zinc-800 text-zinc-500 dark:bg-zinc-800/50"
-                              )}
-                            >
-                              <input
-                                type="radio"
-                                name="gender"
-                                value={opt.value}
-                                checked={form.gender === opt.value}
-                                onChange={() => update("gender", opt.value)}
-                                className="w-4 h-4 accent-purple-brand"
-                              />
-                              {opt.label}
-                            </label>
-                          ))}
-                        </div>
+                      <div className="space-y-1.5">
+                        <label className={labelBase}>Plan End Date <span className="text-red-500">*</span></label>
+                        <input
+                          type="text"
+                          placeholder="DD/MM/YYYY"
+                          value={form.planEndDate}
+                          onChange={(e) => update("planEndDate", handleDateInput(e.target.value))}
+                          className={inputBase}
+                          required
+                        />
                       </div>
                     </div>
-                  </FormSection>
+                  </div>
+                </FormSection>
 
-                  <FormSection title="Disability Details" icon={<AlertTriangle className="w-5 h-5" />}>
-                    <textarea
-                      placeholder="Please provide details about the primary disability and any secondary diagnosis..."
-                      value={form.primaryDisabilityDetail}
-                      onChange={(e) => update("primaryDisabilityDetail", e.target.value)}
-                      className={cn(inputBase, "min-h-[120px] resize-none")}
-                      required
-                    />
-                  </FormSection>
+                <FormSection title="Billing & Funding" icon={<CreditCard className="w-5 h-5" />}>
+                  <div className="space-y-8">
+                    <div>
+                      <label className={labelBase}>Managed By <span className="text-red-500">*</span></label>
+                      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                        {FUNDING_OPTIONS.map((opt) => (
+                          <label
+                            key={opt.value}
+                            className={cn(
+                              "flex items-center gap-3 rounded-xl border px-5 py-4 cursor-pointer transition-all duration-300",
+                              form.fundingManaged === opt.value
+                                ? "border-purple-brand bg-purple-brand/5 dark:bg-purple-brand/10 shadow-sm"
+                                : "border-zinc-200 dark:border-zinc-800 dark:bg-zinc-800/50"
+                            )}
+                          >
+                            <input
+                              type="radio"
+                              name="fundingManaged"
+                              value={opt.value}
+                              checked={form.fundingManaged === opt.value}
+                              onChange={() => update("fundingManaged", opt.value)}
+                              className="w-4 h-4 accent-purple-brand"
+                            />
+                            <span className="text-sm font-bold">{opt.label}</span>
+                          </label>
+                        ))}
+                      </div>
+                    </div>
 
-                  <FormSection title="Services & Goals" icon={<Target className="w-5 h-5" />}>
-                    <div className="space-y-8">
-                      <div>
-                        <label className={labelBase}>Services Required <span className="text-red-500">*</span></label>
-                        <div className="grid grid-cols-1 gap-2">
-                          {SERVICE_OPTIONS.map((opt) => (
-                            <label
-                              key={opt.value}
-                              className={cn(
-                                "flex items-center gap-3 rounded-xl border px-4 py-3 cursor-pointer transition-all duration-300",
-                                form.servicesRequired.includes(opt.value)
-                                  ? "border-purple-brand bg-purple-brand/5 dark:bg-purple-brand/10"
-                                  : "border-zinc-200 dark:border-zinc-800 dark:bg-zinc-800/50"
-                              )}
-                            >
+                    {form.fundingManaged === "plan-managed" && (
+                      <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="space-y-5 p-6 rounded-2xl bg-zinc-50 dark:bg-zinc-800/40 border border-zinc-100 dark:border-zinc-800">
+                        <h4 className="text-xs font-black uppercase tracking-widest text-purple-brand dark:text-purple-400 mb-2">Plan Manager Details</h4>
+                        <div className="space-y-4">
+                          <input
+                            type="text"
+                            placeholder="Plan Management Company Name"
+                            value={form.planManagerName}
+                            onChange={(e) => update("planManagerName", e.target.value)}
+                            className={inputBase}
+                            required
+                          />
+                          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <input
+                              type="email"
+                              placeholder="Invoices Email"
+                              value={form.planManagerEmail}
+                              onChange={(e) => update("planManagerEmail", e.target.value)}
+                              className={inputBase}
+                              required
+                            />
+                            <input
+                              type="tel"
+                              placeholder="Phone"
+                              value={form.planManagerPhone}
+                              onChange={(e) => update("planManagerPhone", e.target.value)}
+                              className={inputBase}
+                            />
+                          </div>
+                        </div>
+                      </motion.div>
+                    )}
+
+                    {form.fundingManaged === "self" && (
+                      <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="space-y-4">
+                        <div className="space-y-1.5">
+                          <label className={labelBase}>Invoices Email Address <span className="text-red-500">*</span></label>
+                          <input
+                            type="email"
+                            placeholder="billing@example.com"
+                            value={form.billingEmail}
+                            onChange={(e) => update("billingEmail", e.target.value)}
+                            className={inputBase}
+                            required
+                          />
+                        </div>
+                      </motion.div>
+                    )}
+                  </div>
+                </FormSection>
+              </div>
+
+              {/* Unique Following Sections */}
+              <div className="space-y-20">
+                <FormSection title="Disability Details" icon={<AlertTriangle className="w-5 h-5" />}>
+                  <textarea
+                    placeholder="Please provide details about the primary disability and any secondary diagnosis..."
+                    value={form.primaryDisabilityDetail}
+                    onChange={(e) => update("primaryDisabilityDetail", e.target.value)}
+                    className={cn(inputBase, "min-h-[120px] resize-none")}
+                    required
+                  />
+                </FormSection>
+
+                <FormSection title="Services & Goals" icon={<Target className="w-5 h-5" />}>
+                  <div className="space-y-8">
+                    <div className="space-y-1.5 pt-4">
+                      <label className={labelBase}>What are you hoping to achieve? <span className="text-red-500">*</span></label>
+                      <textarea
+                        placeholder="Desired outcomes, goals, and specific support needs..."
+                        value={form.desiredOutcomes}
+                        onChange={(e) => update("desiredOutcomes", e.target.value)}
+                        className={cn(inputBase, "min-h-[120px] resize-none")}
+                        required
+                      />
+                    </div>
+
+                    <div className="space-y-4">
+                      <label className={labelBase}>Supporting Documents</label>
+                      <div
+                        onDragOver={(e) => { e.preventDefault(); setDragActive(true); }}
+                        onDragLeave={() => setDragActive(false)}
+                        onDrop={handleFileDrop}
+                        className={cn(
+                          "rounded-3xl border-2 border-dashed p-10 text-center transition-all duration-300",
+                          dragActive
+                            ? "border-purple-brand bg-purple-brand/5 scale-[1.01]"
+                            : "border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-800/20"
+                        )}
+                      >
+                        <input type="file" multiple onChange={handleFileChange} className="hidden" id="referral-files" />
+                        <label htmlFor="referral-files" className="cursor-pointer flex flex-col items-center gap-4">
+                          <Upload className="w-10 h-10 text-purple-brand" />
+                          <div className="space-y-1">
+                            <span className="text-md font-bold block dark:text-zinc-200">Upload NDIS Plan or Reports</span>
+                            <span className="text-sm text-zinc-500">Drag items here or click to browse</span>
+                          </div>
+                        </label>
+                      </div>
+                      {files.length > 0 && (
+                        <div className="flex flex-wrap gap-2 mt-4">
+                          {files.map((file, i) => (
+                            <div key={i} className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-purple-brand/5 dark:bg-purple-brand/20 border border-purple-brand/10 text-xs font-bold text-purple-brand dark:text-purple-300">
+                              <span className="truncate max-w-[150px]">{file.name}</span>
+                              <button type="button" onClick={() => removeFile(i)} className="hover:text-red-500 transition-colors">×</button>
+                            </div>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                </FormSection>
+
+                {/* Horizontal Services Required Section */}
+                <div className="pt-10 border-t border-zinc-100 dark:border-zinc-800">
+                  <FormSection title="Required Services" icon={<Target className="w-5 h-5" />}>
+                    <div className="space-y-6">
+                      <label className={cn(labelBase, "text-base font-bold")}>
+                        Please select all the services that you require <span className="text-red-500">*</span>
+                      </label>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                        {SERVICE_OPTIONS.map((opt) => (
+                          <label
+                            key={opt.value}
+                            className={cn(
+                              "flex items-center gap-3 rounded-2xl border px-5 py-4 cursor-pointer transition-all duration-300 min-h-[70px]",
+                              form.servicesRequired.includes(opt.value)
+                                ? "border-purple-brand bg-purple-brand/5 dark:bg-purple-brand/10 shadow-sm"
+                                : "border-zinc-200 dark:border-zinc-800 dark:bg-zinc-800/50 hover:border-purple-brand/30"
+                            )}
+                          >
+                            <div className="flex items-center justify-center">
                               <input
                                 type="checkbox"
                                 checked={form.servicesRequired.includes(opt.value)}
                                 onChange={() => toggleService(opt.value)}
-                                className="w-4 h-4 accent-purple-brand"
+                                className="w-5 h-5 accent-purple-brand cursor-pointer"
                               />
-                              <span className="text-sm font-bold">{opt.label}</span>
-                            </label>
-                          ))}
-                        </div>
-                      </div>
-                      <div className="space-y-1.5">
-                        <label className={labelBase}>What are you hoping to achieve? <span className="text-red-500">*</span></label>
-                        <textarea
-                          placeholder="Desired outcomes, goals, and specific support needs..."
-                          value={form.desiredOutcomes}
-                          onChange={(e) => update("desiredOutcomes", e.target.value)}
-                          className={cn(inputBase, "min-h-[100px] resize-none")}
-                          required
-                        />
-                      </div>
-
-                      <div className="space-y-4">
-                        <label className={labelBase}>Supporting Documents</label>
-                        <div
-                          onDragOver={(e) => { e.preventDefault(); setDragActive(true); }}
-                          onDragLeave={() => setDragActive(false)}
-                          onDrop={handleFileDrop}
-                          className={cn(
-                            "rounded-3xl border-2 border-dashed p-10 text-center transition-all duration-300",
-                            dragActive
-                              ? "border-purple-brand bg-purple-brand/5 scale-[1.01]"
-                              : "border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-800/20"
-                          )}
-                        >
-                          <input type="file" multiple onChange={handleFileChange} className="hidden" id="referral-files" />
-                          <label htmlFor="referral-files" className="cursor-pointer flex flex-col items-center gap-4">
-                            <Upload className="w-10 h-10 text-purple-brand" />
-                            <div className="space-y-1">
-                              <span className="text-md font-bold block dark:text-zinc-200">Upload NDIS Plan or Reports</span>
-                              <span className="text-sm text-zinc-500">Drag items here or click to browse</span>
                             </div>
+                            <span className="text-sm font-bold leading-tight">{opt.label}</span>
                           </label>
-                        </div>
-                        {files.length > 0 && (
-                          <div className="flex flex-wrap gap-2 mt-4">
-                            {files.map((file, i) => (
-                              <div key={i} className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-purple-brand/5 dark:bg-purple-brand/20 border border-purple-brand/10 text-xs font-bold text-purple-brand dark:text-purple-300">
-                                <span className="truncate max-w-[150px]">{file.name}</span>
-                                <button type="button" onClick={() => removeFile(i)} className="hover:text-red-500 transition-colors">×</button>
-                              </div>
-                            ))}
-                          </div>
-                        )}
+                        ))}
                       </div>
                     </div>
                   </FormSection>
                 </div>
-              </div>
 
-              {/* Final Conclusion & Submission */}
-              <div className="pt-20 border-t border-zinc-100 dark:border-zinc-800">
-                <div className="max-w-4xl mx-auto space-y-16">
-                  <FormSection title="Quick Checks" icon={<AlertTriangle className="w-5 h-5" />}>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                      <div className="space-y-3">
-                        <label className={labelBase}>Preference</label>
-                        <div className="flex flex-wrap gap-2">
-                          {DELIVERY_OPTIONS.map((opt) => (
-                            <label key={opt.value} className={cn("flex items-center gap-2 rounded-xl border px-3 py-2 cursor-pointer text-xs font-bold transition-all", form.preferredDelivery.includes(opt.value) ? "border-purple-brand bg-purple-brand/10 text-purple-brand" : "border-zinc-200 dark:border-zinc-800 text-zinc-500")}>
-                              <input type="checkbox" checked={form.preferredDelivery.includes(opt.value)} onChange={() => toggleDelivery(opt.value)} className="w-4 h-4 accent-purple-brand" />
-                              {opt.label}
-                            </label>
-                          ))}
+                {/* Final Conclusion & Submission */}
+                <div className="pt-20 border-t border-zinc-100 dark:border-zinc-800">
+                  <div className="max-w-4xl mx-auto space-y-16">
+                    <FormSection title="Quick Checks" icon={<AlertTriangle className="w-5 h-5" />}>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div className="space-y-3">
+                          <label className={labelBase}>Preference</label>
+                          <div className="flex flex-wrap gap-2">
+                            {DELIVERY_OPTIONS.map((opt) => (
+                              <label key={opt.value} className={cn("flex items-center gap-2 rounded-xl border px-3 py-2 cursor-pointer text-xs font-bold transition-all", form.preferredDelivery.includes(opt.value) ? "border-purple-brand bg-purple-brand/10 text-purple-brand" : "border-zinc-200 dark:border-zinc-800 text-zinc-500")}>
+                                <input type="checkbox" checked={form.preferredDelivery.includes(opt.value)} onChange={() => toggleDelivery(opt.value)} className="w-4 h-4 accent-purple-brand" />
+                                {opt.label}
+                              </label>
+                            ))}
+                          </div>
+                        </div>
+                        <div className="space-y-3">
+                          <label className={labelBase}>Known Behaviours</label>
+                          <div className="flex flex-wrap gap-2">
+                            {BEHAVIOUR_OPTIONS.map((opt) => (
+                              <label key={opt.value} className={cn("flex items-center gap-2 rounded-xl border px-3 py-2 cursor-pointer text-xs font-bold transition-all", form.behaviours.includes(opt.value) ? "border-purple-brand bg-purple-brand/10 text-purple-brand" : "border-zinc-200 dark:border-zinc-800 text-zinc-500")}>
+                                <input type="checkbox" checked={form.behaviours.includes(opt.value)} onChange={() => toggleBehaviour(opt.value)} className="w-4 h-4 accent-purple-brand" />
+                                {opt.label}
+                              </label>
+                            ))}
+                          </div>
                         </div>
                       </div>
-                      <div className="space-y-3">
-                        <label className={labelBase}>Known Behaviours</label>
-                        <div className="flex flex-wrap gap-2">
-                          {BEHAVIOUR_OPTIONS.map((opt) => (
-                            <label key={opt.value} className={cn("flex items-center gap-2 rounded-xl border px-3 py-2 cursor-pointer text-xs font-bold transition-all", form.behaviours.includes(opt.value) ? "border-purple-brand bg-purple-brand/10 text-purple-brand" : "border-zinc-200 dark:border-zinc-800 text-zinc-500")}>
-                              <input type="checkbox" checked={form.behaviours.includes(opt.value)} onChange={() => toggleBehaviour(opt.value)} className="w-4 h-4 accent-purple-brand" />
-                              {opt.label}
-                            </label>
-                          ))}
-                        </div>
+                    </FormSection>
+
+                    <div className="bg-zinc-50/50 dark:bg-zinc-800/20 rounded-2xl md:rounded-[2rem] p-6 sm:p-10 md:p-12 text-center space-y-8">
+                      <label className="flex items-start justify-center gap-3 cursor-pointer group">
+                        <input
+                          type="checkbox"
+                          checked={form.acknowledgement}
+                          onChange={(e) => update("acknowledgement", e.target.checked)}
+                          className="w-5 h-5 rounded-md accent-purple-brand shrink-0 mt-1"
+                          required
+                        />
+                        <span className="text-sm md:text-md font-bold text-zinc-600 dark:text-zinc-300 text-left leading-relaxed">
+                          I acknowledge that the information entered is truthful and accurate to the best of my knowledge.
+                        </span>
+                      </label>
+
+                      <div className="space-y-4">
+                        <button
+                          type="submit"
+                          disabled={status === "submitting"}
+                          className={cn(
+                            "w-full sm:w-auto px-10 py-4 rounded-xl font-bold text-base md:text-lg uppercase tracking-wider text-white bg-purple-brand shadow-xl shadow-purple-brand/20 transition-all",
+                            "hover:scale-[1.02] hover:shadow-purple-brand/30 active:scale-95 disabled:opacity-50"
+                          )}
+                        >
+                          {status === "submitting" ? "Processing..." : "Submit Referral Form"}
+                        </button>
+                        <p className="text-xs font-black text-zinc-400 uppercase tracking-[0.2em]">Our team will review this within 24 hours</p>
                       </div>
-                    </div>
-                  </FormSection>
-
-                  <div className="bg-zinc-50 dark:bg-zinc-800/30 rounded-[2rem] p-8 sm:p-12 text-center space-y-10">
-                    <label className="flex items-center justify-center gap-4 cursor-pointer group">
-                      <input
-                        type="checkbox"
-                        checked={form.acknowledgement}
-                        onChange={(e) => update("acknowledgement", e.target.checked)}
-                        className="w-6 h-6 rounded-md accent-purple-brand shrink-0"
-                        required
-                      />
-                      <span className="text-md font-bold text-zinc-600 dark:text-zinc-300 text-left leading-relaxed">
-                        I acknowledge that the information entered is truthful and accurate to the best of my knowledge.
-                      </span>
-                    </label>
-
-                    <div className="space-y-4">
-                      <button
-                        type="submit"
-                        disabled={status === "submitting"}
-                        className={cn(
-                          "w-full sm:w-auto min-w-[320px] px-12 py-5 rounded-2xl font-black text-lg uppercase tracking-widest text-white bg-purple-brand shadow-2xl shadow-purple-brand/30 transition-all",
-                          "hover:scale-[1.02] hover:shadow-purple-brand/40 active:scale-98 disabled:opacity-50"
-                        )}
-                      >
-                        {status === "submitting" ? "Processing..." : "Submit Referral Form"}
-                      </button>
-                      <p className="text-xs font-black text-zinc-400 uppercase tracking-[0.2em]">Our team will review this within 24 hours</p>
                     </div>
                   </div>
                 </div>

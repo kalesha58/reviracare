@@ -202,31 +202,15 @@ export default function AboutPage(): React.ReactElement {
                 initial={{ opacity: 0, x: 50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
-                className="w-full max-w-[20rem] xl:w-80"
+                className="w-full group"
               >
-                <div className="flex items-center justify-start gap-4 sm:gap-5 bg-white border-2 border-purple-brand/20 shadow-2xl rounded-2xl md:rounded-[2rem] p-4 sm:p-5 md:p-6 w-full min-w-0 min-h-[85px] sm:min-h-[100px] md:h-[120px] box-border relative overflow-hidden group">
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-purple-brand/[0.03] rounded-full -mr-16 -mt-16" />
-
-                  <div className="w-16 sm:w-20 md:w-24 h-12 sm:h-16 md:h-20 flex shrink-0 items-center justify-center p-2.5 bg-white rounded-xl shadow-lg border border-purple-brand/10 z-10 transition-transform group-hover:scale-105">
-                    <Image
-                      src="/images/hero/National_Disability_Insurance_Scheme_logo.svg.png"
-                      alt="NDIS Registered Provider"
-                      width={96}
-                      height={60}
-                      className="object-contain h-full w-auto"
-                    />
-                  </div>
-
-                  <div className="flex flex-col justify-center min-w-0 z-10 flex-1">
-                    <div className="text-[13px] sm:text-[15px] md:text-[18px] font-black text-zinc-900 uppercase leading-tight mb-1.5 tracking-tight">
-                      Registered <br className="sm:hidden" /> NDIS Provider
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <div className="text-[10px] sm:text-[11px] md:text-[13px] font-black text-purple-brand tracking-[0.15em] bg-purple-brand/10 px-3 py-1 rounded-full border border-purple-brand/10 w-fit whitespace-nowrap">
-                        NO: 4053379341
-                      </div>
-                    </div>
-                  </div>
+                <div className="relative w-full aspect-[4/3] max-w-[240px] drop-shadow-2xl transition-transform duration-300 group-hover:scale-110">
+                  <Image
+                    src="/images/NDIS_LOGO.png"
+                    alt="NDIS Registered Provider"
+                    fill
+                    className="object-contain"
+                  />
                 </div>
               </motion.div>
             </div>
@@ -254,31 +238,15 @@ export default function AboutPage(): React.ReactElement {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 1.4 }}
-              className="w-full max-w-[280px] sm:max-w-[320px]"
+              className="w-full group px-6"
             >
-              <div className="flex items-center justify-start gap-3 sm:gap-4 bg-white border-2 border-purple-brand/20 shadow-xl rounded-2xl p-3 sm:p-4 w-full min-h-[80px] sm:min-h-[90px] box-border relative overflow-hidden group">
-                <div className="absolute top-0 right-0 w-24 h-24 bg-purple-brand/[0.02] rounded-full -mr-12 -mt-12" />
-
-                <div className="w-14 h-11 sm:w-20 sm:h-16 flex shrink-0 items-center justify-center p-1.5 bg-white rounded-xl shadow-md border border-purple-brand/10 z-10 transition-transform">
-                  <Image
-                    src="/images/hero/National_Disability_Insurance_Scheme_logo.svg.png"
-                    alt="NDIS Registered Provider"
-                    width={84}
-                    height={52}
-                    className="object-contain h-full w-auto"
-                  />
-                </div>
-
-                <div className="flex flex-col justify-center min-w-0 z-10 flex-1">
-                  <div className="text-[12px] sm:text-[14px] font-black text-zinc-900 uppercase leading-tight mb-1 tracking-tight">
-                    Registered <br className="sm:hidden" /> NDIS Provider
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <div className="text-[9px] sm:text-[11px] font-black text-purple-brand tracking-[0.12em] bg-purple-brand/10 px-2 py-0.5 rounded-full border border-purple-brand/10 w-fit whitespace-nowrap">
-                      NO: 4053379341
-                    </div>
-                  </div>
-                </div>
+              <div className="relative w-full aspect-[2/1] max-w-[240px] mx-auto drop-shadow-2xl">
+                <Image
+                  src="/images/NDIS_LOGO.png"
+                  alt="NDIS Registered Provider"
+                  fill
+                  className="object-contain"
+                />
               </div>
             </motion.div>
           </div>

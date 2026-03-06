@@ -27,13 +27,12 @@ const IMPORTANT_LINKS = [
 ] as const;
 
 const SERVICE_AREAS = [
-  "Sydney",
-  "Norwest",
-  "NSW",
-  "Parramatta",
-  "Western Sydney",
+  "Sydney - All locations",
+  "Regional New South Wales",
+  "Canberra",
   "Victoria",
-  "Brisbane",
+  "Perth",
+  "Queensland",
 ] as const;
 
 const SOCIAL_LINKS = [
@@ -55,23 +54,33 @@ export function Footer(): React.ReactElement {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 lg:gap-14 pt-16 pb-14 lg:pt-20 lg:pb-16">
           {/* Column 1: Logo & About */}
           <div className="space-y-6">
-            <Link href="/" className="inline-block group">
-              <div className="flex items-center gap-2">
+            <div className="flex flex-col gap-8">
+              <Link href="/" className="inline-block group">
                 <BrandLogo
-                  width={220}
-                  height={56}
+                  width={200}
+                  height={50}
                   imageClassName="brightness-0 invert"
                 />
-                <div className="relative w-20 h-10">
+              </Link>
+              <div className="flex flex-wrap items-center gap-4">
+                <div className="relative w-20 h-10 bg-white p-2 rounded-lg shadow-lg hover:scale-105 transition-transform duration-300 shrink-0">
                   <Image
                     src="/images/NDIS_LOGO.png"
                     alt="NDIS Logo"
                     fill
-                    className="object-contain brightness-0 invert"
+                    className="object-contain p-1"
+                  />
+                </div>
+                <div className="relative w-14 h-14 shrink-0">
+                  <Image
+                    src="/images/COVID_LOGO.png"
+                    alt="COVID Safe"
+                    fill
+                    className="object-contain"
                   />
                 </div>
               </div>
-            </Link>
+            </div>
             <p className="footer-body text-white/85 leading-relaxed max-w-sm">
               As a reputed{" "}
               <span className="font-bold text-white">NDIS</span> provider across{" "}

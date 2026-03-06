@@ -125,7 +125,15 @@ export function Header(): React.ReactElement {
         </nav>
 
         {/* CTA */}
-        <div className="hidden md:flex items-center gap-3">
+        <div className="hidden md:flex items-center gap-4">
+          <div className="relative w-14 h-14 shrink-0">
+            <Image
+              src="/images/COVID_LOGO.png"
+              alt="COVID Safe"
+              fill
+              className="object-contain"
+            />
+          </div>
           <ThemeToggle />
           <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-purple-brand/5 dark:bg-purple-brand/10 border border-purple-brand/20">
             <div className="w-7 h-7 rounded-full bg-purple-brand flex items-center justify-center text-white text-[9px] font-black shrink-0 shadow-sm">
@@ -188,12 +196,22 @@ export function Header(): React.ReactElement {
                 </div>
 
                 {/* Mobile Menu Footer */}
-                <div className="mt-auto border-t border-purple-brand/20 dark:border-white/10 pt-6 pb-8 space-y-3">
+                <div className="mt-auto border-t border-purple-brand/20 dark:border-white/10 pt-6 pb-8 space-y-4">
+                  <div className="flex items-center justify-center">
+                    <div className="relative w-20 h-20 shrink-0">
+                      <Image
+                        src="/images/COVID_LOGO.png"
+                        alt="COVID Safe"
+                        fill
+                        className="object-contain"
+                      />
+                    </div>
+                  </div>
                   <div className="w-full py-3 px-4 bg-purple-brand/5 dark:bg-zinc-900/50 text-slate-900 dark:text-white rounded-xl font-bold flex items-center gap-3 border border-purple-brand/20">
                     <div className="w-10 h-10 rounded-lg bg-purple-brand flex items-center justify-center text-white font-black text-sm shrink-0">
                       24/7
                     </div>
-                    <div className="text-left">
+                    <div className="text-left flex-1">
                       <div className="text-[9px] uppercase tracking-[0.2em] text-zinc-500 dark:text-zinc-400 font-black">Support Services</div>
                       <div className="text-sm text-purple-brand dark:text-purple-200 font-bold leading-tight">Available Always</div>
                     </div>

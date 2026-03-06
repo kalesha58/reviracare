@@ -39,29 +39,15 @@ const BADGES = [
   {
     id: "ndis-official",
     content: (
-      <div className="flex items-center justify-start gap-3 sm:gap-4 md:gap-5 bg-white border-2 border-purple-brand/20 shadow-2xl rounded-2xl md:rounded-[2rem] p-3 sm:p-4 md:p-6 w-full min-w-0 min-h-[80px] sm:min-h-[100px] md:h-[120px] box-border relative overflow-hidden group">
-        {/* Decorative accent */}
-        <div className="absolute top-0 right-0 w-32 h-32 bg-purple-brand/[0.03] rounded-full -mr-16 -mt-16" />
-
-        <div className="w-14 h-11 sm:w-20 sm:h-16 md:w-24 md:h-20 flex shrink-0 items-center justify-center p-1.5 sm:p-2.5 bg-white rounded-xl shadow-lg border border-purple-brand/10 z-10 transition-transform group-hover:scale-105">
+      <div className="flex items-center justify-center w-full group">
+        <div className="relative w-full aspect-[4/3] max-w-[280px] drop-shadow-2xl transition-transform duration-300 group-hover:scale-105">
           <Image
-            src="/images/hero/National_Disability_Insurance_Scheme_logo.svg.png"
+            src="/images/NDIS_LOGO.png"
             alt="NDIS Registered Provider"
-            width={96}
-            height={60}
-            className="object-contain h-full w-auto"
+            fill
+            className="object-contain rounded-2xl"
+            priority
           />
-        </div>
-
-        <div className="flex flex-col justify-center min-w-0 z-10 flex-1">
-          <div className="text-[12px] sm:text-[15px] md:text-[18px] font-black text-zinc-900 uppercase leading-tight mb-1 sm:mb-1.5 tracking-tight">
-            Registered <br className="sm:hidden" /> NDIS Provider
-          </div>
-          <div className="flex items-center gap-2">
-            <div className="text-[9px] sm:text-[11px] md:text-[13px] font-black text-purple-brand tracking-[0.15em] bg-purple-brand/10 px-2 sm:px-3 py-0.5 sm:py-1 rounded-full border border-purple-brand/10 whitespace-nowrap">
-              NO: 4053379341
-            </div>
-          </div>
         </div>
       </div>
     ),
